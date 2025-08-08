@@ -11,7 +11,7 @@ media_folder: "assets/images"
 public_folder: "/assets/images"
 
 # Site URL (replace with your domain)
-site_url: https://www.moileon.com
+site_url: https://www.moileon.in
 
 # Collections define the content types you can edit
 collections:
