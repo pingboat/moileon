@@ -1,6 +1,7 @@
 # admin/config.yml
 backend:
   name: github
+  repo: pingboat/moileon
   branch: main
 
 # Enable editorial workflow (optional - allows draft/review process)
