@@ -1,6 +1,6 @@
 # admin/config.yml
 backend:
-  name: github
+  name: git-gateway
   repo: pingboat/moileon
   branch: main
 
