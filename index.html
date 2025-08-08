@@ -1,247 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>moileon</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Georgia, serif;
-            background-color: #f8f8f8;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            display: flex;
-            min-height: 100vh;
-        }
-
-        .sidebar {
-            width: 200px;
-            background-color: #000080;
-            padding: 20px;
-            box-shadow: none;
-            border-right: none;
-        }
-
-        .nav-button {
-            display: block;
-            width: 100%;
-            padding: 8px 12px;
-            margin-bottom: 2px;
-            background-color: #4169E1;
-            color: white;
-            text-decoration: none;
-            border: 1px solid #0000CD;
-            border-radius: 0;
-            font-size: 13px;
-            font-weight: normal;
-            text-align: left;
-            transition: none;
-            cursor: pointer;
-            font-family: Verdana, Arial, sans-serif;
-        }
-
-        .nav-button:hover {
-            background-color: #1E90FF;
-            color: white;
-        }
-
-        .main-content {
-            flex: 1;
-            padding: 40px;
-            text-align: center;
-        }
-
-        .logo-section {
-            margin-bottom: 60px;
-        }
-
-        .logo-text {
-            font-size: 28px;
-            font-weight: normal;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .lotus-symbol {
-            font-size: 48px;
-            margin: 20px 0;
-        }
-
-        .quiz-section {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .quiz-title {
-            font-size: 32px;
-            margin-bottom: 30px;
-            color: #333;
-        }
-
-        .score {
-            font-size: 18px;
-            margin-bottom: 30px;
-            color: #666;
-        }
-
-        .question {
-            font-size: 20px;
-            margin-bottom: 30px;
-            color: #333;
-        }
-
-        .answer-input {
-            width: 400px;
-            padding: 12px 16px;
-            border: 2px solid #ddd;
-            border-radius: 6px;
-            font-size: 16px;
-            margin-bottom: 15px;
-            background-color: white;
-        }
-
-        .answer-input:focus {
-            outline: none;
-            border-color: #87CEEB;
-        }
-
-        .instruction {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 25px;
-        }
-
-        .button {
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            padding: 10px 20px;
-            margin: 5px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-
-        .button:hover {
-            background-color: #e0e0e0;
-        }
-
-        .submit-btn {
-            background-color: #87CEEB;
-        }
-
-        .submit-btn:hover {
-            background-color: #6BB6D6;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moileon Admin</title>
+  
+  <!-- Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
+  <!-- Custom CSS for admin panel -->
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Custom styling for CMS */
+    .nc-app-header {
+      background: linear-gradient(135deg, #000080, #4169E1) !important;
+    }
+    
+    .nc-app-header-button {
+      color: white !important;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <a href="#" class="nav-button">Home</a>
-            <a href="https://www.moileon.in/articles.html" class="nav-button">Blog</a>
-            <a href="#" class="nav-button">Booknotes</a>
-            <a href="#" class="nav-button">Projects</a>
-            <a href="#" class="nav-button">Consulting</a>
-            <a href="#" class="nav-button">Podcast</a>
-            <a href="#" class="nav-button">Quotes</a>
-            <a href="#" class="nav-button">Bio</a>
-            <a href="https://www.linkedin.com/in/leonkaushik" class="nav-button" target="_blank">LinkedIn</a>
-            <a href="https://x.com/iobyleon" class="nav-button" target="_blank">Twitter</a>
-        </div>
-
-        <div class="main-content">
-            <div class="logo-section">
-                <div class="logo-text">ALL LIFE IS YOGA.</div>
-                <div class="lotus-image" style="margin: 20px 0;">
-                    <svg width="200" height="120" viewBox="0 0 400 240" style="max-width: 100%; height: auto;">
-                        <!-- Recreating the exact lotus from your image -->
-                        <g transform="translate(200, 120)">
-                            <!-- Top center petal -->
-                            <path d="M0,-80 C-15,-90 -25,-85 -30,-70 C-32,-55 -28,-40 -20,-25 C-15,-15 -8,-5 0,0 C8,-5 15,-15 20,-25 C28,-40 32,-55 30,-70 C25,-85 15,-90 0,-80Z" fill="black"/>
-                            
-                            <!-- Top left petal -->
-                            <path d="M-35,-65 C-50,-80 -65,-75 -70,-55 C-72,-35 -68,-20 -58,-10 C-48,-2 -35,0 -25,-5 C-20,-8 -18,-15 -22,-25 C-26,-40 -30,-55 -35,-65Z" fill="black"/>
-                            
-                            <!-- Top right petal -->
-                            <path d="M35,-65 C50,-80 65,-75 70,-55 C72,-35 68,-20 58,-10 C48,-2 35,0 25,-5 C20,-8 18,-15 22,-25 C26,-40 30,-55 35,-65Z" fill="black"/>
-                            
-                            <!-- Left middle petal -->
-                            <path d="M-65,-25 C-85,-35 -95,-25 -95,0 C-95,25 -85,45 -70,50 C-55,55 -40,50 -30,35 C-25,25 -30,10 -40,-10 C-50,-20 -58,-25 -65,-25Z" fill="black"/>
-                            
-                            <!-- Right middle petal -->
-                            <path d="M65,-25 C85,-35 95,-25 95,0 C95,25 85,45 70,50 C55,55 40,50 30,35 C25,25 30,10 40,-10 C50,-20 58,-25 65,-25Z" fill="black"/>
-                            
-                            <!-- Left lower petal -->
-                            <path d="M-50,25 C-70,40 -70,60 -60,75 C-50,85 -35,90 -20,80 C-10,70 -5,50 -12,35 C-18,25 -35,15 -50,25Z" fill="black"/>
-                            
-                            <!-- Right lower petal -->
-                            <path d="M50,25 C70,40 70,60 60,75 C50,85 35,90 20,80 C10,70 5,50 12,35 C18,25 35,15 50,25Z" fill="black"/>
-                            
-                            <!-- Bottom petals -->
-                            <path d="M-25,55 C-40,75 -30,95 -15,100 C0,105 15,100 25,85 C30,70 25,55 15,50 C5,45 -5,50 -15,55 C-20,53 -22,54 -25,55Z" fill="black"/>
-                            <path d="M25,55 C40,75 30,95 15,100 C0,105 -15,100 -25,85 C-30,70 -25,55 -15,50 C-5,45 5,50 15,55 C20,53 22,54 25,55Z" fill="black"/>
-                            
-                            <!-- Far outer petals -->
-                            <path d="M-85,0 C-110,-15 -115,5 -105,25 C-95,40 -80,45 -65,35 C-58,30 -62,20 -75,10 C-80,5 -83,2 -85,0Z" fill="black"/>
-                            <path d="M85,0 C110,-15 115,5 105,25 C95,40 80,45 65,35 C58,30 62,20 75,10 C80,5 83,2 85,0Z" fill="black"/>
-                            
-                            <!-- Om symbol -->
-                            <text x="0" y="12" text-anchor="middle" font-family="serif" font-size="32" font-weight="bold" fill="black">ॐ</text>
-                        </g>
-                    </svg>
-                </div>
-            </div>
-
-            <div class="quiz-section">
-                <h1 class="quiz-title">Quest On!</h1>
-                <div class="score">Score: 0</div>
-                <div class="question">"Which approach is most effective for learning new concepts?"</div>
-                
-                <input type="text" class="answer-input" placeholder="Type your answer here">
-                <div class="instruction">Press Enter after typing your answer</div>
-                
-                <button class="button submit-btn">Submit Answer</button>
-                <button class="button">Show me the answer</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Add Enter key functionality to the input
-        document.querySelector('.answer-input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                submitAnswer();
-            }
-        });
-
-        // Submit answer functionality
-        document.querySelector('.submit-btn').addEventListener('click', submitAnswer);
-
-        function submitAnswer() {
-            const answer = document.querySelector('.answer-input').value.trim();
-            if (answer) {
-                alert('Answer submitted: ' + answer);
-                document.querySelector('.answer-input').value = '';
-            } else {
-                alert('Please enter an answer first.');
-            }
+  <!-- Netlify CMS -->
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  
+  <!-- Initialize Netlify Identity -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
         }
-
-        // Show answer functionality
-        document.querySelectorAll('.button')[1].addEventListener('click', function() {
-            alert('The most effective approach for learning new concepts typically involves active engagement, connecting new information to existing knowledge, and using multiple learning modalities.');
-        });
-    </script>
+      });
+    }
+  </script>
 </body>
 </html>
