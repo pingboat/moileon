@@ -1,6 +1,6 @@
 # admin/config.yml
 backend:
-  name: git-gateway
+  name: github
   branch: main
 
 # Enable editorial workflow (optional - allows draft/review process)
