@@ -11,6 +11,18 @@
             box-sizing: border-box;
         }
 
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+        
         body {
             font-family: Georgia, serif;
             background-color: #f8f8f8;
