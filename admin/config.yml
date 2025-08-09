@@ -68,7 +68,7 @@ collections:
       - label: "Category"
         name: "category"
         widget: "select"
-        options: ["Integral", "Learning", "Philosophy", "Yoga", "Life Skills", "Knowledge", "Wisdom"]
+        options: ["Integral", "Quiz", "Learning", "Philosophy", "Yoga", "Life Skills", "Knowledge", "Wisdom"]
         default: "Learning"
       - label: "Difficulty Level"
         name: "difficulty"
