@@ -63,6 +63,7 @@ collections:
       - label: "Explanation"
         name: "explanation"
         widget: "markdown"
+        required: false
         hint: "Detailed explanation of the answer"
       - label: "Category"
         name: "category"
