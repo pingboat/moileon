@@ -31,10 +31,6 @@ collections:
             name: "quest_title"
             widget: "string"
             default: "Quest On!"
-          - label: "Quest Question"
-            name: "quest_question"
-            widget: "text"
-            default: "Which approach is most effective for learning new concepts?"
           - label: "Current Score"
             name: "score"
             widget: "number"
@@ -43,6 +39,54 @@ collections:
             name: "lotus_image"
             widget: "image"
             default: "/assets/images/lotus.png"
+
+  # Quiz Questions - NEW SECTION
+  - name: "quiz"
+    label: "Quiz Questions"
+    folder: "content/quiz"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - label: "Question"
+        name: "question"
+        widget: "text"
+        hint: "The main quiz question to display"
+      - label: "Correct Answer"
+        name: "correct_answer"
+        widget: "text"
+        hint: "The expected correct answer"
+      - label: "Alternative Answers"
+        name: "alternative_answers"
+        widget: "list"
+        hint: "Other acceptable answers (optional)"
+        required: false
+      - label: "Explanation"
+        name: "explanation"
+        widget: "markdown"
+        hint: "Detailed explanation of the answer"
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["Learning", "Philosophy", "Yoga", "Life Skills", "Knowledge", "Wisdom"]
+        default: "Learning"
+      - label: "Difficulty Level"
+        name: "difficulty"
+        widget: "select"
+        options: ["Beginner", "Intermediate", "Advanced"]
+        default: "Beginner"
+      - label: "Date Created"
+        name: "date"
+        widget: "datetime"
+      - label: "Active"
+        name: "active"
+        widget: "boolean"
+        default: true
+        hint: "Only active questions will be displayed"
+      - label: "Points"
+        name: "points"
+        widget: "number"
+        default: 10
+        hint: "Points awarded for correct answer"
 
   # Blog posts
   - name: "blog"
@@ -226,3 +270,28 @@ collections:
             name: "email"
             widget: "string"
             required: false
+
+      - label: "Quiz Settings"
+        name: "quiz_settings"
+        file: "content/settings/quiz.md"
+        fields:
+          - label: "Quiz Title"
+            name: "quiz_title"
+            widget: "string"
+            default: "Quest On!"
+          - label: "Show Random Questions"
+            name: "random_questions"
+            widget: "boolean"
+            default: true
+          - label: "Questions Per Session"
+            name: "questions_per_session"
+            widget: "number"
+            default: 1
+          - label: "Show Explanations"
+            name: "show_explanations"
+            widget: "boolean"
+            default: true
+          - label: "Enable Scoring"
+            name: "enable_scoring"
+            widget: "boolean"
+            default: true
