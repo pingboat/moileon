@@ -11,18 +11,6 @@
             box-sizing: border-box;
         }
 
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
-        
         body {
             font-family: Georgia, serif;
             background-color: #f8f8f8;
@@ -229,6 +217,9 @@
         </div>
     </div>
 
+    <!-- Netlify Identity Widget for password reset -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    
     <script>
         // Add Enter key functionality to the input
         document.querySelector('.answer-input').addEventListener('keypress', function(e) {
@@ -254,6 +245,17 @@
         document.querySelectorAll('.button')[1].addEventListener('click', function() {
             alert('The most effective approach for learning new concepts typically involves active engagement, connecting new information to existing knowledge, and using multiple learning modalities.');
         });
+
+        // Netlify Identity initialization
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
     </script>
 </body>
 </html>
