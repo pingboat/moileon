@@ -38,7 +38,7 @@ collections:
           - label: "Lotus Image"
             name: "lotus_image"
             widget: "image"
-            default: "/assets/images/lotus.jpg"
+            default: "/assets/images/lotus.png"
 
   # Quiz Questions - NEW SECTION
   - name: "quiz"
