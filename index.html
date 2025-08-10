@@ -3,172 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>moileon</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Georgia, serif; background-color: #f8f8f8; color: #333; line-height: 1.6; }
-        .container { display: flex; min-height: 100vh; }
-        .sidebar { width: 200px; background-color: #000080; padding: 20px; }
-        .nav-button { display: block; width: 100%; padding: 8px 12px; margin-bottom: 2px; background-color: #4169E1; color: white; text-decoration: none; border: 1px solid #0000CD; font-size: 13px; font-family: Verdana, Arial, sans-serif; cursor: pointer; }
-        .nav-button:hover { background-color: #1E90FF; color: white; }
-        .main-content { flex: 1; padding: 40px; text-align: center; }
-        .logo-section { margin-bottom: 60px; }
-        .logo-text { font-size: 32px; letter-spacing: 2px; margin-bottom: 20px; color: #333; }
-        .lotus-image img { width: 200px; height: auto; display: block; margin: 0 auto; }
-        .quiz-section { max-width: 600px; margin: 0 auto; }
-        .quiz-title { font-size: 32px; margin-bottom: 30px; }
-        .score { font-size: 18px; margin-bottom: 30px; color: #666; }
-        .question { font-size: 20px; margin-bottom: 30px; }
-        .answer-input { width: 400px; padding: 12px 16px; border: 2px solid #ddd; border-radius: 6px; font-size: 16px; margin-bottom: 15px; background-color: white; }
-        .answer-input:focus { border-color: #87CEEB; outline: none; }
-        .instruction { font-size: 14px; color: #666; margin-bottom: 25px; }
-        .button { background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 6px; padding: 10px 20px; margin: 5px; font-size: 14px; cursor: pointer; }
-        .button:hover { background-color: #e0e0e0; }
-        .submit-btn { background-color: #87CEEB; }
-        .submit-btn:hover { background-color: #6BB6D6; }
-        .content-section { max-width: 800px; margin: 40px auto; text-align: left; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .content-section h2 { color: #000080; margin-bottom: 20px; border-bottom: 2px solid #4169E1; padding-bottom: 10px; }
-        .content-item { margin-bottom: 20px; padding: 15px; border-left: 4px solid #87CEEB; background: #f9f9f9; }
-        .loading { text-align: center; color: #666; font-style: italic; }
-        .error { text-align: center; color: #cc0000; font-style: italic; }
-    </style>
+    <title>Moileon Quiz</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <a href="#" class="nav-button" onclick="showSection('home')">Home</a>
-            <a href="#" class="nav-button" onclick="showSection('blog')">Blog</a>
-            <a href="#" class="nav-button" onclick="showSection('booknotes')">Booknotes</a>
-            <a href="#" class="nav-button" onclick="showSection('projects')">Projects</a>
-            <a href="#" class="nav-button" onclick="showSection('consulting')">Consulting</a>
-            <a href="#" class="nav-button" onclick="showSection('podcast')">Podcast</a>
-            <a href="#" class="nav-button" onclick="showSection('quotes')">Quotes</a>
-            <a href="#" class="nav-button" onclick="showSection('bio')">Bio</a>
-            <a href="https://www.linkedin.com/in/leonkaushik" class="nav-button" target="_blank">LinkedIn</a>
-            <a href="https://x.com/iobyleon" class="nav-button" target="_blank">Twitter</a>
-        </div>
 
-        <div class="main-content">
-            <div id="home" class="section active">
-                <div class="logo-section">
-                    <div class="logo-text">ALL LIFE IS YOGA.</div>
-                    <div class="lotus-image" id="lotus-container">
-                        <img id="lotus" src="" alt="Lotus">
-                        <div id="lotus-status" style="text-align:center; color:#666; padding:10px; font-size:12px;">Loading lotus image...</div>
-                    </div>
-                </div>
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <h1>Welcome to Moileon Quiz</h1>
 
-                <div class="quiz-section">
-                    <h1 class="quiz-title" id="quiz-title">Quest On!</h1>
-                    <div class="score" id="score-display">Score: <span id="current-score">0</span></div>
-                    <div class="question" id="quiz-question">Loading question...</div>
-                    <input type="text" class="answer-input" id="answer-input" placeholder="Type your answer here">
-                    <div class="instruction">Press Enter after typing your answer</div>
-                    <button class="button submit-btn" id="submit-btn">Submit Answer</button>
-                    <button class="button" id="show-answer-btn">Show me the answer</button>
-                    <button class="button" id="next-question-btn" style="display:none;">Next Question</button>
-                    <div id="quiz-feedback" style="display:none; margin-top:20px; padding:15px; border-radius:6px;"></div>
-                </div>
-            </div>
-
-            <div id="blog" class="section content-section" style="display:none;">
-                <h2>Blog Posts</h2>
-                <div id="blog-content" class="loading">Loading blog posts...</div>
-            </div>
-
-            <div id="booknotes" class="section content-section" style="display:none;">
-                <h2>Book Notes</h2>
-                <div id="booknotes-content" class="loading">Loading book notes...</div>
-            </div>
-
-            <div id="projects" class="section content-section" style="display:none;">
-                <h2>Projects</h2>
-                <div id="projects-content" class="loading">Loading projects...</div>
-            </div>
-
-            <div id="quotes" class="section content-section" style="display:none;">
-                <h2>Quotes</h2>
-                <div id="quotes-content" class="loading">Loading quotes...</div>
-            </div>
-
-            <div id="consulting" class="section content-section" style="display:none;">
-                <h2>Consulting</h2>
-                <p>Consulting services information will be displayed here.</p>
-            </div>
-
-            <div id="podcast" class="section content-section" style="display:none;">
-                <h2>Podcast</h2>
-                <p>Podcast episodes and information will be displayed here.</p>
-            </div>
-
-            <div id="bio" class="section content-section" style="display:none;">
-                <h2>Bio</h2>
-                <p>Personal biography and information will be displayed here.</p>
+        <!-- Lotus Image Section -->
+        <div class="lotus-image" id="lotus-container">
+            <img id="lotus" src="" alt="Lotus" style="width:200px; height:auto; display:block; margin:0 auto;">
+            <div id="lotus-status" style="text-align:center; color:#666; padding:10px; font-size:12px;">
+                Loading lotus image...
             </div>
         </div>
-    </div>
 
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+        <button onclick="showSection('quiz')">Start Quiz</button>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="section">
+        <h2>Quiz Time!</h2>
+        <div id="quiz-container"></div>
+        <button onclick="showSection('home')">Back to Home</button>
+    </section>
+
+    <script src="quest.js"></script>
 
     <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => section.style.display = 'none');
-            document.getElementById(sectionId).style.display = 'block';
+    function showSection(sectionId) {
+        document.querySelectorAll('.section').forEach(section => {
+            section.classList.remove('active');
+        });
+        document.getElementById(sectionId).classList.add('active');
+    }
+
+    function loadLotusImage() {
+        const lotusImage = document.getElementById("lotus");
+        const statusText = document.getElementById("lotus-status");
+
+        const imageUrl = "https://moileon.in/assets/images/lotus.png";
+
+        // If cached in localStorage, load instantly
+        const cachedImage = localStorage.getItem("lotusImageData");
+        if (cachedImage) {
+            lotusImage.src = cachedImage;
+            statusText.textContent = "";
+            console.log("Loaded lotus image from cache.");
         }
 
-        function loadLotusImage() {
-            const lotusImage = document.getElementById("lotus");
-            const statusText = document.getElementById("lotus-status");
-            const imageUrl = "https://moileon.in/assets/images/lotus.png";
-
-            const testImage = new Image();
-            testImage.onload = function () {
-                lotusImage.src = imageUrl;
+        // Always try to fetch the latest from server
+        fetch(imageUrl, { cache: "force-cache" })
+            .then(response => {
+                if (!response.ok) throw new Error("Network error");
+                return response.blob();
+            })
+            .then(blob => {
+                const objectURL = URL.createObjectURL(blob);
+                lotusImage.src = objectURL;
                 statusText.textContent = "";
-                console.log("Lotus image loaded successfully.");
-            };
-            testImage.onerror = function () {
-                statusText.textContent = "Lotus image not available";
-                console.error("Failed to load lotus image.");
-            };
-            testImage.src = imageUrl;
-        }
 
-        document.querySelector('.answer-input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') submitAnswer();
-        });
+                // Store in localStorage for instant future loads
+                const reader = new FileReader();
+                reader.onloadend = function () {
+                    localStorage.setItem("lotusImageData", reader.result);
+                };
+                reader.readAsDataURL(blob);
 
-        document.querySelector('.submit-btn').addEventListener('click', submitAnswer);
-
-        function submitAnswer() {
-            const answer = document.querySelector('.answer-input').value.trim();
-            if (answer) {
-                alert('Answer submitted: ' + answer);
-                document.querySelector('.answer-input').value = '';
-            } else {
-                alert('Please enter an answer first.');
-            }
-        }
-
-        document.querySelectorAll('.button')[1].addEventListener('click', function() {
-            alert('The most effective approach for learning new concepts typically involves active engagement, connecting new information to existing knowledge, and using multiple learning modalities.');
-        });
-
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                        document.location.href = "/admin/";
-                    });
+                console.log("Lotus image loaded and cached.");
+            })
+            .catch(() => {
+                if (!cachedImage) {
+                    statusText.textContent = "Lotus image not available";
                 }
+                console.error("Failed to load lotus image from server.");
             });
-        }
+    }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            showSection('home');
-            loadLotusImage();
-        });
+    document.addEventListener('DOMContentLoaded', function() {
+        showSection('home');
+        loadLotusImage();
+    });
     </script>
+
 </body>
 </html>
