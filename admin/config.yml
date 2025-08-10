@@ -15,31 +15,6 @@ site_url: https://moileon.in
 
 # Collections define the content types you can edit
 collections:
-  # Home page content
-  - name: "pages"
-    label: "Pages"
-    files:
-      - label: "Home Page"
-        name: "home"
-        file: "content/home.md"
-        fields:
-          - label: "Page Title"
-            name: "title"
-            widget: "string"
-            default: "ALL LIFE IS YOGA."
-          - label: "Quest Section Title"
-            name: "quest_title"
-            widget: "string"
-            default: "Quest On!"
-          - label: "Current Score"
-            name: "score"
-            widget: "number"
-            default: 0
-          - label: "Lotus Image"
-            name: "lotus_image"
-            widget: "image"
-            default: "/assets/images/lotus.png"
-
   # Quiz Questions - NEW SECTION
   - name: "quiz"
     label: "Quiz Questions"
@@ -63,12 +38,11 @@ collections:
       - label: "Explanation"
         name: "explanation"
         widget: "markdown"
-        required: false
         hint: "Detailed explanation of the answer"
       - label: "Category"
         name: "category"
         widget: "select"
-        options: ["Integral", "Quiz", "Learning", "Philosophy", "Yoga", "Life Skills", "Knowledge", "Wisdom"]
+        options: ["Learning", "Philosophy", "Yoga", "Life Skills", "Knowledge", "Wisdom"]
         default: "Learning"
       - label: "Difficulty Level"
         name: "difficulty"
@@ -296,3 +270,13 @@ collections:
             name: "enable_scoring"
             widget: "boolean"
             default: true
+
+      # Simple image management
+      - label: "Site Images"
+        name: "images"
+        file: "content/settings/images.md"
+        fields:
+          - label: "Lotus Image"
+            name: "lotus_image"
+            widget: "image"
+            hint: "Upload the main lotus image for the homepage"
