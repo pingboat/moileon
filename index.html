@@ -240,7 +240,10 @@
                     <div class="logo-text">ALL LIFE IS YOGA.</div>
                     <div class="lotus-image" id="lotus-container">
                         <!-- Will be loaded dynamically from CMS -->
-                        <div id="lotus-loading">Loading lotus image...</div>
+                        <div id="lotus-loading" style="text-align: center; color: #666; padding: 20px;">
+                            <div>Loading lotus image...</div>
+                            <div style="font-size: 12px; margin-top: 5px;">Trying multiple image paths...</div>
+                        </div>
                     </div>
                 </div>
 
@@ -320,6 +323,43 @@
         // Load lotus image from CMS
         async function loadLotusImage() {
             try {
+                // Try direct image paths first
+                const imagePaths = [
+                    '/assets/images/lotus.png',
+                    './assets/images/lotus.png',
+                    'assets/images/lotus.png'
+                ];
+                
+                // Test each path
+                for (const path of imagePaths) {
+                    const img = new Image();
+                    const success = await new Promise((resolve) => {
+                        img.onload = () => resolve(true);
+                        img.onerror = () => resolve(false);
+                        img.src = path;
+                        // Timeout after 3 seconds
+                        setTimeout(() => resolve(false), 3000);
+                    });
+                    
+                    if (success) {
+                        // Found working image path
+                        const container = document.getElementById('lotus-container');
+                        container.innerHTML = '';
+                        
+                        const finalImg = document.createElement('img');
+                        finalImg.src = path;
+                        finalImg.alt = 'Lotus with Om Symbol';
+                        finalImg.style.width = '200px';
+                        finalImg.style.height = 'auto';
+                        finalImg.style.display = 'block';
+                        finalImg.style.margin = '0 auto';
+                        
+                        container.appendChild(finalImg);
+                        return;
+                    }
+                }
+                
+                // If direct paths fail, try loading from CMS settings
                 const response = await fetch('https://api.github.com/repos/pingboat/moileon/contents/content/settings/images.md');
                 if (response.ok) {
                     const file = await response.json();
@@ -327,36 +367,39 @@
                     const imageData = parseMarkdownFrontMatter(content);
                     
                     if (imageData.lotus_image) {
-                        // Create img element with CMS image
-                        const imgElement = document.createElement('img');
-                        imgElement.src = imageData.lotus_image;
-                        imgElement.alt = 'Lotus with Om Symbol';
-                        imgElement.style.width = '200px';
-                        imgElement.style.height = 'auto';
-                        imgElement.style.display = 'block';
-                        imgElement.style.margin = '0 auto';
+                        // Try the CMS path
+                        const img = new Image();
+                        const success = await new Promise((resolve) => {
+                            img.onload = () => resolve(true);
+                            img.onerror = () => resolve(false);
+                            img.src = imageData.lotus_image;
+                            setTimeout(() => resolve(false), 3000);
+                        });
                         
-                        // Handle image load success
-                        imgElement.onload = function() {
+                        if (success) {
                             const container = document.getElementById('lotus-container');
                             container.innerHTML = '';
-                            container.appendChild(imgElement);
-                        };
-                        
-                        // Handle image load error - fallback to SVG
-                        imgElement.onerror = function() {
-                            showFallbackLotus();
-                        };
-                        
-                        return;
+                            
+                            const finalImg = document.createElement('img');
+                            finalImg.src = imageData.lotus_image;
+                            finalImg.alt = 'Lotus with Om Symbol';
+                            finalImg.style.width = '200px';
+                            finalImg.style.height = 'auto';
+                            finalImg.style.display = 'block';
+                            finalImg.style.margin = '0 auto';
+                            
+                            container.appendChild(finalImg);
+                            return;
+                        }
                     }
                 }
                 
-                // If no CMS image found, show fallback
+                // All attempts failed, show fallback
+                console.log('All lotus image loading attempts failed, showing SVG fallback');
                 showFallbackLotus();
                 
             } catch (error) {
-                console.error('Error loading lotus image from CMS:', error);
+                console.error('Error loading lotus image:', error);
                 showFallbackLotus();
             }
         }
