@@ -39,7 +39,6 @@ collections:
         name: "explanation"
         widget: "markdown"
         hint: "Detailed explanation of the answer"
-        required: false
       - label: "Category"
         name: "category"
         widget: "select"
