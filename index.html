@@ -1,139 +1,526 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moileon - Quest On!</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>moileon</title>
+  <style>
+    /* ---------- Basic, responsive styles (inline so site doesn't appear blank) ---------- */
+    :root{
+      --nav-width: 220px;
+      --nav-bg: #000080;
+      --nav-button: #4169E1;
+      --accent: #87CEEB;
+      --text: #333;
+      --muted: #666;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family: Georgia, serif;color:var(--text);background:#f8f8f8}
+    .container{display:flex;min-height:100vh}
+    /* sidebar */
+    .sidebar{width:var(--nav-width);background:var(--nav-bg);padding:18px}
+    .nav-button{display:block;width:100%;padding:10px 14px;margin-bottom:8px;background:var(--nav-button);color:#fff;text-decoration:none;border:1px solid #0000CD;font-size:14px;text-align:left;font-family:Verdana,Arial,sans-serif;cursor:pointer}
+    .nav-button:hover{background:#1E90FF}
+    /* main area */
+    .main-content{flex:1;padding:36px; text-align:center}
+    .logo-text{font-size:28px;margin-bottom:18px;color:var(--text);letter-spacing:2px}
+    #lotus-container{margin:14px 0}
+    #lotus-container img{max-width:200px;width:100%;height:auto;display:block;margin:0 auto}
+    /* quiz */
+    .quiz-section{max-width:680px;margin:18px auto}
+    .quiz-title{font-size:36px;margin-bottom:12px}
+    .score{color:var(--muted);margin-bottom:12px}
+    .question{font-size:20px;margin:20px 0;color:var(--text)}
+    .answer-input{width:100%;max-width:420px;padding:12px;border-radius:8px;border:2px solid #ddd;font-size:16px;margin:14px auto;display:block;background:#fff}
+    .instruction{color:var(--muted);margin-bottom:18px}
+    .button{display:inline-block;padding:10px 18px;border-radius:8px;border:1px solid #ccc;margin:6px;cursor:pointer;background:#f0f0f0}
+    .submit-btn{background:var(--accent);border-color:#b6e6f7}
+    /* content sections */
+    .content-section{max-width:900px;margin:40px auto;text-align:left;padding:18px;background:#fff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.06)}
+    .content-section h2{color:var(--nav-bg);border-bottom:2px solid #4169E1;padding-bottom:10px}
+    .content-item{padding:14px;margin-bottom:12px;background:#f9f9f9;border-left:4px solid var(--accent)}
+    .content-item h3{margin:0 0 8px;color:#333}
+    blockquote{margin:0;padding:0}
+    footer{margin-top:40px;color:var(--muted);text-align:left;padding-left:12px}
+
+    /* feedback boxes */
+    .feedback-correct{background:#d4edda;border:1px solid #c3e6cb;color:#155724;padding:12px;border-radius:6px}
+    .feedback-incorrect{background:#f8d7da;border:1px solid #f5c6cb;color:#721c24;padding:12px;border-radius:6px}
+    .feedback-explanation{background:#e2e3e5;border:1px solid #d6d8db;color:#383d41;padding:12px;border-radius:6px}
+
+    /* small screens: stack and make sidebar top */
+    @media (max-width: 900px){
+      .container{flex-direction:column;}
+      .sidebar{width:100%;display:flex;overflow-x:auto;padding:12px;gap:8px}
+      .nav-button{white-space:nowrap;min-width:120px}
+      .main-content{padding:20px}
+      .logo-text{font-size:22px}
+    }
+  </style>
 </head>
-
 <body>
-
-  <!-- HEADER -->
-  <header>
-    <h1>Moileon</h1>
-    <nav>
-      <ul id="nav-menu">
-        <!-- Navigation will load from settings/navigation.md -->
-      </ul>
-    </nav>
-  </header>
-
-  <!-- QUIZ SECTION -->
-  <section id="quiz-section">
-    <h2>Quest On!</h2>
-    <div id="quiz-container">
-      <!-- Quiz questions will be dynamically loaded -->
+  <div class="container">
+    <div class="sidebar" aria-label="Main navigation">
+      <a class="nav-button" href="#" onclick="showSection('home');return false;">Home</a>
+      <a class="nav-button" href="https://moileon.in/articles.html" target="_self">Blog</a>
+      <a class="nav-button" href="#" onclick="showSection('booknotes');return false;">Booknotes</a>
+      <a class="nav-button" href="#" onclick="showSection('projects');return false;">Projects</a>
+      <a class="nav-button" href="#" onclick="showSection('consulting');return false;">Consulting</a>
+      <a class="nav-button" href="#" onclick="showSection('podcast');return false;">Podcast</a>
+      <a class="nav-button" href="#" onclick="showSection('quotes');return false;">Quotes</a>
+      <a class="nav-button" href="#" onclick="showSection('bio');return false;">Bio</a>
+      <a class="nav-button" href="https://www.linkedin.com/in/leonkaushik" target="_blank">LinkedIn</a>
+      <a class="nav-button" href="https://x.com/iobyleon" target="_blank">Twitter</a>
     </div>
-  </section>
 
-  <!-- QUOTES SECTION -->
-  <section id="quotes-section">
-    <h2>Quotes</h2>
-    <div id="quotes-container">
-      <!-- Quotes will be dynamically loaded -->
+    <div class="main-content">
+      <!-- HOME -->
+      <div id="home" class="section">
+        <div class="logo-section">
+          <div class="logo-text">ALL LIFE IS YOGA.</div>
+          <div id="lotus-container" class="lotus-image">
+            <!-- Lotus will be placed here by JS -->
+            <div id="lotus-loading" style="text-align:center;color:#666;padding:18px">
+              <div>Loading lotus image...</div>
+              <div style="font-size:12px;margin-top:6px">Trying default image and CMS setting...</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-section">
+          <h1 id="quiz-title" class="quiz-title">Quest On!</h1>
+          <div class="score" id="score-display">Score: <span id="current-score">0</span></div>
+          <div class="question" id="quiz-question">Loading question...</div>
+
+          <input id="answer-input" class="answer-input" type="text" placeholder="Type your answer here" aria-label="Answer">
+          <div class="instruction">Press Enter after typing your answer</div>
+
+          <div style="margin-top: 12px;">
+            <button id="submit-btn" class="button submit-btn">Submit Answer</button>
+            <button id="show-answer-btn" class="button">Show me the answer</button>
+            <button id="next-question-btn" class="button" style="display:none;">Next Question</button>
+          </div>
+
+          <div id="quiz-feedback" style="display:none;margin-top:20px"></div>
+        </div>
+      </div>
+
+      <!-- BLOG -->
+      <div id="blog" class="section content-section" style="display:none;">
+        <h2>Blog Posts</h2>
+        <div id="blog-content" class="loading">Loading blog posts...</div>
+      </div>
+
+      <!-- BOOKNOTES -->
+      <div id="booknotes" class="section content-section" style="display:none;">
+        <h2>Book Notes</h2>
+        <div id="booknotes-content" class="loading">Loading book notes...</div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div id="projects" class="section content-section" style="display:none;">
+        <h2>Projects</h2>
+        <div id="projects-content" class="loading">Loading projects...</div>
+      </div>
+
+      <!-- QUOTES -->
+      <div id="quotes" class="section content-section" style="display:none;">
+        <h2>Quotes</h2>
+        <div id="quotes-content" class="loading">Loading quotes...</div>
+      </div>
+
+      <!-- CONSULTING / DIGITAL -->
+      <div id="consulting" class="section content-section" style="display:none;">
+        <h2>Consulting</h2>
+        <p>Consulting services information will be displayed here.</p>
+      </div>
+
+      <!-- PODCAST -->
+      <div id="podcast" class="section content-section" style="display:none;">
+        <h2>Podcast</h2>
+        <p>Podcast episodes and information will be displayed here.</p>
+      </div>
+
+      <!-- BIO -->
+      <div id="bio" class="section content-section" style="display:none;">
+        <h2>Bio</h2>
+        <p>Personal biography and information will be displayed here.</p>
+      </div>
+
+      <footer>
+        <p>&copy; <span id="year"></span> Moileon</p>
+      </footer>
     </div>
-  </section>
+  </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; <span id="year"></span> Moileon</p>
-  </footer>
+  <!-- Netlify Identity Widget (kept) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-  <!-- SCRIPTS -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const yearSpan = document.getElementById("year");
-      yearSpan.textContent = new Date().getFullYear();
+    /* ---------- small helpers ---------- */
+    const repoBase = 'https://api.github.com/repos/pingboat/moileon/contents';
 
-      // Load navigation
-      fetch("/content/settings/navigation.md")
-        .then(res => res.text())
-        .then(data => {
-          const navList = document.getElementById("nav-menu");
-          const navItems = parseNavMarkdown(data);
-          navItems.forEach(item => {
-            const li = document.createElement("li");
-            const a = document.createElement("a");
-            a.href = item.url;
-            a.textContent = item.label;
-            if (item.external) a.target = "_blank";
-            li.appendChild(a);
-            navList.appendChild(li);
-          });
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+      const el = document.getElementById(id);
+      if (el) el.style.display = (id === 'home') ? 'block' : 'block';
+      // Fetch content when showing section
+      loadContent(id);
+    }
+
+    // -------------------- markdown front-matter parser --------------------
+    function parseMarkdownFrontMatter(text) {
+      const parts = text.split('---');
+      let frontMatter = {};
+      let content = '';
+      if (parts.length >= 3) {
+        const fm = parts[1].trim();
+        content = parts.slice(2).join('---').trim();
+        fm.split('\n').forEach(line => {
+          if (!line) return;
+          const idx = line.indexOf(':');
+          if (idx === -1) return;
+          const key = line.substring(0, idx).trim();
+          let val = line.substring(idx + 1).trim();
+          if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+            val = val.slice(1, -1);
+          }
+          if (val === 'true') val = true;
+          if (val === 'false') val = false;
+          if (!isNaN(val) && val !== '') val = Number(val);
+          frontMatter[key] = val;
         });
+      } else {
+        content = text;
+      }
+      frontMatter.content = content;
+      return frontMatter;
+    }
 
-      // Load quiz
-      fetchQuiz();
+    // -------------------- load lotus image (simplified) --------------------
+    async function loadLotusImage() {
+      const defaultPath = '/assets/images/lotus.png';
+      // Try default path first
+      const imgTest = new Image();
+      const success = await new Promise(resolve => {
+        imgTest.onload = () => resolve(true);
+        imgTest.onerror = () => resolve(false);
+        imgTest.src = defaultPath;
+        setTimeout(() => resolve(false), 2500);
+      });
 
-      // Load quotes
-      fetchQuotes();
-    });
+      const container = document.getElementById('lotus-container');
+      container.innerHTML = '';
+      if (success) {
+        const final = document.createElement('img');
+        final.src = defaultPath;
+        final.alt = 'Lotus';
+        container.appendChild(final);
+        return;
+      }
 
-    // --- Helper: Parse navigation markdown ---
-    function parseNavMarkdown(md) {
+      // If default didn't load, try reading images.md via GitHub contents API
       try {
-        const json = JSON.parse(md.split("```json")[1].split("```")[0]);
-        return json.nav_items || [];
+        const res = await fetch(`${repoBase}/content/settings/images.md`);
+        if (res.ok) {
+          const j = await res.json();
+          // GitHub contents API returns base64 content in j.content
+          if (j && j.content) {
+            const decoded = atob(j.content);
+            const parsed = parseMarkdownFrontMatter(decoded);
+            if (parsed.lotus_image) {
+              const img2 = new Image();
+              const ok2 = await new Promise(resolve => {
+                img2.onload = () => resolve(true);
+                img2.onerror = () => resolve(false);
+                img2.src = parsed.lotus_image;
+                setTimeout(() => resolve(false), 2500);
+              });
+              if (ok2) {
+                const final2 = document.createElement('img');
+                final2.src = parsed.lotus_image;
+                final2.alt = 'Lotus';
+                container.appendChild(final2);
+                return;
+              }
+            }
+          }
+        }
+      } catch (e) { console.warn('lotus settings fetch failed', e); }
+
+      // fallback SVG if none found
+      container.innerHTML = `
+        <svg width="200" height="120" viewBox="0 0 400 240" style="margin:0 auto;display:block;">
+          <g transform="translate(200,120)">
+            <path d="M0,-80 C-15,-90 -25,-85 -30,-70 C-32,-55 -28,-40 -20,-25 C-15,-15 -8,-5 0,0 C8,-5 15,-15 20,-25 C28,-40 32,-55 30,-70 C25,-85 15,-90 0,-80Z" fill="black"/>
+            <text x="0" y="12" text-anchor="middle" font-family="serif" font-size="32" font-weight="bold" fill="black">ॐ</text>
+          </g>
+        </svg>
+      `;
+    }
+
+    // -------------------- QUIZ: load settings & questions --------------------
+    let currentQuestions = [];
+    let currentQuestionIndex = 0;
+    let currentScore = 0;
+    let quizSettings = {
+      random_questions: true,
+      questions_per_session: 1,
+      show_explanations: true,
+      enable_scoring: true,
+      quiz_title: 'Quest On!'
+    };
+
+    async function loadQuizSettings() {
+      try {
+        const res = await fetch(`${repoBase}/content/settings/quiz.md`);
+        if (!res.ok) return;
+        const j = await res.json();
+        if (j && j.content) {
+          const dec = atob(j.content);
+          const parsed = parseMarkdownFrontMatter(dec);
+          // map fields if present
+          quizSettings = Object.assign(quizSettings, parsed);
+          if (parsed.quiz_title) document.getElementById('quiz-title').textContent = parsed.quiz_title;
+        }
       } catch (e) {
-        console.error("Error parsing navigation:", e);
-        return [];
+        console.warn('loadQuizSettings failed', e);
       }
     }
 
-    // --- Fetch quiz questions ---
-    function fetchQuiz() {
-      fetch("/content/quiz")
-        .then(res => res.json())
-        .then(quizData => {
-          const quizContainer = document.getElementById("quiz-container");
-          quizData.forEach(q => {
-            const div = document.createElement("div");
-            div.className = "quiz-card";
-            div.innerHTML = `
-              <h3>${q.question}</h3>
-              <p><strong>Answer:</strong> ${q.correct_answer}</p>
-              ${q.explanation ? `<p>${q.explanation}</p>` : ""}
-            `;
-            quizContainer.appendChild(div);
-          });
-        })
-        .catch(err => console.error("Quiz load error:", err));
+    async function loadQuizData() {
+      try {
+        await loadQuizSettings();
+
+        const res = await fetch(`${repoBase}/content/quiz`);
+        if (!res.ok) {
+          console.error('Quiz folder fetch failed', res.status);
+          document.getElementById('quiz-question').innerText = 'No quiz available.';
+          return;
+        }
+        const files = await res.json();
+        currentQuestions = [];
+        if (Array.isArray(files)) {
+          for (const f of files) {
+            if (f && f.name && f.name.endsWith('.md')) {
+              try {
+                const fileText = await fetch(f.download_url).then(r => r.ok ? r.text() : '');
+                const parsed = parseMarkdownFrontMatter(fileText);
+                // ensure correct answer field names mapping (CMS uses correct_answer in config)
+                if (parsed && parsed.question && parsed.correct_answer) {
+                  currentQuestions.push(parsed);
+                } else if (parsed && parsed.question && parsed.answer) {
+                  // backward compatibility
+                  parsed.correct_answer = parsed.answer;
+                  currentQuestions.push(parsed);
+                }
+              } catch (e) { console.warn('load single question failed', f.name, e); }
+            }
+          }
+        }
+        if (currentQuestions.length === 0) {
+          document.getElementById('quiz-question').innerText = '"No active quiz questions found."';
+          return;
+        }
+        if (quizSettings.random_questions) shuffleArray(currentQuestions);
+        currentQuestionIndex = 0;
+        currentScore = 0;
+        document.getElementById('current-score').textContent = currentScore;
+        loadCurrentQuestion();
+      } catch (e) {
+        console.error('loadQuizData error', e);
+        document.getElementById('quiz-question').innerText = '"Error loading quiz questions."';
+      }
     }
 
-    // --- Fetch quotes ---
-    function fetchQuotes() {
-      fetch("/content/quotes")
-        .then(res => res.json())
-        .then(quotesData => {
-          const quotesContainer = document.getElementById("quotes-container");
-          quotesData.forEach(quote => {
-            const div = document.createElement("div");
-            div.className = "quote-card";
+    function loadCurrentQuestion() {
+      if (!currentQuestions || currentQuestions.length === 0) {
+        document.getElementById('quiz-question').innerText = 'No questions available.';
+        return;
+      }
+      const q = currentQuestions[currentQuestionIndex];
+      document.getElementById('quiz-question').innerHTML = `"${q.question}"`;
+      document.getElementById('answer-input').value = '';
+      document.getElementById('quiz-feedback').style.display = 'none';
+      document.getElementById('next-question-btn').style.display = 'none';
+      document.getElementById('submit-btn').disabled = false;
+      document.getElementById('show-answer-btn').disabled = false;
+    }
 
-            // Format optional date
-            let dateHTML = "";
-            if (quote.date) {
-              const d = new Date(quote.date);
-              dateHTML = `<small class="quote-date">${d.toLocaleDateString()}</small>`;
+    function checkAnswer(userAnswer) {
+      if (!currentQuestions || currentQuestions.length === 0) return;
+      const q = currentQuestions[currentQuestionIndex];
+      const correct = (q.correct_answer || '').toString().toLowerCase().trim();
+      const user = userAnswer.toLowerCase().trim();
+      let isCorrect = user === correct;
+
+      if (!isCorrect && q.alternative_answers) {
+        // alternative_answers may be array or comma separated in content; try both
+        if (Array.isArray(q.alternative_answers)) {
+          isCorrect = q.alternative_answers.some(a => a.toString().toLowerCase().trim() === user);
+        } else if (typeof q.alternative_answers === 'string') {
+          // split by newlines or commas
+          const parts = q.alternative_answers.split(/\r?\n|,/).map(s => s.trim());
+          isCorrect = parts.some(a => a.toLowerCase() === user);
+        }
+      }
+
+      const fb = document.getElementById('quiz-feedback');
+      if (isCorrect) {
+        if (quizSettings.enable_scoring) {
+          currentScore += (q.points || 10);
+          document.getElementById('current-score').textContent = currentScore;
+        }
+        fb.className = 'feedback-correct';
+        fb.innerHTML = '<strong>Correct!</strong> Great job!';
+      } else {
+        fb.className = 'feedback-incorrect';
+        fb.innerHTML = `<strong>Not quite.</strong> The answer is: "${q.correct_answer}"`;
+      }
+
+      if (quizSettings.show_explanations && q.explanation) {
+        fb.innerHTML += `<div style="margin-top:10px;"><strong>Explanation:</strong> ${q.explanation}</div>`;
+      }
+
+      fb.style.display = 'block';
+      document.getElementById('submit-btn').disabled = true;
+      document.getElementById('show-answer-btn').disabled = true;
+      if (currentQuestions.length > 1) document.getElementById('next-question-btn').style.display = 'inline-block';
+    }
+
+    function showAnswerDirect() {
+      if (!currentQuestions || currentQuestions.length === 0) return;
+      const q = currentQuestions[currentQuestionIndex];
+      const fb = document.getElementById('quiz-feedback');
+      fb.className = 'feedback-explanation';
+      fb.innerHTML = `<strong>Answer:</strong> "${q.correct_answer}"`;
+      if (q.explanation) fb.innerHTML += `<div style="margin-top:8px;"><strong>Explanation:</strong> ${q.explanation}</div>`;
+      fb.style.display = 'block';
+    }
+
+    function nextQuestion() {
+      if (!currentQuestions || currentQuestions.length === 0) return;
+      currentQuestionIndex = (currentQuestionIndex + 1) % currentQuestions.length;
+      loadCurrentQuestion();
+    }
+
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+    }
+
+    // -------------------- Generic content loader for other sections --------------------
+    async function loadContent(type) {
+      if (type === 'home') {
+        // load quiz + lotus
+        loadQuizData();
+        loadLotusImage();
+        return;
+      }
+      const contentDiv = document.getElementById(`${type}-content`);
+      if (!contentDiv) return;
+
+      contentDiv.innerHTML = ''; // reset
+      try {
+        const res = await fetch(`${repoBase}/content/${type}`);
+        if (!res.ok) {
+          contentDiv.innerHTML = `<p class="loading">No ${type} found yet. Create some in the admin panel!</p>`;
+          return;
+        }
+        const files = await res.json();
+        if (!Array.isArray(files) || files.length === 0) {
+          contentDiv.innerHTML = `<p class="loading">No ${type} found yet. Create some in the admin panel!</p>`;
+          return;
+        }
+
+        for (const f of files) {
+          if (f && f.name && f.name.endsWith('.md')) {
+            try {
+              const raw = await fetch(f.download_url).then(r => r.ok ? r.text() : '');
+              const parsed = parseMarkdownFrontMatter(raw);
+              // render depending on type
+              const item = document.createElement('div');
+              item.className = 'content-item';
+              let html = '';
+              if (parsed.title) html += `<h3>${parsed.title}</h3>`;
+              if (parsed.date) {
+                const d = new Date(parsed.date);
+                html += `<div class="date">${d.toLocaleDateString()}</div>`;
+              }
+              if (type === 'blog' && parsed.author) html += `<div class="date">By ${parsed.author}</div>`;
+              if (type === 'booknotes' && parsed.book_author) html += `<div class="date">Author: ${parsed.book_author}</div>`;
+              if (type === 'quotes' && parsed.quote) {
+                // Only show quote and author (date optional)
+                html += `<blockquote>"${parsed.quote}"</blockquote>`;
+                if (parsed.author) html += `<div class="date">— ${parsed.author}</div>`;
+              }
+              // content body rendering (very basic markdown->html)
+              if (parsed.content) {
+                const htmlContent = parsed.content
+                  .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+                  .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+                  .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+                  .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+                  .replace(/\*(.*)\*/gim, '<em>$1</em>')
+                  .replace(/\n\n/gim, '</p><p>')
+                  .replace(/\n/gim, '<br>');
+                html += `<div><p>${htmlContent}</p></div>`;
+              }
+              item.innerHTML = html;
+              contentDiv.appendChild(item);
+            } catch (e) {
+              console.warn('Error loading file for', type, f.name, e);
             }
+          }
+        }
 
-            div.innerHTML = `
-              <blockquote>
-                <p>"${quote.quote}"</p>
-                <footer>
-                  — ${quote.author}
-                  ${dateHTML}
-                </footer>
-              </blockquote>
-            `;
-            quotesContainer.appendChild(div);
+        if (contentDiv.innerHTML.trim() === '') {
+          contentDiv.innerHTML = `<p class="loading">No ${type} found yet. Create some in the admin panel!</p>`;
+        }
+      } catch (e) {
+        console.error('Error loading content type', type, e);
+        contentDiv.innerHTML = `<p class="error">Error loading ${type}. Content may not be published yet.</p>`;
+      }
+    }
+
+    // -------------------- Event wiring --------------------
+    document.addEventListener('DOMContentLoaded', () => {
+      // Enter key submit
+      const answerInput = document.getElementById('answer-input');
+      answerInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') submitAnswer();
+      });
+      document.getElementById('submit-btn').addEventListener('click', submitAnswer);
+      document.getElementById('show-answer-btn').addEventListener('click', showAnswerDirect);
+      document.getElementById('next-question-btn').addEventListener('click', nextQuestion);
+
+      // Show home on load
+      showSection('home');
+    });
+
+    function submitAnswer() {
+      const answer = document.getElementById('answer-input').value.trim();
+      if (answer) {
+        checkAnswer(answer);
+      } else {
+        alert('Please enter an answer first.');
+      }
+    }
+
+    // Netlify identity setup preserved
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
           });
-        })
-        .catch(err => console.error("Quotes load error:", err));
+        }
+      });
     }
   </script>
-
 </body>
 </html>
