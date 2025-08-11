@@ -1,211 +1,121 @@
-# admin/config.yml
+# Netlify CMS Configuration
 backend:
   name: git-gateway
-  branch: main
+  branch: main  # Main branch for commits from CMS
 
 # Enable editorial workflow (optional - allows draft/review process)
 publish_mode: editorial_workflow
 
-# Media folder for uploads
-media_folder: "assets/images"
-public_folder: "/assets/images"
+# Media settings
+media_folder: "assets/images"     # Folder for uploaded files
+public_folder: "/assets/images"   # Public path for media
 
-# Site URL - Updated to your custom domain
+# Site URL
 site_url: https://moileon.in
 
-# Collections define the content types you can edit
+# Content Collections
 collections:
-  # Quiz Questions - NEW SECTION
+
+  # ------------------------------
+  # QUIZ QUESTIONS
+  # ------------------------------
   - name: "quiz"
     label: "Quiz Questions"
     folder: "content/quiz"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - label: "Question"
-        name: "question"
-        widget: "text"
-        hint: "The main quiz question to display"
-      - label: "Correct Answer"
-        name: "correct_answer"
-        widget: "text"
-        hint: "The expected correct answer"
-      - label: "Alternative Answers"
-        name: "alternative_answers"
-        widget: "list"
-        hint: "Other acceptable answers (optional)"
-        required: false
-      - label: "Explanation"
-        name: "explanation"
-        widget: "markdown"
-        hint: "Detailed explanation of the answer"
-      - label: "Category"
-        name: "category"
-        widget: "select"
-        options: ["Learning", "Philosophy", "Yoga", "Life Skills", "Knowledge", "Wisdom"]
-        default: "Learning"
-      - label: "Difficulty Level"
-        name: "difficulty"
-        widget: "select"
-        options: ["Beginner", "Intermediate", "Advanced"]
-        default: "Beginner"
-      - label: "Date Created"
-        name: "date"
-        widget: "datetime"
-      - label: "Active"
-        name: "active"
-        widget: "boolean"
-        default: true
-        hint: "Only active questions will be displayed"
-      - label: "Points"
-        name: "points"
-        widget: "number"
-        default: 10
-        hint: "Points awarded for correct answer"
+      - { label: "Question", name: "question", widget: "text", hint: "Main quiz question" }
+      - { label: "Correct Answer", name: "correct_answer", widget: "text" }
+      - { label: "Alternative Answers", name: "alternative_answers", widget: "list", required: false }
+      - { label: "Explanation", name: "explanation", widget: "markdown" }
+      - { label: "Category", name: "category", widget: "select", options: ["Learning", "Philosophy", "Yoga", "Life Skills", "Knowledge", "Wisdom"], default: "Learning" }
+      - { label: "Difficulty Level", name: "difficulty", widget: "select", options: ["Beginner", "Intermediate", "Advanced"], default: "Beginner" }
+      - { label: "Date Created", name: "date", widget: "datetime" }
+      - { label: "Active", name: "active", widget: "boolean", default: true }
+      - { label: "Points", name: "points", widget: "number", default: 10 }
 
-  # Blog posts
+  # ------------------------------
+  # BLOG POSTS
+  # ------------------------------
   - name: "blog"
     label: "Blog Posts"
     folder: "content/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - label: "Title"
-        name: "title"
-        widget: "string"
-      - label: "Date"
-        name: "date"
-        widget: "datetime"
-      - label: "Author"
-        name: "author"
-        widget: "string"
-        default: "Leon Kaushik"
-      - label: "Featured Image"
-        name: "featured_image"
-        widget: "image"
-        required: false
-      - label: "Excerpt"
-        name: "excerpt"
-        widget: "text"
-        required: false
-      - label: "Tags"
-        name: "tags"
-        widget: "list"
-        required: false
-      - label: "Content"
-        name: "body"
-        widget: "markdown"
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", default: "Leon Kaushik" }
+      - { label: "Featured Image", name: "featured_image", widget: "image", required: false }
+      - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Content", name: "body", widget: "markdown" }
 
-  # Book notes
+  # ------------------------------
+  # BOOK NOTES
+  # ------------------------------
   - name: "booknotes"
     label: "Book Notes"
     folder: "content/booknotes"
     create: true
     slug: "{{slug}}"
     fields:
-      - label: "Book Title"
-        name: "title"
-        widget: "string"
-      - label: "Author"
-        name: "book_author"
-        widget: "string"
-      - label: "Date Added"
-        name: "date"
-        widget: "datetime"
-      - label: "Book Cover"
-        name: "book_cover"
-        widget: "image"
-        required: false
-      - label: "Rating"
-        name: "rating"
-        widget: "select"
-        options: ["1", "2", "3", "4", "5"]
-        required: false
+      - { label: "Book Title", name: "title", widget: "string" }
+      - { label: "Author", name: "book_author", widget: "string" }
+      - { label: "Date Added", name: "date", widget: "datetime" }
+      - { label: "Book Cover", name: "book_cover", widget: "image", required: false }
+      - { label: "Rating", name: "rating", widget: "select", options: ["1", "2", "3", "4", "5"], required: false }
       - label: "Key Takeaways"
         name: "key_takeaways"
         widget: "list"
-        field: 
-          label: "Takeaway"
-          name: "takeaway"
-          widget: "string"
-      - label: "Notes"
-        name: "body"
-        widget: "markdown"
+        field:
+          { label: "Takeaway", name: "takeaway", widget: "string" }
+      - { label: "Notes", name: "body", widget: "markdown" }
 
-  # Projects
+  # ------------------------------
+  # PROJECTS
+  # ------------------------------
   - name: "projects"
     label: "Projects"
     folder: "content/projects"
     create: true
     slug: "{{slug}}"
     fields:
-      - label: "Project Name"
-        name: "title"
-        widget: "string"
-      - label: "Date"
-        name: "date"
-        widget: "datetime"
-      - label: "Status"
-        name: "status"
-        widget: "select"
-        options: ["Active", "Completed", "On Hold", "Planned"]
-      - label: "Project Type"
-        name: "project_type"
-        widget: "select"
-        options: ["Web Development", "Mobile App", "Research", "Writing", "Other"]
-      - label: "Technologies Used"
-        name: "technologies"
-        widget: "list"
-        required: false
-      - label: "Project URL"
-        name: "project_url"
-        widget: "string"
-        required: false
-      - label: "GitHub Repository"
-        name: "github_url"
-        widget: "string"
-        required: false
-      - label: "Project Image"
-        name: "project_image"
-        widget: "image"
-        required: false
-      - label: "Description"
-        name: "body"
-        widget: "markdown"
+      - { label: "Project Name", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Status", name: "status", widget: "select", options: ["Active", "Completed", "On Hold", "Planned"] }
+      - { label: "Project Type", name: "project_type", widget: "select", options: ["Web Development", "Mobile App", "Research", "Writing", "Other"] }
+      - { label: "Technologies Used", name: "technologies", widget: "list", required: false }
+      - { label: "Project URL", name: "project_url", widget: "string", required: false }
+      - { label: "GitHub Repository", name: "github_url", widget: "string", required: false }
+      - { label: "Project Image", name: "project_image", widget: "image", required: false }
+      - { label: "Description", name: "body", widget: "markdown" }
 
-  # Quotes
+  # ------------------------------
+  # QUOTES
+  # ------------------------------
   - name: "quotes"
     label: "Quotes"
     folder: "content/quotes"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - label: "Quote"
-        name: "quote"
-        widget: "text"
-      - label: "Author"
-        name: "author"
-        widget: "string"
-      - label: "Source"
-        name: "source"
-        widget: "string"
-        required: false
-      - label: "Date Added"
-        name: "date"
-        widget: "datetime"
-      - label: "Category"
-        name: "category"
-        widget: "select"
-        options: ["Wisdom", "Motivation", "Philosophy", "Yoga", "Life", "Success"]
-      - label: "Personal Note"
-        name: "note"
-        widget: "text"
-        required: false
+      - { label: "Quote", name: "quote", widget: "text" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Source", name: "source", widget: "string", required: false }
+      - { label: "Date Added", name: "date", widget: "datetime", required: false }  # Now optional
+      - { label: "Category", name: "category", widget: "select", options: ["Wisdom", "Motivation", "Philosophy", "Yoga", "Life", "Success"] }
+      - { label: "Personal Note", name: "note", widget: "text", required: false }
 
-  # Site settings
+  # ------------------------------
+  # SITE SETTINGS
+  # ------------------------------
   - name: "settings"
     label: "Site Settings"
     files:
+
+      # Navigation Links
       - label: "Navigation"
         name: "navigation"
         file: "content/settings/navigation.md"
@@ -214,69 +124,34 @@ collections:
             name: "nav_items"
             widget: "list"
             fields:
-              - label: "Label"
-                name: "label"
-                widget: "string"
-              - label: "URL"
-                name: "url"
-                widget: "string"
-              - label: "Open in New Tab"
-                name: "external"
-                widget: "boolean"
-                default: false
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Open in New Tab", name: "external", widget: "boolean", default: false }
 
+      # Social Media Links
       - label: "Social Media"
         name: "social"
         file: "content/settings/social.md"
         fields:
-          - label: "LinkedIn URL"
-            name: "linkedin"
-            widget: "string"
-            default: "https://www.linkedin.com/in/leonkaushik"
-          - label: "Twitter/X URL"
-            name: "twitter"
-            widget: "string"
-            default: "https://x.com/iobyleon"
-          - label: "GitHub URL"
-            name: "github"
-            widget: "string"
-            required: false
-          - label: "Email"
-            name: "email"
-            widget: "string"
-            required: false
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string", default: "https://www.linkedin.com/in/leonkaushik" }
+          - { label: "Twitter/X URL", name: "twitter", widget: "string", default: "https://x.com/iobyleon" }
+          - { label: "GitHub URL", name: "github", widget: "string", required: false }
+          - { label: "Email", name: "email", widget: "string", required: false }
 
+      # Quiz Configuration
       - label: "Quiz Settings"
         name: "quiz_settings"
         file: "content/settings/quiz.md"
         fields:
-          - label: "Quiz Title"
-            name: "quiz_title"
-            widget: "string"
-            default: "Quest On!"
-          - label: "Show Random Questions"
-            name: "random_questions"
-            widget: "boolean"
-            default: true
-          - label: "Questions Per Session"
-            name: "questions_per_session"
-            widget: "number"
-            default: 1
-          - label: "Show Explanations"
-            name: "show_explanations"
-            widget: "boolean"
-            default: true
-          - label: "Enable Scoring"
-            name: "enable_scoring"
-            widget: "boolean"
-            default: true
+          - { label: "Quiz Title", name: "quiz_title", widget: "string", default: "Quest On!" }
+          - { label: "Show Random Questions", name: "random_questions", widget: "boolean", default: true }
+          - { label: "Questions Per Session", name: "questions_per_session", widget: "number", default: 1 }
+          - { label: "Show Explanations", name: "show_explanations", widget: "boolean", default: true }
+          - { label: "Enable Scoring", name: "enable_scoring", widget: "boolean", default: true }
 
-      # Simple image management
+      # Main Lotus Image
       - label: "Site Images"
         name: "images"
         file: "content/settings/images.md"
         fields:
-          - label: "Lotus Image"
-            name: "lotus_image"
-            widget: "image"
-            hint: "Upload the main lotus image for the homepage"
+          - { label: "Lotus Image", name: "lotus_image", widget: "image", hint: "Upload the main lotus image for the homepage" }
