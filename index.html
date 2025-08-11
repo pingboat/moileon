@@ -6,6 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>moileon</title>
     <style>
+        /* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make layout flexible */
+.container {
+  width: 100%;
+  max-width: 1200px; /* Keeps it from getting too wide on big screens */
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Responsive text */
+body {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
         * {
             margin: 0;
             padding: 0;
