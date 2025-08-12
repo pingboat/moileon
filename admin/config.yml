@@ -105,7 +105,7 @@ collections:
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Source", name: "source", widget: "string", required: false }
       - { label: "Date Added", name: "date", widget: "datetime", required: false }  # Now optional
-      - { label: "Category", name: "category", widget: "select", options: ["Wisdom", "Motivation", "Philosophy", "Yoga", "Life", "Success"]
+      - { label: "Category", name: "category", widget: "select", options: ["Wisdom", "Motivation", "Philosophy", "Yoga", "Life", "Success"], 
         required: false }
       - { label: "Personal Note", name: "note", widget: "text", required: false }
 
