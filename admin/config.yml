@@ -1,7 +1,7 @@
 # Netlify CMS Configuration
 backend:
   name: git-gateway
-  branch: main  # Main branch for commits from CMS
+  branch: dev  # Development branch for commits from CMS
 
 # Enable editorial workflow (optional - allows draft/review process)
 publish_mode: editorial_workflow
