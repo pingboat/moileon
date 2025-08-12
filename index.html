@@ -6,49 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>moileon</title>
     <style>
-        /* Make images responsive */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Make layout flexible */
-.container {
-  width: 100%;
-  max-width: 1200px; /* Keeps it from getting too wide on big screens */
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* Responsive text */
-body {
-  font-size: 16px;
-}
-
-@media (max-width: 768px) {
-  body {
-    font-size: 15px;
-  }
-  h1 {
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-  h1 {
-    font-size: 1.5rem;
-  }
-}
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-
+```
     body {
         font-family: Georgia, serif;
         background-color: #f8f8f8;
@@ -99,7 +63,7 @@ body {
     }
 
     .logo-section {
-        margin-bottom: 60px;
+        margin-bottom: 100px;
     }
 
     .logo-text {
@@ -111,7 +75,7 @@ body {
     }
 
     .lotus-image {
-        margin: 20px 0;
+        margin: 30px 0 50px 0;
     }
 
     .lotus-image img {
@@ -188,7 +152,6 @@ body {
         background-color: #6BB6D6;
     }
 
-    /* Dynamic content sections */
     .content-section {
         max-width: 800px;
         margin: 40px auto;
@@ -236,7 +199,6 @@ body {
         font-style: italic;
     }
 
-    /* Quiz feedback styles */
     .feedback-correct {
         background-color: #d4edda;
         border: 1px solid #c3e6cb;
@@ -255,7 +217,7 @@ body {
         color: #383d41;
     }
 </style>
-
+```
 
 </head>
 <body>
@@ -265,7 +227,7 @@ body {
             <a href="https://moileon.in/articles.html" class="nav-button">Blog</a>
             <a href="#" class="nav-button" onclick="showSection('booknotes')">Booknotes</a>
             <a href="#" class="nav-button" onclick="showSection('projects')">Projects</a>
-            <a href="#" class="nav-button" onclick="showSection('consulting')">Digital</a>
+            <a href="#" class="nav-button" onclick="showSection('consulting')">Consulting</a>
             <a href="#" class="nav-button" onclick="showSection('podcast')">Podcast</a>
             <a href="#" class="nav-button" onclick="showSection('quotes')">Quotes</a>
             <a href="#" class="nav-button" onclick="showSection('bio')">Bio</a>
@@ -273,18 +235,14 @@ body {
             <a href="https://x.com/iobyleon" class="nav-button" target="_blank">Twitter</a>
         </div>
 
-
+```
     <div class="main-content">
         <!-- Home Section -->
         <div id="home" class="section active">
             <div class="logo-section">
                 <div class="logo-text">ALL LIFE IS YOGA.</div>
-                <div class="lotus-image" id="lotus-container">
-                    <!-- Will be loaded dynamically from CMS -->
-                    <div id="lotus-loading" style="text-align: center; color: #666; padding: 20px;">
-                        <div>Loading lotus image...</div>
-                        <div style="font-size: 12px; margin-top: 5px;">Trying multiple image paths...</div>
-                    </div>
+                <div class="lotus-image">
+                    <img src="/assets/images/lotus.png" alt="Lotus with Om Symbol">
                 </div>
             </div>
 
@@ -325,9 +283,9 @@ body {
             <div id="quotes-content" class="loading">Loading quotes...</div>
         </div>
 
-        <div id="digital" class="section content-section" style="display:none;">
-            <h2>Digital</h2>
-            <p>Digital products information will be displayed here.</p>
+        <div id="consulting" class="section content-section" style="display:none;">
+            <h2>Consulting</h2>
+            <p>Consulting services information will be displayed here.</p>
         </div>
 
         <div id="podcast" class="section content-section" style="display:none;">
@@ -346,56 +304,40 @@ body {
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 <script>
-    // Quiz functionality
     let currentQuestions = [];
     let currentQuestionIndex = 0;
     let currentScore = 0;
     let quizSettings = {};
 
-    // Navigation functionality
     function showSection(sectionId) {
-        // Hide all sections
         const sections = document.querySelectorAll('.section');
         sections.forEach(section => {
             section.style.display = 'none';
         });
         
-        // Show selected section
         document.getElementById(sectionId).style.display = 'block';
-        
-        // Load content if needed
         loadContent(sectionId);
     }
 
-    // Load quiz questions and settings
     async function loadQuizData() {
         try {
-            // Load quiz settings first
             await loadQuizSettings();
             
-            // Load questions with better error handling
-            console.log('Loading quiz questions from GitHub...');
             const response = await fetch('https://api.github.com/repos/pingboat/moileon/contents/content/quiz');
             
             if (response.ok) {
                 const files = await response.json();
-                console.log('Quiz files found:', files);
-                
                 currentQuestions = [];
                 
                 if (Array.isArray(files) && files.length > 0) {
                     for (const file of files) {
                         if (file.name.endsWith('.md')) {
-                            console.log('Loading quiz file:', file.name);
                             const question = await loadQuizQuestion(file.download_url);
                             if (question && question.active !== false) {
                                 currentQuestions.push(question);
-                                console.log('Added question:', question.question);
                             }
                         }
                     }
-                    
-                    console.log('Total active questions loaded:', currentQuestions.length);
                     
                     if (currentQuestions.length > 0) {
                         if (quizSettings.random_questions) {
@@ -403,25 +345,20 @@ body {
                         }
                         loadCurrentQuestion();
                     } else {
-                        console.log('No active questions found');
-                        document.getElementById('quiz-question').innerHTML = '"No active quiz questions found. Create some in the admin panel!"';
+                        document.getElementById('quiz-question').innerHTML = '"Create quiz questions in the admin panel to get started!"';
                     }
                 } else {
-                    console.log('No quiz files found in content/quiz folder');
                     document.getElementById('quiz-question').innerHTML = '"Create quiz questions in the admin panel to get started!"';
                 }
             } else {
-                console.error('Failed to fetch quiz content:', response.status, response.statusText);
-                // Fallback question if no quiz questions exist
                 document.getElementById('quiz-question').innerHTML = '"Which approach is most effective for learning new concepts?"';
             }
         } catch (error) {
             console.error('Error loading quiz data:', error);
-            document.getElementById('quiz-question').innerHTML = '"Error loading quiz questions. Check console for details."';
+            document.getElementById('quiz-question').innerHTML = '"Which approach is most effective for learning new concepts?"';
         }
     }
 
-    // Load quiz settings
     async function loadQuizSettings() {
         try {
             const response = await fetch('https://api.github.com/repos/pingboat/moileon/contents/content/settings/quiz.md');
@@ -430,14 +367,11 @@ body {
                 const content = atob(file.content);
                 quizSettings = parseMarkdownFrontMatter(content);
                 
-                // Update quiz title
                 if (quizSettings.quiz_title) {
                     document.getElementById('quiz-title').textContent = quizSettings.quiz_title;
                 }
             }
         } catch (error) {
-            console.error('Error loading quiz settings:', error);
-            // Use defaults
             quizSettings = {
                 random_questions: true,
                 questions_per_session: 1,
@@ -447,30 +381,18 @@ body {
         }
     }
 
-    // Load individual quiz question
     async function loadQuizQuestion(url) {
         try {
-            console.log('Fetching question from:', url);
             const response = await fetch(url);
-            if (!response.ok) {
-                console.error('Failed to fetch question file:', response.status);
-                return null;
-            }
+            if (!response.ok) return null;
             
             const text = await response.text();
-            console.log('Raw question content:', text.substring(0, 200) + '...');
-            
-            const parsed = parseMarkdownFrontMatter(text);
-            console.log('Parsed question data:', parsed);
-            
-            return parsed;
+            return parseMarkdownFrontMatter(text);
         } catch (error) {
-            console.error('Error loading quiz question from', url, ':', error);
             return null;
         }
     }
 
-    // Parse markdown front matter
     function parseMarkdownFrontMatter(text) {
         const parts = text.split('---');
         let frontMatter = {};
@@ -480,145 +402,30 @@ body {
             const frontMatterText = parts[1];
             content = parts.slice(2).join('---').trim();
             
-            console.log('Front matter text:', frontMatterText);
-            
             frontMatterText.split('\n').forEach(line => {
                 if (line.includes(':')) {
                     const colonIndex = line.indexOf(':');
                     const key = line.substring(0, colonIndex).trim();
                     let value = line.substring(colonIndex + 1).trim();
                     
-                    // Remove quotes
                     if ((value.startsWith('"') && value.endsWith('"')) || 
                         (value.startsWith("'") && value.endsWith("'"))) {
                         value = value.slice(1, -1);
                     }
                     
-                    // Convert boolean and number values
                     if (value === 'true') value = true;
                     else if (value === 'false') value = false;
                     else if (!isNaN(value) && value !== '') value = Number(value);
                     
                     frontMatter[key] = value;
-                    console.log('Parsed field:', key, '=', value);
                 }
             });
-        } else {
-            console.log('No front matter found in content');
         }
         
         frontMatter.content = content;
         return frontMatter;
     }
 
-    // Load lotus image from CMS
-    async function loadLotusImage() {
-        try {
-            // Try direct image paths first
-            const imagePaths = [
-                '/assets/images/lotus.png',
-                './assets/images/lotus.png',
-                'assets/images/lotus.png'
-            ];
-            
-            // Test each path
-            for (const path of imagePaths) {
-                const img = new Image();
-                const success = await new Promise((resolve) => {
-                    img.onload = () => resolve(true);
-                    img.onerror = () => resolve(false);
-                    img.src = path;
-                    // Timeout after 3 seconds
-                    setTimeout(() => resolve(false), 3000);
-                });
-                
-                if (success) {
-                    // Found working image path
-                    const container = document.getElementById('lotus-container');
-                    container.innerHTML = '';
-                    
-                    const finalImg = document.createElement('img');
-                    finalImg.src = path;
-                    finalImg.alt = 'Lotus with Om Symbol';
-                    finalImg.style.width = '200px';
-                    finalImg.style.height = 'auto';
-                    finalImg.style.display = 'block';
-                    finalImg.style.margin = '0 auto';
-                    
-                    container.appendChild(finalImg);
-                    return;
-                }
-            }
-            
-            // If direct paths fail, try loading from CMS settings
-            const response = await fetch('https://api.github.com/repos/pingboat/moileon/contents/content/settings/images.md');
-            if (response.ok) {
-                const file = await response.json();
-                const content = atob(file.content);
-                const imageData = parseMarkdownFrontMatter(content);
-                
-                if (imageData.lotus_image) {
-                    // Try the CMS path
-                    const img = new Image();
-                    const success = await new Promise((resolve) => {
-                        img.onload = () => resolve(true);
-                        img.onerror = () => resolve(false);
-                        img.src = imageData.lotus_image;
-                        setTimeout(() => resolve(false), 3000);
-                    });
-                    
-                    if (success) {
-                        const container = document.getElementById('lotus-container');
-                        container.innerHTML = '';
-                        
-                        const finalImg = document.createElement('img');
-                        finalImg.src = imageData.lotus_image;
-                        finalImg.alt = 'Lotus with Om Symbol';
-                        finalImg.style.width = '200px';
-                        finalImg.style.height = 'auto';
-                        finalImg.style.display = 'block';
-                        finalImg.style.margin = '0 auto';
-                        
-                        container.appendChild(finalImg);
-                        return;
-                    }
-                }
-            }
-            
-            // All attempts failed, show fallback
-            console.log('All lotus image loading attempts failed, showing SVG fallback');
-            showFallbackLotus();
-            
-        } catch (error) {
-            console.error('Error loading lotus image:', error);
-            showFallbackLotus();
-        }
-    }
-
-    // Show fallback SVG lotus
-    function showFallbackLotus() {
-        const container = document.getElementById('lotus-container');
-        container.innerHTML = `
-            <svg width="200" height="120" viewBox="0 0 400 240" style="margin: 0 auto; display: block;">
-                <g transform="translate(200, 120)">
-                    <path d="M0,-80 C-15,-90 -25,-85 -30,-70 C-32,-55 -28,-40 -20,-25 C-15,-15 -8,-5 0,0 C8,-5 15,-15 20,-25 C28,-40 32,-55 30,-70 C25,-85 15,-90 0,-80Z" fill="black"/>
-                    <path d="M-35,-65 C-50,-80 -65,-75 -70,-55 C-72,-35 -68,-20 -58,-10 C-48,-2 -35,0 -25,-5 C-20,-8 -18,-15 -22,-25 C-26,-40 -30,-55 -35,-65Z" fill="black"/>
-                    <path d="M35,-65 C50,-80 65,-75 70,-55 C72,-35 68,-20 58,-10 C48,-2 35,0 25,-5 C20,-8 18,-15 22,-25 C26,-40 30,-55 35,-65Z" fill="black"/>
-                    <path d="M-65,-25 C-85,-35 -95,-25 -95,0 C-95,25 -85,45 -70,50 C-55,55 -40,50 -30,35 C-25,25 -30,10 -40,-10 C-50,-20 -58,-25 -65,-25Z" fill="black"/>
-                    <path d="M65,-25 C85,-35 95,-25 95,0 C95,25 85,45 70,50 C55,55 40,50 30,35 C25,25 30,10 40,-10 C50,-20 58,-25 65,-25Z" fill="black"/>
-                    <path d="M-50,25 C-70,40 -70,60 -60,75 C-50,85 -35,90 -20,80 C-10,70 -5,50 -12,35 C-18,25 -35,15 -50,25Z" fill="black"/>
-                    <path d="M50,25 C70,40 70,60 60,75 C50,85 35,90 20,80 C10,70 5,50 12,35 C18,25 35,15 50,25Z" fill="black"/>
-                    <path d="M-25,55 C-40,75 -30,95 -15,100 C0,105 15,100 25,85 C30,70 25,55 15,50 C5,45 -5,50 -15,55 C-20,53 -22,54 -25,55Z" fill="black"/>
-                    <path d="M25,55 C40,75 30,95 15,100 C0,105 -15,100 -25,85 C-30,70 -25,55 -15,50 C-5,45 5,50 15,55 C20,53 22,54 25,55Z" fill="black"/>
-                    <path d="M-85,0 C-110,-15 -115,5 -105,25 C-95,40 -80,45 -65,35 C-58,30 -62,20 -75,10 C-80,5 -83,2 -85,0Z" fill="black"/>
-                    <path d="M85,0 C110,-15 115,5 105,25 C95,40 80,45 65,35 C58,30 62,20 75,10 C80,5 83,2 85,0Z" fill="black"/>
-                    <text x="0" y="12" text-anchor="middle" font-family="serif" font-size="32" font-weight="bold" fill="black">ॐ</text>
-                </g>
-            </svg>
-         ;
-    }
-
-    // Shuffle array for random questions
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -626,25 +433,17 @@ body {
         }
     }
 
-    // Load current question
     function loadCurrentQuestion() {
-        if (currentQuestions.length === 0) {
-            console.log('No questions available to load');
-            return;
-        }
+        if (currentQuestions.length === 0) return;
         
         const question = currentQuestions[currentQuestionIndex];
-        console.log('Loading question:', question);
         
         if (question && question.question) {
             document.getElementById('quiz-question').innerHTML = `"${question.question}"`;
-            console.log('Question displayed:', question.question);
         } else {
-            console.error('Question object missing question field:', question);
             document.getElementById('quiz-question').innerHTML = '"Error: Question format invalid"';
         }
         
-        // Reset UI
         document.getElementById('answer-input').value = '';
         document.getElementById('quiz-feedback').style.display = 'none';
         document.getElementById('next-question-btn').style.display = 'none';
@@ -652,7 +451,6 @@ body {
         document.getElementById('show-answer-btn').disabled = false;
     }
 
-    // Check answer
     function checkAnswer(userAnswer) {
         if (currentQuestions.length === 0) return;
         
@@ -662,7 +460,6 @@ body {
         
         let isCorrect = user === correct;
         
-        // Check alternative answers
         if (!isCorrect && question.alternative_answers) {
             isCorrect = question.alternative_answers.some(alt => 
                 alt.toLowerCase().trim() === user
@@ -684,7 +481,6 @@ body {
             feedbackHTML = `<strong>Not quite.</strong> The answer is: "${question.correct_answer}"`;
         }
         
-        // Show explanation if available and enabled
         if (quizSettings.show_explanations && question.explanation) {
             feedbackHTML += `<div style="margin-top:10px;"><strong>Explanation:</strong> ${question.explanation}</div>`;
         }
@@ -692,7 +488,6 @@ body {
         feedbackDiv.innerHTML = feedbackHTML;
         feedbackDiv.style.display = 'block';
         
-        // Disable submit button and show next question button
         document.getElementById('submit-btn').disabled = true;
         document.getElementById('show-answer-btn').disabled = true;
         
@@ -701,7 +496,6 @@ body {
         }
     }
 
-    // Show answer without submitting
     function showAnswer() {
         if (currentQuestions.length === 0) return;
         
@@ -719,17 +513,14 @@ body {
         feedbackDiv.style.display = 'block';
     }
 
-    // Next question
     function nextQuestion() {
         currentQuestionIndex = (currentQuestionIndex + 1) % currentQuestions.length;
         loadCurrentQuestion();
     }
 
-    // Load content from GitHub repository
     async function loadContent(type) {
         if (type === 'home') {
             loadQuizData();
-            loadLotusImage(); // Load lotus image from CMS
             return;
         }
         
@@ -754,23 +545,19 @@ body {
                 document.getElementById(`${type}-content`).innerHTML = `<p class="loading">No ${type} found yet. Create some in the admin panel!</p>`;
             }
         } catch (error) {
-            console.error('Error loading content:', error);
             document.getElementById(`${type}-content`).innerHTML = `<p class="error">Error loading ${type}. Content may not be published yet.</p>`;
         }
     }
 
-    // Load and parse markdown files
     async function loadMarkdownFile(url, container, type) {
         try {
             const response = await fetch(url);
             const text = await response.text();
             
-            // Parse front matter and content
             const parsedContent = parseMarkdownFrontMatter(text);
             const frontMatter = parsedContent;
             const content = parsedContent.content;
             
-            // Create content item
             const item = document.createElement('div');
             item.className = 'content-item';
             
@@ -794,7 +581,6 @@ body {
                 }
             }
             
-            // Add content (basic markdown to HTML)
             if (content) {
                 const htmlContent = content
                     .replace(/^### (.*$)/gim, '<h3>$1</h3>')
@@ -816,9 +602,7 @@ body {
         }
     }
 
-    // Event listeners
     document.addEventListener('DOMContentLoaded', function() {
-        // Answer input
         const answerInput = document.getElementById('answer-input');
         answerInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
@@ -826,20 +610,13 @@ body {
             }
         });
 
-        // Submit button
         document.getElementById('submit-btn').addEventListener('click', submitAnswer);
-
-        // Show answer button
         document.getElementById('show-answer-btn').addEventListener('click', showAnswer);
-
-        // Next question button
         document.getElementById('next-question-btn').addEventListener('click', nextQuestion);
 
-        // Load home content by default
         showSection('home');
     });
 
-    // Submit answer function
     function submitAnswer() {
         const answer = document.getElementById('answer-input').value.trim();
         if (answer) {
@@ -849,7 +626,6 @@ body {
         }
     }
 
-    // Netlify Identity initialization
     if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
             if (!user) {
@@ -860,7 +636,7 @@ body {
         });
     }
 </script>
-
+```
 
 </body>
 </html>
