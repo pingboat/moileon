@@ -283,9 +283,9 @@
             <div id="quotes-content" class="loading">Loading quotes...</div>
         </div>
 
-        <div id="consulting" class="section content-section" style="display:none;">
+        <div id="digital" class="section content-section" style="display:none;">
             <h2>Digital</h2>
-            <p>Digital Products information will be displayed here.</p>
+            <p>Digital services and information will be displayed here.</p>
         </div>
 
         <div id="podcast" class="section content-section" style="display:none;">
@@ -562,10 +562,10 @@
             item.className = 'content-item';
             
             let itemHTML = '';
-            if (frontMatter.title) {
+            if (frontMatter.title && type !== 'quotes') {
                 itemHTML += `<h3>${frontMatter.title}</h3>`;
             }
-            if (frontMatter.date) {
+            if (frontMatter.date && type !== 'quotes') {
                 itemHTML += `<div class="date">${new Date(frontMatter.date).toLocaleDateString()}</div>`;
             }
             if (frontMatter.author && type === 'blog') {
@@ -575,10 +575,17 @@
                 itemHTML += `<div class="date">Author: ${frontMatter.book_author}</div>`;
             }
             if (frontMatter.quote && type === 'quotes') {
-                itemHTML += `<blockquote>"${frontMatter.quote}"</blockquote>`;
+                itemHTML += `<blockquote style="font-size: 18px; font-style: italic; margin: 15px 0; color: #333;">"${frontMatter.quote}"</blockquote>`;
                 if (frontMatter.author) {
-                    itemHTML += `<div class="date">— ${frontMatter.author}</div>`;
+                    itemHTML += `<div class="date" style="text-align: right; margin-top: 10px;">— ${frontMatter.author}</div>`;
                 }
+                if (frontMatter.source) {
+                    itemHTML += `<div class="date" style="font-size: 0.8em; color: #999; margin-top: 5px;">Source: ${frontMatter.source}</div>`;
+                }
+                if (frontMatter.note) {
+                    itemHTML += `<div style="margin-top: 15px; padding: 10px; background: #f0f8ff; border-left: 3px solid #87CEEB; font-size: 0.9em;"><strong>Note:</strong> ${frontMatter.note}</div>`;
+                }
+                return; // Don't process content for quotes, just show the quote data
             }
             
             if (content) {
@@ -636,7 +643,7 @@
         });
     }
 </script>
-```
+
 
 </body>
 </html>
