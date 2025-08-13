@@ -12,7 +12,7 @@
             box-sizing: border-box;
         }
 
-
+```
     body {
         font-family: Georgia, serif;
         background-color: #f8f8f8;
@@ -217,7 +217,7 @@
         color: #383d41;
     }
 </style>
-
+```
 
 </head>
 <body>
@@ -235,7 +235,7 @@
             <a href="https://x.com/iobyleon" class="nav-button" target="_blank">Twitter</a>
         </div>
 
-
+```
     <div class="main-content">
         <!-- Home Section -->
         <div id="home" class="section active">
@@ -525,8 +525,11 @@
         }
         
         try {
+            console.log(`Loading content for: ${type}`);
             const response = await fetch(`https://api.github.com/repos/pingboat/moileon/contents/content/${type}`);
             const files = await response.json();
+            
+            console.log(`Files found for ${type}:`, files);
             
             if (Array.isArray(files)) {
                 const contentDiv = document.getElementById(`${type}-content`);
@@ -534,6 +537,7 @@
                 
                 for (const file of files) {
                     if (file.name.endsWith('.md')) {
+                        console.log(`Processing file: ${file.name}`);
                         await loadMarkdownFile(file.download_url, contentDiv, type);
                     }
                 }
@@ -542,9 +546,11 @@
                     contentDiv.innerHTML = `<p class="loading">No ${type} found yet. Create some in the admin panel!</p>`;
                 }
             } else {
+                console.log(`No array returned for ${type}, got:`, files);
                 document.getElementById(`${type}-content`).innerHTML = `<p class="loading">No ${type} found yet. Create some in the admin panel!</p>`;
             }
         } catch (error) {
+            console.error(`Error loading ${type}:`, error);
             document.getElementById(`${type}-content`).innerHTML = `<p class="error">Error loading ${type}. Content may not be published yet.</p>`;
         }
     }
@@ -643,7 +649,7 @@
         });
     }
 </script>
-
+```
 
 </body>
 </html>
