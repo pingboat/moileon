@@ -576,6 +576,8 @@
                     if (frontMatter.author) {
                         itemHTML += `<div class="date" style="text-align: right; margin-top: 10px;">— ${frontMatter.author}</div>`;
                     }
+                    item.innerHTML = itemHTML;
+                    container.appendChild(item); // APPEND the constructed DOM node
                     return; // Exit after processing quote and author for quotes section
                 }
                 
