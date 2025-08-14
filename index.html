@@ -563,7 +563,8 @@
                 if (frontMatter.quote && type === 'quotes') {
                     itemHTML += `<blockquote style="font-size: 18px; font-style: normal; margin: 15px 0; color: #333;">"${frontMatter.quote}"</blockquote>`;
                     if (frontMatter.author) {
-                        itemHTML += `<div class="date" style="text-align: right; margin-top: 10px;">— ${frontMatter.author}</div>`;
+                        const authorText = String(frontMatter.author).trim().replace(/^[—-]\s*/, '');
+                        itemHTML += `<div class="date" style="text-align: right; margin-top: 10px; font-style: normal;">— ${authorText}</div>`;
                     }
                     item.innerHTML = itemHTML;
                     container.appendChild(item); // APPEND the constructed DOM node
