@@ -3,17 +3,13 @@ backend:
   name: git-gateway
   branch: dev  # Development branch for commits from CMS
 
-# Enable editorial workflow (optional - allows draft/review process)
 publish_mode: editorial_workflow
 
-# Media settings
-media_folder: "assets/images"     # Folder for uploaded files
-public_folder: "/assets/images"   # Public path for media
+media_folder: "assets/images"
+public_folder: "/assets/images"
 
-# Site URL
 site_url: https://moileon.in
 
-# Content Collections
 collections:
 
   # ------------------------------
@@ -28,7 +24,7 @@ collections:
       - { label: "Question", name: "question", widget: "text", hint: "Main quiz question" }
       - { label: "Correct Answer", name: "correct_answer", widget: "text" }
       - { label: "Alternative Answers", name: "alternative_answers", widget: "list", required: false }
-      - { label: "Explanation", name: "explanation", widget: "markdown" }
+      - { label: "Explanation", name: "explanation", widget: "markdown", required: false }
       - { label: "Category", name: "category", widget: "select", options: ["Learning", "Philosophy", "Yoga", "Life Skills", "Knowledge", "Wisdom"], default: "Learning" }
       - { label: "Difficulty Level", name: "difficulty", widget: "select", options: ["Beginner", "Intermediate", "Advanced"], default: "Beginner" }
       - { label: "Date Created", name: "date", widget: "datetime" }
@@ -99,13 +95,14 @@ collections:
     label: "Quotes"
     folder: "content/quotes"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: quote
+    slug: "{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{second}}"
     fields:
       - { label: "Quote", name: "quote", widget: "text" }
-      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Author", name: "author", widget: "string", required: false }
       - { label: "Source", name: "source", widget: "string", required: false }
-      - { label: "Date Added", name: "date", widget: "datetime", required: false }  # Now optional
-      - { label: "Category", name: "category", widget: "select", options: ["Wisdom", "Motivation", "Philosophy", "Yoga", "Life", "Success"] }
+      - { label: "Date Added", name: "date", widget: "datetime", required: false }
+      - { label: "Category", name: "category", widget: "select", options: ["Wisdom", "Motivation", "Philosophy", "Yoga", "Life", "Success"], required: false }
       - { label: "Personal Note", name: "note", widget: "text", required: false }
 
   # ------------------------------
@@ -114,8 +111,6 @@ collections:
   - name: "settings"
     label: "Site Settings"
     files:
-
-      # Navigation Links
       - label: "Navigation"
         name: "navigation"
         file: "content/settings/navigation.md"
@@ -128,7 +123,6 @@ collections:
               - { label: "URL", name: "url", widget: "string" }
               - { label: "Open in New Tab", name: "external", widget: "boolean", default: false }
 
-      # Social Media Links
       - label: "Social Media"
         name: "social"
         file: "content/settings/social.md"
@@ -138,7 +132,6 @@ collections:
           - { label: "GitHub URL", name: "github", widget: "string", required: false }
           - { label: "Email", name: "email", widget: "string", required: false }
 
-      # Quiz Configuration
       - label: "Quiz Settings"
         name: "quiz_settings"
         file: "content/settings/quiz.md"
@@ -149,9 +142,8 @@ collections:
           - { label: "Show Explanations", name: "show_explanations", widget: "boolean", default: true }
           - { label: "Enable Scoring", name: "enable_scoring", widget: "boolean", default: true }
 
-      # Main Lotus Image
       - label: "Site Images"
         name: "images"
-        file: "content/settings/images.md"
+        file: "content/assets/images/lotus.png"
         fields:
           - { label: "Lotus Image", name: "lotus_image", widget: "image", hint: "Upload the main lotus image for the homepage" }
