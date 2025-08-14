@@ -572,13 +572,13 @@
                     let quoteText = String(frontMatter.quote).trim();
                     quoteText = quoteText.replace(/^[“”"']+/, '').replace(/[“”"']+$/, '').trim();
                     let authorText = frontMatter.author ? String(frontMatter.author).trim() : '';
-                    if (!authorText) {
-                        const match = quoteText.match(/\s*[—-]\s*([^"”']+)\s*$/);
-                        if (match) {
-                            authorText = match[1].trim();
-                            quoteText = quoteText.slice(0, match.index).trim();
-                        }
-                    }
+                                         if (!authorText) {
+                         const match = quoteText.match(/\s*[—–-]\s*([^"”']+)\s*$/);
+                         if (match) {
+                             authorText = match[1].trim();
+                             quoteText = quoteText.slice(0, match.index).trim();
+                         }
+                     }
                     if (authorText) {
                         authorText = authorText.replace(/^[—-]\s*/, '');
                     }
