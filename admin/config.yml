@@ -95,11 +95,11 @@ collections:
     label: "Quotes"
     folder: "content/quotes"
     create: true
-    identifier_field: author
-    slug: "{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{second}}-{{fields.author}}"
+    identifier_field: quote
+    slug: "{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{second}}"
     fields:
       - { label: "Quote", name: "quote", widget: "text" }
-      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Author", name: "author", widget: "string", required: false }
       - { label: "Source", name: "source", widget: "string", required: false }
       - { label: "Date Added", name: "date", widget: "datetime", required: false }
       - { label: "Category", name: "category", widget: "select", options: ["Wisdom", "Motivation", "Philosophy", "Yoga", "Life", "Success"], required: false }
