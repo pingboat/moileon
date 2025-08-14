@@ -561,7 +561,7 @@
                     itemHTML += `<div class="date">Author: ${frontMatter.book_author}</div>`;
                 }
                 if (frontMatter.quote && type === 'quotes') {
-                    itemHTML += `<blockquote style="font-size: 18px; font-style: italic; margin: 15px 0; color: #333;">"${frontMatter.quote}"</blockquote>`;
+                    itemHTML += `<blockquote style="font-size: 18px; font-style: normal; margin: 15px 0; color: #333;">"${frontMatter.quote}"</blockquote>`;
                     if (frontMatter.author) {
                         itemHTML += `<div class="date" style="text-align: right; margin-top: 10px;">— ${frontMatter.author}</div>`;
                     }
