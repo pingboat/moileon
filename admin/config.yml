@@ -19,7 +19,9 @@ collections:
     label: "Quiz Questions"
     folder: "content/quiz"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: question
+    summary: "{{question}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{second}}"
     fields:
       - { label: "Question", name: "question", widget: "text", hint: "Main quiz question" }
       - { label: "Correct Answer", name: "correct_answer", widget: "text" }
