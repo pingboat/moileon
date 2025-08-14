@@ -306,6 +306,7 @@
         let currentQuestionIndex = 0;
         let currentScore = 0;
         let quizSettings = {};
+        const CONTENT_BRANCH = (window.location.hostname.startsWith('dev--') || window.location.hostname.includes('localhost')) ? 'dev' : 'main';
 
         function showSection(sectionId) {
             const sections = document.querySelectorAll('.section');
@@ -511,7 +512,7 @@
             
             // Regular content loading for other sections
             try {
-                const response = await fetch(`https://api.github.com/repos/pingboat/moileon/contents/content/${type}`);
+                const response = await fetch(`https://api.github.com/repos/pingboat/moileon/contents/content/${type}?ref=${CONTENT_BRANCH}`);
                 const files = await response.json();
                 
                 if (Array.isArray(files)) {
