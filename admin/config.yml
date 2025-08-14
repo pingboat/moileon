@@ -95,7 +95,8 @@ collections:
     label: "Quotes"
     folder: "content/quotes"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: author
+    slug: "{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{second}}-{{fields.author}}"
     fields:
       - { label: "Quote", name: "quote", widget: "text" }
       - { label: "Author", name: "author", widget: "string" }
