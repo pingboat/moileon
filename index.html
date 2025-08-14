@@ -569,10 +569,21 @@
                     itemHTML += `<div class="date">Author: ${frontMatter.book_author}</div>`;
                 }
                 if (frontMatter.quote && type === 'quotes') {
-                    const quoteText = String(frontMatter.quote).replace(/^[“”"']+/, '').replace(/[“”"']+$/, '').trim();
+                    let quoteText = String(frontMatter.quote).trim();
+                    quoteText = quoteText.replace(/^[“”"']+/, '').replace(/[“”"']+$/, '').trim();
+                    let authorText = frontMatter.author ? String(frontMatter.author).trim() : '';
+                    if (!authorText) {
+                        const match = quoteText.match(/\s*[—-]\s*([^"”']+)\s*$/);
+                        if (match) {
+                            authorText = match[1].trim();
+                            quoteText = quoteText.slice(0, match.index).trim();
+                        }
+                    }
+                    if (authorText) {
+                        authorText = authorText.replace(/^[—-]\s*/, '');
+                    }
                     itemHTML += `<blockquote style="font-size: 18px; font-style: normal; margin: 15px 0; color: #333;">"${quoteText}"</blockquote>`;
-                    if (frontMatter.author) {
-                        const authorText = String(frontMatter.author).trim().replace(/^[—-]\s*/, '');
+                    if (authorText) {
                         itemHTML += `<div class="date" style="text-align: right; margin-top: 10px; font-style: normal;">— ${authorText}</div>`;
                     }
                     item.innerHTML = itemHTML;
