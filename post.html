@@ -104,16 +104,13 @@
         }
 
         function formatMeta(fm) {
-            const parts = [];
             if (fm.date) {
                 try {
-                    parts.push(new Date(fm.date).toLocaleDateString());
+                    const d = new Date(fm.date);
+                    return d.toLocaleString('en-US', { month: 'long', year: 'numeric' });
                 } catch (e) {}
             }
-            if (fm.author) {
-                parts.push(`By ${fm.author}`);
-            }
-            return parts.join(' · ');
+            return '';
         }
 
         function renderError(msg) {

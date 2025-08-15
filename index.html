@@ -579,9 +579,15 @@
                     itemHTML += `<h3>${frontMatter.title}</h3>`;
                 }
                 if (frontMatter.date && type !== 'quotes') {
-                    itemHTML += `<div class="date">${new Date(frontMatter.date).toLocaleDateString()}</div>`;
+                    if (type === 'blog') {
+                        const d = new Date(frontMatter.date);
+                        const monthYear = d.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+                        itemHTML += `<div class="date">${monthYear}</div>`;
+                    } else {
+                        itemHTML += `<div class="date">${new Date(frontMatter.date).toLocaleDateString()}</div>`;
+                    }
                 }
-                if (frontMatter.author && type === 'blog') {
+                if (false && frontMatter.author && type === 'blog') {
                     itemHTML += `<div class="date">By ${frontMatter.author}</div>`;
                 }
                 if (frontMatter.book_author && type === 'booknotes') {
