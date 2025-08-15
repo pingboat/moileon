@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | moileon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Georgia, serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #000080;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #4169E1;
+            padding-bottom: 10px;
+            font-weight: normal;
+        }
+        .note {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        ul.post-list {
+            list-style: none;
+        }
+        ul.post-list li {
+            margin: 8px 0;
+        }
+        ul.post-list a {
+            color: #1E3A8A;
+            text-decoration: none;
+        }
+        ul.post-list a:hover {
+            text-decoration: underline;
+        }
+        .loading, .error, .empty {
+            color: #666;
+            font-style: italic;
+            margin-top: 10px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Articles</h1>
+        <div id="posts-container" class="loading">Loading articles...</div>
+    </div>
+
+    <script>
+        const CONTENT_BRANCH = (window.location.hostname.startsWith('dev--') || window.location.hostname.includes('localhost')) ? 'dev' : 'main';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadBlogIndex();
+        });
+
+        async function loadBlogIndex() {
+            const container = document.getElementById('posts-container');
+            try {
+                const listResp = await fetch(`https://api.github.com/repos/pingboat/moileon/contents/content/blog?ref=${CONTENT_BRANCH}`);
+                if (!listResp.ok) {
+                    container.className = 'error';
+                    container.textContent = 'Error loading articles. Content may not be published yet.';
+                    return;
+                }
+                const files = await listResp.json();
+                if (!Array.isArray(files) || files.length === 0) {
+                    container.className = 'empty';
+                    container.textContent = 'No articles yet.';
+                    return;
+                }
+
+                const mdFiles = files.filter(f => {
+                    const name = (f.name || '').toLowerCase();
+                    return name.endsWith('.md') && name !== 'readme.md';
+                });
+
+                if (mdFiles.length === 0) {
+                    container.className = 'empty';
+                    container.textContent = 'No articles yet.';
+                    return;
+                }
+
+                const posts = await Promise.all(mdFiles.map(async (file) => {
+                    const rawUrl = `https://raw.githubusercontent.com/pingboat/moileon/${CONTENT_BRANCH}/${file.path}`;
+                    try {
+                        const resp = await fetch(rawUrl);
+                        if (!resp.ok) return null;
+                        const text = await resp.text();
+                        const fm = parseMarkdownFrontMatter(text);
+                        return {
+                            title: fm.title || stripExtension(file.name),
+                            date: fm.date || '',
+                            path: file.path
+                        };
+                    } catch (e) {
+                        return {
+                            title: stripExtension(file.name),
+                            date: '',
+                            path: file.path
+                        };
+                    }
+                }));
+
+                const validPosts = posts.filter(Boolean);
+                validPosts.sort((a, b) => new Date(b.date || '1970-01-01') - new Date(a.date || '1970-01-01'));
+
+                const list = document.createElement('ul');
+                list.className = 'post-list';
+                for (const post of validPosts) {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = `/post.html?path=${encodeURIComponent(post.path)}`;
+                    a.textContent = post.title;
+                    li.appendChild(a);
+                    list.appendChild(li);
+                }
+
+                container.className = '';
+                container.innerHTML = '';
+                container.appendChild(list);
+            } catch (error) {
+                container.className = 'error';
+                container.textContent = 'Error loading articles.';
+            }
+        }
+
+        function stripExtension(name) {
+            const i = name.lastIndexOf('.');
+            return i > 0 ? name.slice(0, i) : name;
+        }
+
+        function parseMarkdownFrontMatter(text) {
+            let data = {};
+            const match = text.match(/^---\s*\n([\s\S]*?)\n---\s*/);
+            if (match) {
+                try {
+                    data = jsyaml.load(match[1]) || {};
+                } catch (e) {
+                    data = {};
+                }
+            }
+            return data;
+        }
+    </script>
+</body>
+</html>
