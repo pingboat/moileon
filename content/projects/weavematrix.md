@@ -1,5 +1,5 @@
 ---
-title: WeaveMatrix
+title: WM
 date: ""
 status: Active
 project_type: Other
