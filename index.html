@@ -578,7 +578,7 @@
                 if (frontMatter.title && type !== 'quotes') {
                     itemHTML += `<h3>${frontMatter.title}</h3>`;
                 }
-                if (frontMatter.date && type !== 'quotes' && type !== 'projects') {
+                if (frontMatter.date && type !== 'quotes') {
                     itemHTML += `<div class="date">${new Date(frontMatter.date).toLocaleDateString()}</div>`;
                 }
                 if (frontMatter.author && type === 'blog') {
