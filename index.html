@@ -230,6 +230,12 @@
         #blog i {
             font-style: normal;
         }
+        /* Force all descendants in blog content to be regular and left aligned */
+        #blog .content-item,
+        #blog .content-item * {
+            text-align: left !important;
+            font-style: normal !important;
+        }
 
         .feedback-correct {
             background-color: #d4edda;
