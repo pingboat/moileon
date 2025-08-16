@@ -198,11 +198,30 @@
             font-style: italic;
         }
 
-        /* Left-align quotes section explicitly */
+        /* Left-align quotes and blog sections explicitly */
         #quotes,
         #quotes .content-item,
         #quotes blockquote {
             text-align: left;
+        }
+        
+        /* Blog: enforce left alignment and regular font style */
+        #blog,
+        #blog .content-item,
+        #blog h1,
+        #blog h2,
+        #blog h3,
+        #blog p,
+        #blog ul,
+        #blog ol,
+        #blog li,
+        #blog blockquote {
+            text-align: left;
+            font-style: normal;
+        }
+        #blog em,
+        #blog i {
+            font-style: normal;
         }
 
         .feedback-correct {
@@ -620,7 +639,7 @@
                         .replace(/^## (.*$)/gim, '<h2>$1</h2>')
                         .replace(/^# (.*$)/gim, '<h1>$1</h1>')
                         .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
-                        .replace(/\*(.*)\*/gim, '<em>$1</em>')
+                        .replace(/\*(.*)\*/gim, '<span style="font-style: normal;">$1</span>')
                         .replace(/\n\n/gim, '</p><p>')
                         .replace(/\n/gim, '<br>');
                     
