@@ -579,9 +579,13 @@
                     itemHTML += `<h3>${frontMatter.title}</h3>`;
                 }
                 if (frontMatter.date && type !== 'quotes') {
-                    itemHTML += `<div class="date">${new Date(frontMatter.date).toLocaleDateString()}</div>`;
+                    const d = new Date(frontMatter.date);
+                    const formattedDate = (type === 'blog')
+                        ? d.toLocaleString('en-US', { month: 'long', year: 'numeric' })
+                        : d.toLocaleDateString();
+                    itemHTML += `<div class="date">${formattedDate}</div>`;
                 }
-                if (frontMatter.author && type === 'blog') {
+                if (type === 'blog' && frontMatter.author) {
                     itemHTML += `<div class="date">By ${frontMatter.author}</div>`;
                 }
                 if (frontMatter.book_author && type === 'booknotes') {
