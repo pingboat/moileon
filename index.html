@@ -179,6 +179,13 @@
             margin-bottom: 10px;
             color: #333;
         }
+        
+        /* Blog title styling */
+        #blog .blog-title {
+            color: #0000CC;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
 
         .content-item .date {
             color: #666;
@@ -595,7 +602,7 @@
                 
                 let itemHTML = '';
                 if (frontMatter.title && type !== 'quotes') {
-                    itemHTML += `<h3>${frontMatter.title}</h3>`;
+                    itemHTML += `<h3 class="blog-title">${frontMatter.title}</h3>`;
                 }
                 if (frontMatter.date && type !== 'quotes') {
                     const d = new Date(frontMatter.date);
