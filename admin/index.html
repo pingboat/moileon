@@ -29,6 +29,15 @@
 <body>
   <!-- Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script>
+    if (window.CMS) {
+      CMS.registerPreviewStyle(`
+        .nc-previewPane-root, .nc-previewPane-root * { text-align: left !important; font-style: normal !important; }
+        .nc-previewPane-root em, .nc-previewPane-root i { font-style: normal !important; }
+        .nc-previewPane-root h1, .nc-previewPane-root h2, .nc-previewPane-root h3, .nc-previewPane-root h4, .nc-previewPane-root h5, .nc-previewPane-root h6 { text-align: left !important; font-style: normal !important; }
+      `, { raw: true });
+    }
+  </script>
   
   <!-- Initialize Netlify Identity -->
   <script>
