@@ -43,12 +43,15 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Custom URL", name: "custom_url", widget: "string", required: false, hint: "Optional: Custom URL path (e.g., 'my-special-post'). Leave blank to auto-generate from title." }
       - { label: "Date", name: "date", widget: "datetime", required: false }
       - { label: "Author", name: "author", widget: "string", required: false }
       - { label: "Featured Image", name: "featured_image", widget: "image", required: false }
       - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Content", name: "body", widget: "markdown" }
+
+  
 
   # ------------------------------
   # BOOK NOTES
