@@ -72,7 +72,11 @@
                 item.className = 'content-item';
 
                 let itemHTML = '';
-                if (frontMatter.title) { itemHTML += `<h3 class="blog-title">${frontMatter.title}</h3>`; }
+                if (frontMatter.title) {
+                    const href = `/post.html?slug=${(frontMatter.slug || '').toString().trim()}`;
+                    const titleHTML = (frontMatter.slug) ? `<a href="${href}" style="color: #0000CC; text-decoration: none;">${frontMatter.title}</a>` : `${frontMatter.title}`;
+                    itemHTML += `<h3 class="blog-title">${titleHTML}</h3>`;
+                }
                 if (frontMatter.date) {
                     const d = new Date(frontMatter.date);
                     const formattedDate = d.toLocaleString('en-US', { month: 'long', year: 'numeric' });
