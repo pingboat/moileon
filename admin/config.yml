@@ -146,6 +146,6 @@ collections:
 
       - label: "Site Images"
         name: "images"
-        file: "content/assets/images/lotus.png"
+        file: "content/settings/images.md"
         fields:
           - { label: "Lotus Image", name: "lotus_image", widget: "image", hint: "Upload the main lotus image for the homepage" }
