@@ -1,0 +1,12 @@
+{
+  "name": "moileon-site",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "rename:quiz": "node scripts/rename-quiz.js"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
