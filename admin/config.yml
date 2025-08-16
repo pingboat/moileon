@@ -50,7 +50,6 @@ collections:
       - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Content", name: "body", widget: "markdown" }
-
   
 
   # ------------------------------
