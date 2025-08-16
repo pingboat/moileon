@@ -372,7 +372,7 @@
 
         async function loadQuizSettings() {
             try {
-                const response = await fetch('https://api.github.com/repos/pingboat/moileon/contents/content/settings/quiz.md');
+                const response = await fetch(`https://api.github.com/repos/pingboat/moileon/contents/content/settings/quiz.md?ref=${CONTENT_BRANCH}`);
                 if (response.ok) {
                     const file = await response.json();
                     const content = atob(file.content);
@@ -389,6 +389,24 @@
                     show_explanations: true,
                     enable_scoring: true
                 };
+            }
+        }
+
+        async function loadSiteImages() {
+            try {
+                const response = await fetch(`https://api.github.com/repos/pingboat/moileon/contents/content/settings/images.md?ref=${CONTENT_BRANCH}`);
+                if (response.ok) {
+                    const file = await response.json();
+                    const content = atob(file.content);
+                    const images = parseMarkdownFrontMatter(content);
+                    if (images && images.lotus_image) {
+                        const lotusImg = document.querySelector('.lotus-image img');
+                        if (lotusImg) {
+                            lotusImg.src = images.lotus_image;
+                        }
+                    }
+                }
+            } catch (error) {
             }
         }
 
@@ -533,6 +551,7 @@
         async function loadContent(type) {
             if (type === 'home') {
                 loadQuizData();
+                loadSiteImages();
                 return;
             }
             
