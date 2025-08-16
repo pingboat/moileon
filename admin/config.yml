@@ -1,7 +1,7 @@
 # Netlify CMS Configuration
 backend:
   name: git-gateway
-  branch: dev  # Development branch for commits from CMS
+  branch: dev # Development branch for commits from CMS
 
 publish_mode: editorial_workflow
 
@@ -11,7 +11,6 @@ public_folder: "/assets/images"
 site_url: https://moileon.in
 
 collections:
-
   # ------------------------------
   # QUIZ QUESTIONS
   # ------------------------------
@@ -21,15 +20,45 @@ collections:
     create: true
     identifier_field: question
     summary: "{{question}}"
-    slug: "{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{second}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Question", name: "question", widget: "text", hint: "Main quiz question" }
-      - { label: "Correct Answer", name: "correct_answer", widget: "text" }
-      - { label: "Alternative Answers", name: "alternative_answers", widget: "list", required: false }
-      - { label: "Explanation", name: "explanation", widget: "markdown", required: false }
-      - { label: "Category", name: "category", widget: "select", options: ["Learning", "Philosophy", "Yoga", "Life Skills", "Knowledge", "Wisdom"], default: "Learning" }
-      - { label: "Difficulty Level", name: "difficulty", widget: "select", options: ["Beginner", "Intermediate", "Advanced"], default: "Beginner" }
-      - { label: "Date Created", name: "date", widget: "datetime" }
+      - { label: "Question", name: "question", widget: "string" }
+      - { label: "Correct Answer", name: "correct_answer", widget: "string" }
+      - {
+          label: "Alternative Answers",
+          name: "alternative_answers",
+          widget: "list",
+          required: false,
+        }
+      - {
+          label: "Explanation",
+          name: "explanation",
+          widget: "text",
+          required: false,
+        }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          options:
+            [
+              "Learning",
+              "Philosophy",
+              "Yoga",
+              "Life Skills",
+              "Knowledge",
+              "Wisdom",
+            ],
+          default: "Learning",
+        }
+      - {
+          label: "Difficulty Level",
+          name: "difficulty",
+          widget: "select",
+          options: ["Beginner", "Intermediate", "Advanced"],
+          default: "Beginner",
+        }
+      - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Active", name: "active", widget: "boolean", default: true }
       - { label: "Points", name: "points", widget: "number", default: 10 }
 
@@ -45,7 +74,12 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime", required: false }
       - { label: "Author", name: "author", widget: "string", required: false }
-      - { label: "Featured Image", name: "featured_image", widget: "image", required: false }
+      - {
+          label: "Featured Image",
+          name: "featured_image",
+          widget: "image",
+          required: false,
+        }
       - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Content", name: "body", widget: "markdown" }
@@ -62,13 +96,23 @@ collections:
       - { label: "Book Title", name: "title", widget: "string" }
       - { label: "Author", name: "book_author", widget: "string" }
       - { label: "Date Added", name: "date", widget: "datetime" }
-      - { label: "Book Cover", name: "book_cover", widget: "image", required: false }
-      - { label: "Rating", name: "rating", widget: "select", options: ["1", "2", "3", "4", "5"], required: false }
+      - {
+          label: "Book Cover",
+          name: "book_cover",
+          widget: "image",
+          required: false,
+        }
+      - {
+          label: "Rating",
+          name: "rating",
+          widget: "select",
+          options: ["1", "2", "3", "4", "5"],
+          required: false,
+        }
       - label: "Key Takeaways"
         name: "key_takeaways"
         widget: "list"
-        field:
-          { label: "Takeaway", name: "takeaway", widget: "string" }
+        field: { label: "Takeaway", name: "takeaway", widget: "string" }
       - { label: "Notes", name: "body", widget: "markdown" }
 
   # ------------------------------
@@ -82,12 +126,43 @@ collections:
     fields:
       - { label: "Project Name", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime", required: false }
-      - { label: "Status", name: "status", widget: "select", options: ["Active", "Completed", "On Hold", "Planned"] }
-      - { label: "Project Type", name: "project_type", widget: "select", options: ["Web Development", "Mobile App", "Research", "Writing", "Other"] }
-      - { label: "Technologies Used", name: "technologies", widget: "list", required: false }
-      - { label: "Project URL", name: "project_url", widget: "string", required: false }
-      - { label: "GitHub Repository", name: "github_url", widget: "string", required: false }
-      - { label: "Project Image", name: "project_image", widget: "image", required: false }
+      - {
+          label: "Status",
+          name: "status",
+          widget: "select",
+          options: ["Active", "Completed", "On Hold", "Planned"],
+        }
+      - {
+          label: "Project Type",
+          name: "project_type",
+          widget: "select",
+          options:
+            ["Web Development", "Mobile App", "Research", "Writing", "Other"],
+        }
+      - {
+          label: "Technologies Used",
+          name: "technologies",
+          widget: "list",
+          required: false,
+        }
+      - {
+          label: "Project URL",
+          name: "project_url",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "GitHub Repository",
+          name: "github_url",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Project Image",
+          name: "project_image",
+          widget: "image",
+          required: false,
+        }
       - { label: "Description", name: "body", widget: "markdown" }
 
   # ------------------------------
@@ -98,14 +173,31 @@ collections:
     folder: "content/quotes"
     create: true
     identifier_field: quote
-    slug: "{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{second}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Quote", name: "quote", widget: "text" }
       - { label: "Author", name: "author", widget: "string", required: false }
       - { label: "Source", name: "source", widget: "string", required: false }
-      - { label: "Date Added", name: "date", widget: "datetime", required: false }
-      - { label: "Category", name: "category", widget: "select", options: ["Wisdom", "Motivation", "Philosophy", "Yoga", "Life", "Success"], required: false }
-      - { label: "Personal Note", name: "note", widget: "text", required: false }
+      - {
+          label: "Date Added",
+          name: "date",
+          widget: "datetime",
+          required: false,
+        }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          options:
+            ["Wisdom", "Motivation", "Philosophy", "Yoga", "Life", "Success"],
+          required: false,
+        }
+      - {
+          label: "Personal Note",
+          name: "note",
+          widget: "text",
+          required: false,
+        }
 
   # ------------------------------
   # SITE SETTINGS
@@ -123,29 +215,79 @@ collections:
             fields:
               - { label: "Label", name: "label", widget: "string" }
               - { label: "URL", name: "url", widget: "string" }
-              - { label: "Open in New Tab", name: "external", widget: "boolean", default: false }
+              - {
+                  label: "Open in New Tab",
+                  name: "external",
+                  widget: "boolean",
+                  default: false,
+                }
 
       - label: "Social Media"
         name: "social"
         file: "content/settings/social.md"
         fields:
-          - { label: "LinkedIn URL", name: "linkedin", widget: "string", default: "https://www.linkedin.com/in/leonkaushik" }
-          - { label: "Twitter/X URL", name: "twitter", widget: "string", default: "https://x.com/iobyleon" }
-          - { label: "GitHub URL", name: "github", widget: "string", required: false }
+          - {
+              label: "LinkedIn URL",
+              name: "linkedin",
+              widget: "string",
+              default: "https://www.linkedin.com/in/leonkaushik",
+            }
+          - {
+              label: "Twitter/X URL",
+              name: "twitter",
+              widget: "string",
+              default: "https://x.com/iobyleon",
+            }
+          - {
+              label: "GitHub URL",
+              name: "github",
+              widget: "string",
+              required: false,
+            }
           - { label: "Email", name: "email", widget: "string", required: false }
 
       - label: "Quiz Settings"
         name: "quiz_settings"
         file: "content/settings/quiz.md"
         fields:
-          - { label: "Quiz Title", name: "quiz_title", widget: "string", default: "Quest On!" }
-          - { label: "Show Random Questions", name: "random_questions", widget: "boolean", default: true }
-          - { label: "Questions Per Session", name: "questions_per_session", widget: "number", default: 1 }
-          - { label: "Show Explanations", name: "show_explanations", widget: "boolean", default: true }
-          - { label: "Enable Scoring", name: "enable_scoring", widget: "boolean", default: true }
+          - {
+              label: "Quiz Title",
+              name: "quiz_title",
+              widget: "string",
+              default: "Quest On!",
+            }
+          - {
+              label: "Show Random Questions",
+              name: "random_questions",
+              widget: "boolean",
+              default: true,
+            }
+          - {
+              label: "Questions Per Session",
+              name: "questions_per_session",
+              widget: "number",
+              default: 1,
+            }
+          - {
+              label: "Show Explanations",
+              name: "show_explanations",
+              widget: "boolean",
+              default: true,
+            }
+          - {
+              label: "Enable Scoring",
+              name: "enable_scoring",
+              widget: "boolean",
+              default: true,
+            }
 
       - label: "Site Images"
         name: "images"
         file: "content/settings/images.md"
         fields:
-          - { label: "Lotus Image", name: "lotus_image", widget: "image", hint: "Upload the main lotus image for the homepage" }
+          - {
+              label: "Lotus Image",
+              name: "lotus_image",
+              widget: "image",
+              hint: "Upload the main lotus image for the homepage",
+            }
