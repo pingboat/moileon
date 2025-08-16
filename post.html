@@ -53,6 +53,13 @@
 			return params.get(name) || '';
 		}
 
+		function getSlugFromPath() {
+			const path = window.location.pathname;
+			// Expecting /blog/<slug>
+			const match = path.match(/\/blog\/(.+)$/);
+			return match ? match[1] : '';
+		}
+
 		function parseMarkdownFrontMatter(text) {
 			let frontMatter = {}; let content = text;
 			const match = text.match(/^---\s*\n([\s\S]*?)\n---\s*/);
@@ -64,7 +71,7 @@
 		}
 
 		async function loadPost() {
-			const slug = getQueryParam('slug');
+			const slug = getSlugFromPath() || getQueryParam('slug');
 			if (!slug) {
 				document.getElementById('post-content').innerHTML = '<p class="error">No slug provided.</p>';
 				return;

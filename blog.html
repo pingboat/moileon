@@ -73,8 +73,8 @@
 
                 let itemHTML = '';
                 if (frontMatter.title) {
-                    const href = `/post.html?slug=${(frontMatter.slug || '').toString().trim()}`;
-                    const titleHTML = (frontMatter.slug) ? `<a href="${href}" style="color: #0000CC; text-decoration: none;">${frontMatter.title}</a>` : `${frontMatter.title}`;
+                                         const href = `/blog/${(frontMatter.slug || '').toString().trim()}`;
+                     const titleHTML = (frontMatter.slug) ? `<a href="${href}" style="color: #0000CC; text-decoration: none;">${frontMatter.title}</a>` : `${frontMatter.title}`;
                     itemHTML += `<h3 class="blog-title">${titleHTML}</h3>`;
                 }
                 if (frontMatter.date) {
