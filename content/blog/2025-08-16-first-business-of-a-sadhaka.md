@@ -1,5 +1,5 @@
 ---
-title: First Business of a Sadhaka
+title: FIRST BUSINESS OF A SADHAKA
 date: ""
 ---
 Sri Aurobindo explains the business of a Sadhaka practicing Integral Yoga.
