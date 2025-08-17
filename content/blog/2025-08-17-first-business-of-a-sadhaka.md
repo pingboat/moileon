@@ -24,13 +24,17 @@ Calm and powerful spontaneous possession of the universal energy and capable of 
 
                                                                                                                                                                                                                        Equality is the foundation on which you can embrace everything that life has to offer, and compel it to become a perfect form of action of the self and spirit. Equality is the first secret of the soul’s mastery of existence. Our souls are meant to master the universe and not to become vulnerable victims of our circumstances. If we really want to become the master of the whole play of the cosmos, to become the master of all challenges, including all challenges that are unseen and unimaginable in the cosmic video game that we are in, equality is the first secret of the soul’s mastery of existence. It’s the first secret which opens the doors to other secrets. Without mastering equality, the other doors will forever remain hidden. When we have it in perfection, we are admitted to the very ground of the divine spiritual nature. It is the gateway. 
 
-In essence, equality is to remain unmoved within centrally, irrespective of the external (or even internal) circumstances.            
+In essence, equality is to remain unmoved within centrally, irrespective of the external (or even internal) circumstances.                                                                                                                                  
 
-                                                                                                                                                                               Therefore, the first business of the Sadhaka is to see whether he has the perfect equality, how far he has gone in this direction, or else where is the flaw, and to exercise steadily his will on his nature, or invite the will of the Purusha to get rid of the defects and its causes. All this is the first business of the Sadhaka.                                                                                                                                                                                           
+Therefore, the first business of the Sadhaka is to see whether he has the perfect equality, how far he has gone in this direction, or else where is the flaw, and to exercise steadily his will on his nature, or invite the will of the Purusha to get rid of the defects and its causes. All this is the first business of the Sadhaka.                                                                                                                                                                                           
 
 To be equal is to be infinite and universal, not to bind oneself to this or that form of the mind and life and its partial preferences and desires. 
 
+
+
 However, that is not our starting point. We all start from a limited capacity, preferences, desires, attachments and so on. To accept all our limitations at first is inevitable. To get beyond them is exceedingly difficult, and not perhaps altogether possible; so long as we are compelled to use the mind as the chief instrument of our action. But opening to the divine action, allowing a higher power to work in you, all this ceases to be true. 
+
+
 
 Going beyond one’s limitations then becomes relatively easy, as opposed to being exceedingly difficult; because we are no more using the mind as the chief instrument of our action. Thus now, even your little efforts will bring great results.                                                                         
 
@@ -40,7 +44,11 @@ And repel even the least incidents of trouble, anxiety, greed, revolt, or any ot
 
 Whenever there is a loss of equality, on no account must he admit any excuse for them, however natural, righteous, in seeming or plausible or any inner or outer justification. Never rush to justify the loss of equality. No ifs, no buts. Accept the loss of equality without any justification, discard it, and set it right. Bring back the perfect equality.
 
+
+
 What is the method of this practice?    
+
+
 
 There must be a constant insistence on one main idea. That main idea is to self surrender to the master of our being, to the divine within us, to the divine above us, and around us in the world, to the supreme self, the universal spirit. That you are doing things, engaging with the world, but behind the appearances there is always the divine presence. And here you are playing your video game, accepting that your ego has zero claims over anything. This complete self surrender has to be the chief mainstay of the Sadhaka because it is the only way by which absolute calm and peace can come. The opening above to the higher influence brings with it the spontaneous nature of its illumined strength. And then, you establish this calm. The calm established in the whole being must remain the same, despite whatever happens; in health or in disease, in pleasure and in pain, even in the strongest physical pain, in good fortune and misfortune, our own or of that we love, in success and failure, honour and insult, praise and blame, justice done to us or injustice, everything that ordinarily affects the mind. 
 
