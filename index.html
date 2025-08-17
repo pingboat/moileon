@@ -256,6 +256,15 @@
             font-style: normal !important;
         }
 
+        /* Force blog content to be left-aligned */
+        #blog-content {
+            text-align: left !important;
+        }
+
+        #blog-content div {
+            text-align: left !important;
+        }
+
         /* Left-align quotes section explicitly */
         #quotes,
         #quotes .content-item,
@@ -376,16 +385,132 @@
         const CONTENT_BRANCH = (window.location.hostname.startsWith('dev--') || window.location.hostname.includes('localhost')) ? 'dev' : 'main';
 
         /* ==================================================
-           SECTION NAVIGATION
+           SECTION NAVIGATION - FIXED VERSION
            ================================================== */
         function showSection(sectionId) {
+            // Reset the main content structure first
+            const mainContent = document.querySelector('.main-content');
+            
+            // Check if we need to restore the original structure
+            if (!document.getElementById('home') || !document.getElementById(sectionId)) {
+                // Restore the original main content structure
+                mainContent.innerHTML = `
+                    <!-- Homepage Section -->
+                    <div id="home" class="section active">
+                        <div class="logo-section">
+                            <div class="logo-text">ALL LIFE IS YOGA.</div>
+                            <div class="lotus-image">
+                                <img src="/assets/images/lotus.png" alt="Lotus with Om Symbol">
+                            </div>
+                        </div>
+
+                        <div class="quiz-section">
+                            <h1 class="quiz-title" id="quiz-title">Quest On!</h1>
+                            <div class="score" id="score-display">Score: <span id="current-score">${currentScore}</span></div>
+                            <div class="question" id="quiz-question">Loading question...</div>
+                            
+                            <input type="text" class="answer-input" id="answer-input" placeholder="Type your answer here">
+                            <div class="instruction">Press Enter after typing your answer</div>
+                            
+                            <button class="button submit-btn" id="submit-btn">Submit Answer</button>
+                            <button class="button" id="show-answer-btn">Show me the answer</button>
+                            <button class="button" id="next-question-btn" style="display:none;">Next Question</button>
+                            
+                            <div id="quiz-feedback" style="display:none; margin-top:20px; padding:15px; border-radius:6px;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Content Sections -->
+                    <div id="blog" class="section content-section" style="display:none;">
+                        <h2>Blog Posts</h2>
+                        <div id="blog-content" class="loading">Loading blog posts...</div>
+                    </div>
+
+                    <div id="booknotes" class="section content-section" style="display:none;">
+                        <h2>Book Notes</h2>
+                        <div id="booknotes-content" class="loading">Loading book notes...</div>
+                    </div>
+
+                    <div id="projects" class="section content-section" style="display:none;">
+                        <h2>Projects</h2>
+                        <div id="projects-content" class="loading">Loading projects...</div>
+                    </div>
+
+                    <div id="quotes" class="section content-section" style="display:none;">
+                        <h2>Quotes</h2>
+                        <div id="quotes-content" class="loading">Loading quotes...</div>
+                    </div>
+
+                    <div id="digital" class="section content-section" style="display:none;">
+                        <h2>Digital</h2>
+                        <p>Digital services and information will be displayed here.</p>
+                    </div>
+
+                    <div id="podcast" class="section content-section" style="display:none;">
+                        <h2>Podcast</h2>
+                        <p>Podcast episodes and information will be displayed here.</p>
+                    </div>
+
+                    <div id="bio" class="section content-section" style="display:none;">
+                        <h2>Bio</h2>
+                        <p>Personal biography and information will be displayed here.</p>
+                    </div>
+                `;
+                
+                // Re-attach event listeners for quiz functionality
+                reattachQuizEventListeners();
+            }
+            
+            // Now hide all sections and show the requested one
             const sections = document.querySelectorAll('.section');
             sections.forEach(section => {
                 section.style.display = 'none';
             });
             
-            document.getElementById(sectionId).style.display = 'block';
-            loadContent(sectionId);
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+                loadContent(sectionId);
+            }
+        }
+
+        /* ==================================================
+           REATTACH EVENT LISTENERS
+           ================================================== */
+        function reattachQuizEventListeners() {
+            // Wait a moment for DOM to be ready
+            setTimeout(() => {
+                const answerInput = document.getElementById('answer-input');
+                const submitBtn = document.getElementById('submit-btn');
+                const showAnswerBtn = document.getElementById('show-answer-btn');
+                const nextQuestionBtn = document.getElementById('next-question-btn');
+                
+                if (answerInput) {
+                    // Remove existing listeners and add new ones
+                    answerInput.replaceWith(answerInput.cloneNode(true));
+                    const newAnswerInput = document.getElementById('answer-input');
+                    newAnswerInput.addEventListener('keypress', function(e) {
+                        if (e.key === 'Enter') {
+                            submitAnswer();
+                        }
+                    });
+                }
+                
+                if (submitBtn) {
+                    submitBtn.replaceWith(submitBtn.cloneNode(true));
+                    document.getElementById('submit-btn').addEventListener('click', submitAnswer);
+                }
+                
+                if (showAnswerBtn) {
+                    showAnswerBtn.replaceWith(showAnswerBtn.cloneNode(true));
+                    document.getElementById('show-answer-btn').addEventListener('click', showAnswer);
+                }
+                
+                if (nextQuestionBtn) {
+                    nextQuestionBtn.replaceWith(nextQuestionBtn.cloneNode(true));
+                    document.getElementById('next-question-btn').addEventListener('click', nextQuestion);
+                }
+            }, 100);
         }
 
         /* ==================================================
@@ -557,7 +682,7 @@
             }
         }
 
-        // Display full blog post
+        // Display full blog post - UPDATED VERSION
         function displayFullBlogPost(post) {
             const mainContent = document.querySelector('.main-content');
             
