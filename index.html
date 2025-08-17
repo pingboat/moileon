@@ -392,7 +392,15 @@
             const mainContent = document.querySelector('.main-content');
             
             // Check if we need to restore the original structure
-            if (!document.getElementById('home') || !document.getElementById(sectionId)) {
+            // This happens when viewing a full blog post or when sections are missing
+            const homeSection = document.getElementById('home');
+            const targetSectionExists = document.getElementById(sectionId);
+            const hasAllSections = document.getElementById('blog') && 
+                                 document.getElementById('booknotes') && 
+                                 document.getElementById('projects') && 
+                                 document.getElementById('quotes');
+            
+            if (!homeSection || !targetSectionExists || !hasAllSections) {
                 // Restore the original main content structure
                 mainContent.innerHTML = `
                     <!-- Homepage Section -->
@@ -1047,5 +1055,3 @@
             });
         }
     </script>
-</body>
-</html>
