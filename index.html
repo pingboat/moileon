@@ -428,7 +428,7 @@
                         
                         // Create Paul Graham style list
                         if (blogPosts.length > 0) {
-                            let listHTML = '<div style="line-height: 1.8; font-size: 16px;">';
+                            let listHTML = '<div style="line-height: 1.8; font-size: 16px; text-align: left;">';
                             
                             blogPosts.forEach(post => {
                                 const url = post.custom_url || createSlugFromTitle(post.title);
