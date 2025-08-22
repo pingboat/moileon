@@ -4,8 +4,6 @@ date: ""
 status: Active
 project_type: Other
 ---
-Building a more sustainable, equitable, and prosperous future for indigenous communities.
-
 A non-profit organization committed to work primarily towards four key areas:
 
 1. Research & Development for Atmanirbhar Bharat
