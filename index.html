@@ -430,6 +430,8 @@
         </div>
     </div>
 
+    
+
     <!-- ==================================================
          EXTERNAL SCRIPTS
          ================================================== -->
@@ -529,9 +531,16 @@
 
                     <div id="bio" class="section content-section" style="display:none;">
                         <h2>Bio</h2>
-                        <p>Personal biography and information will be displayed here.</p>
                     </div>
-                `;
+
+                    <div id="photography" class="section content-section" style="display:none;">
+                    <div class="gallery-header">
+                       <h2 class="gallery-title">Lenscape</h2>
+                </div>
+                   <div id="photography-content" class="loading">Loading photographs...</div>
+                   <div id="photography-grid" class="gallery-grid" style="display: none;"></div>
+                </div>
+                ;
                 
                 // Re-attach event listeners for quiz functionality
                 reattachQuizEventListeners();
