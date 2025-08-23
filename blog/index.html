@@ -231,20 +231,22 @@
         <!-- ==================================================
              SIDEBAR NAVIGATION
              ================================================== -->
-        <div class="sidebar">
-            <a href="/" class="nav-button">Home</a>
-            <a href="/blog" class="nav-button active">Blog</a>
-            <a href="/#booknotes" class="nav-button">Booknotes</a>
-            <a href="/#projects" class="nav-button">Projects</a>
-            <a href="/#digital" class="nav-button">Digital</a>
-            <a href="/#podcast" class="nav-button">Podcast</a>
-            <a href="/#quotes" class="nav-button">Quotes</a>
-            <a href="/lenscape" class="nav-button">Lenscape</a>
-            <a href="/#bio" class="nav-button">Bio</a>
-            <a href="https://www.linkedin.com/in/leonkaushik" class="nav-button" target="_blank">LinkedIn</a>
-            <a href="https://x.com/iobyleon" class="nav-button" target="_blank">Twitter</a>
-            
-        </div>
+        <div class="sidebar"></div>
+<script>
+  fetch("/sidebar.html")
+    .then(res => res.text())
+    .then(html => {
+      document.querySelector(".sidebar").innerHTML = html;
+
+      // Highlight the active link
+      const currentPath = window.location.pathname.replace(/\/index\.html$/, "/");
+      document.querySelectorAll(".sidebar a").forEach(link => {
+        if (link.getAttribute("href") === currentPath) {
+          link.classList.add("active");
+        }
+      });
+    });
+</script>
 
         <!-- ==================================================
              MAIN CONTENT AREA - BLOG
