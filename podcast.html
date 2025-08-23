@@ -343,14 +343,15 @@
         }
 
         function showComingSoon() {
-            document.getElementById('podcast-content').innerHTML = 
+            document.getElementById('podcast-content').innerHTML = `
                 <div class="coming-soon">
                     <img src="/assets/images/coming-soon-podcast.jpg" 
                          alt="Coming Soon - Podcast" 
                          onerror="this.style.display='none';">
-                    <h3>Stay tuned for engaging conversations and insights! 🎙️</h3>
+                    <h3>Coming Soon!</h3>
+                    <p>Stay tuned for engaging conversations and insights! 🎙️</p>
                 </div>
-            ;
+            `;
         }
 
         /* ==================================================
