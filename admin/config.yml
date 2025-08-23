@@ -138,6 +138,7 @@ collections:
       - label: "Date Added"
         name: "date"
         widget: "datetime"
+        required: false
       - label: "Book Cover"
         name: "book_cover"
         widget: "image"
