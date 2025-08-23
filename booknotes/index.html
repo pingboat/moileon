@@ -192,10 +192,21 @@
     .then(html => {
       document.querySelector(".sidebar").innerHTML = html;
 
-      // Highlight the active link
-      const currentPath = window.location.pathname.replace(/\/index\.html$/, "/");
+      // Normalize current path
+      let currentPath = window.location.pathname
+        .replace(/\/index\.html$/, "")   // remove index.html
+        .replace(/\/$/, "");             // remove trailing slash
+
+      // Special case: Home should match "/"
+      if (currentPath === "") {
+        currentPath = "/";
+      }
+
+      // Loop through sidebar links
       document.querySelectorAll(".sidebar a").forEach(link => {
-        if (link.getAttribute("href") === currentPath) {
+        let linkPath = link.getAttribute("href").replace(/\/$/, ""); // remove trailing slash
+        if (linkPath === "") linkPath = "/"; // treat empty href as "/"
+        if (linkPath === currentPath) {
           link.classList.add("active");
         }
       });
