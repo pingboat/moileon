@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenscape - moileon</title>
+
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/moileon-favicon.ico">
+
+    <!-- PNG favicons for different sizes -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64x64.png">
+
+    <!-- Apple Touch Icon (iOS devices) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180x180.png">
+
+    <!-- Android/PWA icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="/assets/images/favicon-256x256.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon-512x512.png">
+
+    <!-- Web App Manifest -->
+    <meta name="theme-color" content="#000080">
+    
+    <style>
+        /* ==================================================
+           GLOBAL RESET AND BASE STYLES
+           ================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ==================================================
+           LAYOUT STRUCTURE
+           ================================================== */
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #000080;
+            padding: 20px;
+            box-shadow: none;
+            border-right: none;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 40px;
+        }
+
+        /* ==================================================
+           NAVIGATION BUTTONS
+           ================================================== */
+        .nav-button {
+            display: block;
+            width: 100%;
+            padding: 8px 12px;
+            margin-bottom: 2px;
+            background-color: #4169E1;
+            color: white;
+            text-decoration: none;
+            border: 1px solid #0000CD;
+            border-radius: 0;
+            font-size: 13px;
+            font-weight: normal;
+            text-align: left;
+            transition: none;
+            cursor: pointer;
+            font-family: Verdana, Arial, sans-serif;
+        }
+
+        .nav-button:hover {
+            background-color: #1E90FF;
+            color: white;
+        }
+
+        .nav-button.active {
+            background-color: #1E90FF;
+        }
+
+        /* ==================================================
+           PHOTOGRAPHY GALLERY STYLES
+           ================================================== */
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .gallery-title {
+            font-size: 32px;
+            color: #000080;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .gallery-subtitle {
+            font-size: 16px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .photo-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .photo-item {
+            display: flex;
+            margin-bottom: 80px;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .photo-container {
+            flex: 0 0 auto;
+            max-width: 600px;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .photo-info {
+            flex: 1;
+            padding-top: 20px;
+            min-width: 150px;
+        }
+
+        .photo-date {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 8px;
+            font-family: Arial, sans-serif;
+        }
+
+        .photo-code {
+            font-size: 14px;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        .loading {
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+            margin: 50px 0;
+        }
+
+        .error {
+            text-align: center;
+            color: #cc0000;
+            font-size: 16px;
+            margin: 50px 0;
+        }
+
+        .empty-state {
+            text-align: center;
+            color: #666;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ==================================================
+           RESPONSIVE DESIGN
+           ================================================== */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 20px;
+            }
+            
+            .photo-item {
+                flex-direction: column;
+                gap: 20px;
+                margin-bottom: 60px;
+            }
+            
+            .photo-container {
+                max-width: 100%;
+            }
+            
+            .photo-info {
+                padding-top: 0;
+            }
+            
+            .gallery-title {
+                font-size: 24px;
+            }
+            
+            .gallery-header {
+                margin-bottom: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ==================================================
+             SIDEBAR NAVIGATION
+             ================================================== -->
+        <div class="sidebar">
+            <a href="/" class="nav-button">Home</a>
+            <a href="/#blog" class="nav-button">Blog</a>
+            <a href="/#booknotes" class="nav-button">Booknotes</a>
+            <a href="/#projects" class="nav-button">Projects</a>
+            <a href="/#digital" class="nav-button">Digital</a>
+            <a href="/#podcast" class="nav-button">Podcast</a>
+            <a href="/#quotes" class="nav-button">Quotes</a>
+            <a href="/#bio" class="nav-button">Bio</a>
+            <a href="https://www.linkedin.com/in/leonkaushik" class="nav-button" target="_blank">LinkedIn</a>
+            <a href="https://x.com/iobyleon" class="nav-button" target="_blank">Twitter</a>
+            <a href="/lenscape" class="nav-button active" title="Photography">Lenscape</a>
+        </div>
+
+        <!-- ==================================================
+             MAIN CONTENT AREA - PHOTOGRAPHY GALLERY
+             ================================================== -->
+        <div class="main-content">
+            <div class="gallery-header">
+                <h1 class="gallery-title">LENSCAPE</h1>
+                <p class="gallery-subtitle">Capturing moments through the lens</p>
+            </div>
+
+            <div id="gallery-content">
+                <div class="loading">Loading photographs...</div>
+            </div>
+
+            <!-- Photo List (will be populated by JavaScript) -->
+            <div id="photo-list" class="photo-list" style="display: none;"></div>
+        </div>
+    </div>
+
+    <!-- YAML parser for robust front matter support -->
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
+    <script>
+        /* ==================================================
+           GLOBAL VARIABLES
+           ================================================== */
+        let photographs = [];
+        const CONTENT_BRANCH = (window.location.hostname.startsWith('dev--') || window.location.hostname.includes('localhost')) ? 'dev' : 'main';
+
+        /* ==================================================
+           PHOTOGRAPH LOADING FUNCTIONS
+           ================================================== */
+        async function loadPhotographs() {
+            try {
+                const response = await fetch(`https://api.github.com/repos/pingboat/moileon/contents/content/photography?ref=${CONTENT_BRANCH}`);
+                
+                if (response.ok) {
+                    const files = await response.json();
+                    photographs = [];
+                    
+                    if (Array.isArray(files) && files.length > 0) {
+                        for (const file of files) {
+                            if (file.name.endsWith('.md')) {
+                                const photo = await loadPhotoData(file.download_url);
+                                if (photo && photo.image) {
+                                    photographs.push(photo);
+                                }
+                            }
+                        }
+                        
+                        if (photographs.length > 0) {
+                            // Sort by date (newest first) or by filename if no date
+                            photographs.sort((a, b) => {
+                                if (a.date && b.date) {
+                                    return new Date(b.date) - new Date(a.date);
+                                }
+                                return a.filename > b.filename ? -1 : 1;
+                            });
+                            
+                            displayPhotographs();
+                        } else {
+                            showEmptyState();
+                        }
+                    } else {
+                        showEmptyState();
+                    }
+                } else {
+                    showEmptyState();
+                }
+            } catch (error) {
+                console.error('Error loading photographs:', error);
+                document.getElementById('gallery-content').innerHTML = '<div class="error">Error loading photographs.</div>';
+            }
+        }
+
+        async function loadPhotoData(url) {
+            try {
+                const response = await fetch(url);
+                const text = await response.text();
+                const parsedContent = parseMarkdownFrontMatter(text);
+                
+                // Extract filename for backup sorting
+                const filename = url.split('/').pop().replace('.md', '');
+                
+                return {
+                    image: parsedContent.image,
+                    date: parsedContent.date,
+                    code: parsedContent.code, // Custom photography code from markdown
+                    filename: filename
+                };
+            } catch (error) {
+                console.error('Error loading photo data:', error);
+                return null;
+            }
+        }
+
+        /* ==================================================
+           DISPLAY FUNCTIONS
+           ================================================== */
+        function displayPhotographs() {
+            const galleryContent = document.getElementById('gallery-content');
+            const photoList = document.getElementById('photo-list');
+            
+            galleryContent.style.display = 'none';
+            photoList.style.display = 'block';
+            photoList.innerHTML = '';
+            
+            photographs.forEach((photo, index) => {
+                const photoElement = createPhotoElement(photo, index);
+                photoList.appendChild(photoElement);
+            });
+        }
+
+        function createPhotoElement(photo, index) {
+            const photoItem = document.createElement('div');
+            photoItem.className = 'photo-item';
+            
+            // Generate custom photo code if not provided
+            let photoCode = photo.code;
+            if (!photoCode && photo.date) {
+                // Format: YYYY-MM-DD / 7XXX
+                const date = new Date(photo.date);
+                const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+                photoCode = `${dateStr} / ${String(7000 + index + 1).padStart(4, '0')}`;
+            } else if (!photoCode) {
+                // Fallback if no date
+                photoCode = `${String(7000 + index + 1).padStart(4, '0')}`;
+            }
+            
+            // Format date for display
+            let displayDate = '';
+            if (photo.date) {
+                displayDate = new Date(photo.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit'
+                }).replace(/\//g, '-');
+            }
+            
+            photoItem.innerHTML = `
+                <div class="photo-container">
+                    <img src="${photo.image}" alt="Photograph" loading="lazy">
+                </div>
+                <div class="photo-info">
+                    ${displayDate ? `<div class="photo-date">${displayDate}</div>` : ''}
+                    <div class="photo-code">${photoCode}</div>
+                </div>
+            `;
+            
+            return photoItem;
+        }
+
+        function showEmptyState() {
+            const galleryContent = document.getElementById('gallery-content');
+            galleryContent.innerHTML = `
+                <div class="empty-state">
+                    <h3>Coming Soon!</h3>
+                    <p>Photographs will be displayed here once they're uploaded.</p>
+                    <p>Check back soon to see the world through my lens! 📸</p>
+                </div>
+            `;
+        }
+
+        /* ==================================================
+           UTILITY FUNCTIONS
+           ================================================== */
+        function parseMarkdownFrontMatter(text) {
+            let frontMatter = {};
+            let content = text;
+            const match = text.match(/^---\s*\n([\s\S]*?)\n---\s*/);
+            if (match) {
+                try {
+                    if (typeof jsyaml !== 'undefined' && jsyaml.load) {
+                        frontMatter = jsyaml.load(match[1]) || {};
+                    } else {
+                        // Simple fallback parsing
+                        const yamlContent = match[1];
+                        const lines = yamlContent.split('\n');
+                        lines.forEach(line => {
+                            const colonIndex = line.indexOf(':');
+                            if (colonIndex > 0) {
+                                const key = line.substring(0, colonIndex).trim();
+                                const value = line.substring(colonIndex + 1).trim().replace(/^["']|["']$/g, '');
+                                frontMatter[key] = value;
+                            }
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error parsing YAML:', e);
+                }
+                content = text.slice(match[0].length).trim();
+            }
+            frontMatter.content = content;
+            return frontMatter;
+        }
+
+        /* ==================================================
+           INITIALIZATION
+           ================================================== */
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPhotographs();
+        });
+    </script>
+</body>
+</html>
