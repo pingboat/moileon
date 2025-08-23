@@ -1,7 +1,7 @@
 ---
 title: "EKA: Birth of an Indian Supercomputer"
 book_author: Harish Bhat
-date: 2025-08-20T11:30:45.881Z
+date: ""
 book_cover: /assets/images/EKA.JPG
 ---
 Category: 
