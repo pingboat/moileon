@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - moileon</title>
 
+    <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKB8RXSXSG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      gtag('config', 'G-EKB8RXSXSG', {
+        // Enhanced measurement for better insights
+        enhanced_measurements: true,
+        // Track page views automatically
+        page_title: 'Blog - moileon',
+        page_location: window.location.href
+      });
+    </script>
+
     <!-- Standard favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/images/moileon-favicon.ico">
 
@@ -248,13 +264,37 @@
         currentPath = "/";
       }
 
-      // Loop through sidebar links
+      // Loop through sidebar links and add analytics tracking
       document.querySelectorAll(".sidebar a").forEach(link => {
         let linkPath = link.getAttribute("href").replace(/\/$/, ""); // remove trailing slash
         if (linkPath === "") linkPath = "/"; // treat empty href as "/"
         if (linkPath === currentPath) {
           link.classList.add("active");
         }
+        
+        // Add click tracking for navigation
+        link.addEventListener('click', function(e) {
+          const pageName = this.textContent.trim();
+          const url = this.href;
+          
+          if (this.target === '_blank') {
+            // External links (LinkedIn, Twitter)
+            gtag('event', 'click', {
+              event_category: 'External Link',
+              event_label: pageName,
+              value: 1,
+              custom_parameter_destination: url
+            });
+          } else if (url && !url.includes('#')) {
+            // Internal page navigation
+            gtag('event', 'page_navigation', {
+              event_category: 'Navigation',
+              event_label: pageName,
+              page_title: pageName,
+              page_location: url
+            });
+          }
+        });
       });
     });
 </script>
@@ -286,16 +326,39 @@
 
     <script>
         /* ==================================================
-           GLOBAL VARIABLES
+           GOOGLE ANALYTICS TRACKING FUNCTIONS
+           ================================================== */
+        
+        // Track blog post interactions
+        function trackBlogEvent(action, postTitle = '', additionalData = {}) {
+            gtag('event', action, {
+                event_category: 'Blog',
+                event_label: postTitle.substring(0, 100),
+                value: 1,
+                ...additionalData
+            });
+        }
+        
+        // Track reading time
+        let currentPostStartTime = null;
+        let currentPostTitle = '';
+
+        /* ==================================================
+           GLOBAL VARIABLES (Enhanced with Analytics)
            ================================================== */
         let blogPosts = [];
+        let pageStartTime = Date.now();
+        let engagementTracked = false;
+        let maxScroll = 0;
         const CONTENT_BRANCH = (window.location.hostname.startsWith('dev--') || window.location.hostname.includes('localhost')) ? 'dev' : 'main';
 
         /* ==================================================
-           BLOG LOADING FUNCTIONS
+           BLOG LOADING FUNCTIONS (Enhanced with Analytics)
            ================================================== */
         async function loadBlogPosts() {
             try {
+                const loadStartTime = performance.now();
+                
                 const response = await fetch(`https://api.github.com/repos/pingboat/moileon/contents/content/blog?ref=${CONTENT_BRANCH}`);
                 const files = await response.json();
                 
@@ -340,15 +403,62 @@
                         
                         listHTML += '</div>';
                         contentDiv.innerHTML = listHTML;
+                        
+                        // Add click tracking to blog post links
+                        setupBlogPostClickTracking();
+                        
+                        // Track successful blog loading
+                        const loadTime = Math.round(performance.now() - loadStartTime);
+                        gtag('event', 'blog_loaded', {
+                            event_category: 'Blog',
+                            event_label: 'Blog Posts Loaded Successfully',
+                            value: blogPosts.length,
+                            custom_parameter_load_time: loadTime,
+                            custom_parameter_post_count: blogPosts.length
+                        });
+                        
                     } else {
                         contentDiv.innerHTML = '<p class="loading">No blog posts found yet. Create some in the admin panel!</p>';
+                        
+                        // Track empty state
+                        gtag('event', 'blog_empty', {
+                            event_category: 'Blog',
+                            event_label: 'No Blog Posts Found',
+                            value: 0
+                        });
                     }
                 } else {
                     document.getElementById('blog-content').innerHTML = '<p class="loading">No blog posts found yet. Create some in the admin panel!</p>';
+                    trackBlogEvent('blog_load_error', 'Invalid Response Format');
                 }
             } catch (error) {
                 document.getElementById('blog-content').innerHTML = '<p class="error">Error loading blog posts. Content may not be published yet.</p>';
+                
+                // Track blog loading error
+                gtag('event', 'blog_load_error', {
+                    event_category: 'Blog',
+                    event_label: 'Blog Loading Failed',
+                    value: 0,
+                    custom_parameter_error: error.message
+                });
             }
+        }
+
+        // Setup click tracking for blog post links
+        function setupBlogPostClickTracking() {
+            document.querySelectorAll('.blog-list a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const postTitle = this.textContent.trim();
+                    trackBlogEvent('blog_post_click', postTitle);
+                    
+                    // Track content selection
+                    gtag('event', 'select_content', {
+                        content_type: 'blog_post',
+                        content_id: postTitle.toLowerCase().replace(/\s+/g, '-'),
+                        value: 1
+                    });
+                });
+            });
         }
 
         // Load blog post data (title, date, custom_url only)
@@ -385,7 +495,7 @@
                 .trim();
         }
 
-        // Load full blog post when clicked
+        // Load full blog post when clicked (Enhanced with Analytics)
         async function loadFullBlogPost(slug) {
             try {
                 // Find the post with matching slug
@@ -396,13 +506,28 @@
                 
                 if (post) {
                     displayFullBlogPost(post);
+                    
+                    // Start tracking reading time
+                    currentPostStartTime = Date.now();
+                    currentPostTitle = post.title;
+                    
+                    // Track blog post view
+                    gtag('event', 'blog_post_view', {
+                        event_category: 'Blog',
+                        event_label: post.title,
+                        value: 1,
+                        custom_parameter_author: post.author || 'Unknown',
+                        custom_parameter_publish_date: post.date || 'Unknown'
+                    });
+                    
                 } else {
-                    // If no matching post found, stay on blog list
                     console.error('Blog post not found:', slug);
+                    trackBlogEvent('blog_post_not_found', slug);
                 }
                 
             } catch (error) {
                 console.error('Error loading blog post:', error);
+                trackBlogEvent('blog_post_load_error', slug);
             }
         }
 
@@ -433,12 +558,73 @@
             // Hide blog list, show blog post
             document.getElementById('blog-list-view').style.display = 'none';
             document.getElementById('blog-post-view').style.display = 'block';
+            
+            // Reset scroll position
+            window.scrollTo(0, 0);
+            maxScroll = 0;
         }
 
-        // Show blog list (go back from individual post)
+        // Show blog list (go back from individual post) - Enhanced with Analytics
         function showBlogList() {
+            // Track reading time if we were reading a post
+            if (currentPostStartTime && currentPostTitle) {
+                const readingTime = Math.round((Date.now() - currentPostStartTime) / 1000);
+                
+                if (readingTime > 5) { // Only track if read for more than 5 seconds
+                    gtag('event', 'blog_reading_time', {
+                        event_category: 'Blog',
+                        event_label: currentPostTitle,
+                        value: readingTime,
+                        custom_parameter_reading_time: readingTime
+                    });
+                    
+                    // Categorize reading engagement
+                    let engagement_level = 'low';
+                    if (readingTime > 180) engagement_level = 'high';      // 3+ minutes
+                    else if (readingTime > 60) engagement_level = 'medium'; // 1-3 minutes
+                    
+                    gtag('event', 'blog_engagement', {
+                        event_category: 'Blog',
+                        event_label: engagement_level,
+                        value: readingTime,
+                        custom_parameter_post_title: currentPostTitle
+                    });
+                }
+                
+                // Reset tracking variables
+                currentPostStartTime = null;
+                currentPostTitle = '';
+            }
+            
+            // Track back to blog action
+            gtag('event', 'blog_back_to_list', {
+                event_category: 'Blog',
+                event_label: 'Back to Blog List',
+                value: 1
+            });
+            
             document.getElementById('blog-post-view').style.display = 'none';
             document.getElementById('blog-list-view').style.display = 'block';
+            
+            // Reset scroll tracking
+            maxScroll = 0;
+        }
+
+        /* ==================================================
+           ENGAGEMENT TRACKING FUNCTIONS
+           ================================================== */
+        function trackEngagement() {
+            if (!engagementTracked) {
+                const timeOnPage = Math.round((Date.now() - pageStartTime) / 1000);
+                if (timeOnPage > 10) {
+                    gtag('event', 'page_engagement', {
+                        event_category: 'Blog',
+                        event_label: 'Time on Blog Page',
+                        value: timeOnPage
+                    });
+                    engagementTracked = true;
+                }
+            }
         }
 
         /* ==================================================
@@ -475,9 +661,72 @@
         }
 
         /* ==================================================
-           INITIALIZATION
+           INITIALIZATION (Enhanced with Analytics)
            ================================================== */
         document.addEventListener('DOMContentLoaded', function() {
+            // Track blog page load
+            gtag('event', 'page_view', {
+                page_title: 'Blog - moileon',
+                page_location: window.location.href,
+                event_category: 'Blog'
+            });
+            
+            // Track scroll depth for blog posts
+            window.addEventListener('scroll', function() {
+                const scrollPercent = Math.round(
+                    (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+                );
+                
+                if (scrollPercent > maxScroll) {
+                    maxScroll = scrollPercent;
+                    
+                    // Track milestone scrolls (only for individual blog posts)
+                    if (document.getElementById('blog-post-view').style.display === 'block') {
+                        if (maxScroll >= 75 && !window.scroll75Tracked) {
+                            gtag('event', 'scroll', {
+                                event_category: 'Blog',
+                                event_label: '75% Scrolled',
+                                value: 75,
+                                custom_parameter_post_title: currentPostTitle
+                            });
+                            window.scroll75Tracked = true;
+                        }
+                        
+                        if (maxScroll >= 100 && !window.scroll100Tracked) {
+                            gtag('event', 'scroll', {
+                                event_category: 'Blog',
+                                event_label: '100% Scrolled',
+                                value: 100,
+                                custom_parameter_post_title: currentPostTitle
+                            });
+                            window.scroll100Tracked = true;
+                        }
+                    }
+                }
+            });
+            
+            // Track engagement after 30 seconds
+            setTimeout(trackEngagement, 30000);
+            
+            // Track when user leaves page
+            window.addEventListener('beforeunload', function() {
+                trackEngagement();
+                
+                // Track reading time if leaving during blog post reading
+                if (currentPostStartTime && currentPostTitle) {
+                    const readingTime = Math.round((Date.now() - currentPostStartTime) / 1000);
+                    if (readingTime > 5) {
+                        gtag('event', 'blog_session_end', {
+                            event_category: 'Blog',
+                            event_label: currentPostTitle,
+                            value: readingTime,
+                            custom_parameter_exit_type: 'page_leave'
+                        });
+                    }
+                }
+            });
+            
+            // Load blog posts
             loadBlogPosts();
         });
     </script>
