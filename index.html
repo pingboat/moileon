@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>moileon</title>
 
+    <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKB8RXSXSG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      gtag('config', 'G-EKB8RXSXSG', {
+        // Enhanced measurement for better insights
+        enhanced_measurements: true,
+        // Track page views automatically
+        page_title: document.title,
+        page_location: window.location.href
+      });
+    </script>
+
     <!-- Standard favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/images/moileon-favicon.ico">
 
@@ -278,13 +294,37 @@
         currentPath = "/";
       }
 
-      // Loop through sidebar links
+      // Loop through sidebar links and add analytics tracking
       document.querySelectorAll(".sidebar a").forEach(link => {
         let linkPath = link.getAttribute("href").replace(/\/$/, ""); // remove trailing slash
         if (linkPath === "") linkPath = "/"; // treat empty href as "/"
         if (linkPath === currentPath) {
           link.classList.add("active");
         }
+        
+        // Add click tracking for navigation
+        link.addEventListener('click', function(e) {
+          const pageName = this.textContent.trim();
+          const url = this.href;
+          
+          if (this.target === '_blank') {
+            // External links (LinkedIn, Twitter)
+            gtag('event', 'click', {
+              event_category: 'External Link',
+              event_label: pageName,
+              value: 1,
+              custom_parameter_destination: url
+            });
+          } else if (url && !url.includes('#')) {
+            // Internal page navigation
+            gtag('event', 'page_navigation', {
+              event_category: 'Navigation',
+              event_label: pageName,
+              page_title: pageName,
+              page_location: url
+            });
+          }
+        });
       });
     });
 </script>
@@ -296,7 +336,7 @@
             <div class="logo-section">
                 <div class="logo-text">ALL LIFE IS YOGA.</div>
                 <div class="lotus-image">
-                    <img src="/assets/images/lotus.png" alt="Lotus with Om Symbol">
+                    <img src="/assets/images/lotus.png" alt="Lotus with Om Symbol" loading="lazy" width="200" height="200">
                 </div>
             </div>
 
@@ -327,16 +367,49 @@
 
     <script>
         /* ==================================================
-           GLOBAL VARIABLES
+           GOOGLE ANALYTICS TRACKING FUNCTIONS
+           ================================================== */
+        
+        // Track quiz interactions
+        function trackQuizEvent(action, questionText = '', isCorrect = null) {
+            gtag('event', action, {
+                event_category: 'Quiz',
+                event_label: questionText.substring(0, 100),
+                custom_parameter_correct: isCorrect,
+                value: isCorrect ? 1 : 0
+            });
+        }
+        
+        // Track quiz completion and performance
+        function trackQuizCompletion(score, totalQuestions, correctAnswers) {
+            gtag('event', 'quiz_complete', {
+                event_category: 'Quiz',
+                event_label: 'Quiz Session Completed',
+                value: score,
+                custom_parameter_total_questions: totalQuestions,
+                custom_parameter_correct_answers: correctAnswers,
+                custom_parameter_score_percentage: Math.round((correctAnswers / totalQuestions) * 100)
+            });
+        }
+
+        /* ==================================================
+           GLOBAL VARIABLES (Enhanced with Analytics)
            ================================================== */
         let currentQuestions = [];
         let currentQuestionIndex = 0;
         let currentScore = 0;
         let quizSettings = {};
+        let questionsAttempted = 0;
+        let correctAnswers = 0;
+        let quizStartTime = null;
+        let userHasInteracted = false;
+        let pageStartTime = Date.now();
+        let engagementTracked = false;
+        let maxScroll = 0;
         const CONTENT_BRANCH = (window.location.hostname.startsWith('dev--') || window.location.hostname.includes('localhost')) ? 'dev' : 'main';
 
         /* ==================================================
-           QUIZ FUNCTIONALITY
+           QUIZ FUNCTIONALITY (Enhanced with Analytics)
            ================================================== */
         async function loadQuizData() {
             try {
@@ -368,6 +441,13 @@
                                 shuffleArray(currentQuestions);
                             }
                             loadCurrentQuestion();
+                            
+                            // Track quiz availability
+                            gtag('event', 'quiz_loaded', {
+                                event_category: 'Quiz',
+                                event_label: 'Quiz Questions Available',
+                                value: currentQuestions.length
+                            });
                         } else {
                             document.getElementById('quiz-question').innerHTML = '"Create quiz questions in the admin panel to get started!"';
                         }
@@ -380,6 +460,13 @@
             } catch (error) {
                 console.error('Error loading quiz data:', error);
                 document.getElementById('quiz-question').innerHTML = '"Which approach is most effective for learning new concepts?"';
+                
+                // Track quiz loading errors
+                gtag('event', 'quiz_load_error', {
+                    event_category: 'Quiz',
+                    event_label: 'Quiz Loading Failed',
+                    value: 0
+                });
             }
         }
 
@@ -464,6 +551,13 @@
                 );
             }
             
+            // Track the quiz attempt
+            questionsAttempted++;
+            if (isCorrect) correctAnswers++;
+            
+            // Send analytics event for answer submission
+            trackQuizEvent('answer_submitted', question.question, isCorrect);
+            
             const feedbackDiv = document.getElementById('quiz-feedback');
             let feedbackHTML = '';
             
@@ -474,9 +568,23 @@
                 }
                 feedbackDiv.className = 'feedback-correct';
                 feedbackHTML = `<strong>Correct!</strong> Great job!`;
+                
+                // Track correct answer
+                gtag('event', 'quiz_correct_answer', {
+                    event_category: 'Quiz',
+                    event_label: question.question.substring(0, 50),
+                    value: 1
+                });
             } else {
                 feedbackDiv.className = 'feedback-incorrect';
                 feedbackHTML = `<strong>Not quite.</strong> The answer is: "${question.correct_answer}"`;
+                
+                // Track incorrect answer
+                gtag('event', 'quiz_incorrect_answer', {
+                    event_category: 'Quiz',
+                    event_label: question.question.substring(0, 50),
+                    value: 0
+                });
             }
             
             if (quizSettings.show_explanations && question.explanation) {
@@ -498,8 +606,11 @@
             if (currentQuestions.length === 0) return;
             
             const question = currentQuestions[currentQuestionIndex];
-            const feedbackDiv = document.getElementById('quiz-feedback');
             
+            // Track when user reveals answer
+            trackQuizEvent('answer_revealed', question.question, null);
+            
+            const feedbackDiv = document.getElementById('quiz-feedback');
             feedbackDiv.className = 'feedback-explanation';
             let feedbackHTML = `<strong>Answer:</strong> "${question.correct_answer}"`;
             
@@ -512,7 +623,30 @@
         }
 
         function nextQuestion() {
+            // Track quiz progression
+            gtag('event', 'quiz_next_question', {
+                event_category: 'Quiz',
+                event_label: 'Next Question',
+                value: currentQuestionIndex + 1
+            });
+            
             currentQuestionIndex = (currentQuestionIndex + 1) % currentQuestions.length;
+            
+            // If we've completed a full cycle, track completion
+            if (currentQuestionIndex === 0 && questionsAttempted > 0) {
+                const sessionDuration = quizStartTime ? Math.round((Date.now() - quizStartTime) / 1000) : 0;
+                trackQuizCompletion(currentScore, questionsAttempted, correctAnswers);
+                
+                // Track session details
+                gtag('event', 'quiz_session_complete', {
+                    event_category: 'Quiz',
+                    event_label: 'Full Quiz Session',
+                    value: sessionDuration,
+                    custom_parameter_session_duration: sessionDuration,
+                    custom_parameter_accuracy: Math.round((correctAnswers / questionsAttempted) * 100)
+                });
+            }
+            
             loadCurrentQuestion();
         }
 
@@ -522,6 +656,36 @@
                 checkAnswer(answer);
             } else {
                 alert('Please enter an answer first.');
+            }
+        }
+
+        /* ==================================================
+           ENGAGEMENT TRACKING FUNCTIONS
+           ================================================== */
+        function trackEngagement() {
+            if (!engagementTracked) {
+                const timeOnPage = Math.round((Date.now() - pageStartTime) / 1000);
+                if (timeOnPage > 10) {
+                    gtag('event', 'page_engagement', {
+                        event_category: 'Engagement',
+                        event_label: 'Time on Homepage',
+                        value: timeOnPage
+                    });
+                    engagementTracked = true;
+                }
+            }
+        }
+        
+        function trackQuizInteraction() {
+            if (!userHasInteracted) {
+                userHasInteracted = true;
+                quizStartTime = Date.now();
+                
+                gtag('event', 'quiz_interaction_start', {
+                    event_category: 'Quiz',
+                    event_label: 'User Started Quiz',
+                    value: 1
+                });
             }
         }
 
@@ -559,16 +723,48 @@
            EVENT LISTENERS AND INITIALIZATION
            ================================================== */
         document.addEventListener('DOMContentLoaded', function() {
+            // Track homepage load
+            gtag('event', 'page_view', {
+                page_title: 'Homepage - All Life is Yoga',
+                page_location: window.location.href
+            });
+            
             const answerInput = document.getElementById('answer-input');
             answerInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
                     submitAnswer();
                 }
             });
+            
+            // Track first interaction with quiz
+            answerInput.addEventListener('focus', trackQuizInteraction, { once: true });
+            answerInput.addEventListener('input', trackQuizInteraction, { once: true });
 
             document.getElementById('submit-btn').addEventListener('click', submitAnswer);
             document.getElementById('show-answer-btn').addEventListener('click', showAnswer);
             document.getElementById('next-question-btn').addEventListener('click', nextQuestion);
+
+            // Track scroll depth
+            window.addEventListener('scroll', function() {
+                const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                if (scrollPercent > maxScroll) {
+                    maxScroll = scrollPercent;
+                    if (maxScroll >= 75 && !window.scroll75Tracked) {
+                        gtag('event', 'scroll', {
+                            event_category: 'Engagement',
+                            event_label: '75% Scrolled',
+                            value: 75
+                        });
+                        window.scroll75Tracked = true;
+                    }
+                }
+            });
+            
+            // Track engagement after 30 seconds
+            setTimeout(trackEngagement, 30000);
+            
+            // Track when user leaves page
+            window.addEventListener('beforeunload', trackEngagement);
 
             // Load quiz data on page load
             loadQuizData();
