@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - moileon</title>
 
+    <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKB8RXSXSG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      gtag('config', 'G-EKB8RXSXSG', {
+        // Enhanced measurement for better insights
+        enhanced_measurements: true,
+        // Track page views automatically
+        page_title: 'Projects - moileon',
+        page_location: window.location.href
+      });
+    </script>
+
     <!-- Standard favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/images/moileon-favicon.ico">
 
@@ -233,13 +249,37 @@
         currentPath = "/";
       }
 
-      // Loop through sidebar links
+      // Loop through sidebar links and add analytics tracking
       document.querySelectorAll(".sidebar a").forEach(link => {
         let linkPath = link.getAttribute("href").replace(/\/$/, ""); // remove trailing slash
         if (linkPath === "") linkPath = "/"; // treat empty href as "/"
         if (linkPath === currentPath) {
           link.classList.add("active");
         }
+        
+        // Add click tracking for navigation
+        link.addEventListener('click', function(e) {
+          const pageName = this.textContent.trim();
+          const url = this.href;
+          
+          if (this.target === '_blank') {
+            // External links (LinkedIn, Twitter)
+            gtag('event', 'click', {
+              event_category: 'External Link',
+              event_label: pageName,
+              value: 1,
+              custom_parameter_destination: url
+            });
+          } else if (url && !url.includes('#')) {
+            // Internal page navigation
+            gtag('event', 'page_navigation', {
+              event_category: 'Navigation',
+              event_label: pageName,
+              page_title: pageName,
+              page_location: url
+            });
+          }
+        });
       });
     });
 </script>
@@ -260,41 +300,191 @@
 
     <script>
         /* ==================================================
-           GLOBAL VARIABLES
+           GOOGLE ANALYTICS TRACKING FUNCTIONS
            ================================================== */
-        const CONTENT_BRANCH = (window.location.hostname.startsWith('dev--') || window.location.hostname.includes('localhost')) ? 'dev' : 'main';
+        
+        // Track project interactions
+        function trackProjectEvent(action, projectTitle = '', additionalData = {}) {
+            gtag('event', action, {
+                event_category: 'Projects',
+                event_label: projectTitle.substring(0, 100),
+                value: 1,
+                ...additionalData
+            });
+        }
 
         /* ==================================================
-           PROJECTS LOADING FUNCTIONS
+           GLOBAL VARIABLES (Enhanced with Analytics)
+           ================================================== */
+        const CONTENT_BRANCH = (window.location.hostname.startsWith('dev--') || window.location.hostname.includes('localhost')) ? 'dev' : 'main';
+        let pageStartTime = Date.now();
+        let engagementTracked = false;
+        let maxScroll = 0;
+        let projectsData = [];
+        let projectInteractionTracker = new Map(); // Track project interactions
+
+        /* ==================================================
+           PROJECTS LOADING FUNCTIONS (Enhanced with Analytics)
            ================================================== */
         async function loadProjects() {
             try {
+                const loadStartTime = performance.now();
+                
                 const response = await fetch(`https://api.github.com/repos/pingboat/moileon/contents/content/projects?ref=${CONTENT_BRANCH}`);
                 const files = await response.json();
                 
                 if (Array.isArray(files)) {
                     const contentDiv = document.getElementById('projects-content');
                     contentDiv.innerHTML = '';
+                    projectsData = [];
+                    
+                    let projectsLoaded = 0;
                     
                     for (const file of files) {
                         if (file.name.endsWith('.md')) {
-                            await loadMarkdownFile(file.download_url, contentDiv, 'projects');
+                            const projectData = await loadMarkdownFile(file.download_url, contentDiv, 'projects');
+                            if (projectData) {
+                                projectsData.push(projectData);
+                                projectsLoaded++;
+                            }
                         }
                     }
                     
                     if (contentDiv.innerHTML === '') {
                         contentDiv.innerHTML = `<p class="loading">No projects found yet. Create some in the admin panel!</p>`;
+                        
+                        // Track empty state
+                        gtag('event', 'projects_empty', {
+                            event_category: 'Projects',
+                            event_label: 'No Projects Found',
+                            value: 0
+                        });
+                    } else {
+                        // Track successful loading
+                        const loadTime = Math.round(performance.now() - loadStartTime);
+                        gtag('event', 'projects_loaded', {
+                            event_category: 'Projects',
+                            event_label: 'Projects Loaded Successfully',
+                            value: projectsLoaded,
+                            custom_parameter_load_time: loadTime,
+                            custom_parameter_projects_count: projectsLoaded
+                        });
+                        
+                        // Setup interaction tracking after content loads
+                        setTimeout(setupProjectInteractionTracking, 500);
+                        
+                        // Track project categories/technologies summary
+                        const techSummary = analyzeProjectTechnologies(projectsData);
+                        if (techSummary.length > 0) {
+                            gtag('event', 'projects_tech_summary', {
+                                event_category: 'Projects',
+                                event_label: 'Technology Stack Analysis',
+                                value: techSummary.length,
+                                custom_parameter_top_tech: techSummary.slice(0, 3).join(', ')
+                            });
+                        }
                     }
                 } else {
                     document.getElementById('projects-content').innerHTML = `<p class="loading">No projects found yet. Create some in the admin panel!</p>`;
+                    trackProjectEvent('projects_load_error', '', { error: 'Invalid Response Format' });
                 }
             } catch (error) {
                 document.getElementById('projects-content').innerHTML = `<p class="error">Error loading projects. Content may not be published yet.</p>`;
+                
+                // Track loading error
+                gtag('event', 'projects_load_error', {
+                    event_category: 'Projects',
+                    event_label: 'Projects Loading Failed',
+                    value: 0,
+                    custom_parameter_error: error.message
+                });
             }
         }
 
+        // Analyze project technologies for insights
+        function analyzeProjectTechnologies(projects) {
+            const techCount = {};
+            projects.forEach(project => {
+                if (project.technologies) {
+                    project.technologies.forEach(tech => {
+                        techCount[tech] = (techCount[tech] || 0) + 1;
+                    });
+                }
+            });
+            
+            return Object.entries(techCount)
+                .sort(([,a], [,b]) => b - a)
+                .map(([tech]) => tech);
+        }
+
+        // Setup interaction tracking for project content
+        function setupProjectInteractionTracking() {
+            // Track project title clicks
+            document.querySelectorAll('.content-item h3').forEach((title, index) => {
+                title.addEventListener('click', function() {
+                    const projectTitle = this.textContent.trim();
+                    trackProjectEvent('project_title_click', projectTitle, {
+                        custom_parameter_project_position: index + 1
+                    });
+                });
+                
+                // Track project visibility
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const projectTitle = entry.target.textContent.trim();
+                            if (!projectInteractionTracker.has(projectTitle)) {
+                                projectInteractionTracker.set(projectTitle, Date.now());
+                                
+                                trackProjectEvent('project_viewed', projectTitle, {
+                                    custom_parameter_project_position: index + 1
+                                });
+                            }
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                observer.observe(title.parentElement);
+            });
+            
+            // Track project link clicks
+            document.querySelectorAll('.project-links a').forEach((link, index) => {
+                link.addEventListener('click', function(e) {
+                    const linkText = this.textContent.trim();
+                    const projectTitle = this.closest('.content-item').querySelector('h3')?.textContent.trim() || `Project ${index + 1}`;
+                    const linkUrl = this.href;
+                    
+                    gtag('event', 'project_link_click', {
+                        event_category: 'Projects',
+                        event_label: `${projectTitle} - ${linkText}`,
+                        value: 1,
+                        custom_parameter_link_type: linkText.toLowerCase(),
+                        custom_parameter_destination: linkUrl,
+                        custom_parameter_project_name: projectTitle
+                    });
+                });
+            });
+            
+            // Track technology tag interactions
+            document.querySelectorAll('.project-tech span').forEach((techTag, index) => {
+                techTag.addEventListener('click', function() {
+                    const technology = this.textContent.trim();
+                    const projectTitle = this.closest('.content-item').querySelector('h3')?.textContent.trim() || `Project ${index + 1}`;
+                    
+                    gtag('event', 'project_tech_click', {
+                        event_category: 'Projects',
+                        event_label: technology,
+                        value: 1,
+                        custom_parameter_technology: technology,
+                        custom_parameter_project_name: projectTitle
+                    });
+                });
+            });
+        }
+
         /* ==================================================
-           MARKDOWN FILE LOADING
+           MARKDOWN FILE LOADING (Enhanced with Analytics)
            ================================================== */
         async function loadMarkdownFile(url, container, type) {
             try {
@@ -309,20 +499,24 @@
                 item.className = 'content-item';
                 
                 let itemHTML = '';
+                let projectData = {};
                 
                 // Handle titles
                 if (frontMatter.title) {
                     itemHTML += `<h3>${frontMatter.title}</h3>`;
+                    projectData.title = frontMatter.title;
                 }
                 
                 // Handle dates
                 if (frontMatter.date) {
                     itemHTML += `<div class="date">${new Date(frontMatter.date).toLocaleDateString()}</div>`;
+                    projectData.date = frontMatter.date;
                 }
                 
                 // Handle project status
                 if (frontMatter.status) {
                     itemHTML += `<div class="date">Status: ${frontMatter.status}</div>`;
+                    projectData.status = frontMatter.status;
                 }
                 
                 // Handle regular content
@@ -337,21 +531,30 @@
                         .replace(/\n/gim, '<br>');
                     
                     itemHTML += `<div><p>${htmlContent}</p></div>`;
+                    projectData.contentLength = content.length;
                 }
                 
                 // Handle project links
                 let linksHTML = '';
+                let linkCount = 0;
                 if (frontMatter.github_url) {
                     linksHTML += `<a href="${frontMatter.github_url}" target="_blank">GitHub</a>`;
+                    projectData.hasGithub = true;
+                    linkCount++;
                 }
                 if (frontMatter.demo_url) {
                     linksHTML += `<a href="${frontMatter.demo_url}" target="_blank">Live Demo</a>`;
+                    projectData.hasDemo = true;
+                    linkCount++;
                 }
                 if (frontMatter.website_url) {
                     linksHTML += `<a href="${frontMatter.website_url}" target="_blank">Website</a>`;
+                    projectData.hasWebsite = true;
+                    linkCount++;
                 }
                 if (linksHTML) {
                     itemHTML += `<div class="project-links">${linksHTML}</div>`;
+                    projectData.linkCount = linkCount;
                 }
                 
                 // Handle technologies
@@ -363,14 +566,82 @@
                     });
                     techHTML += '</div>';
                     itemHTML += techHTML;
+                    projectData.technologies = techs.map(t => t.trim());
                 }
                 
                 item.innerHTML = itemHTML;
                 container.appendChild(item);
                 
+                return projectData;
+                
             } catch (error) {
                 console.error('Error loading markdown file:', error);
+                return null;
             }
+        }
+
+        /* ==================================================
+           ENGAGEMENT TRACKING FUNCTIONS
+           ================================================== */
+        function trackEngagement() {
+            if (!engagementTracked) {
+                const timeOnPage = Math.round((Date.now() - pageStartTime) / 1000);
+                if (timeOnPage > 10) {
+                    gtag('event', 'page_engagement', {
+                        event_category: 'Projects',
+                        event_label: 'Time on Projects Page',
+                        value: timeOnPage,
+                        custom_parameter_projects_viewed: projectInteractionTracker.size,
+                        custom_parameter_total_projects: projectsData.length
+                    });
+                    engagementTracked = true;
+                }
+            }
+        }
+
+        // Track scroll behavior and project discovery
+        function trackScrollBehavior() {
+            window.addEventListener('scroll', function() {
+                const scrollPercent = Math.round(
+                    (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+                );
+                
+                if (scrollPercent > maxScroll) {
+                    maxScroll = scrollPercent;
+                    
+                    // Track milestone scrolls
+                    if (maxScroll >= 50 && !window.scroll50Tracked) {
+                        gtag('event', 'scroll', {
+                            event_category: 'Projects',
+                            event_label: '50% Scrolled',
+                            value: 50,
+                            custom_parameter_projects_viewed: projectInteractionTracker.size
+                        });
+                        window.scroll50Tracked = true;
+                    }
+                    
+                    if (maxScroll >= 75 && !window.scroll75Tracked) {
+                        gtag('event', 'scroll', {
+                            event_category: 'Projects',
+                            event_label: '75% Scrolled',
+                            value: 75,
+                            custom_parameter_projects_viewed: projectInteractionTracker.size
+                        });
+                        window.scroll75Tracked = true;
+                    }
+                    
+                    if (maxScroll >= 100 && !window.scroll100Tracked) {
+                        gtag('event', 'scroll', {
+                            event_category: 'Projects',
+                            event_label: '100% Scrolled - Full Projects Viewed',
+                            value: 100,
+                            custom_parameter_projects_viewed: projectInteractionTracker.size,
+                            custom_parameter_completion_rate: Math.round((projectInteractionTracker.size / projectsData.length) * 100)
+                        });
+                        window.scroll100Tracked = true;
+                    }
+                }
+            });
         }
 
         /* ==================================================
@@ -413,9 +684,46 @@
         }
 
         /* ==================================================
-           INITIALIZATION
+           INITIALIZATION (Enhanced with Analytics)
            ================================================== */
         document.addEventListener('DOMContentLoaded', function() {
+            // Track projects page load
+            gtag('event', 'page_view', {
+                page_title: 'Projects - moileon',
+                page_location: window.location.href,
+                event_category: 'Projects'
+            });
+            
+            // Initialize scroll tracking
+            trackScrollBehavior();
+            
+            // Track engagement after 30 seconds
+            setTimeout(trackEngagement, 30000);
+            
+            // Track when user leaves page
+            window.addEventListener('beforeunload', function() {
+                trackEngagement();
+                
+                // Track session summary
+                const timeOnPage = Math.round((Date.now() - pageStartTime) / 1000);
+                if (timeOnPage > 10) {
+                    const projectsViewed = projectInteractionTracker.size;
+                    const completionRate = projectsData.length > 0 ? Math.round((projectsViewed / projectsData.length) * 100) : 0;
+                    
+                    gtag('event', 'projects_session_end', {
+                        event_category: 'Projects',
+                        event_label: 'Session Summary',
+                        value: timeOnPage,
+                        custom_parameter_session_duration: timeOnPage,
+                        custom_parameter_max_scroll: maxScroll,
+                        custom_parameter_projects_available: projectsData.length,
+                        custom_parameter_projects_viewed: projectsViewed,
+                        custom_parameter_completion_rate: completionRate
+                    });
+                }
+            });
+            
+            // Load projects
             loadProjects();
         });
     </script>
