@@ -1,9 +1,25 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quotes - moileon</title>
+
+    <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKB8RXSXSG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      gtag('config', 'G-EKB8RXSXSG', {
+        // Enhanced measurement for better insights
+        enhanced_measurements: true,
+        // Track page views automatically
+        page_title: 'Quotes - moileon',
+        page_location: window.location.href
+      });
+    </script>
 
     <!-- Standard favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/images/moileon-favicon.ico">
@@ -257,13 +273,37 @@
         currentPath = "/";
       }
 
-      // Loop through sidebar links
+      // Loop through sidebar links and add analytics tracking
       document.querySelectorAll(".sidebar a").forEach(link => {
         let linkPath = link.getAttribute("href").replace(/\/$/, ""); // remove trailing slash
         if (linkPath === "") linkPath = "/"; // treat empty href as "/"
         if (linkPath === currentPath) {
           link.classList.add("active");
         }
+        
+        // Add click tracking for navigation
+        link.addEventListener('click', function(e) {
+          const pageName = this.textContent.trim();
+          const url = this.href;
+          
+          if (this.target === '_blank') {
+            // External links (LinkedIn, Twitter)
+            gtag('event', 'click', {
+              event_category: 'External Link',
+              event_label: pageName,
+              value: 1,
+              custom_parameter_destination: url
+            });
+          } else if (url && !url.includes('#')) {
+            // Internal page navigation
+            gtag('event', 'page_navigation', {
+              event_category: 'Navigation',
+              event_label: pageName,
+              page_title: pageName,
+              page_location: url
+            });
+          }
+        });
       });
     });
 </script>
@@ -284,38 +324,100 @@
 
     <script>
         /* ==================================================
-           GLOBAL VARIABLES
+           GOOGLE ANALYTICS TRACKING FUNCTIONS
            ================================================== */
-        const CONTENT_BRANCH = (window.location.hostname.startsWith('dev--') || window.location.hostname.includes('localhost')) ? 'dev' : 'main';
+        
+        // Track quotes interactions
+        function trackQuotesEvent(action, quoteData = {}, additionalData = {}) {
+            gtag('event', action, {
+                event_category: 'Quotes',
+                event_label: (quoteData.author || 'Unknown Author').substring(0, 100),
+                value: 1,
+                custom_parameter_quote_category: quoteData.category,
+                custom_parameter_quote_source: quoteData.source,
+                ...additionalData
+            });
+        }
 
         /* ==================================================
-           QUOTES LOADING FUNCTIONS
+           GLOBAL VARIABLES (Enhanced with Analytics)
+           ================================================== */
+        const CONTENT_BRANCH = (window.location.hostname.startsWith('dev--') || window.location.hostname.includes('localhost')) ? 'dev' : 'main';
+        let pageStartTime = Date.now();
+        let engagementTracked = false;
+        let maxScroll = 0;
+        let quotesData = [];
+        let quoteViewTracker = new Map(); // Track individual quote views
+
+        /* ==================================================
+           QUOTES LOADING FUNCTIONS (Enhanced with Analytics)
            ================================================== */
         async function loadQuotes() {
             try {
+                const loadStartTime = performance.now();
+                
                 const response = await fetch(`https://api.github.com/repos/pingboat/moileon/contents/content/quotes?ref=${CONTENT_BRANCH}`);
                 const files = await response.json();
                 
                 if (Array.isArray(files) && files.length > 0) {
                     const contentDiv = document.getElementById('quotes-content');
                     contentDiv.innerHTML = '';
+                    quotesData = [];
                     
                     let hasQuotes = false;
+                    let quotesLoaded = 0;
+                    
                     for (const file of files) {
                         if (file.name.endsWith('.md')) {
-                            await loadMarkdownFile(file.download_url, contentDiv, 'quotes');
-                            hasQuotes = true;
+                            const quoteData = await loadMarkdownFile(file.download_url, contentDiv, 'quotes');
+                            if (quoteData) {
+                                quotesData.push(quoteData);
+                                quotesLoaded++;
+                                hasQuotes = true;
+                            }
                         }
                     }
                     
                     if (!hasQuotes) {
                         showDefaultContent();
+                        
+                        // Track empty state
+                        gtag('event', 'quotes_empty', {
+                            event_category: 'Quotes',
+                            event_label: 'No Quotes Found',
+                            value: 0
+                        });
+                    } else {
+                        // Track successful loading
+                        const loadTime = Math.round(performance.now() - loadStartTime);
+                        gtag('event', 'quotes_loaded', {
+                            event_category: 'Quotes',
+                            event_label: 'Quotes Loaded Successfully',
+                            value: quotesLoaded,
+                            custom_parameter_load_time: loadTime,
+                            custom_parameter_quotes_count: quotesLoaded
+                        });
+                        
+                        // Analyze quote categories after loading
+                        setTimeout(analyzeQuoteCategories, 1000);
+                        
+                        // Setup interaction tracking
+                        setTimeout(setupQuotesInteractionTracking, 500);
                     }
                 } else {
                     showDefaultContent();
+                    trackQuotesEvent('quotes_load_error', {}, { error: 'No files array' });
                 }
             } catch (error) {
                 showDefaultContent();
+                
+                // Track loading error
+                gtag('event', 'quotes_load_error', {
+                    event_category: 'Quotes',
+                    event_label: 'Quotes Loading Failed',
+                    value: 0,
+                    custom_parameter_error: error.message
+                });
             }
         }
 
@@ -335,8 +437,126 @@
             `;
         }
 
+        // Analyze quote categories and authors
+        function analyzeQuoteCategories() {
+            if (quotesData.length === 0) return;
+            
+            const categories = {};
+            const authors = {};
+            const sources = {};
+            
+            quotesData.forEach(quote => {
+                // Count categories
+                if (quote.categories && Array.isArray(quote.categories)) {
+                    quote.categories.forEach(cat => {
+                        categories[cat] = (categories[cat] || 0) + 1;
+                    });
+                }
+                
+                // Count authors
+                if (quote.author) {
+                    authors[quote.author] = (authors[quote.author] || 0) + 1;
+                }
+                
+                // Count sources
+                if (quote.source) {
+                    sources[quote.source] = (sources[quote.source] || 0) + 1;
+                }
+            });
+            
+            // Track most popular category
+            const topCategory = Object.keys(categories).reduce((a, b) => 
+                categories[a] > categories[b] ? a : b, Object.keys(categories)[0]);
+            
+            if (topCategory) {
+                gtag('event', 'quotes_analysis', {
+                    event_category: 'Quotes',
+                    event_label: 'Content Analysis',
+                    value: quotesData.length,
+                    custom_parameter_top_category: topCategory,
+                    custom_parameter_unique_authors: Object.keys(authors).length,
+                    custom_parameter_unique_sources: Object.keys(sources).length
+                });
+            }
+        }
+
+        // Setup interaction tracking for quotes
+        function setupQuotesInteractionTracking() {
+            // Track quote visibility and reading time
+            document.querySelectorAll('.content-item').forEach((item, index) => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !quoteViewTracker.has(index)) {
+                            quoteViewTracker.set(index, Date.now());
+                            
+                            const quoteData = quotesData[index] || {};
+                            
+                            // Track quote view
+                            gtag('event', 'quote_view', {
+                                event_category: 'Quotes',
+                                event_label: quoteData.author || `Quote ${index + 1}`,
+                                value: 1,
+                                custom_parameter_quote_position: index + 1,
+                                custom_parameter_quote_category: quoteData.categories ? quoteData.categories.join(', ') : 'Uncategorized',
+                                custom_parameter_quote_source: quoteData.source || 'Unknown'
+                            });
+                            
+                            // Track by category for insights
+                            if (quoteData.categories && quoteData.categories.length > 0) {
+                                quoteData.categories.forEach(category => {
+                                    gtag('event', 'quote_category_view', {
+                                        event_category: 'Quotes',
+                                        event_label: category,
+                                        value: 1
+                                    });
+                                });
+                            }
+                        }
+                    });
+                }, { threshold: 0.7 }); // 70% visible to count as "read"
+                
+                observer.observe(item);
+                
+                // Track clicks on quote text
+                const quoteText = item.querySelector('.quote-text');
+                if (quoteText) {
+                    quoteText.addEventListener('click', function() {
+                        const quoteData = quotesData[index] || {};
+                        trackQuotesEvent('quote_click', quoteData, {
+                            custom_parameter_quote_position: index + 1
+                        });
+                    });
+                    
+                    // Track text selection within quotes
+                    quoteText.addEventListener('mouseup', function() {
+                        const selection = window.getSelection();
+                        if (selection.toString().trim().length > 10) { // Minimum 10 chars selected
+                            const quoteData = quotesData[index] || {};
+                            trackQuotesEvent('quote_text_selected', quoteData, {
+                                custom_parameter_selected_length: selection.toString().length
+                            });
+                        }
+                    });
+                }
+                
+                // Track clicks on author names
+                const authorElement = item.querySelector('.quote-author');
+                if (authorElement) {
+                    authorElement.addEventListener('click', function() {
+                        const quoteData = quotesData[index] || {};
+                        gtag('event', 'quote_author_click', {
+                            event_category: 'Quotes',
+                            event_label: quoteData.author || 'Unknown',
+                            value: 1,
+                            custom_parameter_author: quoteData.author || 'Unknown'
+                        });
+                    });
+                }
+            });
+        }
+
         /* ==================================================
-           MARKDOWN FILE LOADING - QUOTES SPECIFIC
+           MARKDOWN FILE LOADING - QUOTES SPECIFIC (Enhanced with Analytics)
            ================================================== */
         async function loadMarkdownFile(url, container, type) {
             try {
@@ -351,6 +571,7 @@
                 item.className = 'content-item';
                 
                 let itemHTML = '';
+                let quoteData = {};
                 
                 // Special handling for quotes
                 if (frontMatter.quote && type === 'quotes') {
@@ -358,12 +579,20 @@
                     quoteText = quoteText.replace(/^["""']+/, '').replace(/["""']+$/, '').trim();
                     let authorText = frontMatter.author ? String(frontMatter.author).trim() : '';
                     
+                    // Store quote data for analytics
+                    quoteData.quote = quoteText;
+                    quoteData.author = authorText;
+                    quoteData.source = frontMatter.source;
+                    quoteData.categories = frontMatter.category;
+                    quoteData.date = frontMatter.date;
+                    
                     // Check if author is embedded in quote
                     if (!authorText) {
                         const match = quoteText.match(/\s*[—–-]\s*([^""']+)\s*$/);
                         if (match) {
                             authorText = match[1].trim();
                             quoteText = quoteText.slice(0, match.index).trim();
+                            quoteData.author = authorText;
                         }
                     }
                     if (authorText) {
@@ -389,6 +618,7 @@
                     if (frontMatter.category) {
                         let categoryHTML = '<div class="quote-category">';
                         const categories = Array.isArray(frontMatter.category) ? frontMatter.category : [frontMatter.category];
+                        quoteData.categories = categories;
                         categories.forEach(cat => {
                             categoryHTML += `<span>${cat.trim()}</span>`;
                         });
@@ -398,16 +628,18 @@
                     
                     item.innerHTML = itemHTML;
                     container.appendChild(item);
-                    return;
+                    return quoteData;
                 }
                 
                 // Handle non-quote content items (if any)
                 if (frontMatter.title) {
                     itemHTML += `<h3>${frontMatter.title}</h3>`;
+                    quoteData.title = frontMatter.title;
                 }
                 
                 if (frontMatter.date) {
                     itemHTML += `<div class="date">${new Date(frontMatter.date).toLocaleDateString()}</div>`;
+                    quoteData.date = frontMatter.date;
                 }
                 
                 if (content) {
@@ -421,14 +653,71 @@
                         .replace(/\n/gim, '<br>');
                     
                     itemHTML += `<div><p>${htmlContent}</p></div>`;
+                    quoteData.content = content;
                 }
                 
                 item.innerHTML = itemHTML;
                 container.appendChild(item);
+                return quoteData;
                 
             } catch (error) {
                 console.error('Error loading markdown file:', error);
+                return null;
             }
+        }
+
+        /* ==================================================
+           ENGAGEMENT TRACKING FUNCTIONS
+           ================================================== */
+        function trackEngagement() {
+            if (!engagementTracked) {
+                const timeOnPage = Math.round((Date.now() - pageStartTime) / 1000);
+                if (timeOnPage > 10) {
+                    gtag('event', 'page_engagement', {
+                        event_category: 'Quotes',
+                        event_label: 'Time on Quotes Page',
+                        value: timeOnPage,
+                        custom_parameter_quotes_viewed: quoteViewTracker.size,
+                        custom_parameter_total_quotes: quotesData.length
+                    });
+                    engagementTracked = true;
+                }
+            }
+        }
+
+        // Track scroll behavior and quote discovery
+        function trackScrollBehavior() {
+            window.addEventListener('scroll', function() {
+                const scrollPercent = Math.round(
+                    (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+                );
+                
+                if (scrollPercent > maxScroll) {
+                    maxScroll = scrollPercent;
+                    
+                    // Track milestone scrolls
+                    if (maxScroll >= 75 && !window.scroll75Tracked) {
+                        gtag('event', 'scroll', {
+                            event_category: 'Quotes',
+                            event_label: '75% Scrolled',
+                            value: 75,
+                            custom_parameter_quotes_viewed: quoteViewTracker.size
+                        });
+                        window.scroll75Tracked = true;
+                    }
+                    
+                    if (maxScroll >= 100 && !window.scroll100Tracked) {
+                        gtag('event', 'scroll', {
+                            event_category: 'Quotes',
+                            event_label: '100% Scrolled - All Quotes Viewed',
+                            value: 100,
+                            custom_parameter_quotes_viewed: quoteViewTracker.size,
+                            custom_parameter_completion_rate: Math.round((quoteViewTracker.size / quotesData.length) * 100)
+                        });
+                        window.scroll100Tracked = true;
+                    }
+                }
+            });
         }
 
         /* ==================================================
@@ -471,9 +760,46 @@
         }
 
         /* ==================================================
-           INITIALIZATION
+           INITIALIZATION (Enhanced with Analytics)
            ================================================== */
         document.addEventListener('DOMContentLoaded', function() {
+            // Track quotes page load
+            gtag('event', 'page_view', {
+                page_title: 'Quotes - moileon',
+                page_location: window.location.href,
+                event_category: 'Quotes'
+            });
+            
+            // Initialize scroll tracking
+            trackScrollBehavior();
+            
+            // Track engagement after 30 seconds
+            setTimeout(trackEngagement, 30000);
+            
+            // Track when user leaves page
+            window.addEventListener('beforeunload', function() {
+                trackEngagement();
+                
+                // Track session summary
+                const timeOnPage = Math.round((Date.now() - pageStartTime) / 1000);
+                if (timeOnPage > 10) {
+                    const quotesViewed = quoteViewTracker.size;
+                    const completionRate = quotesData.length > 0 ? Math.round((quotesViewed / quotesData.length) * 100) : 0;
+                    
+                    gtag('event', 'quotes_session_end', {
+                        event_category: 'Quotes',
+                        event_label: 'Session Summary',
+                        value: timeOnPage,
+                        custom_parameter_session_duration: timeOnPage,
+                        custom_parameter_max_scroll: maxScroll,
+                        custom_parameter_quotes_available: quotesData.length,
+                        custom_parameter_quotes_viewed: quotesViewed,
+                        custom_parameter_completion_rate: completionRate
+                    });
+                }
+            });
+            
+            // Load quotes
             loadQuotes();
         });
     </script>
