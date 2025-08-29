@@ -1,5 +1,5 @@
 # ==================================================
-# NETLIFY CMS CONFIGURATION
+# NETLIFY CMS CONFIGURATION WITH ENHANCED WYSIWYG
 # ==================================================
 
 # Backend Configuration
@@ -15,6 +15,10 @@ public_folder: "/assets/images"
 
 # Site URL
 site_url: https://moileon.in
+
+# Editor Configuration for WYSIWYG
+editor:
+  preview: true
 
 # ==================================================
 # CONTENT COLLECTIONS
@@ -80,54 +84,134 @@ collections:
         default: 10
 
   # ------------------------------
-  # BLOG POSTS
+  # BLOG POSTS - ENHANCED WYSIWYG
   # ------------------------------
   - name: "blog"
     label: "Blog Posts"
     folder: "content/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} - {{date | date('YYYY-MM-DD')}}"
+    sortable_fields: ['title', 'date', 'author']
+    view_groups:
+      - label: "Status"
+        field: "status"
+      - label: "Author"
+        field: "author"
     fields:
       - label: "Title"
         name: "title"
         widget: "string"
+        pattern: ['^.{1,100}$', 'Title must be between 1 and 100 characters']
       - label: "Custom URL"
         name: "custom_url"
         widget: "string"
         required: false
         hint: "Optional: Custom URL path (e.g., 'my-special-post'). Leave blank to auto-generate from title."
+        pattern: ['^[a-z0-9-]+$', 'Use only lowercase letters, numbers, and hyphens']
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options:
+          - { label: "Draft", value: "draft" }
+          - { label: "Published", value: "published" }
+          - { label: "Archived", value: "archived" }
+        default: "draft"
       - label: "Date"
         name: "date"
         widget: "datetime"
-        required: false
+        date_format: "YYYY-MM-DD"
+        time_format: "HH:mm"
+        format: "YYYY-MM-DD HH:mm:ss"
       - label: "Author"
         name: "author"
         widget: "string"
-        required: false
+        default: "Leon Kaushik"
       - label: "Featured Image"
         name: "featured_image"
         widget: "image"
         required: false
+        media_library:
+          config:
+            multiple: false
+            max_file_size: 2048000
+      - label: "Featured Image Alt Text"
+        name: "featured_image_alt"
+        widget: "string"
+        required: false
+        hint: "Describe the image for accessibility"
       - label: "Excerpt"
         name: "excerpt"
         widget: "text"
+        hint: "Brief summary for previews and SEO (150-160 characters recommended)"
+        pattern: ['^.{50,300}$', 'Excerpt should be between 50-300 characters']
+      - label: "SEO Description"
+        name: "seo_description"
+        widget: "text"
         required: false
+        hint: "Meta description for search engines (max 160 characters)"
+        pattern: ['^.{0,160}$', 'SEO description must be under 160 characters']
       - label: "Tags"
         name: "tags"
         widget: "list"
         required: false
+        hint: "Add relevant tags for categorization"
+        field:
+          label: "Tag"
+          name: "tag"
+          widget: "string"
+      - label: "Categories"
+        name: "categories"
+        widget: "select"
+        multiple: true
+        options:
+          - "Philosophy"
+          - "Yoga"
+          - "Personal Development"
+          - "Spirituality"
+          - "Life Lessons"
+          - "Book Reviews"
+          - "Meditation"
+          - "Wisdom"
+          - "Learning"
+        required: false
+      - label: "Reading Time (minutes)"
+        name: "reading_time"
+        widget: "number"
+        required: false
+        hint: "Estimated reading time in minutes"
+        min: 1
+        max: 60
       - label: "Content"
         name: "body"
         widget: "markdown"
+        hint: "Write your blog post content here. Use the toolbar for formatting."
+        editor_components:
+          - "image"
+          - "code-block"
+        modes: ["rich_text", "raw"]
+        buttons:
+          - "bold"
+          - "italic"
+          - "code"
+          - "link"
+          - "heading-one"
+          - "heading-two"
+          - "heading-three"
+          - "quote"
+          - "code-block"
+          - "bulleted-list"
+          - "numbered-list"
 
   # ------------------------------
-  # BOOK NOTES
+  # BOOK NOTES - ENHANCED
   # ------------------------------
   - name: "booknotes"
     label: "Book Notes"
     folder: "content/booknotes"
     create: true
     slug: "{{slug}}"
+    summary: "{{title}} by {{book_author}}"
     fields:
       - label: "Book Title"
         name: "title"
@@ -138,15 +222,47 @@ collections:
       - label: "Date Added"
         name: "date"
         widget: "datetime"
-        required: false
+        default: ""
       - label: "Book Cover"
         name: "book_cover"
         widget: "image"
         required: false
+        media_library:
+          config:
+            multiple: false
+            max_file_size: 1048576
+      - label: "ISBN"
+        name: "isbn"
+        widget: "string"
+        required: false
+        hint: "10 or 13 digit ISBN"
+      - label: "Publication Year"
+        name: "publication_year"
+        widget: "number"
+        required: false
+      - label: "Genre"
+        name: "genre"
+        widget: "select"
+        multiple: true
+        options:
+          - "Philosophy"
+          - "Self-Help"
+          - "Biography"
+          - "Spirituality"
+          - "Psychology"
+          - "Business"
+          - "Fiction"
+          - "Science"
+        required: false
       - label: "Rating"
         name: "rating"
         widget: "select"
-        options: ["1", "2", "3", "4", "5"]
+        options:
+          - { label: "★☆☆☆☆ (1/5)", value: "1" }
+          - { label: "★★☆☆☆ (2/5)", value: "2" }
+          - { label: "★★★☆☆ (3/5)", value: "3" }
+          - { label: "★★★★☆ (4/5)", value: "4" }
+          - { label: "★★★★★ (5/5)", value: "5" }
         required: false
       - label: "Key Takeaways"
         name: "key_takeaways"
@@ -155,34 +271,64 @@ collections:
           label: "Takeaway"
           name: "takeaway"
           widget: "string"
+      - label: "Favorite Quotes"
+        name: "favorite_quotes"
+        widget: "list"
+        required: false
+        field:
+          label: "Quote"
+          name: "quote"
+          widget: "text"
       - label: "Notes"
         name: "body"
         widget: "markdown"
+        modes: ["rich_text", "raw"]
 
   # ------------------------------
-  # PROJECTS
+  # PROJECTS - ENHANCED
   # ------------------------------
   - name: "projects"
     label: "Projects"
     folder: "content/projects"
     create: true
     slug: "{{slug}}"
+    summary: "{{title}} - {{status}}"
+    view_groups:
+      - label: "Status"
+        field: "status"
+      - label: "Type"
+        field: "project_type"
     fields:
       - label: "Project Name"
         name: "title"
         widget: "string"
-      - label: "Date"
+      - label: "Date Started"
         name: "date"
+        widget: "datetime"
+        default: ""
+      - label: "Date Completed"
+        name: "completion_date"
         widget: "datetime"
         required: false
       - label: "Status"
         name: "status"
         widget: "select"
         options:
-          - "Active"
-          - "Completed"
-          - "On Hold"
-          - "Planned"
+          - { label: "🚀 Active", value: "Active" }
+          - { label: "✅ Completed", value: "Completed" }
+          - { label: "⏸️ On Hold", value: "On Hold" }
+          - { label: "📋 Planned", value: "Planned" }
+          - { label: "❌ Cancelled", value: "Cancelled" }
+        default: "Planned"
+      - label: "Priority"
+        name: "priority"
+        widget: "select"
+        options:
+          - "High"
+          - "Medium"  
+          - "Low"
+        default: "Medium"
+        required: false
       - label: "Project Type"
         name: "project_type"
         widget: "select"
@@ -191,29 +337,496 @@ collections:
           - "Mobile App"
           - "Research"
           - "Writing"
+          - "Design"
+          - "Data Analysis"
           - "Other"
       - label: "Technologies Used"
         name: "technologies"
         widget: "list"
         required: false
+        field:
+          label: "Technology"
+          name: "tech"
+          widget: "string"
+      - label: "Collaborators"
+        name: "collaborators"
+        widget: "list"
+        required: false
+        field:
+          label: "Collaborator"
+          name: "person"
+          widget: "string"
       - label: "Project URL"
         name: "project_url"
         widget: "string"
         required: false
+        pattern: ['^https?://.+$', 'Must be a valid URL starting with http:// or https://']
       - label: "GitHub Repository"
         name: "github_url"
         widget: "string"
         required: false
+        pattern: ['^https://github\.com/.+$', 'Must be a valid GitHub URL']
       - label: "Project Image"
         name: "project_image"
         widget: "image"
         required: false
+        media_library:
+          config:
+            multiple: false
+      - label: "Progress (%)"
+        name: "progress"
+        widget: "number"
+        required: false
+        min: 0
+        max: 100
+        step: 5
       - label: "Description"
         name: "body"
         widget: "markdown"
+        modes: ["rich_text", "raw"]
 
   # ------------------------------
-  # QUOTES
+  # LENSCAPE POSTS
+  # ------------------------------
+  - name: "lenscape"
+    label: "Lenscape"
+    folder: "content/lenscape"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} - {{date | date('YYYY-MM-DD')}}"
+    sortable_fields: ['title', 'date', 'category']
+    view_groups:
+      - label: "Category"
+        field: "category"
+      - label: "Type"
+        field: "content_type"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        pattern: ['^.{1,100}$', 'Title must be between 1 and 100 characters']
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: "HH:mm"
+        format: "YYYY-MM-DD HH:mm:ss"
+      - label: "Content Type"
+        name: "content_type"
+        widget: "select"
+        options:
+          - "Photography"
+          - "Visual Story"
+          - "Photo Essay"
+          - "Behind the Scenes"
+          - "Tutorial"
+          - "Equipment Review"
+        default: "Photography"
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "Nature"
+          - "Portrait"
+          - "Street"
+          - "Travel"
+          - "Abstract"
+          - "Architecture"
+          - "Events"
+        required: false
+      - label: "Featured Image"
+        name: "featured_image"
+        widget: "image"
+        required: false
+        media_library:
+          config:
+            multiple: false
+            max_file_size: 5242880
+      - label: "Image Gallery"
+        name: "gallery"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Image"
+            name: "image"
+            widget: "image"
+          - label: "Caption"
+            name: "caption"
+            widget: "string"
+            required: false
+          - label: "Alt Text"
+            name: "alt_text"
+            widget: "string"
+            required: false
+      - label: "Camera/Equipment"
+        name: "equipment"
+        widget: "string"
+        required: false
+      - label: "Location"
+        name: "location"
+        widget: "string"
+        required: false
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        field:
+          label: "Tag"
+          name: "tag"
+          widget: "string"
+      - label: "Content"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text", "raw"]
+        buttons:
+          - "bold"
+          - "italic"
+          - "link"
+          - "heading-two"
+          - "heading-three"
+          - "quote"
+          - "bulleted-list"
+          - "numbered-list"
+
+  # ------------------------------
+  # DIGITAL PRODUCTS/SERVICES
+  # ------------------------------
+  - name: "digital"
+    label: "Digital"
+    folder: "content/digital"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} - {{product_type}}"
+    view_groups:
+      - label: "Type"
+        field: "product_type"
+      - label: "Status"
+        field: "status"
+    fields:
+      - label: "Product/Service Name"
+        name: "title"
+        widget: "string"
+      - label: "Date Created"
+        name: "date"
+        widget: "datetime"
+        default: ""
+      - label: "Product Type"
+        name: "product_type"
+        widget: "select"
+        options:
+          - "Digital Product"
+          - "Service"
+          - "Course"
+          - "Template"
+          - "Tool"
+          - "Consultation"
+        default: "Digital Product"
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options:
+          - { label: "Coming Soon", value: "coming_soon" }
+          - { label: "Available", value: "available" }
+          - { label: "Limited", value: "limited" }
+          - { label: "Sold Out", value: "sold_out" }
+          - { label: "Discontinued", value: "discontinued" }
+        default: "coming_soon"
+      - label: "Price"
+        name: "price"
+        widget: "string"
+        required: false
+        hint: "e.g., '$29' or 'Free' or 'Contact for pricing'"
+      - label: "Gumroad URL"
+        name: "gumroad_url"
+        widget: "string"
+        required: false
+        pattern: ['^https://.*gumroad\.com.*$', 'Must be a valid Gumroad URL']
+      - label: "Preview/Demo URL"
+        name: "demo_url"
+        widget: "string"
+        required: false
+      - label: "Product Image"
+        name: "product_image"
+        widget: "image"
+        required: false
+        media_library:
+          config:
+            multiple: false
+            max_file_size: 2048000
+      - label: "Gallery Images"
+        name: "gallery"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Image"
+            name: "image"
+            widget: "image"
+          - label: "Caption"
+            name: "caption"
+            widget: "string"
+            required: false
+      - label: "Short Description"
+        name: "excerpt"
+        widget: "text"
+        hint: "Brief summary for listings"
+      - label: "Key Features"
+        name: "features"
+        widget: "list"
+        required: false
+        field:
+          label: "Feature"
+          name: "feature"
+          widget: "string"
+      - label: "What's Included"
+        name: "includes"
+        widget: "list"
+        required: false
+        field:
+          label: "Item"
+          name: "item"
+          widget: "string"
+      - label: "Target Audience"
+        name: "target_audience"
+        widget: "string"
+        required: false
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        field:
+          label: "Tag"
+          name: "tag"
+          widget: "string"
+      - label: "Detailed Description"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text", "raw"]
+
+  # ------------------------------
+  # BIO/ABOUT CONTENT
+  # ------------------------------
+  - name: "bio"
+    label: "Bio"
+    folder: "content/bio"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - label: "Section Title"
+        name: "title"
+        widget: "string"
+        hint: "e.g., 'About Me', 'My Journey', 'Professional Background'"
+      - label: "Date Updated"
+        name: "date"
+        widget: "datetime"
+        default: ""
+      - label: "Section Type"
+        name: "section_type"
+        widget: "select"
+        options:
+          - "Personal Story"
+          - "Professional Background"
+          - "Philosophy"
+          - "Achievements"
+          - "Timeline"
+          - "Skills"
+          - "Contact Info"
+        default: "Personal Story"
+      - label: "Display Order"
+        name: "order"
+        widget: "number"
+        default: 1
+        min: 1
+        max: 20
+        hint: "Order in which this section appears (1 = first)"
+      - label: "Profile Image"
+        name: "profile_image"
+        widget: "image"
+        required: false
+        media_library:
+          config:
+            multiple: false
+            max_file_size: 2048000
+      - label: "Image Caption"
+        name: "image_caption"
+        widget: "string"
+        required: false
+      - label: "Key Highlights"
+        name: "highlights"
+        widget: "list"
+        required: false
+        field:
+          label: "Highlight"
+          name: "highlight"
+          widget: "string"
+      - label: "Skills/Expertise"
+        name: "skills"
+        widget: "list"
+        required: false
+        field:
+          label: "Skill"
+          name: "skill"
+          widget: "string"
+      - label: "Show on Homepage"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        hint: "Display this section on the main bio page"
+      - label: "Content"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text", "raw"]
+
+  # ------------------------------
+  # PODCAST EPISODES
+  # ------------------------------
+  - name: "podcast"
+    label: "Podcast"
+    folder: "content/podcast"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-episode-{{episode_number}}"
+    summary: "Episode {{episode_number}}: {{title}}"
+    sortable_fields: ['episode_number', 'title', 'date', 'status']
+    view_groups:
+      - label: "Status"
+        field: "status"
+      - label: "Season"
+        field: "season"
+    fields:
+      - label: "Episode Title"
+        name: "title"
+        widget: "string"
+      - label: "Episode Number"
+        name: "episode_number"
+        widget: "number"
+        min: 1
+      - label: "Season"
+        name: "season"
+        widget: "number"
+        default: 1
+        min: 1
+        required: false
+      - label: "Publication Date"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: "HH:mm"
+        format: "YYYY-MM-DD HH:mm:ss"
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options:
+          - { label: "Draft", value: "draft" }
+          - { label: "Scheduled", value: "scheduled" }
+          - { label: "Published", value: "published" }
+          - { label: "Archived", value: "archived" }
+        default: "draft"
+      - label: "Episode Type"
+        name: "episode_type"
+        widget: "select"
+        options:
+          - "Solo Episode"
+          - "Interview"
+          - "Panel Discussion"
+          - "Q&A"
+          - "Meditation"
+          - "Story/Narrative"
+        default: "Solo Episode"
+      - label: "Duration (minutes)"
+        name: "duration"
+        widget: "number"
+        required: false
+        min: 1
+        max: 300
+      - label: "Guest Name(s)"
+        name: "guests"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Name"
+            name: "name"
+            widget: "string"
+          - label: "Bio/Title"
+            name: "bio"
+            widget: "string"
+            required: false
+          - label: "Website/Social"
+            name: "website"
+            widget: "string"
+            required: false
+      - label: "Audio File URL"
+        name: "audio_url"
+        widget: "string"
+        required: false
+        hint: "Link to hosted audio file (Anchor, Spotify, etc.)"
+      - label: "Spotify URL"
+        name: "spotify_url"
+        widget: "string"
+        required: false
+      - label: "Apple Podcasts URL"
+        name: "apple_url"
+        widget: "string"
+        required: false
+      - label: "YouTube URL"
+        name: "youtube_url"
+        widget: "string"
+        required: false
+      - label: "Episode Cover Art"
+        name: "cover_art"
+        widget: "image"
+        required: false
+        media_library:
+          config:
+            multiple: false
+            max_file_size: 2048000
+      - label: "Episode Description"
+        name: "description"
+        widget: "text"
+        hint: "Brief description for podcast platforms (1-2 sentences)"
+      - label: "Topics/Tags"
+        name: "topics"
+        widget: "list"
+        required: false
+        field:
+          label: "Topic"
+          name: "topic"
+          widget: "string"
+      - label: "Key Timestamps"
+        name: "timestamps"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Time"
+            name: "time"
+            widget: "string"
+            hint: "Format: MM:SS or HH:MM:SS"
+          - label: "Description"
+            name: "description"
+            widget: "string"
+      - label: "Resources Mentioned"
+        name: "resources"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "URL"
+            name: "url"
+            widget: "string"
+            required: false
+          - label: "Description"
+            name: "description"
+            widget: "string"
+            required: false
+      - label: "Transcript/Show Notes"
+        name: "body"
+        widget: "markdown"
+        hint: "Full transcript or detailed show notes"
+        modes: ["rich_text", "raw"]
+
+  # ------------------------------
+  # QUOTES - ENHANCED
   # ------------------------------
   - name: "quotes"
     label: "Quotes"
@@ -221,10 +834,12 @@ collections:
     create: true
     identifier_field: quote
     slug: "{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{second}}"
+    summary: "\"{{quote | truncate(50)}}\" - {{author}}"
     fields:
       - label: "Quote"
         name: "quote"
         widget: "text"
+        hint: "The main quote text"
       - label: "Author"
         name: "author"
         widget: "string"
@@ -233,10 +848,16 @@ collections:
         name: "source"
         widget: "string"
         required: false
+        hint: "Book, speech, interview, etc."
       - label: "Date Added"
         name: "date"
         widget: "datetime"
+        default: ""
+      - label: "Context/Occasion"
+        name: "context"
+        widget: "string"
         required: false
+        hint: "When or why this was said"
       - label: "Category"
         name: "category"
         widget: "select"
@@ -247,11 +868,28 @@ collections:
           - "Yoga"
           - "Life"
           - "Success"
+          - "Love"
+          - "Growth"
+          - "Peace"
         required: false
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        field:
+          label: "Tag"
+          name: "tag"
+          widget: "string"
       - label: "Personal Note"
         name: "note"
         widget: "text"
         required: false
+        hint: "Why this quote resonates with you"
+      - label: "Favorite"
+        name: "favorite"
+        widget: "boolean"
+        required: false
+        default: false
 
   # ------------------------------
   # SITE SETTINGS
@@ -277,6 +915,11 @@ collections:
                 name: "external"
                 widget: "boolean"
                 default: false
+              - label: "Icon"
+                name: "icon"
+                widget: "string"
+                required: false
+                hint: "Optional icon class or emoji"
 
       - label: "Social Media"
         name: "social"
@@ -286,18 +929,22 @@ collections:
             name: "linkedin"
             widget: "string"
             default: "https://www.linkedin.com/in/leonkaushik"
+            pattern: ['^https://.*linkedin\.com.*$', 'Must be a valid LinkedIn URL']
           - label: "Twitter/X URL"
             name: "twitter"
             widget: "string"
             default: "https://x.com/iobyleon"
+            pattern: ['^https://.*\.com.*$', 'Must be a valid social media URL']
           - label: "GitHub URL"
             name: "github"
             widget: "string"
             required: false
+            pattern: ['^https://github\.com.*$', 'Must be a valid GitHub URL']
           - label: "Email"
             name: "email"
             widget: "string"
             required: false
+            pattern: ['^[^@\s]+@[^@\s]+\.[^@\s]+$', 'Must be a valid email address']
 
       - label: "Quiz Settings"
         name: "quiz_settings"
@@ -315,6 +962,8 @@ collections:
             name: "questions_per_session"
             widget: "number"
             default: 1
+            min: 1
+            max: 20
           - label: "Show Explanations"
             name: "show_explanations"
             widget: "boolean"
@@ -323,6 +972,39 @@ collections:
             name: "enable_scoring"
             widget: "boolean"
             default: true
+          - label: "Difficulty Progression"
+            name: "difficulty_progression"
+            widget: "boolean"
+            default: false
+            hint: "Increase difficulty based on correct answers"
+
+      - label: "Site Metadata"
+        name: "metadata"
+        file: "content/settings/metadata.md"
+        fields:
+          - label: "Site Title"
+            name: "site_title"
+            widget: "string"
+            default: "moileon"
+          - label: "Site Description"
+            name: "site_description"
+            widget: "text"
+            default: "All Life is Yoga"
+          - label: "Site Keywords"
+            name: "keywords"
+            widget: "list"
+            field:
+              label: "Keyword"
+              name: "keyword"
+              widget: "string"
+          - label: "Author"
+            name: "author"
+            widget: "string"
+            default: "Leon Kaushik"
+          - label: "Contact Email"
+            name: "contact_email"
+            widget: "string"
+            required: false
 
       - label: "Site Images"
         name: "images"
@@ -332,3 +1014,7 @@ collections:
             name: "lotus_image"
             widget: "image"
             hint: "Upload the main lotus image for the homepage"
+            media_library:
+              config:
+                multiple: false
+                max_file_size: 5242880
