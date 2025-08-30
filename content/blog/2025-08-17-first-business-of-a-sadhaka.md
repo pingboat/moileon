@@ -2,7 +2,7 @@
 title: First Business of a Sadhaka
 display_title: FIRST BUSINESS OF A SADHAKA
 custom_url: moileon.in/blog/sadhaka
-status: draft
+status: published
 date: 2025-07-25
 author: Integral
 excerpt: >-
