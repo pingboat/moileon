@@ -102,13 +102,11 @@ collections:
       - label: "Title"
         name: "title"
         widget: "string"
-        pattern: ['^.{1,100}$', 'Title must be between 1 and 100 characters']
       - label: "Custom URL"
         name: "custom_url"
         widget: "string"
         required: false
         hint: "Optional: Custom URL path (e.g., 'my-special-post'). Leave blank to auto-generate from title."
-        pattern: ['^[a-z0-9-]+$', 'Use only lowercase letters, numbers, and hyphens']
       - label: "Status"
         name: "status"
         widget: "select"
@@ -131,10 +129,6 @@ collections:
         name: "featured_image"
         widget: "image"
         required: false
-        media_library:
-          config:
-            multiple: false
-            max_file_size: 2048000
       - label: "Featured Image Alt Text"
         name: "featured_image_alt"
         widget: "string"
@@ -144,22 +138,16 @@ collections:
         name: "excerpt"
         widget: "text"
         hint: "Brief summary for previews and SEO (150-160 characters recommended)"
-        pattern: ['^.{50,300}$', 'Excerpt should be between 50-300 characters']
       - label: "SEO Description"
         name: "seo_description"
         widget: "text"
         required: false
         hint: "Meta description for search engines (max 160 characters)"
-        pattern: ['^.{0,160}$', 'SEO description must be under 160 characters']
       - label: "Tags"
         name: "tags"
         widget: "list"
         required: false
         hint: "Add relevant tags for categorization"
-        field:
-          label: "Tag"
-          name: "tag"
-          widget: "string"
       - label: "Categories"
         name: "categories"
         widget: "select"
@@ -186,204 +174,6 @@ collections:
         name: "body"
         widget: "markdown"
         hint: "Write your blog post content here. Use the toolbar for formatting."
-        editor_components:
-          - "image"
-          - "code-block"
-        modes: ["rich_text", "raw"]
-        buttons:
-          - "bold"
-          - "italic"
-          - "code"
-          - "link"
-          - "heading-one"
-          - "heading-two"
-          - "heading-three"
-          - "quote"
-          - "code-block"
-          - "bulleted-list"
-          - "numbered-list"
-
-  # ------------------------------
-  # BOOK NOTES - ENHANCED
-  # ------------------------------
-  - name: "booknotes"
-    label: "Book Notes"
-    folder: "content/booknotes"
-    create: true
-    slug: "{{slug}}"
-    summary: "{{title}} by {{book_author}}"
-    fields:
-      - label: "Book Title"
-        name: "title"
-        widget: "string"
-      - label: "Author"
-        name: "book_author"
-        widget: "string"
-      - label: "Date Added"
-        name: "date"
-        widget: "datetime"
-        default: ""
-      - label: "Book Cover"
-        name: "book_cover"
-        widget: "image"
-        required: false
-        media_library:
-          config:
-            multiple: false
-            max_file_size: 1048576
-      - label: "ISBN"
-        name: "isbn"
-        widget: "string"
-        required: false
-        hint: "10 or 13 digit ISBN"
-      - label: "Publication Year"
-        name: "publication_year"
-        widget: "number"
-        required: false
-      - label: "Genre"
-        name: "genre"
-        widget: "select"
-        multiple: true
-        options:
-          - "Philosophy"
-          - "Self-Help"
-          - "Biography"
-          - "Spirituality"
-          - "Psychology"
-          - "Business"
-          - "Fiction"
-          - "Science"
-        required: false
-      - label: "Rating"
-        name: "rating"
-        widget: "select"
-        options:
-          - { label: "★☆☆☆☆ (1/5)", value: "1" }
-          - { label: "★★☆☆☆ (2/5)", value: "2" }
-          - { label: "★★★☆☆ (3/5)", value: "3" }
-          - { label: "★★★★☆ (4/5)", value: "4" }
-          - { label: "★★★★★ (5/5)", value: "5" }
-        required: false
-      - label: "Key Takeaways"
-        name: "key_takeaways"
-        widget: "list"
-        field:
-          label: "Takeaway"
-          name: "takeaway"
-          widget: "string"
-      - label: "Favorite Quotes"
-        name: "favorite_quotes"
-        widget: "list"
-        required: false
-        field:
-          label: "Quote"
-          name: "quote"
-          widget: "text"
-      - label: "Notes"
-        name: "body"
-        widget: "markdown"
-        modes: ["rich_text", "raw"]
-
-  # ------------------------------
-  # PROJECTS - ENHANCED
-  # ------------------------------
-  - name: "projects"
-    label: "Projects"
-    folder: "content/projects"
-    create: true
-    slug: "{{slug}}"
-    summary: "{{title}} - {{status}}"
-    view_groups:
-      - label: "Status"
-        field: "status"
-      - label: "Type"
-        field: "project_type"
-    fields:
-      - label: "Project Name"
-        name: "title"
-        widget: "string"
-      - label: "Date Started"
-        name: "date"
-        widget: "datetime"
-        default: ""
-      - label: "Date Completed"
-        name: "completion_date"
-        widget: "datetime"
-        required: false
-      - label: "Status"
-        name: "status"
-        widget: "select"
-        options:
-          - { label: "🚀 Active", value: "Active" }
-          - { label: "✅ Completed", value: "Completed" }
-          - { label: "⏸️ On Hold", value: "On Hold" }
-          - { label: "📋 Planned", value: "Planned" }
-          - { label: "❌ Cancelled", value: "Cancelled" }
-        default: "Planned"
-      - label: "Priority"
-        name: "priority"
-        widget: "select"
-        options:
-          - "High"
-          - "Medium"  
-          - "Low"
-        default: "Medium"
-        required: false
-      - label: "Project Type"
-        name: "project_type"
-        widget: "select"
-        options:
-          - "Web Development"
-          - "Mobile App"
-          - "Research"
-          - "Writing"
-          - "Design"
-          - "Data Analysis"
-          - "Other"
-      - label: "Technologies Used"
-        name: "technologies"
-        widget: "list"
-        required: false
-        field:
-          label: "Technology"
-          name: "tech"
-          widget: "string"
-      - label: "Collaborators"
-        name: "collaborators"
-        widget: "list"
-        required: false
-        field:
-          label: "Collaborator"
-          name: "person"
-          widget: "string"
-      - label: "Project URL"
-        name: "project_url"
-        widget: "string"
-        required: false
-        pattern: ['^https?://.+$', 'Must be a valid URL starting with http:// or https://']
-      - label: "GitHub Repository"
-        name: "github_url"
-        widget: "string"
-        required: false
-        pattern: ['^https://github\.com/.+$', 'Must be a valid GitHub URL']
-      - label: "Project Image"
-        name: "project_image"
-        widget: "image"
-        required: false
-        media_library:
-          config:
-            multiple: false
-      - label: "Progress (%)"
-        name: "progress"
-        widget: "number"
-        required: false
-        min: 0
-        max: 100
-        step: 5
-      - label: "Description"
-        name: "body"
-        widget: "markdown"
-        modes: ["rich_text", "raw"]
 
   # ------------------------------
   # LENSCAPE POSTS
@@ -404,7 +194,6 @@ collections:
       - label: "Title"
         name: "title"
         widget: "string"
-        pattern: ['^.{1,100}$', 'Title must be between 1 and 100 characters']
       - label: "Date"
         name: "date"
         widget: "datetime"
@@ -438,10 +227,6 @@ collections:
         name: "featured_image"
         widget: "image"
         required: false
-        media_library:
-          config:
-            multiple: false
-            max_file_size: 5242880
       - label: "Image Gallery"
         name: "gallery"
         widget: "list"
@@ -470,23 +255,9 @@ collections:
         name: "tags"
         widget: "list"
         required: false
-        field:
-          label: "Tag"
-          name: "tag"
-          widget: "string"
       - label: "Content"
         name: "body"
         widget: "markdown"
-        modes: ["rich_text", "raw"]
-        buttons:
-          - "bold"
-          - "italic"
-          - "link"
-          - "heading-two"
-          - "heading-three"
-          - "quote"
-          - "bulleted-list"
-          - "numbered-list"
 
   # ------------------------------
   # DIGITAL PRODUCTS/SERVICES
@@ -540,7 +311,6 @@ collections:
         name: "gumroad_url"
         widget: "string"
         required: false
-        pattern: ['^https://.*gumroad\.com.*$', 'Must be a valid Gumroad URL']
       - label: "Preview/Demo URL"
         name: "demo_url"
         widget: "string"
@@ -549,10 +319,6 @@ collections:
         name: "product_image"
         widget: "image"
         required: false
-        media_library:
-          config:
-            multiple: false
-            max_file_size: 2048000
       - label: "Gallery Images"
         name: "gallery"
         widget: "list"
@@ -573,18 +339,10 @@ collections:
         name: "features"
         widget: "list"
         required: false
-        field:
-          label: "Feature"
-          name: "feature"
-          widget: "string"
       - label: "What's Included"
         name: "includes"
         widget: "list"
         required: false
-        field:
-          label: "Item"
-          name: "item"
-          widget: "string"
       - label: "Target Audience"
         name: "target_audience"
         widget: "string"
@@ -593,14 +351,9 @@ collections:
         name: "tags"
         widget: "list"
         required: false
-        field:
-          label: "Tag"
-          name: "tag"
-          widget: "string"
       - label: "Detailed Description"
         name: "body"
         widget: "markdown"
-        modes: ["rich_text", "raw"]
 
   # ------------------------------
   # BIO/ABOUT CONTENT
@@ -643,10 +396,6 @@ collections:
         name: "profile_image"
         widget: "image"
         required: false
-        media_library:
-          config:
-            multiple: false
-            max_file_size: 2048000
       - label: "Image Caption"
         name: "image_caption"
         widget: "string"
@@ -655,18 +404,10 @@ collections:
         name: "highlights"
         widget: "list"
         required: false
-        field:
-          label: "Highlight"
-          name: "highlight"
-          widget: "string"
       - label: "Skills/Expertise"
         name: "skills"
         widget: "list"
         required: false
-        field:
-          label: "Skill"
-          name: "skill"
-          widget: "string"
       - label: "Show on Homepage"
         name: "featured"
         widget: "boolean"
@@ -675,7 +416,6 @@ collections:
       - label: "Content"
         name: "body"
         widget: "markdown"
-        modes: ["rich_text", "raw"]
 
   # ------------------------------
   # PODCAST EPISODES
@@ -775,10 +515,6 @@ collections:
         name: "cover_art"
         widget: "image"
         required: false
-        media_library:
-          config:
-            multiple: false
-            max_file_size: 2048000
       - label: "Episode Description"
         name: "description"
         widget: "text"
@@ -787,10 +523,6 @@ collections:
         name: "topics"
         widget: "list"
         required: false
-        field:
-          label: "Topic"
-          name: "topic"
-          widget: "string"
       - label: "Key Timestamps"
         name: "timestamps"
         widget: "list"
@@ -823,7 +555,169 @@ collections:
         name: "body"
         widget: "markdown"
         hint: "Full transcript or detailed show notes"
-        modes: ["rich_text", "raw"]
+
+  # ------------------------------
+  # BOOK NOTES - ENHANCED
+  # ------------------------------
+  - name: "booknotes"
+    label: "Book Notes"
+    folder: "content/booknotes"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} by {{book_author}}"
+    fields:
+      - label: "Book Title"
+        name: "title"
+        widget: "string"
+      - label: "Author"
+        name: "book_author"
+        widget: "string"
+      - label: "Date Added"
+        name: "date"
+        widget: "datetime"
+        default: ""
+      - label: "Book Cover"
+        name: "book_cover"
+        widget: "image"
+        required: false
+      - label: "ISBN"
+        name: "isbn"
+        widget: "string"
+        required: false
+        hint: "10 or 13 digit ISBN"
+      - label: "Publication Year"
+        name: "publication_year"
+        widget: "number"
+        required: false
+      - label: "Genre"
+        name: "genre"
+        widget: "select"
+        multiple: true
+        options:
+          - "Philosophy"
+          - "Self-Help"
+          - "Biography"
+          - "Spirituality"
+          - "Psychology"
+          - "Business"
+          - "Fiction"
+          - "Science"
+        required: false
+      - label: "Rating"
+        name: "rating"
+        widget: "select"
+        options:
+          - { label: "★☆☆☆☆ (1/5)", value: "1" }
+          - { label: "★★☆☆☆ (2/5)", value: "2" }
+          - { label: "★★★☆☆ (3/5)", value: "3" }
+          - { label: "★★★★☆ (4/5)", value: "4" }
+          - { label: "★★★★★ (5/5)", value: "5" }
+        required: false
+      - label: "Key Takeaways"
+        name: "key_takeaways"
+        widget: "list"
+        field:
+          label: "Takeaway"
+          name: "takeaway"
+          widget: "string"
+      - label: "Favorite Quotes"
+        name: "favorite_quotes"
+        widget: "list"
+        required: false
+        field:
+          label: "Quote"
+          name: "quote"
+          widget: "text"
+      - label: "Notes"
+        name: "body"
+        widget: "markdown"
+
+  # ------------------------------
+  # PROJECTS - ENHANCED
+  # ------------------------------
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} - {{status}}"
+    view_groups:
+      - label: "Status"
+        field: "status"
+      - label: "Type"
+        field: "project_type"
+    fields:
+      - label: "Project Name"
+        name: "title"
+        widget: "string"
+      - label: "Date Started"
+        name: "date"
+        widget: "datetime"
+        default: ""
+      - label: "Date Completed"
+        name: "completion_date"
+        widget: "datetime"
+        required: false
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options:
+          - { label: "Active", value: "Active" }
+          - { label: "Completed", value: "Completed" }
+          - { label: "On Hold", value: "On Hold" }
+          - { label: "Planned", value: "Planned" }
+          - { label: "Cancelled", value: "Cancelled" }
+        default: "Planned"
+      - label: "Priority"
+        name: "priority"
+        widget: "select"
+        options:
+          - "High"
+          - "Medium"  
+          - "Low"
+        default: "Medium"
+        required: false
+      - label: "Project Type"
+        name: "project_type"
+        widget: "select"
+        options:
+          - "Web Development"
+          - "Mobile App"
+          - "Research"
+          - "Writing"
+          - "Design"
+          - "Data Analysis"
+          - "Other"
+      - label: "Technologies Used"
+        name: "technologies"
+        widget: "list"
+        required: false
+      - label: "Collaborators"
+        name: "collaborators"
+        widget: "list"
+        required: false
+      - label: "Project URL"
+        name: "project_url"
+        widget: "string"
+        required: false
+      - label: "GitHub Repository"
+        name: "github_url"
+        widget: "string"
+        required: false
+      - label: "Project Image"
+        name: "project_image"
+        widget: "image"
+        required: false
+      - label: "Progress (%)"
+        name: "progress"
+        widget: "number"
+        required: false
+        min: 0
+        max: 100
+        step: 5
+      - label: "Description"
+        name: "body"
+        widget: "markdown"
 
   # ------------------------------
   # QUOTES - ENHANCED
@@ -876,10 +770,6 @@ collections:
         name: "tags"
         widget: "list"
         required: false
-        field:
-          label: "Tag"
-          name: "tag"
-          widget: "string"
       - label: "Personal Note"
         name: "note"
         widget: "text"
@@ -929,22 +819,18 @@ collections:
             name: "linkedin"
             widget: "string"
             default: "https://www.linkedin.com/in/leonkaushik"
-            pattern: ['^https://.*linkedin\.com.*$', 'Must be a valid LinkedIn URL']
           - label: "Twitter/X URL"
             name: "twitter"
             widget: "string"
             default: "https://x.com/iobyleon"
-            pattern: ['^https://.*\.com.*$', 'Must be a valid social media URL']
           - label: "GitHub URL"
             name: "github"
             widget: "string"
             required: false
-            pattern: ['^https://github\.com.*$', 'Must be a valid GitHub URL']
           - label: "Email"
             name: "email"
             widget: "string"
             required: false
-            pattern: ['^[^@\s]+@[^@\s]+\.[^@\s]+$', 'Must be a valid email address']
 
       - label: "Quiz Settings"
         name: "quiz_settings"
@@ -993,10 +879,6 @@ collections:
           - label: "Site Keywords"
             name: "keywords"
             widget: "list"
-            field:
-              label: "Keyword"
-              name: "keyword"
-              widget: "string"
           - label: "Author"
             name: "author"
             widget: "string"
@@ -1014,7 +896,3 @@ collections:
             name: "lotus_image"
             widget: "image"
             hint: "Upload the main lotus image for the homepage"
-            media_library:
-              config:
-                multiple: false
-                max_file_size: 5242880
