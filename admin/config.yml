@@ -102,6 +102,12 @@ collections:
       - label: "Title"
         name: "title"
         widget: "string"
+        hint: "Enter title in Title Case (like 'The Shape of the Essay Field')"
+      - label: "Display Title"
+        name: "display_title"
+        widget: "string"
+        required: false
+        hint: "Optional: Custom styling for the essay page (like 'THE SHAPE OF THE ESSAY FIELD'). Leave blank to auto-generate from title."
       - label: "Custom URL"
         name: "custom_url"
         widget: "string"
