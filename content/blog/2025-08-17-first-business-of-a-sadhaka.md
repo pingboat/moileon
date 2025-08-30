@@ -4,7 +4,7 @@ display_title: FIRST BUSINESS OF A SADHAKA
 custom_url: moileon.in/blog/sadhaka
 status: published
 date: 2025-07-25
-author: Integral
+author: ""
 excerpt: >-
   The first business of the Sadhaka is to see whether he has the perfect
   equality, how far he has gone in this direction, or else where is the flaw,
