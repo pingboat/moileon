@@ -125,8 +125,9 @@ collections:
         name: "date"
         widget: "datetime"
         date_format: "YYYY-MM-DD"
-        time_format: "HH:mm"
-        format: "YYYY-MM-DD HH:mm:ss"
+        time_format: false
+        format: "YYYY-MM-DD"
+        hint: "Publication date - will display as 'Month Year' format (e.g., 'June 2025')"
       - label: "Author"
         name: "author"
         widget: "string"
