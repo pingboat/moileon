@@ -132,6 +132,7 @@ collections:
         name: "author"
         widget: "string"
         default: "Leon Kaushik"
+        required: false
       - label: "Featured Image"
         name: "featured_image"
         widget: "image"
