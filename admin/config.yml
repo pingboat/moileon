@@ -132,7 +132,6 @@ collections:
         name: "author"
         widget: "string"
         default: "Leon Kaushik"
-        required: false
       - label: "Featured Image"
         name: "featured_image"
         widget: "image"
@@ -182,6 +181,9 @@ collections:
         name: "body"
         widget: "markdown"
         hint: "Write your blog post content here. Use the toolbar for formatting."
+        modes: ["rich_text"]
+        minimal: false
+        sanitize_preview: true
 
   # ------------------------------
   # LENSCAPE POSTS
