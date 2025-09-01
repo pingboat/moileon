@@ -1,5 +1,8 @@
 ---
-title: SANDHYA VANDANAM
-date: ""
+title: Sandhya Vandanam
+display_title: SANDHYA VANDANAM
+status: published
+date: 2025-07-18
+excerpt: It's the basic daily practice.
 ---
 It's the basic daily practice.
