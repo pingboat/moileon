@@ -542,7 +542,8 @@
                 .replace(/\n\n/gim, '</p><p>')
                 .replace(/\n/gim, '<br>');
             
-            document.getElementById('post-title').textContent = post.title;
+            const displayTitle = post.display_title || post.title.toUpperCase();
+                 document.getElementById('post-title').textContent = displayTitle;
             
             let metaHTML = '';
             if (post.date) {
