@@ -546,8 +546,12 @@
             
             let metaHTML = '';
             if (post.date) {
-                metaHTML += new Date(post.date).toLocaleDateString();
+                metaHTML += new Date(post.date).toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long'
+                });
             }
+            
             if (post.author) {
                 metaHTML += post.date ? ` • By ${post.author}` : `By ${post.author}`;
             }
