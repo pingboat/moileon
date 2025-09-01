@@ -35,7 +35,9 @@ Once free, we approach everything entirely with equality. Like the Divine turns 
 
 Calm and powerful spontaneous possession of the universal energy and capable of determining easily and happily all its reactions in the Oneness and the Ananda. In every situation, find what is the maximum growth and progress possible out of this. Think in terms of forward movement.               
 
-                                                                                                                                                                                                                       Equality is the foundation on which you can embrace everything that life has to offer, and compel it to become a perfect form of action of the self and spirit. Equality is the first secret of the soul’s mastery of existence. Our souls are meant to master the universe and not to become vulnerable victims of our circumstances. If we really want to become the master of the whole play of the cosmos, to become the master of all challenges, including all challenges that are unseen and unimaginable in the cosmic video game that we are in, equality is the first secret of the soul’s mastery of existence. It’s the first secret which opens the doors to other secrets. Without mastering equality, the other doors will forever remain hidden. When we have it in perfection, we are admitted to the very ground of the divine spiritual nature. It is the gateway. 
+                                                                                                                                                                                                                  
+
+Equality is the foundation on which you can embrace everything that life has to offer, and compel it to become a perfect form of action of the self and spirit. Equality is the first secret of the soul’s mastery of existence. Our souls are meant to master the universe and not to become vulnerable victims of our circumstances. If we really want to become the master of the whole play of the cosmos, to become the master of all challenges, including all challenges that are unseen and unimaginable in the cosmic video game that we are in, equality is the first secret of the soul’s mastery of existence. It’s the first secret which opens the doors to other secrets. Without mastering equality, the other doors will forever remain hidden. When we have it in perfection, we are admitted to the very ground of the divine spiritual nature. It is the gateway. 
 
 In essence, equality is to remain unmoved within centrally, irrespective of the external (or even internal) circumstances.                                                                                                                                  
 
@@ -59,8 +61,6 @@ There must be a constant insistence on one main idea. That main idea is to self 
 
 Knowing and accepting that whatever is the circumstance, there is a greater wisdom, and all the Sadhaka can do is to do what is needed to the best of his capacity. The full surrender of one’s personal being to the divine and through that attaining to the all possessing Ananda.       
 
-
-
 **1.1.1 Passive or Negative Equality**                                                                                                                                                                                                                                  
 
 Passive equality is of three types based on differences in approach: Titiksha (way of will), Udasinata (way of knowledge), Nati (way of devotion). All three approaches lead to the same goal.     
@@ -76,8 +76,6 @@ Indifference to dualities of life based on the fact that what the outer mentalit
 **Nati**
 
 An equal submission to the will of the Divine.
-
-
 
 **1.1.2 Active or Positive Equality**                                              
 
@@ -99,19 +97,13 @@ Pleasure of the mind in all Rasa. Enjoyment of the rasa for the nourishment of t
 
 The Divine pleasure in existence, which is superior to the mental pleasure. The joy of unity. The ananda of unity in and with everything. This ananda is a delight that is undivided, not bound by any duality. The ananda of consciousness engaging with everything with perfect equality. 
 
-
-
 **1.2 Shanti (Peace)**                                                                                                                        
 
 When Samata (Equality) mentioned above is perfected, the being reigns in Shanti (Peace). This may be a vast passive calm founded on Passive equality or a vast joyous calm based on Active equality. The former is an intermediate stage which must culminate in the latter. A firm peace and absence of all disturbance and trouble. 
 
-
-
 **1.3 Sukham (Happiness)**                                                                                                              
 
 A positive inner spiritual happiness and spiritual ease of the natural being which nothing can lessen. Complete release from grief and depression. A state of positive inner happiness and spiritual ease. This comes from the fulfillment of the first two parts of this quartet: Equality and Peace.
-
-
 
 **1.4 Hasyam (Atmaprasada)**                                                                                                        
 
