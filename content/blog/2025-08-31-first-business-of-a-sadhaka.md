@@ -59,6 +59,8 @@ There must be a constant insistence on one main idea. That main idea is to self 
 
 Knowing and accepting that whatever is the circumstance, there is a greater wisdom, and all the Sadhaka can do is to do what is needed to the best of his capacity. The full surrender of one’s personal being to the divine and through that attaining to the all possessing Ananda.       
 
+
+
 **1.1.1 Passive or Negative Equality**                                                                                                                                                                                                                                  
 
 Passive equality is of three types based on differences in approach: Titiksha (way of will), Udasinata (way of knowledge), Nati (way of devotion). All three approaches lead to the same goal.     
@@ -74,6 +76,8 @@ Indifference to dualities of life based on the fact that what the outer mentalit
 **Nati**
 
 An equal submission to the will of the Divine.
+
+
 
 **1.1.2 Active or Positive Equality**                                              
 
@@ -95,13 +99,19 @@ Pleasure of the mind in all Rasa. Enjoyment of the rasa for the nourishment of t
 
 The Divine pleasure in existence, which is superior to the mental pleasure. The joy of unity. The ananda of unity in and with everything. This ananda is a delight that is undivided, not bound by any duality. The ananda of consciousness engaging with everything with perfect equality. 
 
+
+
 **1.2 Shanti (Peace)**                                                                                                                        
 
 When Samata (Equality) mentioned above is perfected, the being reigns in Shanti (Peace). This may be a vast passive calm founded on Passive equality or a vast joyous calm based on Active equality. The former is an intermediate stage which must culminate in the latter. A firm peace and absence of all disturbance and trouble. 
 
+
+
 **1.3 Sukham (Happiness)**                                                                                                              
 
 A positive inner spiritual happiness and spiritual ease of the natural being which nothing can lessen. Complete release from grief and depression. A state of positive inner happiness and spiritual ease. This comes from the fulfillment of the first two parts of this quartet: Equality and Peace.
+
+
 
 **1.4 Hasyam (Atmaprasada)**                                                                                                        
 
