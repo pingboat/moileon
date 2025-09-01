@@ -59,27 +59,39 @@ There must be a constant insistence on one main idea. That main idea is to self 
 
 Knowing and accepting that whatever is the circumstance, there is a greater wisdom, and all the Sadhaka can do is to do what is needed to the best of his capacity. The full surrender of one’s personal being to the divine and through that attaining to the all possessing Ananda.       
 
-**1.1.1 Passive or Negative Equality**                                                                                                                                                                                                                                     Passive equality is of three types based on differences in approach: Titiksha (way of will), Udasinata (way of knowledge), Nati (way of devotion). All three approaches lead to the same goal.     
+**1.1.1 Passive or Negative Equality**                                                                                                                                                                                                                                  Passive equality is of three types based on differences in approach: Titiksha (way of will), Udasinata (way of knowledge), Nati (way of devotion). All three approaches lead to the same goal.     
 
-**Tititksha**                                                                               Ability to bear all sensations without being overpowered by unpleasant ones or overjoyed by pleasant sensations.
+**Tititksha**                                                                               
 
-**Udasinata**                                                                             Indifference to dualities of life based on the fact that what the outer mentality sees are illusions of life. This indifference may be of four kinds: Tamasic (inertia), Rajasic (kinetic), Sattvic (pure), Trigunatita (that which has conquered the three Gunas or qualities).
+Ability to bear all sensations without being overpowered by unpleasant ones or overjoyed by pleasant sensations.
+
+**Udasinata**                                                                             
+
+Indifference to dualities of life based on the fact that what the outer mentality sees are illusions of life. This indifference may be of four kinds: Tamasic (inertia), Rajasic (kinetic), Sattvic (pure), Trigunatita (that which has conquered the three Gunas or qualities).
 
 **Nati**
 
 An equal submission to the will of the Divine.
 
-**1.1.2 Active or Positive Equality**                                              While Passive equality requires the cultivation of detachment of our Self from the outer world, Active equality implies a return and possession of the world in the power of the calm and equal Spirit. Once we acquire the full consciousness of the Self, we can act on the world with calm, joy, knowledge and seeing will of the Spirit. Active equality, like passive equality, has three approaches.
+**1.1.2 Active or Positive Equality**                                              
 
-**Rasa**                                                                                     Joyous calm based on Nati.
+While Passive equality requires the cultivation of detachment of our Self from the outer world, Active equality implies a return and possession of the world in the power of the calm and equal Spirit. Once we acquire the full consciousness of the Self, we can act on the world with calm, joy, knowledge and seeing will of the Spirit. Active equality, like passive equality, has three approaches.
+
+**Rasa**                                                                                     
+
+Joyous calm based on Nati.
 
 You can catch the rasa, the underlying delight, the deeper truth. The deeper truth is that we are playing a video game in a way. When a child plays a video game, it dies, it kills, it shoots, gets shot. But they look at that life and death as just another event to move to the next stage or to restart the game. 
 
 One can access the rasa, the underlying delight whether in a positive or a negative situation only if one turns to the situation with equality. This is perceiving the rasa.                   
 
-**Priti**                                                                                      Pleasure of the mind in all Rasa. Enjoyment of the rasa for the nourishment of the soul’s growth. This is Bhoga of the rasa.         
+**Priti**                                                                                      
 
-**Ananda**                                                                                The Divine pleasure in existence, which is superior to the mental pleasure. The joy of unity. The ananda of unity in and with everything. This ananda is a delight that is undivided, not bound by any duality. The ananda of consciousness engaging with everything with perfect equality. 
+Pleasure of the mind in all Rasa. Enjoyment of the rasa for the nourishment of the soul’s growth. This is Bhoga of the rasa.         
+
+**Ananda**                                                                                
+
+The Divine pleasure in existence, which is superior to the mental pleasure. The joy of unity. The ananda of unity in and with everything. This ananda is a delight that is undivided, not bound by any duality. The ananda of consciousness engaging with everything with perfect equality. 
 
 **1.2 Shanti (Peace)**                                                                                                                        When Samata (Equality) mentioned above is perfected, the being reigns in Shanti (Peace). This may be a vast passive calm founded on Passive equality or a vast joyous calm based on Active equality. The former is an intermediate stage which must culminate in the latter. A firm peace and absence of all disturbance and trouble. 
 
