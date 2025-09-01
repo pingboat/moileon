@@ -65,13 +65,17 @@ Knowing and accepting that whatever is the circumstance, there is a greater wisd
 
 Ability to bear all sensations without being overpowered by unpleasant ones or overjoyed by pleasant sensations.
 
-**Udasinata**                                                                             Indifference to dualities of life based on the fact that what the outer mentality sees are illusions of life. This indifference may be of four kinds: Tamasic (inertia), Rajasic (kinetic), Sattvic (pure), Trigunatita (that which has conquered the three Gunas or qualities).
+**Udasinata**                                                                             
+
+Indifference to dualities of life based on the fact that what the outer mentality sees are illusions of life. This indifference may be of four kinds: Tamasic (inertia), Rajasic (kinetic), Sattvic (pure), Trigunatita (that which has conquered the three Gunas or qualities).
 
 **Nati**
 
 An equal submission to the will of the Divine.
 
-**1.1.2 Active or Positive Equality**                                              While Passive equality requires the cultivation of detachment of our Self from the outer world, Active equality implies a return and possession of the world in the power of the calm and equal Spirit. Once we acquire the full consciousness of the Self, we can act on the world with calm, joy, knowledge and seeing will of the Spirit. Active equality, like passive equality, has three approaches.
+**1.1.2 Active or Positive Equality**                                              
+
+While Passive equality requires the cultivation of detachment of our Self from the outer world, Active equality implies a return and possession of the world in the power of the calm and equal Spirit. Once we acquire the full consciousness of the Self, we can act on the world with calm, joy, knowledge and seeing will of the Spirit. Active equality, like passive equality, has three approaches.
 
 **Rasa**                                                                                     
 
