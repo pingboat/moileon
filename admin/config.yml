@@ -111,7 +111,7 @@ collections:
       - label: "Custom URL"
         name: "custom_url"
         widget: "string"
-        required: false
+        required: true
         hint: "Optional: Custom URL path (e.g., 'my-special-post'). Leave blank to auto-generate from title."
       - label: "Status"
         name: "status"
@@ -131,7 +131,7 @@ collections:
       - label: "Author"
         name: "author"
         widget: "string"
-        default: "Leon Kaushik"
+        required: false
       - label: "Featured Image"
         name: "featured_image"
         widget: "image"
