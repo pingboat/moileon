@@ -368,6 +368,35 @@
         const CONTENT_BRANCH = (window.location.hostname.startsWith('dev--') || window.location.hostname.includes('localhost')) ? 'dev' : 'main';
 
         /* ==================================================
+           URL HANDLING FUNCTIONS (NEW)
+           ================================================== */
+        function updateURL(customUrl) {
+            const newUrl = customUrl ? `/blog/${customUrl}` : '/blog/';
+            window.history.pushState({}, '', newUrl);
+            
+            // Update GA4 with new page view
+            gtag('config', 'G-EKB8RXSXSG', {
+                page_title: customUrl ? `Blog Post - moileon` : 'Blog - moileon',
+                page_location: window.location.href
+            });
+        }
+
+        function getCurrentPostSlug() {
+            const path = window.location.pathname;
+            const match = path.match(/\/blog\/(.+)$/);
+            return match ? match[1] : null;
+        }
+
+        function handleURLChange() {
+            const slug = getCurrentPostSlug();
+            if (slug) {
+                loadFullBlogPost(slug);
+            } else {
+                showBlogList();
+            }
+        }
+
+        /* ==================================================
            BLOG LOADING FUNCTIONS (Enhanced with Analytics)
            ================================================== */
         async function loadBlogPosts() {
@@ -405,11 +434,16 @@
                         let listHTML = '<div class="blog-list">';
                         
                         blogPosts.forEach(post => {
-                            const url = post.custom_url || createSlugFromTitle(post.title);
+                            // Validate that custom_url exists (mandatory)
+                            if (!post.custom_url) {
+                                console.warn(`Blog post "${post.title}" is missing mandatory custom_url`);
+                                return;
+                            }
+                            
                             listHTML += `
                                 <div>
                                     <span style="margin-right: 8px;">•</span>
-                                    <a href="#" onclick="loadFullBlogPost('${url}'); return false;">
+                                    <a href="/blog/${post.custom_url}" onclick="loadFullBlogPost('${post.custom_url}'); return false;">
                                        ${post.title}
                                     </a>
                                 </div>
@@ -421,6 +455,12 @@
                         
                         // Add click tracking to blog post links
                         setupBlogPostClickTracking();
+                        
+                        // Check if we need to load a specific post based on URL
+                        const currentSlug = getCurrentPostSlug();
+                        if (currentSlug) {
+                            loadFullBlogPost(currentSlug);
+                        }
                         
                         // Track successful blog loading
                         const loadTime = Math.round(performance.now() - loadStartTime);
@@ -483,7 +523,7 @@
                 const text = await response.text();
                 const parsedContent = parseMarkdownFrontMatter(text);
                 
-                if (parsedContent.title) {
+                if (parsedContent.title && parsedContent.custom_url) {
                     return {
                         title: parsedContent.title,
                         date: parsedContent.date,
@@ -492,6 +532,8 @@
                         author: parsedContent.author,
                         excerpt: parsedContent.excerpt
                     };
+                } else if (parsedContent.title && !parsedContent.custom_url) {
+                    console.warn(`Blog post "${parsedContent.title}" is missing mandatory custom_url field`);
                 }
                 return null;
             } catch (error) {
@@ -500,27 +542,15 @@
             }
         }
 
-        // Create URL slug from title
-        function createSlugFromTitle(title) {
-            return title
-                .toLowerCase()
-                .replace(/[^\w\s-]/g, '') // Remove special characters
-                .replace(/\s+/g, '-')     // Replace spaces with hyphens
-                .replace(/--+/g, '-')     // Replace multiple hyphens with single hyphen
-                .trim();
-        }
-
         // Load full blog post when clicked (Enhanced with Analytics)
         async function loadFullBlogPost(slug) {
             try {
-                // Find the post with matching slug
-                const post = blogPosts.find(p => {
-                    const postSlug = p.custom_url || createSlugFromTitle(p.title);
-                    return postSlug === slug;
-                });
+                // Find the post with matching custom_url
+                const post = blogPosts.find(p => p.custom_url === slug);
                 
                 if (post) {
                     displayFullBlogPost(post);
+                    updateURL(post.custom_url);
                     
                     // Start tracking reading time
                     currentPostStartTime = Date.now();
@@ -532,12 +562,15 @@
                         event_label: post.title,
                         value: 1,
                         custom_parameter_author: post.author || 'Unknown',
-                        custom_parameter_publish_date: post.date || 'Unknown'
+                        custom_parameter_publish_date: post.date || 'Unknown',
+                        custom_parameter_custom_url: post.custom_url
                     });
                     
                 } else {
                     console.error('Blog post not found:', slug);
                     trackBlogEvent('blog_post_not_found', slug);
+                    // Redirect to blog list if post not found
+                    showBlogList();
                 }
                 
             } catch (error) {
@@ -558,7 +591,7 @@
                 .replace(/\n/gim, '<br>');
             
             const displayTitle = post.display_title || post.title.toUpperCase();
-                 document.getElementById('post-title').textContent = displayTitle;
+            document.getElementById('post-title').textContent = displayTitle;
             
             let metaHTML = '';
             if (post.date) {
@@ -579,9 +612,11 @@
             document.getElementById('blog-list-view').style.display = 'none';
             document.getElementById('blog-post-view').style.display = 'block';
             
-            // Reset scroll position
+            // Reset scroll position and tracking
             window.scrollTo(0, 0);
             maxScroll = 0;
+            window.scroll75Tracked = false;
+            window.scroll100Tracked = false;
         }
 
         // Show blog list (go back from individual post) - Enhanced with Analytics
@@ -625,6 +660,9 @@
             
             document.getElementById('blog-post-view').style.display = 'none';
             document.getElementById('blog-list-view').style.display = 'block';
+            
+            // Update URL to blog root
+            updateURL('');
             
             // Reset scroll tracking
             maxScroll = 0;
@@ -691,6 +729,11 @@
                 event_category: 'Blog'
             });
             
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', function(e) {
+                handleURLChange();
+            });
+            
             // Track scroll depth for blog posts
             window.addEventListener('scroll', function() {
                 const scrollPercent = Math.round(
@@ -749,6 +792,4 @@
             // Load blog posts
             loadBlogPosts();
         });
-    </script>
-</body>
-</html>
+</script>
