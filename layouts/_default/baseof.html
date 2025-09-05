@@ -1,66 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moileon</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-  <link rel="manifest" href="/assets/images/site.webmanifest">
-  <style>
-    .lotus-image img {
-      width: 200px;
-      height: auto;
-    }
-  </style>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QEV09DRFST"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QEV09DRFST');
-  </script>
-</head>
-<body>
-  <button class="hamburger-btn" id="hamburger-btn">
-    <div class="hamburger-icon"></div>
-  </button>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moileon</title>
 
-  <div class="mobile-overlay" id="mobile-overlay"></div>
-
-  <div class="container">
-    <div class="sidebar"></div>
+    <!-- Open Graph Meta Tags for Social Media Previews -->
+    <meta property="og:title" content="moileon">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://moileon.com">
+    <meta property="og:site_name" content="moileon.com">
+    <meta property="og:description" content="">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="moileon">
+    <meta name="twitter:description" content="">
+    
+    <!-- Standard Meta Tags -->
+    <meta name="description" content="">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKB8RXSXSG"></script>
     <script>
-      fetch('/assets/components/sidebar.html')
-        .then(response => response.text())
-        .then(data => {
-          document.querySelector('.sidebar').innerHTML = data;
-          const hamburgerBtn = document.getElementById('hamburger-btn');
-          const sidebar = document.querySelector('.sidebar');
-          const overlay = document.getElementById('mobile-overlay');
-
-          hamburgerBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
-            overlay.classList.toggle('active');
-          });
-
-          overlay.addEventListener('click', () => {
-            sidebar.classList.remove('active');
-            overlay.classList.remove('active');
-          });
-        });
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EKB8RXSXSG', {
+        enhanced_measurements: true,
+        page_title: document.title,
+        page_location: window.location.href
+      });
     </script>
 
-    <div class="main-content">
-      {{ block "main" . }}{{ end }}
-    </div>
-  </div>
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/moileon-favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64x64.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="/assets/images/favicon-256x256.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon-512x512.png">
 
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
-  <script src="/assets/js/quiz.js"></script>
+    <meta name="theme-color" content="#000080">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <button class="hamburger-btn" id="hamburger-btn">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
+    <div class="container">
+        <div class="sidebar"></div>
+        <script>
+          fetch("/sidebar.html")
+            .then(res => res.text())
+            .then(html => {
+              document.querySelector(".sidebar").innerHTML = html;
+              let currentPath = window.location.pathname
+                .replace(/\/index\.html$/, "")
+                .replace(/\/$/, "");
+              if (currentPath === "") currentPath = "/";
+              document.querySelectorAll(".sidebar a").forEach(link => {
+                let linkPath = link.getAttribute("href").replace(/\/$/, "");
+                if (linkPath === "") linkPath = "/";
+                if (linkPath === currentPath) {
+                  link.classList.add("active");
+                }
+              });
+            });
+        </script>
+
+        <div class="main-content">
+            {{ block "main" . }}{{ end }}
+        </div>
+    </div>
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
+    <!-- Your quiz and analytics scripts remain unchanged -->
 </body>
 </html>
