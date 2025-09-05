@@ -1,55 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ .Site.LanguageCode | default "en" }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>moileon</title>
-
-    <!-- Open Graph Meta Tags for Social Media Previews -->
-    <meta property="og:title" content="moileon">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://moileon.com">
-    <meta property="og:site_name" content="moileon.com">
-    <meta property="og:description" content="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
     
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="moileon">
-    <meta name="twitter:description" content="">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
     
-    <!-- Standard Meta Tags -->
-    <meta name="description" content="">
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKB8RXSXSG"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-EKB8RXSXSG', {
-        enhanced_measurements: true,
-        page_title: document.title,
-        page_location: window.location.href
-      });
-    </script>
-
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="/assets/images/moileon-favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48x48.png">
-    <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64x64.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192x192.png">
-    <link rel="icon" type="image/png" sizes="256x256" href="/assets/images/favicon-256x256.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon-512x512.png">
-
-    <meta name="theme-color" content="#000080">
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/css/main.css">
+    {{ if .Site.Params.favicon }}
+    <link rel="icon" type="image/x-icon" href="{{ .Site.Params.favicon | relURL }}">
+    {{ end }}
 </head>
 <body>
-    <button class="hamburger-btn" id="hamburger-btn">
+    <!-- Mobile hamburger button -->
+    <button class="hamburger-btn" id="hamburgerBtn">
         <div class="hamburger-icon">
             <span></span>
             <span></span>
@@ -57,39 +22,65 @@
         </div>
     </button>
 
-    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <!-- Mobile overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
 
     <div class="container">
-        <div class="sidebar"></div>
-        <script>
-          fetch("/sidebar.html")
-            .then(res => res.text())
-            .then(html => {
-              document.querySelector(".sidebar").innerHTML = html;
-              let currentPath = window.location.pathname
-                .replace(/\/index\.html$/, "")
-                .replace(/\/$/, "");
-              if (currentPath === "") currentPath = "/";
-              document.querySelectorAll(".sidebar a").forEach(link => {
-                let linkPath = link.getAttribute("href").replace(/\/$/, "");
-                if (linkPath === "") linkPath = "/";
-                if (linkPath === currentPath) {
-                  link.classList.add("active");
-                }
-              });
-            });
-        </script>
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <a href="{{ "/" | relURL }}" class="nav-button {{ if .IsHome }}active{{ end }}">Home</a>
+            <a href="{{ "/blog/" | relURL }}" class="nav-button {{ if eq .Section "blog" }}active{{ end }}">Blog</a>
+            <a href="{{ "/booknotes/" | relURL }}" class="nav-button {{ if eq .Section "booknotes" }}active{{ end }}">Book Notes</a>
+            <a href="{{ "/projects/" | relURL }}" class="nav-button {{ if eq .Section "projects" }}active{{ end }}">Projects</a>
+            <a href="{{ "/digital/" | relURL }}" class="nav-button {{ if eq .Section "digital" }}active{{ end }}">Digital</a>
+            <a href="{{ "/podcast/" | relURL }}" class="nav-button {{ if eq .Section "podcast" }}active{{ end }}">Podcast</a>
+            <a href="{{ "/lenscape/" | relURL }}" class="nav-button {{ if eq .Section "lenscape" }}active{{ end }}">Lenscape</a>
+        </nav>
 
-        <div class="main-content">
+        <!-- Main Content -->
+        <main class="main-content">
             {{ block "main" . }}{{ end }}
-        </div>
+        </main>
     </div>
 
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <!-- JavaScript -->
+    <script>
+        // Mobile navigation toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('mobileOverlay');
 
-    <!-- Your quiz and analytics scripts remain unchanged -->
-    <script src="/js/sidebar.js"></script>
-<script src="/js/quiz.js"></script>
+            function toggleSidebar() {
+                hamburgerBtn.classList.toggle('active');
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+            }
+
+            hamburgerBtn.addEventListener('click', toggleSidebar);
+            overlay.addEventListener('click', toggleSidebar);
+
+            // Close sidebar on link click (mobile)
+            const navLinks = sidebar.querySelectorAll('.nav-button');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        toggleSidebar();
+                    }
+                });
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    hamburgerBtn.classList.remove('active');
+                    sidebar.classList.remove('active');
+                    overlay.classList.remove('active');
+                }
+            });
+        });
+    </script>
+    <script src="{{ "js/quiz.js" | relURL }}"></script>
+    {{ block "scripts" . }}{{ end }}
 </body>
 </html>
