@@ -1,26 +1,9 @@
 /* ==================================================
-   QUIZ LOGIC
+   QUIZ LOGIC (using external JSON file)
    ================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
-    const questions = [
-        {
-            question: "Who was the first Prime Minister of India?",
-            answer: "Jawaharlal Nehru",
-            explanation: "Jawaharlal Nehru was the first Prime Minister of independent India (1947–1964)."
-        },
-        {
-            question: "What is the capital of France?",
-            answer: "Paris",
-            explanation: "Paris has been the capital of France since the 10th century."
-        },
-        {
-            question: "Which planet is known as the Red Planet?",
-            answer: "Mars",
-            explanation: "Mars is called the Red Planet due to its reddish appearance caused by iron oxide."
-        }
-    ];
-
+    let questions = [];
     let currentQuestionIndex = 0;
     let score = 0;
 
@@ -30,6 +13,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const feedbackElement = document.getElementById("feedback");
     const nextButton = document.getElementById("next");
     const scoreElement = document.getElementById("score");
+
+    // Load questions from JSON file
+    fetch("/data/questions.json")
+        .then(response => response.json())
+        .then(data => {
+            questions = data;
+            showQuestion();
+        })
+        .catch(error => {
+            console.error("Error loading quiz questions:", error);
+            questionElement.textContent = "⚠️ Failed to load quiz questions.";
+        });
 
     function showQuestion() {
         feedbackElement.innerHTML = "";
@@ -66,7 +61,4 @@ document.addEventListener("DOMContentLoaded", function () {
             nextButton.disabled = true;
         }
     });
-
-    // Start quiz
-    showQuestion();
 });
