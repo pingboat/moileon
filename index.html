@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>moileon</title>
 
-    <!-- Google Analytics 4 (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKB8RXSXSG"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -21,24 +20,19 @@
       });
     </script>
 
-    <!-- Standard favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/images/moileon-favicon.ico">
 
-    <!-- PNG favicons for different sizes -->
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48x48.png">
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64x64.png">
 
-    <!-- Apple Touch Icon (iOS devices) -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180x180.png">
 
-    <!-- Android/PWA icons -->
     <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="256x256" href="/assets/images/favicon-256x256.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon-512x512.png">
 
-    <!-- Web App Manifest (optional - for PWA features) -->
     <meta name="theme-color" content="#000080">
     
     <style>
@@ -443,7 +437,6 @@
     </style>
 </head>
 <body>
-    <!-- Mobile hamburger button -->
     <button class="hamburger-btn" id="hamburger-btn">
         <div class="hamburger-icon">
             <span></span>
@@ -452,14 +445,10 @@
         </div>
     </button>
 
-    <!-- Mobile overlay -->
     <div class="mobile-overlay" id="mobile-overlay"></div>
 
     <div class="container">
         
-        <!-- ==================================================
-             SIDEBAR NAVIGATION
-             ================================================== -->
         <div class="sidebar"></div>
 <script>
   fetch("/sidebar.html")
@@ -520,9 +509,6 @@
     });
 </script>
 
-        <!-- ==================================================
-             MAIN CONTENT AREA - HOMEPAGE ONLY
-             ================================================== -->
         <div class="main-content">
             <div class="logo-section">
                 <div class="logo-text">ALL LIFE IS YOGA.</div>
@@ -548,12 +534,7 @@
         </div>
     </div>
 
-    <!-- ==================================================
-         EXTERNAL SCRIPTS
-         ================================================== -->
-    <!-- Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <!-- YAML parser for robust front matter support -->
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 
     <script>
@@ -603,6 +584,11 @@
                     document.body.style.overflow = '';
                 }
             });
+
+            // Check if the quiz section exists on this page before running the quiz script
+            if (document.querySelector('.quiz-section')) {
+                loadQuizData(); // This line was added
+            }
         });
 
         /* ==================================================
@@ -925,3 +911,60 @@
                     event_label: 'User Started Quiz',
                     value: 1
                 });
+            }
+        }
+
+        // Helper function for shuffling an array (Fisher-Yates)
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Helper function to parse markdown with YAML front matter
+        function parseMarkdownFrontMatter(text) {
+            const frontMatterRegex = /^---\s*([\s\S]*?)\s*---([\s\S]*)/;
+            const match = text.match(frontMatterRegex);
+            if (!match) {
+                return { content: text };
+            }
+            
+            const yamlContent = match[1];
+            const markdownContent = match[2].trim();
+            const data = jsyaml.load(yamlContent);
+            return { ...data, content: markdownContent };
+        }
+
+        /* ==================================================
+           EVENT LISTENERS FOR QUIZ BUTTONS AND INPUT
+           ================================================== */
+        document.getElementById('submit-btn').addEventListener('click', () => {
+            submitAnswer();
+            trackQuizInteraction();
+        });
+        
+        document.getElementById('show-answer-btn').addEventListener('click', () => {
+            showAnswer();
+            trackQuizInteraction();
+        });
+        
+        document.getElementById('next-question-btn').addEventListener('click', nextQuestion);
+        
+        document.getElementById('answer-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                submitAnswer();
+            }
+        });
+
+        // Add event listeners for analytics on user interaction
+        document.getElementById('answer-input').addEventListener('input', trackQuizInteraction);
+
+        // Periodically check for engagement
+        setInterval(trackEngagement, 15000);
+
+    </script>
+</body>
+</html>
+
