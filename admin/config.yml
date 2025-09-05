@@ -20,6 +20,7 @@ site_url: https://moileon.in
 editor:
   preview: true
   preview_styles: 
+    - /css/main.css
     - /admin/preview.css
 
 # ==================================================
