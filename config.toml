@@ -1,0 +1,19 @@
+baseURL = "https://moileon.in/"
+title = "Moileon"
+languageCode = "en"
+paginate = 20
+enableRobotsTXT = true
+
+[permalinks]
+  blog     = "/blog/:slug/"
+  podcast  = "/podcast/:slug/"
+  digital  = "/digital/:slug/"
+  lenscape = "/lenscape/:slug/"
+
+[outputs]
+  home    = ["HTML","RSS"]
+  section = ["HTML","RSS"]
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
