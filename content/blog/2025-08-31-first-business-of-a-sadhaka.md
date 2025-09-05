@@ -35,11 +35,9 @@ Once free, we approach everything entirely with equality. Like the Divine turns 
 
 Calm and powerful spontaneous possession of the universal energy and capable of determining easily and happily all its reactions in the Oneness and the Ananda. In every situation, find what is the maximum growth and progress possible out of this. Think in terms of forward movement.               
 
-                                                                                                                                                                                                                  
-
 Equality is the foundation on which you can embrace everything that life has to offer, and compel it to become a perfect form of action of the self and spirit. Equality is the first secret of the soul’s mastery of existence. Our souls are meant to master the universe and not to become vulnerable victims of our circumstances. If we really want to become the master of the whole play of the cosmos, to become the master of all challenges, including all challenges that are unseen and unimaginable in the cosmic video game that we are in, equality is the first secret of the soul’s mastery of existence. It’s the first secret which opens the doors to other secrets. Without mastering equality, the other doors will forever remain hidden. When we have it in perfection, we are admitted to the very ground of the divine spiritual nature. It is the gateway. 
 
-In essence, equality is to remain unmoved within centrally, irrespective of the external (or even internal) circumstances.                                                                                                                                  
+In essence, equality is to remain unmoved within centrally, irrespective of the external (or even internal) circumstances.                                                                                                                                 
 
 Therefore, the first business of the Sadhaka is to see whether he has the perfect equality, how far he has gone in this direction, or else where is the flaw, and to exercise steadily his will on his nature, or invite the will of the Purusha to get rid of the defects and its causes. All this is the first business of the Sadhaka.                                                                                                                                                                                           
 
@@ -61,13 +59,15 @@ There must be a constant insistence on one main idea. That main idea is to self 
 
 Knowing and accepting that whatever is the circumstance, there is a greater wisdom, and all the Sadhaka can do is to do what is needed to the best of his capacity. The full surrender of one’s personal being to the divine and through that attaining to the all possessing Ananda.       
 
-**1.1.1 Passive or Negative Equality**                                                                                                                                                                                                                                  
+
+
+
+
+**1.1.1 Passive or Negative Equality**                                                                                                                                                                                                                                
 
 Passive equality is of three types based on differences in approach: Titiksha (way of will), Udasinata (way of knowledge), Nati (way of devotion). All three approaches lead to the same goal.     
 
-**Tititksha**                                                                               
-
-Ability to bear all sensations without being overpowered by unpleasant ones or overjoyed by pleasant sensations.
+**Tititksha**                                                   Ability to bear all sensations without being overpowered by unpleasant ones or overjoyed by pleasant sensations.
 
 **Udasinata**                                                                             
 
@@ -107,4 +107,4 @@ A positive inner spiritual happiness and spiritual ease of the natural being whi
 
 **1.4 Hasyam (Atmaprasada)**                                                                                                        
 
-Hasya is the active side of Sukha. A clear joy and laughter of the soul embracing life and existence. Now the child playing the video game has extended its playground to the whole cosmos, and the potential is infinite. It is an active internal state of gladness and cheerfulness which no adverse experience mental or physical can trouble. Atmaprasada is a state of clearness, purity and contentment on the whole self; equivalent to hasyam (though hasyam is sometimes regarded as a still more positive state).
+Hasyam is the active side of Sukha. A clear joy and laughter of the soul embracing life and existence. Now the child playing the video game has extended its playground to the whole cosmos, and the potential is infinite. It is an active internal state of gladness and cheerfulness which no adverse experience mental or physical can trouble. Atmaprasada is a state of clearness, purity and contentment on the whole self; equivalent to hasyam (though hasyam is sometimes regarded as a still more positive state).
