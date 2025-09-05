@@ -1,45 +1,119 @@
-/* Global body font (for paragraphs, quiz, etc.) */
+/* ===============================
+   Fonts
+   =============================== */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Base styles */
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #222;
+  color: #333;
   background-color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
-/* Logo text (ALL LIFE IS YOGA.) */
-.logo-text {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 28px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-align: center;
-  margin: 20px 0;
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', Georgia, serif;
+  font-weight: 700;
+  margin: 1em 0 0.5em;
+  line-height: 1.3;
 }
 
-/* Sidebar menu */
-.sidebar a {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
+/* Navigation Sidebar */
+.sidebar {
+  background-color: #001f77; /* deep blue */
   color: #fff;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 600;
+  padding: 1em;
 }
 
-/* Headings inside main content */
-h1, h2, h3 {
-  font-family: Georgia, 'Times New Roman', serif;
-  margin: 20px 0;
+.sidebar a {
+  display: block;
+  padding: 8px 12px;
+  margin-bottom: 4px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background-color: #0055ff; /* brighter blue */
+}
+
+/* Logo Section */
+.logo-section {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.logo-text {
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 /* Quiz Section */
 .quiz-section {
-  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  margin: 2em auto;
+  max-width: 600px;
 }
 
 .quiz-section h2 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 28px;
+  margin-bottom: 1em;
+}
+
+.quiz-section input {
+  padding: 10px;
+  font-size: 16px;
+  width: 80%;
+  max-width: 400px;
+  margin-bottom: 1em;
+}
+
+button.next-btn,
+button.submit-btn {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 16px;
+  color: white;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button.next-btn:hover,
+button.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Booknotes */
+.booknote {
+  margin: 2em 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1.5em;
+}
+
+.booknote img {
+  float: left;
+  margin-right: 20px;
+  max-width: 120px;
+}
+
+.booknote h2 {
+  font-size: 20px;
+}
+
+.booknote p {
+  font-size: 16px;
+  color: #444;
 }
