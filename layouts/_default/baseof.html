@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moileon</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/site.webmanifest">
+  <style>
+    .lotus-image img {
+      width: 200px;
+      height: auto;
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QEV09DRFST"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QEV09DRFST');
+  </script>
+</head>
+<body>
+  <button class="hamburger-btn" id="hamburger-btn">
+    <div class="hamburger-icon"></div>
+  </button>
+
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <div class="container">
+    <div class="sidebar"></div>
+    <script>
+      fetch('/assets/components/sidebar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.querySelector('.sidebar').innerHTML = data;
+          const hamburgerBtn = document.getElementById('hamburger-btn');
+          const sidebar = document.querySelector('.sidebar');
+          const overlay = document.getElementById('mobile-overlay');
+
+          hamburgerBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+          });
+
+          overlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+          });
+        });
+    </script>
+
+    <div class="main-content">
+      {{ block "main" . }}{{ end }}
+    </div>
+  </div>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <script src="/assets/js/quiz.js"></script>
+</body>
+</html>
