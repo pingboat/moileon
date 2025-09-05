@@ -1,10 +1,248 @@
 {{ define "main" }}
-<main class="container">
-  <article>
-    <h1>{{ .Title }}</h1>
-    <p class="date">{{ .Date.Format "Jan 2, 2006" }}</p>
-    {{ with .Params.description }}<p class="descr">{{ . }}</p>{{ end }}
-    {{ .Content }}
-  </article>
-</main>
-{{ end }}
+<article class="single-post">
+    <header class="post-header">
+        <h1>{{ .Title }}</h1>
+        <div class="post-meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            {{ if .Params.author }}
+            <span class="author">by {{ .Params.author }}</span>
+            {{ end }}
+        </div>
+    </header>
+
+    <!-- Book-specific metadata for booknotes -->
+    {{ if eq .Section "booknotes" }}
+    <div class="book-info">
+        {{ if .Params.book_cover }}
+        <img src="{{ .Params.book_cover | relURL }}" alt="{{ .Title }} cover" class="book-cover">
+        {{ end }}
+        <div class="book-details">
+            {{ if .Params.author }}
+            <p class="book-author"><strong>Author:</strong> {{ .Params.author }}</p>
+            {{ end }}
+            {{ if .Params.rating }}
+            <p class="book-rating"><strong>Rating:</strong> {{ .Params.rating }}/5</p>
+            {{ end }}
+            {{ if .Params.isbn }}
+            <p class="book-isbn"><strong>ISBN:</strong> {{ .Params.isbn }}</p>
+            {{ end }}
+            {{ if .Params.published_year }}
+            <p class="book-year"><strong>Published:</strong> {{ .Params.published_year }}</p>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+
+    <!-- Project-specific metadata -->
+    {{ if eq .Section "projects" }}
+    <div class="project-info">
+        {{ if .Params.tech_stack }}
+        <p class="tech-stack"><strong>Tech Stack:</strong> {{ delimit .Params.tech_stack ", " }}</p>
+        {{ end }}
+        {{ if .Params.project_url }}
+        <p class="project-links">
+            <a href="{{ .Params.project_url }}" target="_blank" rel="noopener" class="button">View Live Project →</a>
+        </p>
+        {{ end }}
+        {{ if .Params.github_url }}
+        <p class="project-links">
+            <a href="{{ .Params.github_url }}" target="_blank" rel="noopener" class="button">View on GitHub →</a>
+        </p>
+        {{ end }}
+    </div>
+    {{ end }}
+
+    <!-- Podcast-specific metadata -->
+    {{ if eq .Section "podcast" }}
+    <div class="podcast-info">
+        {{ if .Params.episode_number }}
+        <p class="episode-meta"><strong>Episode:</strong> {{ .Params.episode_number }}</p>
+        {{ end }}
+        {{ if .Params.duration }}
+        <p class="episode-meta"><strong>Duration:</strong> {{ .Params.duration }}</p>
+        {{ end }}
+        {{ if .Params.audio_url }}
+        <div class="podcast-player">
+            <audio controls>
+                <source src="{{ .Params.audio_url }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        {{ end }}
+    </div>
+    {{ end }}
+
+    <div class="post-content">
+        {{ .Content }}
+    </div>
+
+    <!-- Tags -->
+    {{ if .Params.tags }}
+    <div class="post-tags">
+        <h3>Tags</h3>
+        <ul class="tag-list">
+            {{ range .Params.tags }}
+            <li><a href="{{ printf "/tags/%s" . | urlize | relURL }}" class="tag-link">{{ . }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+
+    <!-- Navigation -->
+    <nav class="post-navigation">
+        {{ with .PrevInSection }}
+        <a href="{{ .Permalink }}" class="nav-link prev-link">← {{ .Title }}</a>
+        {{ end }}
+        {{ with .NextInSection }}
+        <a href="{{ .Permalink }}" class="nav-link next-link">{{ .Title }} →</a>
+        {{ end }}
+    </nav>
+
+    <!-- Back to section link -->
+    <div class="back-to-section">
+        <a href="{{ printf "/%s/" .Section | relURL }}" class="button">← Back to {{ humanize .Section }}</a>
+    </div>
+</article>
+
+<style>
+/* Single post styles */
+.single-post {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.post-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.post-header h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.post-meta {
+    color: #666;
+    font-size: 14px;
+}
+
+.post-meta .author {
+    margin-left: 15px;
+}
+
+/* Book info styles */
+.book-info {
+    display: flex;
+    gap: 20px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 30px 0;
+}
+
+.book-cover {
+    max-width: 150px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.book-details p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Project info styles */
+.project-info {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 30px 0;
+}
+
+.project-info .tech-stack {
+    margin: 10px 0;
+    color: #555;
+}
+
+.project-links {
+    margin: 15px 0;
+}
+
+.project-links a {
+    margin-right: 15px;
+}
+
+/* Podcast info styles */
+.podcast-info {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 30px 0;
+}
+
+.episode-meta {
+    margin: 8px 0;
+    color: #555;
+}
+
+.podcast-player {
+    margin: 20px 0;
+}
+
+.podcast-player audio {
+    width: 100%;
+    height: 40px;
+}
+
+/* Post content */
+.post-content {
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 30px 0;
+}
+
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+    margin: 30px 0 15px 0;
+    color: #333;
+}
+
+.post-content p {
+    margin: 15px 0;
+}
+
+.post-content ul,
+.post-content ol {
+    margin: 15px 0;
+    padding-left: 30px;
+}
+
+.post-content li {
+    margin: 8px 0;
+}
+
+.post-content blockquote {
+    background-color: #f8f8f8;
+    border-left: 4px solid #000080;
+    padding: 15px 20px;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+.post-content code {
+    background-color: #f1f1f1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+}
+
+.post-content pre {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
