@@ -19,6 +19,8 @@ site_url: https://moileon.in
 # Editor Configuration for WYSIWYG
 editor:
   preview: true
+  preview_styles: 
+    - /admin/preview.css
 
 # ==================================================
 # CONTENT COLLECTIONS
