@@ -1,0 +1,57 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/images"
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "podcast"
+    label: "Podcast"
+    folder: "content/podcast"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Audio URL", name: "audio_url", widget: "string" }
+      - { label: "Duration", name: "duration", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+
+  - name: "digital"
+    label: "Digital"
+    folder: "content/digital"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Price", name: "price", widget: "string", required: false }
+      - { label: "Product URL", name: "product_url", widget: "string", required: false }
+      - { label: "Images", name: "images", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+
+  - name: "lenscape"
+    label: "Lenscape"
+    folder: "content/lenscape"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Gallery", name: "gallery", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
