@@ -1,13 +1,207 @@
 {{ define "main" }}
-<main>
-  <h1>{{ .Title }}</h1>
-  <ul>
-    {{ range .Pages.ByDate.Reverse }}
-      <li>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        <span>{{ .Date.Format "Jan 2, 2006" }}</span>
-      </li>
-    {{ end }}
-  </ul>
-</main>
+<div class="section-page">
+    <header class="section-header">
+        <h1>{{ humanize .Section }}</h1>
+        {{ if .Content }}
+        <div class="section-description">
+            {{ .Content }}
+        </div>
+        {{ end }}
+    </header>
+
+    <div class="posts-list">
+        {{ $paginator := .Paginate .Data.Pages }}
+        {{ range $paginator.Pages }}
+        
+        {{ if eq .Section "booknotes" }}
+        <!-- Book Note Layout -->
+        <article class="booknote-item">
+            {{ if .Params.book_cover }}
+            <img src="{{ .Params.book_cover | relURL }}" alt="{{ .Title }} cover" class="book-cover-small">
+            {{ end }}
+            <div class="booknote-content">
+                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                {{ if .Params.author }}
+                <p class="book-author">by {{ .Params.author }}</p>
+                {{ end }}
+                {{ if .Params.rating }}
+                <p class="book-rating">Rating: {{ .Params.rating }}/5</p>
+                {{ end }}
+                <p class="post-date">{{ .Date.Format "January 2, 2006" }}</p>
+                {{ if .Summary }}
+                <p class="book-summary">{{ .Summary }}</p>
+                {{ end }}
+                <a href="{{ .Permalink }}" class="read-more">Read notes →</a>
+            </div>
+        </article>
+        
+        {{ else if eq .Section "projects" }}
+        <!-- Project Layout -->
+        <article class="project-item">
+            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            {{ if .Params.tech_stack }}
+            <p class="tech-stack">Tech: {{ delimit .Params.tech_stack ", " }}</p>
+            {{ end }}
+            <p class="post-date">{{ .Date.Format "January 2, 2006" }}</p>
+            {{ if .Summary }}
+            <p class="project-summary">{{ .Summary }}</p>
+            {{ end }}
+            <div class="project-links">
+                <a href="{{ .Permalink }}" class="read-more">View project →</a>
+                {{ if .Params.project_url }}
+                <a href="{{ .Params.project_url }}" target="_blank" rel="noopener" class="external-link">Live demo →</a>
+                {{ end }}
+                {{ if .Params.github_url }}
+                <a href="{{ .Params.github_url }}" target="_blank" rel="noopener" class="external-link">GitHub →</a>
+                {{ end }}
+            </div>
+        </article>
+        
+        {{ else if eq .Section "podcast" }}
+        <!-- Podcast Layout -->
+        <article class="podcast-item">
+            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            {{ if .Params.episode_number }}
+            <p class="episode-number">Episode {{ .Params.episode_number }}</p>
+            {{ end }}
+            {{ if .Params.duration }}
+            <p class="episode-duration">Duration: {{ .Params.duration }}</p>
+            {{ end }}
+            <p class="post-date">{{ .Date.Format "January 2, 2006" }}</p>
+            {{ if .Summary }}
+            <p class="podcast-summary">{{ .Summary }}</p>
+            {{ end }}
+            <a href="{{ .Permalink }}" class="read-more">Listen →</a>
+        </article>
+        
+        {{ else }}
+        <!-- Default Layout (Blog, Digital, Lenscape, etc.) -->
+        <article class="post-item">
+            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <p class="post-date">{{ .Date.Format "January 2, 2006" }}</p>
+            {{ if .Summary }}
+            <p class="post-summary">{{ .Summary }}</p>
+            {{ end }}
+            {{ if .Params.tags }}
+            <div class="post-tags-small">
+                {{ range .Params.tags }}
+                <span class="tag-small">{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+            <a href="{{ .Permalink }}" class="read-more">Read more →</a>
+        </article>
+        {{ end }}
+        
+        {{ end }}
+
+        <!-- Pagination -->
+        {{ if gt $paginator.TotalPages 1 }}
+        <nav class="pagination">
+            {{ if $paginator.HasPrev }}
+            <a href="{{ $paginator.Prev.URL }}" class="pagination-link">← Previous</a>
+            {{ end }}
+            
+            <span class="pagination-info">
+                Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}
+            </span>
+            
+            {{ if $paginator.HasNext }}
+            <a href="{{ $paginator.Next.URL }}" class="pagination-link">Next →</a>
+            {{ end }}
+        </nav>
+        {{ end }}
+    </div>
+</div>
+
+<style>
+/* Additional styles for list pages */
+.section-page {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.book-cover-small {
+    float: left;
+    width: 80px;
+    height: auto;
+    margin: 0 15px 15px 0;
+    border-radius: 4px;
+}
+
+.booknote-content {
+    overflow: hidden;
+}
+
+.project-links,
+.external-link {
+    margin-top: 10px;
+}
+
+.external-link {
+    margin-left: 15px;
+    color: #4169E1;
+    text-decoration: none;
+}
+
+.external-link:hover {
+    text-decoration: underline;
+}
+
+.post-tags-small {
+    margin: 10px 0;
+}
+
+.tag-small {
+    background-color: #f0f0f0;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.pagination {
+    text-align: center;
+    margin: 40px 0;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+}
+
+.pagination-link {
+    color: #000080;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.pagination-link:hover {
+    background-color: #e8e8e8;
+    text-decoration: none;
+}
+
+.pagination-info {
+    margin: 0 20px;
+    color: #666;
+}
+</style>
 {{ end }}
