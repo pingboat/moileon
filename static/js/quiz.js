@@ -1,5 +1,5 @@
 /* ==================================================
-QUIZ LOGIC (using Hugo-embedded JSON)
+QUIZ LOGIC (using external JSON file via Hugo embed)
 ================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -8,22 +8,23 @@ document.addEventListener("DOMContentLoaded", function () {
     let score = 0;
     let quizCompleted = false;
 
-    // Updated selectors to match your HTML structure
+    // Updated selectors to match your HTML
     const questionElement = document.getElementById("question-display");
     const answerInput = document.getElementById("answer-input");
     const submitButton = document.querySelector(".submit-btn");
-    const showAnswerButton = document.querySelector(".next-btn");
-    const scoreElement = document.getElementById("score"); 
+    const showAnswerButton = document.querySelector(".next-btn"); // ensure this exists
+    const scoreElement = document.getElementById("score-display");
     const quizSection = document.querySelector(".quiz-section");
 
-    if (!quizSection) return; // Exit if not on a quiz page
-    
-    // Set initial text
+    // Exit if not on quiz page
+    if (!quizSection) return;
+
+    // Initial message
     if (questionElement) {
         questionElement.textContent = "Loading question...";
     }
 
-    // ✅ Load quiz data from embedded script tag
+    // Load quiz data from embedded script tag
     const quizDataElement = document.getElementById("quiz-data");
     if (quizDataElement) {
         try {
@@ -33,13 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
         } catch (error) {
             console.error("Error parsing quiz data:", error);
             if (questionElement) {
-                questionElement.textContent =
-                  "⚠️ Failed to load quiz questions. Please check JSON format.";
+                questionElement.textContent = "⚠️ Failed to load quiz questions. Please check JSON format.";
             }
         }
     }
 
-    // Shuffle array function
+    // Shuffle array
     function shuffleArray(array) {
         const shuffled = [...array];
         for (let i = shuffled.length - 1; i > 0; i--) {
@@ -63,11 +63,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Reset buttons
         submitButton.textContent = "Submit Answer";
-        submitButton.className = "submit-btn";
         submitButton.disabled = false;
-        
-        showAnswerButton.textContent = "Show me the answer";
-        showAnswerButton.disabled = false;
+
+        if (showAnswerButton) {
+            showAnswerButton.textContent = "Show me the answer";
+            showAnswerButton.disabled = false;
+        }
 
         removeFeedback();
     }
@@ -77,21 +78,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const userAnswer = answerInput.value.trim().toLowerCase();
         const currentQuestion = questions[currentQuestionIndex];
-        
-        const correctAnswers = Array.isArray(currentQuestion.answer) 
-            ? currentQuestion.answer.map(ans => ans.toLowerCase())
+
+        // Allow multiple correct answers
+        const correctAnswers = Array.isArray(currentQuestion.answer)
+            ? currentQuestion.answer.map(a => a.toLowerCase())
             : [currentQuestion.answer.toLowerCase()];
 
-        const isCorrect = correctAnswers.some(answer => userAnswer === answer);
+        const isCorrect = correctAnswers.includes(userAnswer);
 
         if (isCorrect) {
             showFeedback("✅ Correct!", "success");
             score++;
         } else {
-            const correctAnswer = Array.isArray(currentQuestion.answer) 
-                ? currentQuestion.answer[0] 
+            const correctAnswer = Array.isArray(currentQuestion.answer)
+                ? currentQuestion.answer[0]
                 : currentQuestion.answer;
-            
+
             let message = `❌ Incorrect. The correct answer is: ${correctAnswer}`;
             if (currentQuestion.explanation) {
                 message += `\n💡 ${currentQuestion.explanation}`;
@@ -101,18 +103,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         updateScore();
         answerInput.disabled = true;
-        
-        // Change submit button to next button
+
+        // Switch button to next
         submitButton.textContent = "Next Question";
-        submitButton.className = "next-btn";
     }
 
     function showAnswer() {
         const currentQuestion = questions[currentQuestionIndex];
-        const correctAnswer = Array.isArray(currentQuestion.answer) 
-            ? currentQuestion.answer[0] 
+        const correctAnswer = Array.isArray(currentQuestion.answer)
+            ? currentQuestion.answer[0]
             : currentQuestion.answer;
-        
+
         let message = `💡 The answer is: ${correctAnswer}`;
         if (currentQuestion.explanation) {
             message += `\n${currentQuestion.explanation}`;
@@ -131,23 +132,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function finishQuiz() {
         questionElement.textContent = "🎉 Quiz completed!";
-        scoreElement.textContent = score;
-        
+        scoreElement.textContent = `${score}/${questions.length}`;
+
         answerInput.style.display = "none";
         submitButton.textContent = "Restart Quiz";
-        submitButton.className = "submit-btn";
-        submitButton.onclick = restartQuiz;
-        
-        showAnswerButton.style.display = "none";
         quizCompleted = true;
+
+        if (showAnswerButton) showAnswerButton.style.display = "none";
 
         const percentage = Math.round((score / questions.length) * 100);
         let message = `You scored ${score} out of ${questions.length} (${percentage}%)`;
-        
+
         if (percentage >= 80) message += " - Excellent! 🌟";
         else if (percentage >= 60) message += " - Good job! 👍";
         else message += " - Keep practicing! 💪";
-        
+
         showFeedback(message, "success");
     }
 
@@ -155,19 +154,19 @@ document.addEventListener("DOMContentLoaded", function () {
         currentQuestionIndex = 0;
         score = 0;
         quizCompleted = false;
-        
+
         questions = shuffleArray(questions);
-        
+
         answerInput.style.display = "block";
-        showAnswerButton.style.display = "inline-block";
-        
+        if (showAnswerButton) showAnswerButton.style.display = "inline-block";
+
         removeFeedback();
         showQuestion();
     }
 
     function showFeedback(message, type) {
         removeFeedback();
-        
+
         const feedback = document.createElement("div");
         feedback.className = `quiz-feedback quiz-feedback-${type}`;
         feedback.style.cssText = `
@@ -196,6 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.appendChild(feedback);
 
         setTimeout(() => feedback.style.transform = 'translateX(0)', 10);
+
         setTimeout(() => {
             feedback.style.transform = 'translateX(100%)';
             setTimeout(() => feedback.remove(), 300);
@@ -217,7 +217,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    showAnswerButton.addEventListener("click", showAnswer);
+    if (showAnswerButton) {
+        showAnswerButton.addEventListener("click", showAnswer);
+    }
 
     answerInput.addEventListener("keypress", function(event) {
         if (event.key === "Enter" && !answerInput.disabled) {
@@ -229,6 +231,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Initialize score
     updateScore();
 });
