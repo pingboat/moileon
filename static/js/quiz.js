@@ -1,5 +1,5 @@
 /* ==================================================
-QUIZ LOGIC (using external JSON file)
+QUIZ LOGIC (using Hugo-embedded JSON)
 ================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -13,37 +13,31 @@ document.addEventListener("DOMContentLoaded", function () {
     const answerInput = document.getElementById("answer-input");
     const submitButton = document.querySelector(".submit-btn");
     const showAnswerButton = document.querySelector(".next-btn");
-    const scoreElement = document.getElementById("score-display");
-    const quizSection = document.querySelector(".quiz-section"); // Added for visibility
+    const scoreElement = document.getElementById("score"); 
+    const quizSection = document.querySelector(".quiz-section");
 
-    // Check if quiz elements exist on this page
-    if (!quizSection) {
-        return; // Exit if not on a quiz page
-    }
+    if (!quizSection) return; // Exit if not on a quiz page
     
-    // Set initial text to loading
+    // Set initial text
     if (questionElement) {
         questionElement.textContent = "Loading question...";
     }
 
-    // Load questions from JSON file
-    fetch("/data/questions.json")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            questions = shuffleArray(data); // Shuffle questions for variety
+    // ✅ Load quiz data from embedded script tag
+    const quizDataElement = document.getElementById("quiz-data");
+    if (quizDataElement) {
+        try {
+            questions = JSON.parse(quizDataElement.textContent);
+            questions = shuffleArray(questions);
             showQuestion();
-        })
-        .catch(error => {
-            console.error("Error loading quiz questions:", error);
+        } catch (error) {
+            console.error("Error parsing quiz data:", error);
             if (questionElement) {
-                questionElement.textContent = "⚠️ Failed to load quiz questions. Please check if /data/questions.json exists and has valid JSON syntax.";
+                questionElement.textContent =
+                  "⚠️ Failed to load quiz questions. Please check JSON format.";
             }
-        });
+        }
+    }
 
     // Shuffle array function
     function shuffleArray(array) {
@@ -75,19 +69,15 @@ document.addEventListener("DOMContentLoaded", function () {
         showAnswerButton.textContent = "Show me the answer";
         showAnswerButton.disabled = false;
 
-        // Remove any existing feedback
         removeFeedback();
     }
 
     function checkAnswer() {
-        if (quizCompleted || !answerInput.value.trim()) {
-            return;
-        }
+        if (quizCompleted || !answerInput.value.trim()) return;
 
         const userAnswer = answerInput.value.trim().toLowerCase();
         const currentQuestion = questions[currentQuestionIndex];
         
-        // Support multiple correct answers
         const correctAnswers = Array.isArray(currentQuestion.answer) 
             ? currentQuestion.answer.map(ans => ans.toLowerCase())
             : [currentQuestion.answer.toLowerCase()];
@@ -136,12 +126,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function updateScore() {
-        scoreElement.textContent = `Score: ${score}`;
+        scoreElement.textContent = score;
     }
 
     function finishQuiz() {
         questionElement.textContent = "🎉 Quiz completed!";
-        scoreElement.textContent = `Final Score: ${score}/${questions.length}`;
+        scoreElement.textContent = score;
         
         answerInput.style.display = "none";
         submitButton.textContent = "Restart Quiz";
@@ -196,26 +186,16 @@ document.addEventListener("DOMContentLoaded", function () {
             transition: transform 0.3s ease;
         `;
 
-        // Set background color based on type
         switch(type) {
-            case 'success':
-                feedback.style.background = '#10b981';
-                break;
-            case 'error':
-                feedback.style.background = '#ef4444';
-                break;
-            case 'info':
-                feedback.style.background = '#001f77'; // Match your theme
-                break;
+            case 'success': feedback.style.background = '#10b981'; break;
+            case 'error': feedback.style.background = '#ef4444'; break;
+            case 'info': feedback.style.background = '#001f77'; break;
         }
 
         feedback.textContent = message;
         document.body.appendChild(feedback);
 
-        // Animate in
         setTimeout(() => feedback.style.transform = 'translateX(0)', 10);
-
-        // Remove after delay
         setTimeout(() => {
             feedback.style.transform = 'translateX(100%)';
             setTimeout(() => feedback.remove(), 300);
@@ -239,7 +219,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     showAnswerButton.addEventListener("click", showAnswer);
 
-    // Allow Enter key to submit answer
     answerInput.addEventListener("keypress", function(event) {
         if (event.key === "Enter" && !answerInput.disabled) {
             if (submitButton.textContent === "Submit Answer") {
@@ -250,7 +229,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Initialize score display
+    // Initialize score
     updateScore();
 });
-
