@@ -17,7 +17,12 @@
         <input type="text" class="answer-input" id="answer-input" placeholder="">
         <div class="instruction">Press Enter after typing your answer</div>
         <div id="feedback"></div>
-        <button class="button submit-btn" id="next-question" style="display: none;">Next Question</button>
+
+        <!-- Buttons -->
+        <div class="quiz-buttons">
+            <button class="button submit-btn">Submit Answer</button>
+            <button class="button next-btn">Show me the answer</button>
+        </div>
     </div>
 
     <!-- Embed quiz data -->
@@ -28,7 +33,6 @@
     <!-- Load quiz logic -->
     <script src="{{ "js/quiz.js" | relURL }}"></script>
 </div>
-
 <!-- Content Sections -->
 <div class="content-sections">
     
