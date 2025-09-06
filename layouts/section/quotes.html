@@ -1,15 +1,18 @@
 {{ define "main" }}
     <div class="main-content">
         <h1>Quotes</h1>
-        <ul>
+        <div class="quotes-container">
             {{ range .Paginator.Pages }}
-            <li>
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                <span class="post-date">{{ .Date.Format "January 2, 2006" }}</span>
-                <p>{{ .Summary | markdownify }}</p>
-            </li>
+            <div class="quote-card">
+                <div class="quote-content">
+                    {{ .Content | markdownify }}
+                </div>
+                <div class="quote-author">
+                    — {{ .Params.author }}
+                </div>
+            </div>
             {{ end }}
-        </ul>
+        </div>
         {{ template "_internal/pagination.html" . }}
     </div>
 {{ end }}
