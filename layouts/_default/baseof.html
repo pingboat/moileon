@@ -34,7 +34,11 @@
             <a href="{{ "/projects/" | relURL }}" class="nav-button {{ if eq .Section "projects" }}active{{ end }}">Projects</a>
             <a href="{{ "/digital/" | relURL }}" class="nav-button {{ if eq .Section "digital" }}active{{ end }}">Digital</a>
             <a href="{{ "/podcast/" | relURL }}" class="nav-button {{ if eq .Section "podcast" }}active{{ end }}">Podcast</a>
+            <a href="{{ "/quotes/" | relURL }}" class="nav-button {{ if eq .Section "lenscape" }}active{{ end }}">Quotes</a>
             <a href="{{ "/lenscape/" | relURL }}" class="nav-button {{ if eq .Section "lenscape" }}active{{ end }}">Lenscape</a>
+            <a href="{{ "/bio/" | relURL }}" class="nav-button {{ if eq .Section "lenscape" }}active{{ end }}">Bio</a>
+            <a href="{{ "/linkedin/" | relURL }}" class="nav-button {{ if eq .Section "lenscape" }}active{{ end }}">Linkedin</a>
+            <a href="{{ "/twitter/" | relURL }}" class="nav-button {{ if eq .Section "lenscape" }}active{{ end }}">Twitter</a>
         </nav>
 
         <!-- Main Content -->
@@ -44,42 +48,7 @@
     </div>
 
     <!-- JavaScript -->
-    <script>
-        // Mobile navigation toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburgerBtn = document.getElementById('hamburgerBtn');
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('mobileOverlay');
-
-            function toggleSidebar() {
-                hamburgerBtn.classList.toggle('active');
-                sidebar.classList.toggle('active');
-                overlay.classList.toggle('active');
-            }
-
-            hamburgerBtn.addEventListener('click', toggleSidebar);
-            overlay.addEventListener('click', toggleSidebar);
-
-            // Close sidebar on link click (mobile)
-            const navLinks = sidebar.querySelectorAll('.nav-button');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth <= 768) {
-                        toggleSidebar();
-                    }
-                });
-            });
-
-            // Handle window resize
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768) {
-                    hamburgerBtn.classList.remove('active');
-                    sidebar.classList.remove('active');
-                    overlay.classList.remove('active');
-                }
-            });
-        });
-    </script>
+    <script src="{{ "js/navigation.js" | relURL }}"></script>
     <script src="{{ "js/quiz.js" | relURL }}"></script>
     {{ block "scripts" . }}{{ end }}
 </body>
