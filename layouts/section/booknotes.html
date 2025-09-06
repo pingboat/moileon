@@ -1,0 +1,15 @@
+{{ define "main" }}
+    <div class="main-content">
+        <h1>Booknotes</h1>
+        <ul>
+            {{ range .Paginator.Pages }}
+            <li>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                <span class="post-date">{{ .Date.Format "January 2, 2006" }}</span>
+                <p>{{ .Summary | markdownify }}</p>
+            </li>
+            {{ end }}
+        </ul>
+        {{ template "_internal/pagination.html" . }}
+    </div>
+{{ end }}
