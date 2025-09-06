@@ -55,3 +55,18 @@ collections:
       - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Gallery", name: "gallery", widget: "list", required: false }
       - { label: "Body", name: "body", widget: "markdown", required: false }
+
+  - name: "quiz"
+    label: "Quiz Questions"
+    files:
+      - file: "data/questions.json"
+        label: "Quiz Data"
+        name: "questions"
+        fields:
+          - label: "Questions"
+            name: "questions"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer(s)", name: "answer", widget: "list", field: {label: "Answer", name: "answer", widget: "string"} }
+              - { label: "Explanation", name: "explanation", widget: "text", required: false }
