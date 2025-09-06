@@ -1,77 +1,77 @@
 [
-{
-“question”: “Which company’s first product was a line of playing cards in 1889?”,
-“answer”: [“nintendo”, “Nintendo”],
-“explanation”: “Nintendo started as a playing card company in Kyoto, Japan, founded by Fusajiro Yamauchi.”
-},
-{
-“question”: “What does ‘www’ stand for in web addresses?”,
-“answer”: [“world wide web”, “World Wide Web”],
-“explanation”: “The World Wide Web was invented by Tim Berners-Lee in 1989 while working at CERN.”
-},
-{
-“question”: “Which planet is known as the Red Planet?”,
-“answer”: [“mars”, “Mars”],
-“explanation”: “Mars appears red due to iron oxide (rust) on its surface.”
-},
-{
-“question”: “What is the largest mammal in the world?”,
-“answer”: [“blue whale”, “Blue whale”],
-“explanation”: “Blue whales can grow up to 100 feet long and weigh as much as 200 tons.”
-},
-{
-“question”: “In which year did World War II end?”,
-“answer”: [“1945”],
-“explanation”: “WWII ended in 1945 with Japan’s surrender on September 2, following the atomic bombings.”
-},
-{
-“question”: “What is the capital of Australia?”,
-“answer”: [“canberra”, “Canberra”],
-“explanation”: “Canberra was specially built as Australia’s capital city, not Sydney or Melbourne.”
-},
-{
-“question”: “Who painted the Mona Lisa?”,
-“answer”: [“leonardo da vinci”, “da vinci”, “leonardo”],
-“explanation”: “Leonardo da Vinci painted the Mona Lisa between 1503-1519. It’s housed in the Louvre Museum.”
-},
-{
-“question”: “What is the smallest country in the world?”,
-“answer”: [“vatican city”, “vatican”],
-“explanation”: “Vatican City is only 0.17 square miles (0.44 km²) and has about 800 residents.”
-},
-{
-“question”: “Which element has the chemical symbol ‘O’?”,
-“answer”: [“oxygen”, “Oxygen”],
-“explanation”: “Oxygen makes up about 21% of Earth’s atmosphere and is essential for most life forms.”
-},
-{
-“question”: “How many continents are there?”,
-“answer”: [“7”, “seven”, “Seven”],
-“explanation”: “The seven continents are: Asia, Africa, North America, South America, Antarctica, Europe, and Australia/Oceania.”
-},
-{
-“question”: “What is the fastest land animal?”,
-“answer”: [“cheetah”, “Cheetah”],
-“explanation”: “Cheetahs can reach speeds of up to 70 mph (112 km/h) in short bursts.”
-},
-{
-“question”: “Which programming language was created by Guido van Rossum?”,
-“answer”: [“python”, “Python”],
-“explanation”: “Python was first released in 1991 and is named after the British comedy group Monty Python.”
-},
-{
-“question”: “What is the currency of Japan?”,
-“answer”: [“yen”, “Yen”],
-“explanation”: “The Japanese yen (¥) has been Japan’s official currency since 1871.”
-},
-{
-“question”: “Which organ in the human body produces insulin?”,
-“answer”: [“pancreas”, “Pancreas”],
-“explanation”: “The pancreas produces insulin to help regulate blood sugar levels.”
-},
-{
-“question”: “What is the hardest natural substance on Earth?”,
-“answer”: [“diamond”, “Diamond”],
-“explanation”: “Diamond rates 10 on the Mohs hardness scale, making it the hardest natural material.”
-}
+  {
+    "question": "Which company’s first product was a line of playing cards in 1889?",
+    "answer": ["nintendo", "Nintendo"],
+    "explanation": "Nintendo started as a playing card company in Kyoto, Japan, founded by Fusajiro Yamauchi."
+  },
+  {
+    "question": "What does ‘www’ stand for in web addresses?",
+    "answer": ["world wide web", "World Wide Web"],
+    "explanation": "The World Wide Web was invented by Tim Berners-Lee in 1989 while working at CERN."
+  },
+  {
+    "question": "Which planet is known as the Red Planet?",
+    "answer": ["mars", "Mars"],
+    "explanation": "Mars appears red due to iron oxide (rust) on its surface."
+  },
+  {
+    "question": "What is the largest mammal in the world?",
+    "answer": ["blue whale", "Blue whale"],
+    "explanation": "Blue whales can grow up to 100 feet long and weigh as much as 200 tons."
+  },
+  {
+    "question": "In which year did World War II end?",
+    "answer": ["1945"],
+    "explanation": "WWII ended in 1945 with Japan’s surrender on September 2, following the atomic bombings."
+  },
+  {
+    "question": "What is the capital of Australia?",
+    "answer": ["canberra", "Canberra"],
+    "explanation": "Canberra was specially built as Australia’s capital city, not Sydney or Melbourne."
+  },
+  {
+    "question": "Who painted the Mona Lisa?",
+    "answer": ["leonardo da vinci", "da vinci", "leonardo"],
+    "explanation": "Leonardo da Vinci painted the Mona Lisa between 1503-1519. It’s housed in the Louvre Museum."
+  },
+  {
+    "question": "What is the smallest country in the world?",
+    "answer": ["vatican city", "vatican"],
+    "explanation": "Vatican City is only 0.17 square miles (0.44 km²) and has about 800 residents."
+  },
+  {
+    "question": "Which element has the chemical symbol ‘O’?",
+    "answer": ["oxygen", "Oxygen"],
+    "explanation": "Oxygen makes up about 21% of Earth’s atmosphere and is essential for most life forms."
+  },
+  {
+    "question": "How many continents are there?",
+    "answer": ["7", "seven", "Seven"],
+    "explanation": "The seven continents are: Asia, Africa, North America, South America, Antarctica, Europe, and Australia/Oceania."
+  },
+  {
+    "question": "What is the fastest land animal?",
+    "answer": ["cheetah", "Cheetah"],
+    "explanation": "Cheetahs can reach speeds of up to 70 mph (112 km/h) in short bursts."
+  },
+  {
+    "question": "Which programming language was created by Guido van Rossum?",
+    "answer": ["python", "Python"],
+    "explanation": "Python was first released in 1991 and is named after the British comedy group Monty Python."
+  },
+  {
+    "question": "What is the currency of Japan?",
+    "answer": ["yen", "Yen"],
+    "explanation": "The Japanese yen (¥) has been Japan’s official currency since 1871."
+  },
+  {
+    "question": "Which organ in the human body produces insulin?",
+    "answer": ["pancreas", "Pancreas"],
+    "explanation": "The pancreas produces insulin to help regulate blood sugar levels."
+  },
+  {
+    "question": "What is the hardest natural substance on Earth?",
+    "answer": ["diamond", "Diamond"],
+    "explanation": "Diamond rates 10 on the Mohs hardness scale, making it the hardest natural material."
+  }
 ]
