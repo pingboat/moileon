@@ -19,6 +19,13 @@
         <div id="feedback"></div>
         <button class="button submit-btn" id="next-question" style="display: none;">Next Question</button>
     </div>
+    <!-- Embed quiz data -->
+<script id="quiz-data" type="application/json">
+  {{ site.Data.questions | jsonify }}
+</script>
+
+<!-- Load quiz logic -->
+<script src="{{ "js/quiz.js" | relURL }}"></script>
 </div>
 
 <!-- Content Sections -->
