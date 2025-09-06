@@ -9,7 +9,7 @@ enableRobotsTXT = true
   podcast  = "/podcast/:slug/"
   digital  = "/digital/:slug/"
   lenscape = "/lenscape/:slug/"
-
+  
 [outputs]
   home    = ["HTML","RSS"]
   section = ["HTML","RSS"]
@@ -17,3 +17,49 @@ enableRobotsTXT = true
 [markup]
   [markup.goldmark.renderer]
     unsafe = true
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 20
+  [[menu.main]]
+    name = "Booknotes"
+    url = "/booknotes/"
+    weight = 30
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 40
+  [[menu.main]]
+    name = "Digital"
+    url = "/digital/"
+    weight = 50
+  [[menu.main]]
+    name = "Podcast"
+    url = "/podcast/"
+    weight = 60
+  [[menu.main]]
+    name = "Quotes"
+    url = "/quotes/"
+    weight = 70
+  [[menu.main]]
+    name = "Lenscape"
+    url = "/lenscape/"
+    weight = 80
+  [[menu.main]]
+    name = "Bio"
+    url = "/bio/"
+    weight = 90
+  [[menu.main]]
+    name = "LinkedIn"
+    url = "https://linkedin.com/in/leonkaushik"
+    weight = 100
+  [[menu.main]]
+    name = "Twitter"
+    url = "https://x.com/iobyleon"
+    weight = 110
