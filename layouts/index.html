@@ -1,199 +1,25 @@
 {{ define "main" }}
-<!-- Logo Section -->
-<div class="logo-section">
-    <div class="logo-text">ALL LIFE IS YOGA.</div>
-    <div class="lotus-image">
-        <img src="{{ "images/lotus.png" | relURL }}" alt="Lotus with Om Symbol">
+
+    <div class="logo-section">
+        <div class="logo-text">ALL LIFE IS YOGA.</div>
+        <div class="lotus-image">
+            <img src="{{ "images/lotus.png" | relURL }}" alt="Lotus with Om Symbol">
+        </div>
     </div>
-</div>
 
-<!-- Quiz Section -->
-<div class="quiz-section">
-    <h1 class="quiz-title">Quest On!</h1>
-    <div class="score">Score: <span id="score-display">0</span></div>
-    
-    <div id="quiz-container">
+    <div class="quiz-section">
+        <h1 class="quiz-title">Quest On!</h1>
+        <div class="score">Score: <span id="score-display">0</span></div>
         <div class="question" id="question-display">Loading question...</div>
-        <input type="text" class="answer-input" id="answer-input" placeholder="">
+        <input type="text" class="answer-input" id="answer-input" placeholder="Type your answer here">
         <div class="instruction">Press Enter after typing your answer</div>
-        <div id="feedback"></div>
-
-        <!-- Buttons -->
+        
         <div class="quiz-buttons">
             <button class="button submit-btn">Submit Answer</button>
             <button class="button next-btn">Show me the answer</button>
         </div>
     </div>
-
-    <!-- Embed quiz data -->
-    <script id="quiz-data" type="application/json">
-      {{ site.Data.questions | jsonify }}
-    </script>
-
-    <!-- Load quiz logic -->
-    <script src="{{ "js/quiz.js" | relURL }}"></script>
-</div>
-<!-- Content Sections -->
-<div class="content-sections">
     
-    <!-- Blog Posts Section -->
-    {{ $posts := where .Site.RegularPages "Section" "blog" }}
-    {{ if $posts }}
-    <section class="content-section">
-        <h2>Blog Posts</h2>
-        <div class="posts-list">
-            {{ range first 5 (sort $posts "Date" "desc") }}
-            <article class="post-item">
-                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                <p class="post-date">{{ .Date.Format "January 2, 2006" }}</p>
-                {{ if .Summary }}
-                <p class="post-summary">{{ .Summary | truncate 200 }}</p>
-                {{ end }}
-            </article>
-            {{ end }}
-        </div>
-        <p><a href="{{ "/blog/" | relURL }}" class="section-link">View all blog posts →</a></p>
-    </section>
-    {{ else }}
-    <section class="content-section">
-        <h2>Blog Posts</h2>
-        <p>Loading blog posts...</p>
-    </section>
-    {{ end }}
+    <script src="{{ "js/quiz.js" | relURL }}"></script>
 
-    <!-- Book Notes Section -->
-    {{ $booknotes := where .Site.RegularPages "Section" "booknotes" }}
-    {{ if $booknotes }}
-    <section class="content-section">
-        <h2>Book Notes</h2>
-        <div class="booknotes-list">
-            {{ range first 3 (sort $booknotes "Date" "desc") }}
-            <article class="booknote-item">
-                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                {{ if .Params.author }}
-                <p class="book-author">by {{ .Params.author }}</p>
-                {{ end }}
-                {{ if .Summary }}
-                <p class="book-summary">{{ .Summary | truncate 150 }}</p>
-                {{ end }}
-            </article>
-            {{ end }}
-        </div>
-        <p><a href="{{ "/booknotes/" | relURL }}" class="section-link">View all book notes →</a></p>
-    </section>
-    {{ else }}
-    <section class="content-section">
-        <h2>Book Notes</h2>
-        <p>Loading book notes...</p>
-    </section>
-    {{ end }}
-
-    <!-- Projects Section -->
-    {{ $projects := where .Site.RegularPages "Section" "projects" }}
-    {{ if $projects }}
-    <section class="content-section">
-        <h2>Projects</h2>
-        <div class="projects-list">
-            {{ range first 3 (sort $projects "Date" "desc") }}
-            <article class="project-item">
-                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                {{ if .Params.tech_stack }}
-                <p class="tech-stack">{{ delimit .Params.tech_stack ", " }}</p>
-                {{ end }}
-                {{ if .Summary }}
-                <p class="project-summary">{{ .Summary | truncate 150 }}</p>
-                {{ end }}
-            </article>
-            {{ end }}
-        </div>
-        <p><a href="{{ "/projects/" | relURL }}" class="section-link">View all projects →</a></p>
-    </section>
-    {{ else }}
-    <section class="content-section">
-        <h2>Projects</h2>
-        <p>Loading projects...</p>
-    </section>
-    {{ end }}
-
-    <!-- Digital Section -->
-    {{ $digital := where .Site.RegularPages "Section" "digital" }}
-    {{ if $digital }}
-    <section class="content-section">
-        <h2>Digital</h2>
-        <div class="digital-list">
-            {{ range first 3 (sort $digital "Date" "desc") }}
-            <article class="digital-item">
-                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                {{ if .Summary }}
-                <p class="digital-summary">{{ .Summary | truncate 150 }}</p>
-                {{ end }}
-            </article>
-            {{ end }}
-        </div>
-        <p><a href="{{ "/digital/" | relURL }}" class="section-link">View all digital services →</a></p>
-    </section>
-    {{ else }}
-    <section class="content-section">
-        <h2>Digital</h2>
-        <p>Digital services and information will be displayed here.</p>
-    </section>
-    {{ end }}
-
-    <!-- Podcast Section -->
-    {{ $podcasts := where .Site.RegularPages "Section" "podcast" }}
-    {{ if $podcasts }}
-    <section class="content-section">
-        <h2>Podcast</h2>
-        <div class="podcast-list">
-            {{ range first 3 (sort $podcasts "Date" "desc") }}
-            <article class="podcast-item">
-                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                {{ if .Params.episode_number }}
-                <p class="episode-number">Episode {{ .Params.episode_number }}</p>
-                {{ end }}
-                {{ if .Summary }}
-                <p class="podcast-summary">{{ .Summary | truncate 150 }}</p>
-                {{ end }}
-            </article>
-            {{ end }}
-        </div>
-        <p><a href="{{ "/podcast/" | relURL }}" class="section-link">View all episodes →</a></p>
-    </section>
-    {{ else }}
-    <section class="content-section">
-        <h2>Podcast</h2>
-        <p>Podcast episodes and information will be displayed here.</p>
-    </section>
-    {{ end }}
-
-    <!-- Lenscape Section (if content exists) -->
-    {{ $lenscape := where .Site.RegularPages "Section" "lenscape" }}
-    {{ if $lenscape }}
-    <section class="content-section">
-        <h2>Lenscape</h2>
-        <div class="lenscape-list">
-            {{ range first 3 (sort $lenscape "Date" "desc") }}
-            <article class="lenscape-item">
-                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                {{ if .Summary }}
-                <p class="lenscape-summary">{{ .Summary | truncate 150 }}</p>
-                {{ end }}
-            </article>
-            {{ end }}
-        </div>
-        <p><a href="{{ "/lenscape/" | relURL }}" class="section-link">View all lenscape content →</a></p>
-    </section>
-    {{ end }}
-
-    <!-- Bio Section (if defined in config) -->
-    {{ if .Site.Params.bio }}
-    <section class="content-section">
-        <h2>Bio</h2>
-        <div class="bio-content">
-            {{ .Site.Params.bio | markdownify }}
-        </div>
-    </section>
-    {{ end }}
-
-</div>
 {{ end }}
