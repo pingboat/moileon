@@ -82,6 +82,7 @@ body {
 
 .card ul {
   padding-left: 1.2em;
+  text-align: left;
 }
 
 .card li {
