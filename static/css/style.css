@@ -34,7 +34,7 @@ body {
 .main-content {
     flex: 1;
     padding: 40px;
-    text-align: center;
+    text-align: left;
 }
 
 /* ==================================================
