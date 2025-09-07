@@ -83,7 +83,8 @@ body {
 .card ul {
   padding-left: 1.2em;
   text-align: left !important;
-    display: inline-block; /* This overrides parent centering */
+  display: inline-block; /* This overrides parent centering */
+  list-style-position: inside;
 }
 
 .card li {
