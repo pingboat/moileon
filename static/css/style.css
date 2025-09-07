@@ -34,7 +34,7 @@ body {
 .main-content {
     flex: 1;
     padding: 40px;
-    text-align: left;
+    text-align: center;
 }
 
 /* ==================================================
@@ -275,6 +275,116 @@ body {
     padding: 15px;
     border-radius: 6px;
     margin-top: 20px;
+}
+
+/* ==================================================
+   LIST PAGES STYLING
+   ================================================== */
+.section-page {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.section-header {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.section-header h1 {
+    font-size: 32px;
+    color: #000080;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #000080;
+    padding-bottom: 10px;
+}
+
+.section-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.posts-list {
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.posts-list ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.posts-list li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.posts-list a {
+    color: #000080;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+.posts-list a:hover {
+    color: #4169E1;
+}
+
+/* For article-based list items (preserve original bullet style) */
+.post-item,
+.booknote-item,
+.project-item,
+.podcast-item {
+    margin-bottom: 15px;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    list-style: disc outside;
+    margin-left: 20px;
+}
+
+.post-item h3,
+.booknote-item h3,
+.project-item h3,
+.podcast-item h3 {
+    display: inline;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.post-item h3 a,
+.booknote-item h3 a,
+.project-item h3 a,
+.podcast-item h3 a {
+    color: #000080;
+    text-decoration: underline;
+}
+
+.post-item h3 a:hover,
+.booknote-item h3 a:hover,
+.project-item h3 a:hover,
+.podcast-item h3 a:hover {
+    color: #4169E1;
+}
+
+/* Hide other post elements to maintain simple bullet list */
+.post-date,
+.post-summary,
+.book-author,
+.book-rating,
+.episode-number,
+.episode-duration,
+.tech-stack,
+.book-summary,
+.project-summary,
+.podcast-summary,
+.read-more,
+.project-links,
+.external-link,
+.post-tags-small {
+    display: none;
 }
 
 /* ==================================================
