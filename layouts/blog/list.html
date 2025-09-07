@@ -1,13 +1,13 @@
-<div style="max-width: 600px; margin: 2em auto;">
-  <div style="background: white; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,64,0.15); padding: 2em;">
-    <h1 style="color: #191970; font-size: 2em; margin-bottom: 0.3em;">Blog Posts</h1>
-    <hr style="border: none; border-top: 2px solid #191970; margin-bottom: 1em;">
+{{ define "main" }}
+  <div class="card">
+    <h1>Blog Posts</h1>
+    <hr>
     <ul>
       {{ range .Pages }}
         <li>
-          <a href="{{ .RelPermalink }}" style="color: #191970; font-size: 1.15em;">{{ .Title }}</a>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </li>
       {{ end }}
     </ul>
   </div>
-</div>
+{{ end }}
