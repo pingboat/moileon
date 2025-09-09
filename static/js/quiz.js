@@ -15,10 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const scoreElement = document.getElementById("score-display");
 
     console.log("Quiz initialization started");
-    console.log("Question element:", questionElement);
-    console.log("Answer input:", answerInput);
-    console.log("Submit button:", submitButton);
-    console.log("Score element:", scoreElement);
 
     // Check if we're on a quiz page
     if (!questionElement || !answerInput || !submitButton || !scoreElement) {
@@ -76,19 +72,32 @@ document.addEventListener("DOMContentLoaded", function () {
         clearFeedback();
     }
 
+    function getCorrectAnswers(question) {
+        // Handle both string and array answers
+        if (Array.isArray(question.answer)) {
+            return question.answer;
+        } else if (typeof question.answer === 'string') {
+            return [question.answer];
+        } else {
+            console.error("Invalid answer format:", question.answer);
+            return ["unknown"];
+        }
+    }
+
+    function getDisplayAnswer(question) {
+        const answers = getCorrectAnswers(question);
+        return answers[0]; // Return the first (primary) answer for display
+    }
+
     function checkAnswer() {
         const userAnswer = answerInput.value.trim().toLowerCase();
         if (!userAnswer) return;
 
         const currentQuestion = questions[currentQuestionIndex];
-        
-        // Handle both string and array answers
-        let correctAnswers = [];
-        if (Array.isArray(currentQuestion.answer)) {
-            correctAnswers = currentQuestion.answer.map(ans => ans.toLowerCase());
-        } else {
-            correctAnswers = [currentQuestion.answer.toLowerCase()];
-        }
+        const correctAnswers = getCorrectAnswers(currentQuestion).map(ans => ans.toLowerCase());
+
+        console.log("User answer:", userAnswer);
+        console.log("Correct answers:", correctAnswers);
 
         const isCorrect = correctAnswers.some(answer => userAnswer === answer);
 
@@ -96,9 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
             showFeedback("✅ Correct!", "correct");
             score++;
         } else {
-            const correctAnswer = Array.isArray(currentQuestion.answer) 
-                ? currentQuestion.answer[0] 
-                : currentQuestion.answer;
+            const correctAnswer = getDisplayAnswer(currentQuestion);
             let message = `❌ Incorrect. The correct answer is: ${correctAnswer}`;
             if (currentQuestion.explanation) {
                 message += `\n💡 ${currentQuestion.explanation}`;
@@ -113,9 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showAnswer() {
         const currentQuestion = questions[currentQuestionIndex];
-        const correctAnswer = Array.isArray(currentQuestion.answer) 
-            ? currentQuestion.answer[0] 
-            : currentQuestion.answer;
+        const correctAnswer = getDisplayAnswer(currentQuestion);
         
         let message = `💡 The answer is: ${correctAnswer}`;
         if (currentQuestion.explanation) {
@@ -158,44 +163,12 @@ document.addEventListener("DOMContentLoaded", function () {
     function showFeedback(message, type) {
         clearFeedback();
         
-        const feedback = document.createElement("div");
-        feedback.className = "quiz-feedback";
-        feedback.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 15px 20px;
-            border-radius: 8px;
-            color: white;
-            font-weight: 500;
-            z-index: 10000;
-            max-width: 350px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            white-space: pre-line;
-        `;
-
-        switch(type) {
-            case 'correct':
-                feedback.style.background = '#10b981';
-                break;
-            case 'incorrect':
-                feedback.style.background = '#ef4444';
-                break;
-            case 'info':
-                feedback.style.background = '#001f77';
-                break;
-            case 'complete':
-                feedback.style.background = '#10b981';
-                break;
-        }
-
-        feedback.textContent = message;
-        document.body.appendChild(feedback);
-
-        setTimeout(() => feedback.remove(), 4000);
+        // Use alert for mobile compatibility
+        alert(message);
     }
 
     function clearFeedback() {
+        // Clear any existing feedback elements
         document.querySelectorAll('.quiz-feedback').forEach(el => el.remove());
     }
 
