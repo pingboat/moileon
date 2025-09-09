@@ -1,13 +1,13 @@
 <nav>
     <a href="/" class="nav-button {{ if .IsHome }}active{{ end }}">Home</a>
-    <a href="/blog/" class="nav-button {{ if .HasMenuCurrent "main" "blog" }}active{{ end }}">Blog</a>
-    <a href="/booknotes/" class="nav-button {{ if .HasMenuCurrent "main" "booknotes" }}active{{ end }}">Book Notes</a>
-    <a href="/projects/" class="nav-button {{ if .HasMenuCurrent "main" "projects" }}active{{ end }}">Projects</a>
-    <a href="/digital/" class="nav-button {{ if .HasMenuCurrent "main" "digital" }}active{{ end }}">Digital</a>
-    <a href="/podcast/" class="nav-button {{ if .HasMenuCurrent "main" "podcast" }}active{{ end }}">Podcast</a>
-    <a href="/quotes/" class="nav-button {{ if .HasMenuCurrent "main" "quotes" }}active{{ end }}">Quotes</a>
-    <a href="/lenscape/" class="nav-button {{ if .HasMenuCurrent "main" "lenscape" }}active{{ end }}">Lenscape</a>
-    <a href="/bio/" class="nav-button {{ if .HasMenuCurrent "main" "bio" }}active{{ end }}">Bio</a>
+    <a href="/blog/" class="nav-button {{ if or (eq .RelPermalink "/blog/") (.HasMenuCurrent "main" "blog") }}active{{ end }}">Blog</a>
+    <a href="/booknotes/" class="nav-button {{ if or (eq .RelPermalink "/booknotes/") (.HasMenuCurrent "main" "booknotes") }}active{{ end }}">Book Notes</a>
+    <a href="/projects/" class="nav-button {{ if or (eq .RelPermalink "/projects/") (.HasMenuCurrent "main" "projects") }}active{{ end }}">Projects</a>
+    <a href="/digital/" class="nav-button {{ if or (eq .RelPermalink "/digital/") (.HasMenuCurrent "main" "digital") }}active{{ end }}">Digital</a>
+    <a href="/podcast/" class="nav-button {{ if or (eq .RelPermalink "/podcast/") (.HasMenuCurrent "main" "podcast") }}active{{ end }}">Podcast</a>
+    <a href="/quotes/" class="nav-button {{ if or (eq .RelPermalink "/quotes/") (.HasMenuCurrent "main" "quotes") }}active{{ end }}">Quotes</a>
+    <a href="/lenscape/" class="nav-button {{ if or (eq .RelPermalink "/lenscape/") (.HasMenuCurrent "main" "lenscape") }}active{{ end }}">Lenscape</a>
+    <a href="/bio/" class="nav-button {{ if or (eq .RelPermalink "/bio/") (.HasMenuCurrent "main" "bio") }}active{{ end }}">Bio</a>
     <a href="https://x.com/iobyleon" class="nav-button" target="_blank">Twitter</a>
     <a href="https://www.linkedin.com/in/leonkaushik" class="nav-button" target="_blank">LinkedIn</a>
 </nav>
