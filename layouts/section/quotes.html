@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <title>Quotes - moileon</title>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKB8RXSXSG"></script>
     <script>
@@ -141,38 +141,6 @@
             text-align: left;
             margin-top: 10px;
         }
-        
-        /* Default/Error state content */
-        .default-content {
-            text-align: left;
-            color: #666;
-        }
-
-        /* ==================================================
-           RESPONSIVE DESIGN
-           ================================================== */
-        @media (max-width: 768px) {
-            .main-content {
-                padding: 20px;
-            }
-            
-            .content-section {
-                margin: 20px auto;
-                padding: 15px;
-            }
-            
-            .content-section h2 {
-                font-size: 24px;
-            }
-            
-            .quote-item {
-                padding: 12px;
-            }
-            
-            .quote-item blockquote {
-                font-size: 16px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -196,15 +164,7 @@
                     {{ end }}
                 {{ else }}
                     <div class="default-content">
-                        <p>Inspiring quotes and wisdom will be displayed here.</p>
-                        <p>This collection could include:</p>
-                        <ul style="margin-left: 20px; margin-top: 10px;">
-                            <li>Personal reflections</li>
-                            <li>Favorite quotes from books and thinkers</li>
-                            <li>Insights from conversations</li>
-                            <li>Moments of inspiration</li>
-                            <li>And more...</li>
-                        </ul>
+                        <p>No quotes found.</p>
                     </div>
                 {{ end }}
             </div>
