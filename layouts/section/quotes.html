@@ -21,14 +21,11 @@
     </script>
 
     <link rel="icon" type="image/x-icon" href="/assets/images/moileon-favicon.ico">
-
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48x48.png">
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64x64.png">
-
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180x180.png">
-
     <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="256x256" href="/assets/images/favicon-256x256.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon-512x512.png">
@@ -247,57 +244,9 @@
 </head>
 <body>
     <div class="container">
-        <div class="sidebar"></div>
-<script>
-  fetch("/sidebar.html")
-    .then(res => res.text())
-    .then(html => {
-      document.querySelector(".sidebar").innerHTML = html;
-
-      // Normalize current path
-      let currentPath = window.location.pathname
-        .replace(/\/index\.html$/, "")   // remove index.html
-        .replace(/\/$/, "");             // remove trailing slash
-
-      // Special case: Home should match "/"
-      if (currentPath === "") {
-        currentPath = "/";
-      }
-
-      // Loop through sidebar links and add analytics tracking
-      document.querySelectorAll(".sidebar a").forEach(link => {
-        let linkPath = link.getAttribute("href").replace(/\/$/, ""); // remove trailing slash
-        if (linkPath === "") linkPath = "/"; // treat empty href as "/"
-        if (linkPath === currentPath) {
-          link.classList.add("active");
-        }
-        
-        // Add click tracking for navigation
-        link.addEventListener('click', function(e) {
-          const pageName = this.textContent.trim();
-          const url = this.href;
-          
-          if (this.target === '_blank') {
-            // External links (LinkedIn, Twitter)
-            gtag('event', 'click', {
-              event_category: 'External Link',
-              event_label: pageName,
-              value: 1,
-              custom_parameter_destination: url
-            });
-          } else if (url && !url.includes('#')) {
-            // Internal page navigation
-            gtag('event', 'page_navigation', {
-              event_category: 'Navigation',
-              event_label: pageName,
-              page_title: pageName,
-              page_location: url
-            });
-          }
-        });
-      });
-    });
-</script>
+        <div class="sidebar">
+            {{ partial "sidebar.html" . }}
+        </div>
 
         <div class="main-content">
             <div class="content-section">
