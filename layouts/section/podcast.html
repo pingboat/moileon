@@ -292,20 +292,44 @@
             <div class="content-section">
                 <h2>Podcast</h2>
                 <div id="podcast-content">
-                    <div class="content-item">
-                        <h3>Sandhya Vandanam - A Daily Ritual</h3>
-                        <div class="episode-meta">
-                            <span class="date">October 1, 2023</span>
-                            <span class="episode-number">Episode 1</span>
-                            <span class="episode-duration">Duration: 18:25</span>
+                    {{ if not .Pages }}
+                        <div class="coming-soon">
+                            <img src="/assets/images/coming-soon-podcast.jpg" alt="Coming Soon - Podcast">
+                            <h3>Coming Soon!</h3>
+                            <p>Stay tuned for engaging conversations and insights! 🎙️</p>
                         </div>
-                        <div class="podcast-links">
-                            <a href="https://open.spotify.com/episode/7f5e7f5e7f5e7f5e7f5e" target="_blank">Spotify</a>
-                            <a href="https://podcasts.apple.com/us/podcast/sandhya-vandanam-a-daily-ritual/id1710927909?i=1000630018783" target="_blank">Apple Podcasts</a>
-                            <a href="https://youtu.be/0-Q7-9P_P_c" target="_blank">YouTube</a>
-                            <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5idXp6c3Byb3V0LmNvbS8yMTYwNzE3LnJzcw/episode/QnV6enNwcm91dC0xMzY3NzU3Ng" target="_blank">Google Podcasts</a>
-                        </div>
-                    </div>
+                    {{ else }}
+                        {{ range .Pages.ByDate.Reverse }}
+                            <div class="content-item">
+                                <h3>{{ .Title }}</h3>
+                                <div class="episode-meta">
+                                    {{ if .Params.date }}
+                                        <span class="date">{{ .Params.date.Format "October 1, 2023" }}</span>
+                                    {{ end }}
+                                    {{ if .Params.episode_number }}
+                                        <span class="episode-number">Episode {{ .Params.episode_number }}</span>
+                                    {{ end }}
+                                    {{ if .Params.duration }}
+                                        <span class="episode-duration">Duration: {{ .Params.duration }}</span>
+                                    {{ end }}
+                                </div>
+                                <div class="podcast-links">
+                                    {{ if .Params.spotify_url }}
+                                        <a href="{{ .Params.spotify_url }}" target="_blank">Spotify</a>
+                                    {{ end }}
+                                    {{ if .Params.apple_url }}
+                                        <a href="{{ .Params.apple_url }}" target="_blank">Apple Podcasts</a>
+                                    {{ end }}
+                                    {{ if .Params.youtube_url }}
+                                        <a href="{{ .Params.youtube_url }}" target="_blank">YouTube</a>
+                                    {{ end }}
+                                    {{ if .Params.google_url }}
+                                        <a href="{{ .Params.google_url }}" target="_blank">Google Podcasts</a>
+                                    {{ end }}
+                                </div>
+                            </div>
+                        {{ end }}
+                    {{ end }}
                 </div>
             </div>
         </div>
