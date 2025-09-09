@@ -56,10 +56,10 @@ enableRobotsTXT = true
     url = "/bio/"
     weight = 90
   [[menu.main]]
-    name = "LinkedIn"
-    url = "https://linkedin.com/in/leonkaushik"
-    weight = 100
-  [[menu.main]]
     name = "Twitter"
     url = "https://x.com/iobyleon"
+    weight = 100
+    [[menu.main]]
+    name = "LinkedIn"
+    url = "https://linkedin.com/in/leonkaushik"
     weight = 110
