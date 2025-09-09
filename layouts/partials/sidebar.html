@@ -1,44 +1,10 @@
 <nav>
     {{ range .Site.Menus.main }}
         {{ if or (eq .Name "Twitter") (eq .Name "LinkedIn") }}
-            <!-- Social links (external, no highlighting) -->
             <a href="{{ .URL }}" class="nav-button" target="_blank" rel="noopener">{{ .Name }}</a>
         {{ else }}
-            <!-- Regular navigation items -->
-            {{ $isActive := false }}
-            
-            <!-- Handle Home page specially -->
-            {{ if eq .Name "Home" }}
-                {{ if $.IsHome }}
-                    {{ $isActive = true }}
-                {{ end }}
-            {{ else }}
-                <!-- Check if current page matches this menu item -->
-                {{ if $.IsMenuCurrent "main" . }}
-                    {{ $isActive = true }}
-                {{ end }}
-                
-                <!-- Additional check for section matching -->
-                {{ if and (not $isActive) $.CurrentSection }}
-                    {{ if eq $.CurrentSection.RelPermalink .URL }}
-                        {{ $isActive = true }}
-                    {{ end }}
-                {{ end }}
-                
-                <!-- Check if URL matches current page URL -->
-                {{ if and (not $isActive) (eq $.RelPermalink .URL) }}
-                    {{ $isActive = true }}
-                {{ end }}
-                
-                <!-- Check if current page is under this menu item's section -->
-                {{ if and (not $isActive) (ne .URL "/") }}
-                    {{ if hasPrefix $.RelPermalink .URL }}
-                        {{ $isActive = true }}
-                    {{ end }}
-                {{ end }}
-            {{ end }}
-            
-            <a href="{{ .URL }}" class="nav-button {{ if $isActive }}active{{ end }}">{{ .Name }}</a>
+            <a href="{{ .URL }}" class="nav-button {{ if $.IsMenuCurrent "main" . }}active{{ end }}">{{ .Name }}</a>
         {{ end }}
     {{ end }}
 </nav>
+
