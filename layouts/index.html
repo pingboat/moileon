@@ -14,7 +14,16 @@
         
         <!-- Embedded quiz data for JavaScript -->
         <script id="quiz-data" type="application/json">
-        {{ $quizData := getJSON "data/questions.json" }}
+        {{ $quizData := "" }}
+        {{ if fileExists "data/questions.json" }}
+            {{ $quizData = getJSON "data/questions.json" }}
+        {{ else }}
+            {{ $quizData = slice 
+                (dict "question" "Which company's first product was a line of playing cards in 1889?" "answer" (slice "nintendo" "Nintendo") "explanation" "Nintendo started as a playing card company in Kyoto, Japan, founded by Fusajiro Yamauchi.")
+                (dict "question" "What does 'www' stand for in web addresses?" "answer" (slice "world wide web" "World Wide Web") "explanation" "The World Wide Web was invented by Tim Berners-Lee in 1989 while working at CERN.")
+                (dict "question" "Which planet is known as the Red Planet?" "answer" (slice "mars" "Mars") "explanation" "Mars appears red due to iron oxide (rust) on its surface.")
+            }}
+        {{ end }}
         {{ $quizData | jsonify }}
         </script>
         
@@ -27,6 +36,105 @@
         </div>
     </div>
     
-    <script src="{{ "js/quiz.js" | relURL }}"></script>
+    <!-- Inline JavaScript for debugging -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("=== QUIZ DEBUG INFO ===");
+        
+        // Check if elements exist
+        const questionElement = document.getElementById("question-display");
+        const answerInput = document.getElementById("answer-input");
+        const submitButton = document.querySelector(".submit-btn");
+        const nextButton = document.querySelector(".next-btn");
+        const scoreElement = document.getElementById("score-display");
+        const quizDataElement = document.getElementById("quiz-data");
+        
+        console.log("Question element:", questionElement);
+        console.log("Answer input:", answerInput);
+        console.log("Submit button:", submitButton);
+        console.log("Quiz data element:", quizDataElement);
+        
+        if (!questionElement) {
+            console.error("❌ Question element not found!");
+            return;
+        }
+        
+        if (!quizDataElement) {
+            console.error("❌ Quiz data element not found!");
+            questionElement.textContent = "⚠️ Quiz data element missing";
+            return;
+        }
+        
+        // Try to parse quiz data
+        let questions = [];
+        try {
+            const rawData = quizDataElement.textContent.trim();
+            console.log("Raw quiz data:", rawData);
+            questions = JSON.parse(rawData);
+            console.log("✅ Successfully parsed", questions.length, "questions");
+            console.log("First question:", questions[0]);
+        } catch (error) {
+            console.error("❌ Error parsing quiz data:", error);
+            questionElement.textContent = "⚠️ Failed to load quiz questions: " + error.message;
+            return;
+        }
+        
+        if (questions.length === 0) {
+            console.error("❌ No questions found in data");
+            questionElement.textContent = "⚠️ No questions available";
+            return;
+        }
+        
+        // If we get here, everything should work
+        console.log("✅ Quiz initialization successful!");
+        questionElement.textContent = questions[0].question;
+        
+        // Add basic functionality
+        let currentIndex = 0;
+        let score = 0;
+        
+        submitButton.addEventListener("click", function() {
+            const userAnswer = answerInput.value.trim().toLowerCase();
+            const currentQ = questions[currentIndex];
+            const correctAnswers = Array.isArray(currentQ.answer) ? 
+                currentQ.answer.map(a => a.toLowerCase()) : 
+                [currentQ.answer.toLowerCase()];
+            
+            if (correctAnswers.includes(userAnswer)) {
+                alert("✅ Correct! " + (currentQ.explanation || ""));
+                score++;
+                scoreElement.textContent = score;
+            } else {
+                const correctAnswer = Array.isArray(currentQ.answer) ? currentQ.answer[0] : currentQ.answer;
+                alert("❌ Incorrect. The answer was: " + correctAnswer + 
+                      (currentQ.explanation ? "\n\n" + currentQ.explanation : ""));
+            }
+            
+            // Next question
+            currentIndex++;
+            if (currentIndex < questions.length) {
+                questionElement.textContent = questions[currentIndex].question;
+                answerInput.value = "";
+            } else {
+                questionElement.textContent = "🎉 Quiz completed!";
+                const percentage = Math.round((score / questions.length) * 100);
+                alert(`Final Score: ${score}/${questions.length} (${percentage}%)`);
+            }
+        });
+        
+        nextButton.addEventListener("click", function() {
+            const currentQ = questions[currentIndex];
+            const correctAnswer = Array.isArray(currentQ.answer) ? currentQ.answer[0] : currentQ.answer;
+            alert("💡 The answer is: " + correctAnswer + 
+                  (currentQ.explanation ? "\n\n" + currentQ.explanation : ""));
+        });
+        
+        answerInput.addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                submitButton.click();
+            }
+        });
+    });
+    </script>
 
 {{ end }}
