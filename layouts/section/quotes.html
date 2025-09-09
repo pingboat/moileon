@@ -1,18 +1,794 @@
-{{ define "main" }}
-    <div class="main-content">
-        <h1>Quotes</h1>
-        <div class="quotes-container">
-            {{ range .Paginator.Pages }}
-            <div class="quote-card">
-                <div class="quote-content">
-                    {{ .Content | markdownify }}
-                </div>
-                <div class="quote-author">
-                    — {{ .Params.author }}
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes - moileon</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKB8RXSXSG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      gtag('config', 'G-EKB8RXSXSG', {
+        // Enhanced measurement for better insights
+        enhanced_measurements: true,
+        // Track page views automatically
+        page_title: 'Quotes - moileon',
+        page_location: window.location.href
+      });
+    </script>
+
+    <link rel="icon" type="image/x-icon" href="/assets/images/moileon-favicon.ico">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64x64.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180x180.png">
+
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="/assets/images/favicon-256x256.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon-512x512.png">
+
+    <meta name="theme-color" content="#000080">
+    
+    <style>
+        /* ==================================================
+           GLOBAL RESET AND BASE STYLES
+           ================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ==================================================
+           LAYOUT STRUCTURE
+           ================================================== */
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #000080;
+            padding: 20px;
+            box-shadow: none;
+            border-right: none;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 40px;
+        }
+
+        /* ==================================================
+           NAVIGATION BUTTONS
+           ================================================== */
+        .nav-button {
+            display: block;
+            width: 100%;
+            padding: 8px 12px;
+            margin-bottom: 2px;
+            background-color: #4169E1;
+            color: white;
+            text-decoration: none;
+            border: 1px solid #0000CD;
+            border-radius: 0;
+            font-size: 13px;
+            font-weight: normal;
+            text-align: left;
+            transition: none;
+            cursor: pointer;
+            font-family: Verdana, Arial, sans-serif;
+        }
+
+        .nav-button:hover {
+            background-color: #1E90FF;
+            color: white;
+        }
+
+        .nav-button.active {
+            background-color: #1E90FF;
+        }
+
+        /* ==================================================
+           QUOTES STYLES
+           ================================================== */
+        .content-section {
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: left;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .content-section h2 {
+            color: #000080;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #4169E1;
+            padding-bottom: 10px;
+        }
+
+        .content-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-left: 4px solid #87CEEB;
+            background: #f9f9f9;
+            text-align: left;
+        }
+
+        .content-item h3 {
+            margin-bottom: 10px;
+            color: #333;
+            text-align: left !important;
+            font-style: normal !important;
+        }
+
+        .content-item .date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            text-align: left !important;
+            font-style: normal !important;
+        }
+
+        .content-item div p {
+            text-align: left !important;
+            font-style: normal !important;
+        }
+
+        .content-item * {
+            text-align: left !important;
+            font-style: normal !important;
+        }
+
+        .content-item blockquote {
+            text-align: left !important;
+            font-style: normal !important;
+        }
+
+        .loading {
+            text-align: center;
+            color: #666;
+            font-style: normal;
+        }
+
+        .error {
+            text-align: center;
+            color: #cc0000;
+            font-style: normal;
+        }
+
+        /* Quote specific styles */
+        .quote-text {
+            font-size: 18px;
+            font-style: normal !important;
+            margin: 15px 0;
+            color: #333;
+            text-align: left !important;
+        }
+
+        .quote-author {
+            text-align: right !important;
+            margin-top: 10px;
+            font-style: normal !important;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .quote-source {
+            color: #888;
+            font-size: 0.85em;
+            margin-top: 5px;
+            text-align: left !important;
+            font-style: normal !important;
+        }
+
+        .quote-category {
+            margin-top: 8px;
+            font-size: 0.85em;
+            color: #888;
+        }
+
+        .quote-category span {
+            background-color: #e8e8e8;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-right: 6px;
+            display: inline-block;
+        }
+
+        /* Default quotes content (when no markdown files exist) */
+        .default-content {
+            text-align: left;
+            color: #666;
+        }
+
+        /* ==================================================
+           RESPONSIVE DESIGN
+           ================================================== */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 20px;
+            }
+            
+            .content-section {
+                margin: 20px auto;
+                padding: 15px;
+            }
+            
+            .content-section h2 {
+                font-size: 24px;
+            }
+            
+            .content-item {
+                padding: 12px;
+            }
+            
+            .quote-text {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar"></div>
+<script>
+  fetch("/sidebar.html")
+    .then(res => res.text())
+    .then(html => {
+      document.querySelector(".sidebar").innerHTML = html;
+
+      // Normalize current path
+      let currentPath = window.location.pathname
+        .replace(/\/index\.html$/, "")   // remove index.html
+        .replace(/\/$/, "");             // remove trailing slash
+
+      // Special case: Home should match "/"
+      if (currentPath === "") {
+        currentPath = "/";
+      }
+
+      // Loop through sidebar links and add analytics tracking
+      document.querySelectorAll(".sidebar a").forEach(link => {
+        let linkPath = link.getAttribute("href").replace(/\/$/, ""); // remove trailing slash
+        if (linkPath === "") linkPath = "/"; // treat empty href as "/"
+        if (linkPath === currentPath) {
+          link.classList.add("active");
+        }
+        
+        // Add click tracking for navigation
+        link.addEventListener('click', function(e) {
+          const pageName = this.textContent.trim();
+          const url = this.href;
+          
+          if (this.target === '_blank') {
+            // External links (LinkedIn, Twitter)
+            gtag('event', 'click', {
+              event_category: 'External Link',
+              event_label: pageName,
+              value: 1,
+              custom_parameter_destination: url
+            });
+          } else if (url && !url.includes('#')) {
+            // Internal page navigation
+            gtag('event', 'page_navigation', {
+              event_category: 'Navigation',
+              event_label: pageName,
+              page_title: pageName,
+              page_location: url
+            });
+          }
+        });
+      });
+    });
+</script>
+
+        <div class="main-content">
+            <div class="content-section">
+                <h2>Quotes</h2>
+                <div id="quotes-content" class="loading">Loading quotes...</div>
             </div>
-            {{ end }}
         </div>
-        {{ template "_internal/pagination.html" . }}
     </div>
-{{ end }}
+
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
+    <script>
+        /* ==================================================
+           GOOGLE ANALYTICS TRACKING FUNCTIONS
+           ================================================== */
+        
+        // Track quotes interactions
+        function trackQuotesEvent(action, quoteData = {}, additionalData = {}) {
+            gtag('event', action, {
+                event_category: 'Quotes',
+                event_label: (quoteData.author || 'Unknown Author').substring(0, 100),
+                value: 1,
+                custom_parameter_quote_category: quoteData.category,
+                custom_parameter_quote_source: quoteData.source,
+                ...additionalData
+            });
+        }
+
+        /* ==================================================
+           GLOBAL VARIABLES (Enhanced with Analytics)
+           ================================================== */
+        const CONTENT_BRANCH = (window.location.hostname.startsWith('dev--') || window.location.hostname.includes('localhost')) ? 'dev' : 'main';
+        let pageStartTime = Date.now();
+        let engagementTracked = false;
+        let maxScroll = 0;
+        let quotesData = [];
+        let quoteViewTracker = new Map(); // Track individual quote views
+
+        /* ==================================================
+           QUOTES LOADING FUNCTIONS (Enhanced with Analytics)
+           ================================================== */
+        async function loadQuotes() {
+            try {
+                const loadStartTime = performance.now();
+                
+                const response = await fetch(`https://api.github.com/repos/pingboat/moileon/contents/content/quotes?ref=${CONTENT_BRANCH}`);
+                const files = await response.json();
+                
+                if (Array.isArray(files) && files.length > 0) {
+                    const contentDiv = document.getElementById('quotes-content');
+                    contentDiv.innerHTML = '';
+                    quotesData = [];
+                    
+                    let hasQuotes = false;
+                    let quotesLoaded = 0;
+                    
+                    for (const file of files) {
+                        if (file.name.endsWith('.md')) {
+                            const quoteData = await loadMarkdownFile(file.download_url, contentDiv, 'quotes');
+                            if (quoteData) {
+                                quotesData.push(quoteData);
+                                quotesLoaded++;
+                                hasQuotes = true;
+                            }
+                        }
+                    }
+                    
+                    if (!hasQuotes) {
+                        showDefaultContent();
+                        
+                        // Track empty state
+                        gtag('event', 'quotes_empty', {
+                            event_category: 'Quotes',
+                            event_label: 'No Quotes Found',
+                            value: 0
+                        });
+                    } else {
+                        // Track successful loading
+                        const loadTime = Math.round(performance.now() - loadStartTime);
+                        gtag('event', 'quotes_loaded', {
+                            event_category: 'Quotes',
+                            event_label: 'Quotes Loaded Successfully',
+                            value: quotesLoaded,
+                            custom_parameter_load_time: loadTime,
+                            custom_parameter_quotes_count: quotesLoaded
+                        });
+                        
+                        // Analyze quote categories after loading
+                        setTimeout(analyzeQuoteCategories, 1000);
+                        
+                        // Setup interaction tracking
+                        setTimeout(setupQuotesInteractionTracking, 500);
+                    }
+                } else {
+                    showDefaultContent();
+                    trackQuotesEvent('quotes_load_error', {}, { error: 'No files array' });
+                }
+            } catch (error) {
+                showDefaultContent();
+                
+                // Track loading error
+                gtag('event', 'quotes_load_error', {
+                    event_category: 'Quotes',
+                    event_label: 'Quotes Loading Failed',
+                    value: 0,
+                    custom_parameter_error: error.message
+                });
+            }
+        }
+
+        function showDefaultContent() {
+            document.getElementById('quotes-content').innerHTML = `
+                <div class="default-content">
+                    <p>Inspiring quotes and wisdom will be displayed here.</p>
+                    <p>This collection could include:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Personal reflections</li>
+                        <li>Favorite quotes from books and thinkers</li>
+                        <li>Insights from conversations</li>
+                        <li>Moments of inspiration</li>
+                        <li>And more...</li>
+                    </ul>
+                </div>
+            `;
+        }
+
+        // Analyze quote categories and authors
+        function analyzeQuoteCategories() {
+            if (quotesData.length === 0) return;
+            
+            const categories = {};
+            const authors = {};
+            const sources = {};
+            
+            quotesData.forEach(quote => {
+                // Count categories
+                if (quote.categories && Array.isArray(quote.categories)) {
+                    quote.categories.forEach(cat => {
+                        categories[cat] = (categories[cat] || 0) + 1;
+                    });
+                }
+                
+                // Count authors
+                if (quote.author) {
+                    authors[quote.author] = (authors[quote.author] || 0) + 1;
+                }
+                
+                // Count sources
+                if (quote.source) {
+                    sources[quote.source] = (sources[quote.source] || 0) + 1;
+                }
+            });
+            
+            // Track most popular category
+            const topCategory = Object.keys(categories).reduce((a, b) => 
+                categories[a] > categories[b] ? a : b, Object.keys(categories)[0]);
+            
+            if (topCategory) {
+                gtag('event', 'quotes_analysis', {
+                    event_category: 'Quotes',
+                    event_label: 'Content Analysis',
+                    value: quotesData.length,
+                    custom_parameter_top_category: topCategory,
+                    custom_parameter_unique_authors: Object.keys(authors).length,
+                    custom_parameter_unique_sources: Object.keys(sources).length
+                });
+            }
+        }
+
+        // Setup interaction tracking for quotes
+        function setupQuotesInteractionTracking() {
+            // Track quote visibility and reading time
+            document.querySelectorAll('.content-item').forEach((item, index) => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !quoteViewTracker.has(index)) {
+                            quoteViewTracker.set(index, Date.now());
+                            
+                            const quoteData = quotesData[index] || {};
+                            
+                            // Track quote view
+                            gtag('event', 'quote_view', {
+                                event_category: 'Quotes',
+                                event_label: quoteData.author || `Quote ${index + 1}`,
+                                value: 1,
+                                custom_parameter_quote_position: index + 1,
+                                custom_parameter_quote_category: quoteData.categories ? quoteData.categories.join(', ') : 'Uncategorized',
+                                custom_parameter_quote_source: quoteData.source || 'Unknown'
+                            });
+                            
+                            // Track by category for insights
+                            if (quoteData.categories && quoteData.categories.length > 0) {
+                                quoteData.categories.forEach(category => {
+                                    gtag('event', 'quote_category_view', {
+                                        event_category: 'Quotes',
+                                        event_label: category,
+                                        value: 1
+                                    });
+                                });
+                            }
+                        }
+                    });
+                }, { threshold: 0.7 }); // 70% visible to count as "read"
+                
+                observer.observe(item);
+                
+                // Track clicks on quote text
+                const quoteText = item.querySelector('.quote-text');
+                if (quoteText) {
+                    quoteText.addEventListener('click', function() {
+                        const quoteData = quotesData[index] || {};
+                        trackQuotesEvent('quote_click', quoteData, {
+                            custom_parameter_quote_position: index + 1
+                        });
+                    });
+                    
+                    // Track text selection within quotes
+                    quoteText.addEventListener('mouseup', function() {
+                        const selection = window.getSelection();
+                        if (selection.toString().trim().length > 10) { // Minimum 10 chars selected
+                            const quoteData = quotesData[index] || {};
+                            trackQuotesEvent('quote_text_selected', quoteData, {
+                                custom_parameter_selected_length: selection.toString().length
+                            });
+                        }
+                    });
+                }
+                
+                // Track clicks on author names
+                const authorElement = item.querySelector('.quote-author');
+                if (authorElement) {
+                    authorElement.addEventListener('click', function() {
+                        const quoteData = quotesData[index] || {};
+                        gtag('event', 'quote_author_click', {
+                            event_category: 'Quotes',
+                            event_label: quoteData.author || 'Unknown',
+                            value: 1,
+                            custom_parameter_author: quoteData.author || 'Unknown'
+                        });
+                    });
+                }
+            });
+        }
+
+        /* ==================================================
+           MARKDOWN FILE LOADING - QUOTES SPECIFIC (Enhanced with Analytics)
+           ================================================== */
+        async function loadMarkdownFile(url, container, type) {
+            try {
+                const response = await fetch(url);
+                const text = await response.text();
+                
+                const parsedContent = parseMarkdownFrontMatter(text);
+                const frontMatter = parsedContent;
+                const content = parsedContent.content;
+                
+                const item = document.createElement('div');
+                item.className = 'content-item';
+                
+                let itemHTML = '';
+                let quoteData = {};
+                
+                // Special handling for quotes
+                if (frontMatter.quote && type === 'quotes') {
+                    let quoteText = String(frontMatter.quote).trim();
+                    quoteText = quoteText.replace(/^["""']+/, '').replace(/["""']+$/, '').trim();
+                    let authorText = frontMatter.author ? String(frontMatter.author).trim() : '';
+                    
+                    // Store quote data for analytics
+                    quoteData.quote = quoteText;
+                    quoteData.author = authorText;
+                    quoteData.source = frontMatter.source;
+                    quoteData.categories = frontMatter.category;
+                    quoteData.date = frontMatter.date;
+                    
+                    // Check if author is embedded in quote
+                    if (!authorText) {
+                        const match = quoteText.match(/\s*[—–-]\s*([^""']+)\s*$/);
+                        if (match) {
+                            authorText = match[1].trim();
+                            quoteText = quoteText.slice(0, match.index).trim();
+                            quoteData.author = authorText;
+                        }
+                    }
+                    if (authorText) {
+                        authorText = authorText.replace(/^[—-]\s*/, '');
+                    }
+                    
+                    itemHTML += `<div class="quote-text">"${quoteText}"</div>`;
+                    if (authorText) {
+                        itemHTML += `<div class="quote-author">— ${authorText}</div>`;
+                    }
+                    
+                    // Handle quote source
+                    if (frontMatter.source) {
+                        itemHTML += `<div class="quote-source">Source: ${frontMatter.source}</div>`;
+                    }
+                    
+                    // Handle date
+                    if (frontMatter.date) {
+                        itemHTML += `<div class="date">${new Date(frontMatter.date).toLocaleDateString()}</div>`;
+                    }
+                    
+                    // Handle categories
+                    if (frontMatter.category) {
+                        let categoryHTML = '<div class="quote-category">';
+                        const categories = Array.isArray(frontMatter.category) ? frontMatter.category : [frontMatter.category];
+                        quoteData.categories = categories;
+                        categories.forEach(cat => {
+                            categoryHTML += `<span>${cat.trim()}</span>`;
+                        });
+                        categoryHTML += '</div>';
+                        itemHTML += categoryHTML;
+                    }
+                    
+                    item.innerHTML = itemHTML;
+                    container.appendChild(item);
+                    return quoteData;
+                }
+                
+                // Handle non-quote content items (if any)
+                if (frontMatter.title) {
+                    itemHTML += `<h3>${frontMatter.title}</h3>`;
+                    quoteData.title = frontMatter.title;
+                }
+                
+                if (frontMatter.date) {
+                    itemHTML += `<div class="date">${new Date(frontMatter.date).toLocaleDateString()}</div>`;
+                    quoteData.date = frontMatter.date;
+                }
+                
+                if (content) {
+                    const htmlContent = content
+                        .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+                        .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+                        .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+                        .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+                        .replace(/\*(.*)\*/gim, '<em>$1</em>')
+                        .replace(/\n\n/gim, '</p><p>')
+                        .replace(/\n/gim, '<br>');
+                    
+                    itemHTML += `<div><p>${htmlContent}</p></div>`;
+                    quoteData.content = content;
+                }
+                
+                item.innerHTML = itemHTML;
+                container.appendChild(item);
+                return quoteData;
+                
+            } catch (error) {
+                console.error('Error loading markdown file:', error);
+                return null;
+            }
+        }
+
+        /* ==================================================
+           ENGAGEMENT TRACKING FUNCTIONS
+           ================================================== */
+        function trackEngagement() {
+            if (!engagementTracked) {
+                const timeOnPage = Math.round((Date.now() - pageStartTime) / 1000);
+                if (timeOnPage > 10) {
+                    gtag('event', 'page_engagement', {
+                        event_category: 'Quotes',
+                        event_label: 'Time on Quotes Page',
+                        value: timeOnPage,
+                        custom_parameter_quotes_viewed: quoteViewTracker.size,
+                        custom_parameter_total_quotes: quotesData.length
+                    });
+                    engagementTracked = true;
+                }
+            }
+        }
+
+        // Track scroll behavior and quote discovery
+        function trackScrollBehavior() {
+            window.addEventListener('scroll', function() {
+                const scrollPercent = Math.round(
+                    (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+                );
+                
+                if (scrollPercent > maxScroll) {
+                    maxScroll = scrollPercent;
+                    
+                    // Track milestone scrolls
+                    if (maxScroll >= 75 && !window.scroll75Tracked) {
+                        gtag('event', 'scroll', {
+                            event_category: 'Quotes',
+                            event_label: '75% Scrolled',
+                            value: 75,
+                            custom_parameter_quotes_viewed: quoteViewTracker.size
+                        });
+                        window.scroll75Tracked = true;
+                    }
+                    
+                    if (maxScroll >= 100 && !window.scroll100Tracked) {
+                        gtag('event', 'scroll', {
+                            event_category: 'Quotes',
+                            event_label: '100% Scrolled - All Quotes Viewed',
+                            value: 100,
+                            custom_parameter_quotes_viewed: quoteViewTracker.size,
+                            custom_parameter_completion_rate: Math.round((quoteViewTracker.size / quotesData.length) * 100)
+                        });
+                        window.scroll100Tracked = true;
+                    }
+                }
+            });
+        }
+
+        /* ==================================================
+           UTILITY FUNCTIONS
+           ================================================== */
+        function parseMarkdownFrontMatter(text) {
+            let frontMatter = {};
+            let content = text;
+            const match = text.match(/^---\s*\n([\s\S]*?)\n---\s*/);
+            if (match) {
+                try {
+                    if (typeof jsyaml !== 'undefined' && jsyaml.load) {
+                        frontMatter = jsyaml.load(match[1]) || {};
+                    } else {
+                        // Simple fallback parsing
+                        const yamlContent = match[1];
+                        const lines = yamlContent.split('\n');
+                        lines.forEach(line => {
+                            const colonIndex = line.indexOf(':');
+                            if (colonIndex > 0) {
+                                const key = line.substring(0, colonIndex).trim();
+                                let value = line.substring(colonIndex + 1).trim().replace(/^["']|["']$/g, '');
+                                
+                                // Handle arrays (categories)
+                                if (value.startsWith('[') && value.endsWith(']')) {
+                                    value = value.slice(1, -1).split(',').map(item => item.trim().replace(/^["']|["']$/g, ''));
+                                }
+                                
+                                frontMatter[key] = value;
+                            }
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error parsing YAML:', e);
+                }
+                content = text.slice(match[0].length).trim();
+            }
+            frontMatter.content = content;
+            return frontMatter;
+        }
+
+        /* ==================================================
+           INITIALIZATION (Enhanced with Analytics)
+           ================================================== */
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track quotes page load
+            gtag('event', 'page_view', {
+                page_title: 'Quotes - moileon',
+                page_location: window.location.href,
+                event_category: 'Quotes'
+            });
+            
+            // Initialize scroll tracking
+            trackScrollBehavior();
+            
+            // Track engagement after 30 seconds
+            setTimeout(trackEngagement, 30000);
+            
+            // Track when user leaves page
+            window.addEventListener('beforeunload', function() {
+                trackEngagement();
+                
+                // Track session summary
+                const timeOnPage = Math.round((Date.now() - pageStartTime) / 1000);
+                if (timeOnPage > 10) {
+                    const quotesViewed = quoteViewTracker.size;
+                    const completionRate = quotesData.length > 0 ? Math.round((quotesViewed / quotesData.length) * 100) : 0;
+                    
+                    gtag('event', 'quotes_session_end', {
+                        event_category: 'Quotes',
+                        event_label: 'Session Summary',
+                        value: timeOnPage,
+                        custom_parameter_session_duration: timeOnPage,
+                        custom_parameter_max_scroll: maxScroll,
+                        custom_parameter_quotes_available: quotesData.length,
+                        custom_parameter_quotes_viewed: quotesViewed,
+                        custom_parameter_completion_rate: completionRate
+                    });
+                }
+            });
+            
+            // Load quotes
+            loadQuotes();
+        });
+    </script>
+</body>
+</html>
