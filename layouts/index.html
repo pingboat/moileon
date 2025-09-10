@@ -1,240 +1,139 @@
-{{ define "main" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
 
-<div class="logo-section" style="text-align: center;">
-    <div class="logo-text">ALL LIFE IS YOGA.</div>
-    <div class="lotus-image">
-        <img src="{{ "images/lotus.png" | relURL }}" alt="Lotus with Om Symbol">
-    </div>
-</div>
-
-<div class="quiz-section" style="text-align: center;">
-    <h1 class="quiz-title">Quest On!</h1>
-    <div class="score">Score: <span id="score-display">0</span></div>
-    <div class="question" id="question-display">Loading question...</div>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKB8RXSXSG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EKB8RXSXSG');
+    </script>
     
-    <input type="text" class="answer-input" id="answer-input" placeholder="Type your answer here">
-    <div class="instruction">Press Enter after typing your answer</div>
-    
-    <div class="quiz-buttons">
-        <button class="button submit-btn">Submit Answer</button>
-        <button class="button next-btn">Show me the answer</button>
+    <link rel="icon" type="image/x-icon" href="/assets/images/moileon-favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon-64x64.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="/assets/images/favicon-256x256.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon-512x512.png">
+    <meta name="theme-color" content="#000080">
+
+    <style>
+        /* ==================================================
+           GLOBAL RESET AND BASE STYLES
+           ================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ==================================================
+           LAYOUT STRUCTURE
+           ================================================== */
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #000080;
+            padding: 20px;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 40px;
+        }
+        
+        /* Navigation Buttons */
+        .nav-button {
+            display: block;
+            width: 100%;
+            padding: 8px 12px;
+            margin-bottom: 2px;
+            background-color: #4169E1;
+            color: white;
+            text-decoration: none;
+            border: 1px solid #0000CD;
+            border-radius: 0;
+            font-size: 13px;
+            font-weight: normal;
+            text-align: left;
+            cursor: pointer;
+            font-family: Verdana, Arial, sans-serif;
+        }
+
+        .nav-button:hover {
+            background-color: #1E90FF;
+            color: white;
+        }
+
+        .nav-button.active {
+            background-color: #1E90FF;
+        }
+
+        /* Digital Content Section */
+        .content-section {
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .content-section h2 {
+            color: #000080;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #4169E1;
+            padding-bottom: 10px;
+        }
+        
+        .digital-content {
+            text-align: center;
+        }
+        
+        .digital-content h1 {
+            font-family: Georgia, serif;
+            font-size: 3em;
+            color: #000080;
+            margin-bottom: 10px;
+        }
+
+        .digital-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            {{ partial "sidebar.html" . }}
+        </div>
+
+        <div class="main-content">
+            {{ partial "quiz.html" . }}
+        </div>
     </div>
-</div>
+</body>
+</html>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    // Hard-coded questions as backup
-    const fallbackQuestions = [
-        {
-            "question": "Which company's first product was a line of playing cards in 1889?",
-            "answer": ["nintendo", "Nintendo"],
-            "explanation": "Nintendo started as a playing card company in Kyoto, Japan, founded by Fusajiro Yamauchi."
-        },
-        {
-            "question": "What does 'www' stand for in web addresses?",
-            "answer": ["world wide web", "World Wide Web"],
-            "explanation": "The World Wide Web was invented by Tim Berners-Lee in 1989 while working at CERN."
-        },
-        {
-            "question": "Which planet is known as the Red Planet?",
-            "answer": ["mars", "Mars"],
-            "explanation": "Mars appears red due to iron oxide (rust) on its surface."
-        },
-        {
-            "question": "What is the largest mammal in the world?",
-            "answer": ["blue whale", "Blue whale"],
-            "explanation": "Blue whales can grow up to 100 feet long and weigh as much as 200 tons."
-        },
-        {
-            "question": "In which year did World War II end?",
-            "answer": ["1945"],
-            "explanation": "WWII ended in 1945 with Japan's surrender on September 2, following the atomic bombings."
-        },
-        {
-            "question": "What is the capital of Australia?",
-            "answer": ["canberra", "Canberra"],
-            "explanation": "Canberra was specially built as Australia's capital city, not Sydney or Melbourne."
-        },
-        {
-            "question": "Who painted the Mona Lisa?",
-            "answer": ["leonardo da vinci", "da vinci", "leonardo"],
-            "explanation": "Leonardo da Vinci painted the Mona Lisa between 1503-1519. It's housed in the Louvre Museum."
-        },
-        {
-            "question": "What is the smallest country in the world?",
-            "answer": ["vatican city", "vatican"],
-            "explanation": "Vatican City is only 0.17 square miles (0.44 km²) and has about 800 residents."
-        },
-        {
-            "question": "Which element has the chemical symbol 'O'?",
-            "answer": ["oxygen", "Oxygen"],
-            "explanation": "Oxygen makes up about 21% of Earth's atmosphere and is essential for most life forms."
-        },
-        {
-            "question": "How many continents are there?",
-            "answer": ["7", "seven", "Seven"],
-            "explanation": "The seven continents are: Asia, Africa, North America, South America, Antarctica, Europe, and Australia/Oceania."
-        }
-    ];
-
-    let questions = [];
-    let currentQuestionIndex = 0;
-    let score = 0;
-
-    const questionElement = document.getElementById("question-display");
-    const answerInput = document.getElementById("answer-input");
-    const submitButton = document.querySelector(".submit-btn");
-    const nextButton = document.querySelector(".next-btn");
-    const scoreElement = document.getElementById("score-display");
-
-    // Check if we're on a quiz page
-    if (!questionElement || !answerInput || !submitButton || !scoreElement) {
-        return;
-    }
-
-    // Try to load quiz data, fallback to hard-coded questions
-    questions = fallbackQuestions;
-    questions = shuffleArray(questions);
-    showQuestion();
-
-    function shuffleArray(array) {
-        const shuffled = [...array];
-        for (let i = shuffled.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-        }
-        return shuffled;
-    }
-
-    function showQuestion() {
-        if (currentQuestionIndex >= questions.length) {
-            finishQuiz();
-            return;
-        }
-
-        const currentQuestion = questions[currentQuestionIndex];
-        questionElement.textContent = currentQuestion.question;
-        answerInput.value = "";
-        answerInput.disabled = false;
-        answerInput.focus();
-
-        // Reset buttons
-        submitButton.textContent = "Submit Answer";
-        submitButton.disabled = false;
-        nextButton.textContent = "Show me the answer";
-        nextButton.disabled = false;
-    }
-
-    function getCorrectAnswers(question) {
-        if (Array.isArray(question.answer)) {
-            return question.answer;
-        } else if (typeof question.answer === 'string') {
-            return [question.answer];
-        } else {
-            return ["unknown"];
-        }
-    }
-
-    function getDisplayAnswer(question) {
-        const answers = getCorrectAnswers(question);
-        return answers[0];
-    }
-
-    function checkAnswer() {
-        const userAnswer = answerInput.value.trim().toLowerCase();
-        if (!userAnswer) return;
-
-        const currentQuestion = questions[currentQuestionIndex];
-        const correctAnswers = getCorrectAnswers(currentQuestion).map(ans => ans.toLowerCase());
-
-        const isCorrect = correctAnswers.some(answer => userAnswer === answer);
-
-        if (isCorrect) {
-            score++;
-            scoreElement.textContent = score;
-            let message = "✅ Correct!";
-            if (currentQuestion.explanation) {
-                message += "\n\n💡 " + currentQuestion.explanation;
-            }
-            alert(message);
-        } else {
-            const correctAnswer = getDisplayAnswer(currentQuestion);
-            let message = "❌ Incorrect. The correct answer is: " + correctAnswer;
-            if (currentQuestion.explanation) {
-                message += "\n\n💡 " + currentQuestion.explanation;
-            }
-            alert(message);
-        }
-
-        answerInput.disabled = true;
-        submitButton.textContent = "Next Question";
-    }
-
-    function showAnswer() {
-        const currentQuestion = questions[currentQuestionIndex];
-        const correctAnswer = getDisplayAnswer(currentQuestion);
-        
-        let message = "💡 The answer is: " + correctAnswer;
-        if (currentQuestion.explanation) {
-            message += "\n\n" + currentQuestion.explanation;
-        }
-        alert(message);
-    }
-
-    function nextQuestion() {
-        currentQuestionIndex++;
-        showQuestion();
-    }
-
-    function finishQuiz() {
-        questionElement.textContent = "🎉 Quiz completed!";
-        const percentage = Math.round((score / questions.length) * 100);
-        let message = `Final Score: ${score}/${questions.length} (${percentage}%)`;
-        
-        if (percentage >= 80) message += " - Excellent!";
-        else if (percentage >= 60) message += " - Good job!";
-        else message += " - Keep practicing!";
-        
-        alert(message);
-        
-        submitButton.textContent = "Restart Quiz";
-        nextButton.style.display = "none";
-        answerInput.style.display = "none";
-    }
-
-    function restartQuiz() {
-        currentQuestionIndex = 0;
-        score = 0;
-        scoreElement.textContent = score;
-        questions = shuffleArray(fallbackQuestions);
-        nextButton.style.display = "inline-block";
-        answerInput.style.display = "block";
-        showQuestion();
-    }
-
-    // Event listeners
-    submitButton.addEventListener("click", function() {
-        if (this.textContent === "Next Question") {
-            nextQuestion();
-        } else if (this.textContent === "Restart Quiz") {
-            restartQuiz();
-        } else {
-            checkAnswer();
-        }
-    });
-
-    nextButton.addEventListener("click", showAnswer);
-
-    answerInput.addEventListener("keypress", function(event) {
-        if (event.key === "Enter" && !answerInput.disabled) {
-            if (submitButton.textContent === "Submit Answer") {
-                checkAnswer();
-            } else if (submitButton.textContent === "Next Question") {
-                nextQuestion();
-            }
-        }
-    });
-});
-</script>
-
-{{ end }}
