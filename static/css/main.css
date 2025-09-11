@@ -1,215 +1,205 @@
 /* ===============================
-   Fonts
-   =============================== */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+Fonts
+=============================== */
+@import url(‘https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap’);
 
 /* ===============================
-   Base Styles
-   =============================== */
-* {
+Base Styles
+=============================== */
+
+- {
   box-sizing: border-box;
-}
+  }
 
 body {
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #333;
-  background-color: #fff;
-  margin: 0;
-  padding: 0;
+font-family: ‘Open Sans’, Arial, sans-serif;
+font-size: 16px;
+line-height: 1.6;
+color: #333;
+background-color: #fff;
+margin: 0;
+padding: 0;
 }
 
 /* ===============================
-   Layout Container
-   =============================== */
+Layout Container
+=============================== */
 .container {
-  display: flex;
-  min-height: 100vh;
+display: flex;
+min-height: 100vh;
 }
 
 /* ===============================
-   Sidebar Navigation
-   =============================== */
+Sidebar Navigation
+=============================== */
 .sidebar {
-  background-color: #001f77; /* deep blue */
-  color: #fff;
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-weight: 600;
-  padding: 1em;
-  width: 250px;
-  min-height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow-y: auto;
+background-color: #001f77; /* deep blue */
+color: #fff;
+font-family: ‘Open Sans’, Arial, sans-serif;
+font-weight: 600;
+padding: 1em;
+width: 250px;
+min-height: 100vh;
+position: fixed;
+top: 0;
+left: 0;
+overflow-y: auto;
 }
 
 .sidebar a {
-  display: block;
-  padding: 8px 12px;
-  margin-bottom: 4px;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+display: block;
+padding: 8px 12px;
+margin-bottom: 4px;
+color: #fff;
+text-decoration: none;
+border-radius: 4px;
+transition: background-color 0.3s ease;
 }
 
 .sidebar a:hover,
 .sidebar a.active {
-  background-color: #0055ff; /* brighter blue */
+background-color: #0055ff; /* brighter blue */
 }
 
 /* ===============================
-   Logo Section
-   =============================== */
+Logo Section
+=============================== */
 .logo-section {
-  text-align: center;
-  margin: 2em 0;
+text-align: center;
+margin: 2em 0;
 }
 
 .logo-text {
-  font-family: 'Merriweather', Georgia, serif;
-  font-size: 24px;
-  font-weight: bold;
-  text-transform: uppercase;
+font-family: ‘Merriweather’, Georgia, serif;
+font-size: 24px;
+font-weight: bold;
+text-transform: uppercase;
 }
 
 /* ===============================
-   Main Content
-   =============================== */
+Main Content
+=============================== */
 .main-content {
-  margin-left: 250px;
-  padding: 2em;
-  flex: 1;
-  max-width: calc(100vw - 250px);
+margin-left: 250px;
+padding: 2em;
+flex: 1;
+max-width: calc(100vw - 250px);
 }
 
 /* ===============================
-   Headings
-   =============================== */
+Headings
+=============================== */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Merriweather', Georgia, serif;
-  font-weight: 700;
-  margin: 1em 0 0.5em;
-  line-height: 1.3;
+font-family: ‘Merriweather’, Georgia, serif;
+font-weight: 700;
+margin: 1em 0 0.5em;
+line-height: 1.3;
 }
 
 h1 {
-  font-size: 2.5em;
+font-size: 2.5em;
 }
 
 h2 {
-  font-size: 2em;
-  border-bottom: 2px solid #001f77;
-  padding-bottom: 0.5em;
-  margin-bottom: 1em;
+font-size: 2em;
+border-bottom: 2px solid #001f77;
+padding-bottom: 0.5em;
+margin-bottom: 1em;
 }
 
 h3 {
-  font-size: 1.5em;
+font-size: 1.5em;
 }
 
 /* ===============================
-   Quiz Section
-   =============================== */
+Quiz Section
+=============================== */
 .quiz-section {
-  text-align: center;
-  margin: 2em auto;
-  max-width: 600px;
-  padding: 2em;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  border: 2px solid #001f77;
+text-align: center;
+margin: 2em auto;
+max-width: 600px;
+padding: 2em;
+background-color: #f8f9fa;
+border-radius: 8px;
+border: 2px solid #001f77;
 }
 
 .quiz-section h2 {
-  font-family: 'Merriweather', Georgia, serif;
-  font-size: 28px;
-  margin-bottom: 1em;
-  color: #001f77;
-  border: none;
+font-family: ‘Merriweather’, Georgia, serif;
+font-size: 28px;
+margin-bottom: 1em;
+color: #001f77;
+border: none;
 }
 
 #score-display {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 1em;
-  color: #001f77;
+font-size: 18px;
+font-weight: 600;
+margin-bottom: 1em;
+color: #001f77;
 }
 
 #question-display {
-  font-size: 18px;
-  margin-bottom: 1em;
-  padding: 1em;
-  background-color: #fff;
-  border-radius: 4px;
-  border: 1px solid #ddd;
+font-size: 18px;
+margin-bottom: 1em;
+padding: 1em;
+background-color: #fff;
+border-radius: 4px;
+border: 1px solid #ddd;
 }
 
 .quiz-section input {
-  padding: 10px;
-  font-size: 16px;
-  width: 80%;
-  max-width: 400px;
-  margin-bottom: 1em;
-  border: 2px solid #001f77;
-  border-radius: 4px;
+padding: 10px;
+font-size: 16px;
+width: 80%;
+max-width: 400px;
+margin-bottom: 1em;
+border: 2px solid #001f77;
+border-radius: 4px;
 }
 
 .quiz-section input:focus {
-  outline: none;
-  border-color: #0055ff;
+outline: none;
+border-color: #0055ff;
 }
 
 button.next-btn,
 button.submit-btn {
-  background-color: #007bff;
-  border: none;
-  padding: 10px 16px;
-  color: white;
-  font-size: 14px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 5px;
-  transition: background-color 0.3s ease;
+background-color: #007bff;
+border: none;
+padding: 10px 16px;
+color: white;
+font-size: 14px;
+border-radius: 4px;
+cursor: pointer;
+margin: 5px;
+transition: background-color 0.3s ease;
 }
 
 button.next-btn:hover,
 button.submit-btn:hover {
-  background-color: #0056b3;
+background-color: #0056b3;
 }
 
 /* ===============================
-   Content Sections
-   =============================== */
+Content Sections
+=============================== */
 .content-sections {
-    margin-top: 50px;
+margin-top: 50px;
 }
 
 .content-section {
-    margin: 40px 0;
-    text-align: left;
+margin: 40px 0;
+text-align: left;
 }
-
-.content-section h1 {
-  font-family: Georgia, serif;
-  font-size: 24px;
-  color: #001f77 !important;
-  border-bottom: 2px solid #4169E1 !important;
-  padding-bottom: 10px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
 
 .content-section h2 {
-    font-size: 24px;
-    color: #001f77;
-    margin-bottom: 20px;
-    text-align: center;
-    border-bottom: 2px solid #4169E1;
-    padding-bottom: 10px;
+font-size: 24px;
+color: #001f77;
+margin-bottom: 20px;
+text-align: center;
+border-bottom: 2px solid #4169E1;
+padding-bottom: 10px;
 }
 
 /* Post/Content Item Styles */
@@ -219,11 +209,11 @@ button.submit-btn:hover {
 .digital-item,
 .podcast-item,
 .lenscape-item {
-    margin: 20px 0;
-    padding: 15px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+margin: 20px 0;
+padding: 15px;
+background-color: white;
+border: 1px solid #ddd;
+border-radius: 6px;
 }
 
 .post-item h3,
@@ -232,8 +222,8 @@ button.submit-btn:hover {
 .digital-item h3,
 .podcast-item h3,
 .lenscape-item h3 {
-    margin: 0 0 10px 0;
-    font-size: 18px;
+margin: 0 0 10px 0;
+font-size: 18px;
 }
 
 .post-item h3 a,
@@ -242,8 +232,8 @@ button.submit-btn:hover {
 .digital-item h3 a,
 .podcast-item h3 a,
 .lenscape-item h3 a {
-    color: #000080;
-    text-decoration: none;
+color: #000080;
+text-decoration: none;
 }
 
 .post-item h3 a:hover,
@@ -252,17 +242,17 @@ button.submit-btn:hover {
 .digital-item h3 a:hover,
 .podcast-item h3 a:hover,
 .lenscape-item h3 a:hover {
-    color: #4169E1;
-    text-decoration: underline;
+color: #4169E1;
+text-decoration: underline;
 }
 
 .post-date,
 .book-author,
 .episode-number,
 .tech-stack {
-    font-size: 14px;
-    color: #666;
-    margin: 5px 0;
+font-size: 14px;
+color: #666;
+margin: 5px 0;
 }
 
 .post-summary,
@@ -271,67 +261,67 @@ button.submit-btn:hover {
 .digital-summary,
 .podcast-summary,
 .lenscape-summary {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.5;
-    margin: 10px 0 0 0;
+font-size: 14px;
+color: #555;
+line-height: 1.5;
+margin: 10px 0 0 0;
 }
 
 .section-link {
-    color: #000080;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 15px;
+color: #000080;
+text-decoration: none;
+font-weight: bold;
+display: inline-block;
+margin-top: 15px;
 }
 
 .section-link:hover {
-    color: #4169E1;
-    text-decoration: underline;
+color: #4169E1;
+text-decoration: underline;
 }
 
 /* Bio Section */
 .bio-content {
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    text-align: left;
+background-color: white;
+padding: 20px;
+border: 1px solid #ddd;
+border-radius: 6px;
+text-align: left;
 }
 
 /* ===============================
-   Grid Layouts
-   =============================== */
+Grid Layouts
+=============================== */
 .posts-grid,
 .projects-grid,
 .digital-grid,
 .podcast-grid,
 .lenscape-grid {
-  display: grid;
-  gap: 2em;
-  margin-bottom: 2em;
+display: grid;
+gap: 2em;
+margin-bottom: 2em;
 }
 
 .booknotes-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-  margin-bottom: 2em;
+display: flex;
+flex-direction: column;
+gap: 2em;
+margin-bottom: 2em;
 }
 
 /* ===============================
-   Post Previews
-   =============================== */
+Post Previews
+=============================== */
 .post-preview,
 .project-preview,
 .digital-preview,
 .podcast-preview,
 .lenscape-preview {
-  background-color: #f8f9fa;
-  padding: 1.5em;
-  border-radius: 8px;
-  border-left: 4px solid #001f77;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+background-color: #f8f9fa;
+padding: 1.5em;
+border-radius: 8px;
+border-left: 4px solid #001f77;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .post-preview:hover,
@@ -339,8 +329,8 @@ button.submit-btn:hover {
 .digital-preview:hover,
 .podcast-preview:hover,
 .lenscape-preview:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 31, 119, 0.1);
+transform: translateY(-2px);
+box-shadow: 0 4px 12px rgba(0, 31, 119, 0.1);
 }
 
 .post-preview h3,
@@ -348,8 +338,8 @@ button.submit-btn:hover {
 .digital-preview h3,
 .podcast-preview h3,
 .lenscape-preview h3 {
-  margin-top: 0;
-  margin-bottom: 0.5em;
+margin-top: 0;
+margin-bottom: 0.5em;
 }
 
 .post-preview h3 a,
@@ -357,8 +347,8 @@ button.submit-btn:hover {
 .digital-preview h3 a,
 .podcast-preview h3 a,
 .lenscape-preview h3 a {
-  color: #001f77;
-  text-decoration: none;
+color: #001f77;
+text-decoration: none;
 }
 
 .post-preview h3 a:hover,
@@ -366,135 +356,135 @@ button.submit-btn:hover {
 .digital-preview h3 a:hover,
 .podcast-preview h3 a:hover,
 .lenscape-preview h3 a:hover {
-  color: #0055ff;
-  text-decoration: underline;
+color: #0055ff;
+text-decoration: underline;
 }
 
 .post-meta,
 .episode-number,
 .tech-stack {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 0.5em;
+font-size: 14px;
+color: #666;
+margin-bottom: 0.5em;
 }
 
 .book-author {
-  font-style: italic;
-  color: #666;
-  margin-bottom: 0.5em;
+font-style: italic;
+color: #666;
+margin-bottom: 0.5em;
 }
 
 .read-more {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 600;
+color: #007bff;
+text-decoration: none;
+font-weight: 600;
 }
 
 .read-more:hover {
-  color: #0056b3;
-  text-decoration: underline;
+color: #0056b3;
+text-decoration: underline;
 }
 
 /* ===============================
-   Book Notes
-   =============================== */
+Book Notes
+=============================== */
 .booknote {
-  display: flex;
-  gap: 1.5em;
-  background-color: #f8f9fa;
-  padding: 1.5em;
-  border-radius: 8px;
-  border-left: 4px solid #001f77;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+display: flex;
+gap: 1.5em;
+background-color: #f8f9fa;
+padding: 1.5em;
+border-radius: 8px;
+border-left: 4px solid #001f77;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .booknote:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 31, 119, 0.1);
+transform: translateY(-2px);
+box-shadow: 0 4px 12px rgba(0, 31, 119, 0.1);
 }
 
 .booknote img {
-  max-width: 120px;
-  height: auto;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+max-width: 120px;
+height: auto;
+border-radius: 4px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .booknote-content {
-  flex: 1;
+flex: 1;
 }
 
 .booknote h3 {
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  font-size: 18px;
+margin-top: 0;
+margin-bottom: 0.5em;
+font-size: 18px;
 }
 
 .booknote h3 a {
-  color: #001f77;
-  text-decoration: none;
+color: #001f77;
+text-decoration: none;
 }
 
 .booknote h3 a:hover {
-  color: #0055ff;
-  text-decoration: underline;
+color: #0055ff;
+text-decoration: underline;
 }
 
 .booknote p {
-  font-size: 16px;
-  color: #444;
-  margin-bottom: 0.5em;
+font-size: 16px;
+color: #444;
+margin-bottom: 0.5em;
 }
 
 /* ===============================
-   Responsive Design
-   =============================== */
+Responsive Design
+=============================== */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-  
-  .sidebar {
-    position: relative;
-    width: 100%;
-    min-height: auto;
-  }
-  
-  .main-content {
-    margin-left: 0;
-    max-width: 100%;
-    padding: 1em;
-  }
-  
-  .booknote {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .booknote img {
-    align-self: center;
-  }
-  
-  .quiz-section {
-    margin: 1em;
-    padding: 1em;
-  }
+.container {
+flex-direction: column;
+}
+
+.sidebar {
+position: relative;
+width: 100%;
+min-height: auto;
+}
+
+.main-content {
+margin-left: 0;
+max-width: 100%;
+padding: 1em;
+}
+
+.booknote {
+flex-direction: column;
+text-align: center;
+}
+
+.booknote img {
+align-self: center;
+}
+
+.quiz-section {
+margin: 1em;
+padding: 1em;
+}
 }
 
 @media (max-width: 480px) {
-  .quiz-section input {
-    width: 95%;
-  }
-  
-  h1 {
-    font-size: 2em;
-  }
-  
-  h2 {
-    font-size: 1.5em;
-  }
-  
-  .logo-text {
-    font-size: 18px;
-  }
+.quiz-section input {
+width: 95%;
+}
+
+h1 {
+font-size: 2em;
+}
+
+h2 {
+font-size: 1.5em;
+}
+
+.logo-text {
+font-size: 18px;
+}
 }
