@@ -100,12 +100,10 @@ h1 {
 }
 
 h2 {
-  font-size: 24px;
-  color: #001f77 !important;
-  border-bottom: 2px solid #4169E1 !important;
-  padding-bottom: 10px;
-  text-align: center;
-  margin-bottom: 20px;
+  font-size: 2em;
+  border-bottom: 2px solid #001f77;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 h3 {
@@ -193,6 +191,17 @@ button.submit-btn:hover {
     margin: 40px 0;
     text-align: left;
 }
+
+.content-section h1 {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  color: #001f77 !important;
+  border-bottom: 2px solid #4169E1 !important;
+  padding-bottom: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 
 .content-section h2 {
     font-size: 24px;
