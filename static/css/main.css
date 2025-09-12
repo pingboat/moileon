@@ -113,6 +113,15 @@ h3 {
 font-size: 1.5em;
 }
 
+h1, h2 {
+  color: #16216a !important;
+  font-size: 2em !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.5em !important;
+  border-bottom: 2px solid #2031a9 !important;
+  padding-bottom: 0.5em !important;
+}
+
 /* ===============================
 Quiz Section
 =============================== */
