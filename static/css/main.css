@@ -100,16 +100,8 @@ h1 {
 font-size: 2.5em;
 }
 
-/* Universal heading styles - catches ALL h1 elements */
-h1, h2, h3, h4, h5, h6,
-.main-content h1,
-.content-section h1,
-.section-header h1,
-main h1,
-article h1,
-section h1,
-body h1,
-* h1 {
+/* Force all h1 elements to have the blue styling */
+h1 {
     font-size: 24px !important;
     color: #001f77 !important;
     border-bottom: 2px solid #4169E1 !important;
@@ -120,13 +112,26 @@ body h1,
     font-weight: 700 !important;
 }
 
-/* Even more aggressive - targets any h1 anywhere */
-html h1,
-body * h1,
-div h1,
-main * h1,
-section * h1,
-article * h1 {
+/* Specifically target main content h1 elements */
+.main-content h1,
+main h1,
+body h1 {
+    font-size: 24px !important;
+    color: #001f77 !important;
+    border-bottom: 2px solid #4169E1 !important;
+    padding-bottom: 10px !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    font-family: 'Merriweather', Georgia, serif !important;
+    font-weight: 700 !important;
+}
+
+/* Target specific page headings if needed */
+h1[title="Bio"],
+h1:contains("Bio"),
+h1:contains("Blog"),
+h1:contains("Projects"),
+h1:contains("Book Notes") {
     font-size: 24px !important;
     color: #001f77 !important;
     border-bottom: 2px solid #4169E1 !important;
