@@ -100,7 +100,7 @@ h1 {
 font-size: 2.5em;
 }
 
-h1, h2, 
+h1, h2 {
 .main-content h1, .main-content h2,
 .content-section h1, .content-section h2,
 .section-header h1, .section-header h2,
@@ -113,6 +113,7 @@ body h1, body h2 {
     margin-bottom: 20px !important;
     font-family: 'Merriweather', Georgia, serif !important;
     font-weight: 700 !important;
+ }
 }
 
 h3 {
