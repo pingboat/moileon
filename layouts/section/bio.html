@@ -1,15 +1,38 @@
-{{ define "main" }}
-    <div class="main-content">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Your navigation sidebar here -->
+    <nav>
+        <!-- nav content -->
+    </nav>
+
+    <!-- Main content area -->
+    <main class="main-content">
         <h1>Bio</h1>
-        <ul>
-            {{ range .Paginator.Pages }}
-            <li>
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                <span class="post-date">{{ .Date.Format "January 2, 2006" }}</span>
-                <p>{{ .Summary | markdownify }}</p>
-            </li>
-            {{ end }}
-        </ul>
-        {{ template "_internal/pagination.html" . }}
-    </div>
-{{ end }}
+        <!-- Your bio content here -->
+    </main>
+</body>
+</html>
+
+<!-- OR if using a different structure: -->
+<div class="main-content">
+    <h1>Bio</h1>
+    <!-- content -->
+</div>
+
+<!-- OR if using article/section: -->
+<article>
+    <h1>Bio</h1>
+    <!-- content -->
+</article>
+
+<section>
+    <h1>Bio</h1>
+    <!-- content -->
+</section>
