@@ -1,8 +1,11 @@
-{{- define "main" -}}
-<main class="main-content">
-    <h1>Bio</h1>
-    <div class="bio-content">
-        {{ .Content }}
+{{ define "main" }}
+    <div class="content-section">
+        <h2>{{ .Title }}</h2>
+        {{ range .Pages }}
+            <article>
+                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <p>{{ .Summary }}</p>
+            </article>
+        {{ end }}
     </div>
-</main>
-{{- end -}}
+{{ end }}
