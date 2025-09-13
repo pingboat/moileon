@@ -520,3 +520,47 @@ h2, h3, h4, h5, h6 {
         padding: 40px;
     }
 }
+
+/* ==================================================
+   FIX DOUBLE LINE ISSUE - REMOVE ALL CONFLICTING BORDERS
+   ================================================== */
+
+/* Remove borders from ALL elements except h1 */
+hr, .separator, .divider, .section-divider, 
+.content-separator, .posts-separator {
+    display: none !important;
+    border: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Remove any borders that might be on containers */
+.section-page::after,
+.section-header::after,
+.main-content::after,
+.content-section::after {
+    display: none !important;
+    border: none !important;
+}
+
+/* Nuclear option - remove ALL borders except h1 */
+* {
+    border-bottom: none !important;
+}
+
+/* Then add back ONLY the h1 border */
+.section-header h1,
+.main-content h1,
+main h1,
+h1 {
+    font-size: 32px !important;
+    color: #000080 !important;
+    margin-bottom: 30px !important;
+    border-bottom: 2px solid #000080 !important;
+    padding-bottom: 10px !important;
+    text-align: left !important;
+    font-family: Georgia, serif !important;
+    font-weight: normal !important;
+}
+
