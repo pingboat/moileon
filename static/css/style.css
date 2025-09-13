@@ -507,10 +507,7 @@ body {
     }
 }
 
-/* Apply blue styling to ALL main content h1 elements */
-.main-content h1,
-main h1,
-h1 {
+.section-header h1 {
     font-size: 32px !important;
     color: #000080 !important;
     margin-bottom: 10px !important;
@@ -521,12 +518,10 @@ h1 {
     font-weight: normal !important;
 }
 
-/* Ensure it works for specific page types */
-.bio-content h1,
-.blog-content h1,
-.projects-content h1,
-.booknotes-content h1,
-body h1 {
+/* Apply the same styling to all other h1 elements */
+.main-content h1:not(.section-header h1),
+main h1,
+h1 {
     font-size: 32px !important;
     color: #000080 !important;
     margin-bottom: 10px !important;
