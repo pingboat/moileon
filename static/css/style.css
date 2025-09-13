@@ -565,3 +565,6 @@ h1 {
     font-weight: normal !important;
 }
 
+.quiz-section .quiz-title {
+    text-align: center !important;
+}
