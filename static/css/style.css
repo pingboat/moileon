@@ -506,3 +506,33 @@ body {
         padding: 40px;
     }
 }
+
+/* Apply blue styling to ALL main content h1 elements */
+.main-content h1,
+main h1,
+h1 {
+    font-size: 32px !important;
+    color: #000080 !important;
+    margin-bottom: 10px !important;
+    border-bottom: 2px solid #000080 !important;
+    padding-bottom: 10px !important;
+    text-align: left !important;
+    font-family: Georgia, serif !important;
+    font-weight: normal !important;
+}
+
+/* Ensure it works for specific page types */
+.bio-content h1,
+.blog-content h1,
+.projects-content h1,
+.booknotes-content h1,
+body h1 {
+    font-size: 32px !important;
+    color: #000080 !important;
+    margin-bottom: 10px !important;
+    border-bottom: 2px solid #000080 !important;
+    padding-bottom: 10px !important;
+    text-align: left !important;
+    font-family: Georgia, serif !important;
+    font-weight: normal !important;
+}
