@@ -523,3 +523,42 @@ font-size: 1.5em;
 font-size: 18px;
 }
 }
+
+/* Add this at the very end of your main.css file */
+
+/* Nuclear option - override everything */
+* h1,
+html h1,
+body h1,
+div h1,
+main h1,
+section h1,
+article h1,
+.main-content h1,
+#main h1,
+[class*="content"] h1 {
+    font-size: 24px !important;
+    color: #001f77 !important;
+    border-bottom: 2px solid #4169E1 !important;
+    padding-bottom: 10px !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    font-family: 'Merriweather', Georgia, serif !important;
+    font-weight: 700 !important;
+    background: none !important;
+    text-shadow: none !important;
+}
+
+/* Ensure Hugo templates don't override */
+.content h1,
+.post-content h1,
+.page-content h1 {
+    font-size: 24px !important;
+    color: #001f77 !important;
+    border-bottom: 2px solid #4169E1 !important;
+    padding-bottom: 10px !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    font-family: 'Merriweather', Georgia, serif !important;
+    font-weight: 700 !important;
+}
