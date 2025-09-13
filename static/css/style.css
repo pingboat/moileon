@@ -568,3 +568,9 @@ h1 {
 .quiz-section .quiz-title {
     text-align: center !important;
 }
+
+.quiz-section .quiz-title {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+}
+
