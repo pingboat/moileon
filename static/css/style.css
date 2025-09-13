@@ -48,18 +48,27 @@ body {
     padding: 40px;
 }
 
-/* ====== Global H1 Headers (Quotes Style) ====== */
+/* ====== Homepage Tagline (restore original look) ====== */
+.logo-section .logo-text {
+    font-family: Georgia, serif;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+/* ====== Global Section Headers (Quotes Style) ====== */
 .section-header h1,
 .main-content h1,
-main h1,
-h1 {
-    color: #000080 !important;                      /* Deep blue */
-    font-family: Verdana, Arial, sans-serif !important; /* Sans-serif */
-    font-weight: bold !important;
-    border-bottom: 2px solid #000080 !important;    /* Blue underline */
-    padding-bottom: 10px !important;
+main h1 {
+    color: #000080;                               /* Deep blue */
+    font-family: Verdana, Arial, sans-serif;
+    font-weight: bold;
+    border-bottom: 2px solid #000080;             /* Blue underline */
+    padding-bottom: 10px;
     margin-bottom: 20px;
-    text-align: left !important;
+    text-align: left;
 }
 
 /* ====== Quotes Section ====== */
@@ -82,13 +91,13 @@ h1 {
 }
 
 .quiz-section .quiz-title {
-    color: #000080 !important;      
-    font-family: Verdana, Arial, sans-serif !important;
-    font-weight: bold !important;
-    border-bottom: none !important; /* Remove underline */
-    padding-bottom: 0 !important;
+    color: #000080;
+    font-family: Verdana, Arial, sans-serif;
+    font-weight: bold;
+    border-bottom: none;  /* Remove underline */
+    padding-bottom: 0;
     margin-bottom: 20px;
-    text-align: center !important;
+    text-align: center;
 }
 
 .quiz-section input[type="text"] {
