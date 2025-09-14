@@ -289,17 +289,30 @@ body {
     margin-top: 20px;
 }
 
-/* ==================================================
-   HEADINGS - UNIFIED STYLING TO MATCH QUOTES PAGE
-   ================================================== */
+/* ========================================
+   HEADINGS – UNIFIED STYLING WITH HIERARCHY
+   ======================================== */
+/* Main titles (e.g. Blog Posts, Bio) */
 .section-header h1,
-.section-header h2,
 .main-content h1,
+.content-section h1,
+main h1,
+h1 {
+    color: #000080 !important;
+    margin-bottom: 20px !important;
+    border-bottom: 2px solid #4169E1 !important;
+    padding-bottom: 10px !important;
+    text-align: left !important;
+    font-family: Georgia, serif !important;
+    font-weight: bold !important;
+    font-size: 28px !important;  /* Larger for h1 */
+}
+
+/* Subtitles (e.g. Quotes, sub-sections) */
+.section-header h2,
 .main-content h2,
 .content-section h2,
-main h1,
 main h2,
-h1,
 h2 {
     color: #000080 !important;
     margin-bottom: 20px !important;
@@ -308,7 +321,7 @@ h2 {
     text-align: left !important;
     font-family: Georgia, serif !important;
     font-weight: bold !important;
-    font-size: 32px !important;
+    font-size: 24px !important;  /* Slightly smaller for h2 */
 }
 
 /* Remove any HR elements that might create double lines */
