@@ -183,9 +183,12 @@ body {
 }
 
 .quiz-title {
-    font-size: 32px;
-    margin-bottom: 30px;
-    color: #333;
+    font-size: 32px !important;
+    margin-bottom: 30px !important;
+    color: #333 !important;
+    text-align: center !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
 }
 
 .score {
@@ -219,6 +222,15 @@ body {
     font-size: 14px;
     color: #666;
     margin-bottom: 25px;
+}
+
+/* Ensure homepage headings don't get the section heading styling */
+.quiz-section h1,
+.quiz-section h2 {
+    text-align: center !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    color: #333 !important;
 }
 
 /* ==================================================
