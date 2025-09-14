@@ -287,12 +287,19 @@ main h1,
 h1 {
     font-size: 32px !important;
     color: #000080 !important;
-    margin-bottom: 30px !important;
+    font-weight: bold !important;
+    margin-bottom: 20px !important;
     border-bottom: 2px solid #000080 !important;
     padding-bottom: 10px !important;
     text-align: left !important;
     font-family: Georgia, serif !important;
-    font-weight: normal !important;
+    width: 100% !important;
+}
+
+/* Ensure section containers don't add extra spacing */
+.section-header {
+    text-align: left;
+    margin-bottom: 20px;
 }
 
 /* Ensure no other elements create conflicting borders */
