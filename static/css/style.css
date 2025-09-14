@@ -540,3 +540,20 @@ hr {
         padding: 40px;
     }
 }
+
+/* Override general heading styles for quiz title specifically */
+.quiz-section .quiz-title {
+    text-align: center !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    color: #000080 !important;
+    font-weight: bold !important;
+    font-size: 32px !important;
+    margin-bottom: 30px !important;
+}
+
+/* Make sure the quiz section container stays centered */
+.quiz-section {
+    text-align: center !important;
+}
+
