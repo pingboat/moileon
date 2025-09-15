@@ -180,15 +180,16 @@ body {
 .quiz-section {
     max-width: 600px;
     margin: 0 auto;
+    text-align: center !important;
 }
 
 .quiz-title {
-    font-size: 32px;
-    margin-bottom: 30px;
-    color: #333;
-    text-align: center;
-    border-bottom: none;
-    padding-bottom: 0;
+    font-size: 32px !important;
+    margin-bottom: 30px !important;
+    color: #333 !important;
+    text-align: center !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
 }
 
 .score {
@@ -289,31 +290,122 @@ body {
     margin-top: 20px;
 }
 
-/* ========================================
-   HEADINGS – UNIFIED STYLING WITH HIERARCHY
-   ======================================== */
-/* Main titles (e.g. Blog Posts, Bio) */
-.section-header h1,
-.main-content h1,
-.content-section h1,
-main h1,
-h1 {
-    color: #000080 !important;
-    margin-bottom: 20px !important;
-    border-bottom: 2px solid #4169E1 !important;
-    padding-bottom: 10px !important;
-    text-align: left !important;
-    font-family: Georgia, serif !important;
-    font-weight: bold !important;
-    font-size: 28px !important;  /* Larger for h1 */
+/* ==================================================
+   BLOG POST STYLING TO MATCH MOILEON.IN
+   ================================================== */
+
+/* Blog post content container */
+.blog-post,
+.post-content,
+.content,
+article {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0 20px;
+    line-height: 1.7;
+    font-size: 16px;
+    color: #333;
 }
 
-/* Subtitles (e.g. Quotes, sub-sections) */
+/* Blog post main title */
+.blog-post h1,
+.post-content h1,
+.content h1,
+article h1 {
+    font-size: 2.2rem !important;
+    color: #000080 !important;
+    margin-bottom: 15px !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    text-align: left !important;
+    font-family: Georgia, serif !important;
+    font-weight: bold !important;
+    line-height: 1.3 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+/* Date styling */
+.post-date,
+.blog-date,
+.date {
+    color: #666 !important;
+    font-size: 14px !important;
+    margin-bottom: 30px !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    border-bottom: none !important;
+}
+
+/* Blog post paragraphs */
+.blog-post p,
+.post-content p,
+.content p,
+article p {
+    margin-bottom: 20px !important;
+    text-align: left !important;
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+    color: #333 !important;
+    font-family: Georgia, serif !important;
+}
+
+/* Section headings within blog posts */
+.blog-post h2,
+.post-content h2,
+.content h2,
+article h2 {
+    font-size: 1.3rem !important;
+    color: #333 !important;
+    margin: 30px 0 15px 0 !important;
+    font-weight: bold !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    text-align: left !important;
+    font-family: Georgia, serif !important;
+}
+
+/* Subsection headings */
+.blog-post h3,
+.post-content h3,
+.content h3,
+article h3 {
+    font-size: 1.1rem !important;
+    color: #333 !important;
+    margin: 25px 0 12px 0 !important;
+    font-weight: bold !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    text-align: left !important;
+    font-family: Georgia, serif !important;
+}
+
+/* Remove general heading styles from blog posts */
+.blog-post h1,
+.blog-post h2,
+.blog-post h3,
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.content h1,
+.content h2,
+.content h3,
+article h1,
+article h2,
+article h3 {
+    border-bottom: none !important;
+}
+
+/* ==================================================
+   HEADINGS - UNIFIED STYLING TO MATCH QUOTES PAGE
+   ================================================== */
+.section-header h1,
 .section-header h2,
-.main-content h2,
+.main-content h1:not(.blog-post h1):not(.post-content h1):not(.content h1):not(article h1),
+.main-content h2:not(.blog-post h2):not(.post-content h2):not(.content h2):not(article h2),
 .content-section h2,
-main h2,
-h2 {
+main h1:not(.blog-post h1):not(.post-content h1):not(.content h1):not(article h1),
+main h2:not(.blog-post h2):not(.post-content h2):not(.content h2):not(article h2) {
     color: #000080 !important;
     margin-bottom: 20px !important;
     border-bottom: 2px solid #4169E1 !important;
@@ -321,7 +413,7 @@ h2 {
     text-align: left !important;
     font-family: Georgia, serif !important;
     font-weight: bold !important;
-    font-size: 24px !important;  /* Slightly smaller for h2 */
+    font-size: 32px !important;
 }
 
 /* Remove any HR elements that might create double lines */
@@ -434,6 +526,22 @@ hr {
     display: none;
 }
 
+/* Show date in blog posts */
+.blog-post .post-date,
+.post-content .post-date,
+.content .post-date,
+article .post-date,
+.blog-post .blog-date,
+.post-content .blog-date,
+.content .blog-date,
+article .blog-date,
+.blog-post .date,
+.post-content .date,
+.content .date,
+article .date {
+    display: block !important;
+}
+
 /* ==================================================
    RESPONSIVE DESIGN - ENHANCED MOBILE
    ================================================== */
@@ -523,6 +631,23 @@ hr {
         max-width: 400px;
         font-size: 16px;
     }
+    
+    /* Blog post mobile adjustments */
+    .blog-post,
+    .post-content,
+    .content,
+    article {
+        max-width: 95%;
+        padding: 0 15px;
+    }
+    
+    .blog-post h1,
+    .post-content h1,
+    .content h1,
+    article h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+    }
 }
 
 /* Tablet styles (769px to 1024px) */
@@ -553,20 +678,3 @@ hr {
         padding: 40px;
     }
 }
-
-/* Override general heading styles for quiz title specifically */
-.quiz-section .quiz-title {
-    text-align: center !important;
-    border-bottom: none !important;
-    padding-bottom: 0 !important;
-    color: #000080 !important;
-    font-weight: bold !important;
-    font-size: 32px !important;
-    margin-bottom: 30px !important;
-}
-
-/* Make sure the quiz section container stays centered */
-.quiz-section {
-    text-align: center !important;
-}
-
