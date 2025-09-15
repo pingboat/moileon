@@ -101,14 +101,3 @@ body {
   color: #2563eb;
 }
 
-/* Style only the first h2 inside a card (Quest On!) */
-.card h2:first-of-type {
-  text-align: center;
-  border-bottom: none;
-  margin-bottom: 20px;
-}
-
-/* Hide the <hr> that usually appears right after Quest On! */
-.card h2:first-of-type + hr {
-  display: none;
-}
