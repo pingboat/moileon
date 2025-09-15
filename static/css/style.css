@@ -678,3 +678,37 @@ article .date {
         padding: 40px;
     }
 }
+
+/* ==================================================
+   HOMEPAGE QUIZ STYLING - OVERRIDE BLOG STYLES
+   ================================================== */
+
+/* Force center alignment and remove border for quiz title */
+.quiz-section .quiz-title,
+.quiz-section h1 {
+    text-align: center !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    color: #000080 !important;
+    font-weight: bold !important;
+    font-size: 32px !important;
+    margin-bottom: 30px !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+}
+
+/* Ensure the entire quiz section is centered */
+.quiz-section {
+    text-align: center !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+}
+
+/* Override any general heading styles that might affect the quiz */
+.quiz-section h1,
+.quiz-section h2,
+.quiz-section .quiz-title {
+    border-bottom: none !important;
+    text-align: center !important;
+    padding-bottom: 0 !important;
+}
