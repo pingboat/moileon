@@ -101,14 +101,14 @@ body {
   color: #2563eb;
 }
 
-/* Fix Quest On! heading */
-.card h2.quest-title {
+/* Style only the first h2 inside a card (Quest On!) */
+.card h2:first-of-type {
   text-align: center;
   border-bottom: none;
   margin-bottom: 20px;
 }
 
-/* Remove auto <hr> under Quest On! if Hugo/Markdown inserts it */
-.card h2.quest-title + hr {
+/* Hide the <hr> that usually appears right after Quest On! */
+.card h2:first-of-type + hr {
   display: none;
 }
