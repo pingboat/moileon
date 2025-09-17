@@ -1,317 +1,38 @@
 /* ==================================================
-   GLOBAL RESET AND BASE STYLES
+   ENHANCED BLOG POST STYLING - UNIVERSAL APPROACH
    ================================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: Georgia, serif;
-    background-color: #f8f8f8;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* ==================================================
-   LAYOUT STRUCTURE
-   ================================================== */
-.container {
-    display: flex;
-    min-height: 100vh;
-}
-
-.sidebar {
-    width: 200px;
-    background-color: #000080;
-    padding: 20px;
-    box-shadow: none;
-    border-right: none;
-    position: relative;
-}
-
+/* Universal blog content wrapper - applies to any container in main-content */
 .main-content {
-    flex: 1;
+    max-width: 900px; /* Slightly wider for better readability */
+    margin: 0 auto;
     padding: 40px;
     text-align: left;
 }
 
-/* ==================================================
-   HAMBURGER MENU BUTTON (Mobile Only)
-   ================================================== */
-.hamburger-btn {
-    display: none;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1001;
-    background-color: #000080;
-    color: white;
-    border: none;
-    width: 45px;
-    height: 45px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 18px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-}
-
-.hamburger-btn:hover {
-    background-color: #4169E1;
-    transform: scale(1.05);
-}
-
-.hamburger-btn.active {
-    background-color: #1E90FF;
-}
-
-/* Hamburger icon */
-.hamburger-icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
-.hamburger-icon span {
-    display: block;
-    width: 20px;
-    height: 2px;
-    background-color: white;
-    margin: 2px 0;
-    transition: all 0.3s ease;
-}
-
-.hamburger-btn.active .hamburger-icon span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger-btn.active .hamburger-icon span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger-btn.active .hamburger-icon span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
-}
-
-/* ==================================================
-   MOBILE OVERLAY
-   ================================================== */
-.mobile-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.mobile-overlay.active {
-    opacity: 1;
-}
-
-/* ==================================================
-   NAVIGATION BUTTONS
-   ================================================== */
-.nav-button {
-    display: block;
-    width: 100%;
-    padding: 8px 12px;
-    margin-bottom: 2px;
-    background-color: #4169E1;
-    color: white;
-    text-decoration: none;
-    border: 1px solid #0000CD;
-    border-radius: 0;
-    font-size: 13px;
-    font-weight: normal;
-    text-align: left;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-    font-family: Verdana, Arial, sans-serif;
-}
-
-.nav-button:hover {
-    background-color: #1E90FF;
-    color: white;
-}
-
-.nav-button.active {
-    background-color: #1E90FF;
-}
-
-/* ==================================================
-   HOMEPAGE ELEMENTS
-   ================================================== */
-.logo-section {
-    margin-bottom: 100px;
-}
-
-.logo-text {
-    font-size: 32px;
-    font-weight: normal;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.lotus-image {
-    margin: 30px 0 50px 0;
-}
-
-.lotus-image img {
-    width: 200px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-/* ==================================================
-   QUIZ SECTION
-   ================================================== */
-.quiz-section {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center !important;
-}
-
-.quiz-title {
-    font-size: 32px !important;
-    margin-bottom: 30px !important;
-    color: #333 !important;
-    text-align: center !important;
-    border-bottom: none !important;
-    padding-bottom: 0 !important;
-}
-
-.score {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #666;
-}
-
-.question {
-    font-size: 20px;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-.answer-input {
-    width: 400px;
-    padding: 12px 16px;
-    border: 2px solid #ddd;
-    border-radius: 6px;
-    font-size: 16px;
-    margin-bottom: 15px;
-    background-color: white;
-}
-
-.answer-input:focus {
-    outline: none;
-    border-color: #87CEEB;
-}
-
-.instruction {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 25px;
-}
-
-/* Ensure homepage headings don't get the section heading styling */
-.quiz-section h1,
-.quiz-section h2 {
-    text-align: center !important;
-    border-bottom: none !important;
-    padding-bottom: 0 !important;
-    color: #333 !important;
-}
-
-/* ==================================================
-   BUTTONS
-   ================================================== */
-.button {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.button:hover {
-    background-color: #e0e0e0;
-}
-
-.submit-btn {
-    background-color: #87CEEB;
-}
-
-.submit-btn:hover {
-    background-color: #6BB6D6;
-}
-
-/* ==================================================
-   FEEDBACK MESSAGES
-   ================================================== */
-.feedback-correct {
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
-    color: #155724;
-    padding: 15px;
-    border-radius: 6px;
-    margin-top: 20px;
-}
-
-.feedback-incorrect {
-    background-color: #f8d7da;
-    border: 1px solid #f5c6cb;
-    color: #721c24;
-    padding: 15px;
-    border-radius: 6px;
-    margin-top: 20px;
-}
-
-.feedback-explanation {
-    background-color: #e2e3e5;
-    border: 1px solid #d6d8db;
-    color: #383d41;
-    padding: 15px;
-    border-radius: 6px;
-    margin-top: 20px;
-}
-
-/* ==================================================
-   BLOG POST STYLING TO MATCH MOILEON.IN
-   ================================================== */
-
-/* Blog post content container */
+/* Blog post container - more universal selectors */
+.main-content > *,
 .blog-post,
 .post-content,
 .content,
-article {
+article,
+.entry-content,
+.post {
     max-width: 750px;
     margin: 0 auto;
-    padding: 0 20px;
     line-height: 1.7;
-    font-size: 16px;
     color: #333;
+    font-family: Georgia, serif;
 }
 
-/* Blog post main title */
+/* BLOG TITLES - Main post titles */
+.main-content h1,
 .blog-post h1,
 .post-content h1,
 .content h1,
-article h1 {
+article h1,
+.entry-title,
+.post-title {
     font-size: 2.2rem !important;
     color: #000080 !important;
     margin-bottom: 15px !important;
@@ -325,32 +46,46 @@ article h1 {
     letter-spacing: 1px !important;
 }
 
-/* Date styling */
+/* DATES - All possible date selectors */
 .post-date,
 .blog-date,
-.date {
+.date,
+.entry-date,
+.published-date,
+.main-content .date,
+time {
+    display: block !important;
     color: #666 !important;
     font-size: 14px !important;
     margin-bottom: 30px !important;
     font-style: normal !important;
     font-weight: normal !important;
     border-bottom: none !important;
+    text-align: left !important;
+    font-family: Georgia, serif !important;
 }
 
-/* Blog post paragraphs */
+/* PARAGRAPHS - Universal paragraph styling */
+.main-content p,
 .blog-post p,
 .post-content p,
 .content p,
-article p {
+article p,
+.entry-content p {
     margin-bottom: 20px !important;
     text-align: left !important;
     font-size: 16px !important;
     line-height: 1.7 !important;
     color: #333 !important;
     font-family: Georgia, serif !important;
+    text-indent: 0 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
 }
 
-/* Section headings within blog posts */
+/* SECTION HEADINGS within blog posts (h2) */
+.main-content h2:not(.quiz-title),
 .blog-post h2,
 .post-content h2,
 .content h2,
@@ -363,9 +98,12 @@ article h2 {
     padding-bottom: 0 !important;
     text-align: left !important;
     font-family: Georgia, serif !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
 }
 
-/* Subsection headings */
+/* SUBSECTION HEADINGS within blog posts (h3) */
+.main-content h3,
 .blog-post h3,
 .post-content h3,
 .content h3,
@@ -378,317 +116,115 @@ article h3 {
     padding-bottom: 0 !important;
     text-align: left !important;
     font-family: Georgia, serif !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
 }
 
-/* Remove general heading styles from blog posts */
-.blog-post h1,
-.blog-post h2,
-.blog-post h3,
-.post-content h1,
-.post-content h2,
-.post-content h3,
-.content h1,
-.content h2,
-.content h3,
-article h1,
-article h2,
-article h3 {
-    border-bottom: none !important;
-}
-
-/* ==================================================
-   HEADINGS - UNIFIED STYLING TO MATCH QUOTES PAGE
-   ================================================== */
-.section-header h1,
-.section-header h2,
-.main-content h1:not(.quiz-title):not(.blog-post h1):not(.post-content h1):not(.content h1):not(article h1),
-.main-content h2:not(.quiz-title):not(.blog-post h2):not(.post-content h2):not(.content h2):not(article h2),
-.content-section h2,
-main h1:not(.quiz-title):not(.blog-post h1):not(.post-content h1):not(.content h1):not(article h1),
-main h2:not(.quiz-title):not(.blog-post h2):not(.post-content h2):not(.content h2):not(article h2) {
-    color: #000080 !important;
-    margin-bottom: 20px !important;
-    border-bottom: 2px solid #4169E1 !important;
-    padding-bottom: 10px !important;
-    text-align: left !important;
+/* LISTS within blog posts */
+.main-content ul,
+.main-content ol,
+.blog-post ul,
+.blog-post ol,
+.post-content ul,
+.post-content ol,
+.content ul,
+.content ol,
+article ul,
+article ol {
+    margin: 20px 0 20px 40px !important;
+    line-height: 1.7 !important;
     font-family: Georgia, serif !important;
-    font-weight: bold !important;
-    font-size: 32px !important;
 }
 
-/* Also exclude quiz-section headings */
-.quiz-section h1,
-.quiz-section h2,
-.quiz-section .quiz-title {
+.main-content li,
+.blog-post li,
+.post-content li,
+.content li,
+article li {
+    margin-bottom: 8px !important;
+    line-height: 1.7 !important;
+}
+
+/* BLOCKQUOTES */
+.main-content blockquote,
+.blog-post blockquote,
+.post-content blockquote,
+.content blockquote,
+article blockquote {
+    margin: 30px 40px !important;
+    padding: 20px !important;
+    border-left: 4px solid #000080 !important;
+    background-color: #f9f9f9 !important;
+    font-style: italic !important;
+    color: #555 !important;
+}
+
+/* LINKS within blog content */
+.main-content a,
+.blog-post a,
+.post-content a,
+.content a,
+article a {
     color: #000080 !important;
-    text-align: center !important;
-    border-bottom: none !important;
-    padding-bottom: 0 !important;
-    margin-bottom: 30px !important;
-    font-weight: bold !important;
-    font-size: 32px !important;
+    text-decoration: underline !important;
 }
 
-/* Remove any HR elements that might create double lines */
-.section-page hr,
-.main-content hr,
-.content hr,
-hr {
-    display: none;
+.main-content a:hover,
+.blog-post a:hover,
+.post-content a:hover,
+.content a:hover,
+article a:hover {
+    color: #4169E1 !important;
 }
 
-/* ==================================================
-   LIST PAGES STYLING
-   ================================================== */
-.section-page {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
+/* Override any competing styles */
+.main-content * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
-.section-header {
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.section-description {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.6;
-}
-
-.posts-list {
-    padding-left: 20px;
-    margin: 20px 0;
-}
-
-.posts-list ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-.posts-list li {
-    margin-bottom: 10px;
-    line-height: 1.5;
-}
-
-.posts-list a {
-    color: #000080;
-    text-decoration: underline;
-    font-size: 16px;
-}
-
-.posts-list a:hover {
-    color: #4169E1;
-}
-
-/* For article-based list items (preserve original bullet style) */
-.post-item,
-.booknote-item,
-.project-item,
-.podcast-item {
-    margin-bottom: 15px;
-    padding: 0;
-    background: none;
-    border: none;
-    box-shadow: none;
-    list-style: disc outside;
-    margin-left: 20px;
-}
-
-.post-item h3,
-.booknote-item h3,
-.project-item h3,
-.podcast-item h3 {
-    display: inline;
-    font-size: 16px;
-    font-weight: normal;
-    margin: 0;
-}
-
-.post-item h3 a,
-.booknote-item h3 a,
-.project-item h3 a,
-.podcast-item h3 a {
-    color: #000080;
-    text-decoration: underline;
-}
-
-.post-item h3 a:hover,
-.booknote-item h3 a:hover,
-.project-item h3 a:hover,
-.podcast-item h3 a:hover {
-    color: #4169E1;
-}
-
-/* Hide other post elements to maintain simple bullet list */
-.post-date,
-.post-summary,
-.book-author,
-.book-rating,
-.episode-number,
-.episode-duration,
-.tech-stack,
-.book-summary,
-.project-summary,
-.podcast-summary,
-.read-more,
-.project-links,
-.external-link,
-.post-tags-small {
-    display: none;
-}
-
-/* Show date in blog posts */
-.blog-post .post-date,
-.post-content .post-date,
-.content .post-date,
-article .post-date,
-.blog-post .blog-date,
-.post-content .blog-date,
-.content .blog-date,
-article .blog-date,
-.blog-post .date,
-.post-content .date,
-.content .date,
-article .date {
-    display: block !important;
+/* Ensure text flows properly */
+.main-content {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 /* ==================================================
-   RESPONSIVE DESIGN - ENHANCED MOBILE
+   MOBILE RESPONSIVE ADJUSTMENTS
    ================================================== */
-
-/* Mobile styles (768px and below) */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    
-    /* Show hamburger button on mobile */
-    .hamburger-btn {
-        display: block;
-    }
-    
-    /* Mobile sidebar - slide out from left */
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: -250px;
-        width: 250px;
-        height: 100vh;
-        z-index: 1000;
-        transition: left 0.3s ease;
-        overflow-y: auto;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.3);
-        padding: 80px 20px 20px 20px;
-    }
-    
-    /* Show sidebar when active */
-    .sidebar.active {
-        left: 0;
-    }
-    
-    /* Show overlay when sidebar is active */
-    .mobile-overlay {
-        display: block;
-    }
-    
-    /* Adjust main content for mobile */
     .main-content {
-        padding: 80px 20px 20px 20px;
-        width: 100%;
+        padding: 20px 15px;
+        max-width: 100%;
     }
     
-    /* Navigation buttons in mobile sidebar */
-    .nav-button {
-        padding: 12px 16px;
-        margin-bottom: 4px;
-        font-size: 14px;
-        text-align: left;
-        width: 100%;
-        border-radius: 4px;
-    }
-    
-    /* Homepage mobile adjustments */
-    .logo-section {
-        margin-bottom: 50px;
-    }
-    
-    .logo-text {
-        font-size: 24px;
-        margin-bottom: 15px;
-    }
-    
-    .lotus-image {
-        margin: 20px 0 30px 0;
-    }
-    
-    .lotus-image img {
-        width: 150px;
-    }
-    
-    /* Quiz mobile adjustments */
-    .quiz-title {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-    
-    .question {
-        font-size: 18px;
-        margin-bottom: 20px;
-    }
-    
-    .answer-input {
-        width: 100%;
-        max-width: 400px;
-        font-size: 16px;
-    }
-    
-    /* Blog post mobile adjustments */
+    .main-content > *,
     .blog-post,
     .post-content,
     .content,
     article {
-        max-width: 95%;
-        padding: 0 15px;
+        max-width: 100%;
+        padding: 0;
     }
     
+    .main-content h1,
     .blog-post h1,
     .post-content h1,
     .content h1,
     article h1 {
         font-size: 1.8rem !important;
         line-height: 1.2 !important;
-    }
-}
-
-/* Tablet styles (769px to 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .sidebar {
-        width: 180px;
-        padding: 18px;
+        margin-bottom: 10px !important;
     }
     
-    .main-content {
-        padding: 35px;
-    }
-    
-    .nav-button {
-        font-size: 12px;
-        padding: 7px 10px;
-    }
-}
-
-/* Desktop styles (1025px and above) */
-@media (min-width: 1025px) {
-    .sidebar {
-        width: 200px;
-        padding: 20px;
-    }
-    
-    .main-content {
-        padding: 40px;
+    .main-content p,
+    .blog-post p,
+    .post-content p,
+    .content p,
+    article p {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 18px !important;
     }
 }
-
