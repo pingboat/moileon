@@ -291,29 +291,27 @@ body {
 }
 
 /* ==================================================
-   SAFE BLOG POST STYLING - TARGETED APPROACH
+   BLOG POST STYLING TO MATCH MOILEON.IN
    ================================================== */
 
-/* Only target blog-specific content, not all main-content */
+/* Blog post content container */
 .blog-post,
 .post-content,
-.content article,
-article.post,
-.entry-content {
+.content,
+article {
     max-width: 750px;
     margin: 0 auto;
+    padding: 0 20px;
     line-height: 1.7;
+    font-size: 16px;
     color: #333;
-    font-family: Georgia, serif;
 }
 
-/* Blog post titles - more specific selectors */
+/* Blog post main title */
 .blog-post h1,
 .post-content h1,
-article.post h1,
-.entry-content h1,
-.post-title,
-.entry-title {
+.content h1,
+article h1 {
     font-size: 2.2rem !important;
     color: #000080 !important;
     margin-bottom: 15px !important;
@@ -327,51 +325,36 @@ article.post h1,
     letter-spacing: 1px !important;
 }
 
-/* Blog post dates */
-.blog-post .post-date,
-.blog-post .blog-date,
-.blog-post .date,
-.post-content .post-date,
-.post-content .blog-date,
-.post-content .date,
-article.post .post-date,
-article.post .blog-date,
-article.post .date,
-.entry-content .post-date,
-.entry-content .blog-date,
-.entry-content .date,
-.entry-date {
-    display: block !important;
+/* Date styling */
+.post-date,
+.blog-date,
+.date {
     color: #666 !important;
     font-size: 14px !important;
     margin-bottom: 30px !important;
     font-style: normal !important;
     font-weight: normal !important;
     border-bottom: none !important;
-    text-align: left !important;
-    font-family: Georgia, serif !important;
 }
 
 /* Blog post paragraphs */
 .blog-post p,
 .post-content p,
-article.post p,
-.entry-content p {
+.content p,
+article p {
     margin-bottom: 20px !important;
     text-align: left !important;
     font-size: 16px !important;
     line-height: 1.7 !important;
     color: #333 !important;
     font-family: Georgia, serif !important;
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
 }
 
-/* Blog post section headings (h2) */
+/* Section headings within blog posts */
 .blog-post h2,
 .post-content h2,
-article.post h2,
-.entry-content h2 {
+.content h2,
+article h2 {
     font-size: 1.3rem !important;
     color: #333 !important;
     margin: 30px 0 15px 0 !important;
@@ -380,15 +363,13 @@ article.post h2,
     padding-bottom: 0 !important;
     text-align: left !important;
     font-family: Georgia, serif !important;
-    text-transform: none !important;
-    letter-spacing: normal !important;
 }
 
-/* Blog post subsection headings (h3) */
+/* Subsection headings */
 .blog-post h3,
 .post-content h3,
-article.post h3,
-.entry-content h3 {
+.content h3,
+article h3 {
     font-size: 1.1rem !important;
     color: #333 !important;
     margin: 25px 0 12px 0 !important;
@@ -397,73 +378,22 @@ article.post h3,
     padding-bottom: 0 !important;
     text-align: left !important;
     font-family: Georgia, serif !important;
-    text-transform: none !important;
-    letter-spacing: normal !important;
 }
 
-/* Blog post lists */
-.blog-post ul,
-.blog-post ol,
-.post-content ul,
-.post-content ol,
-article.post ul,
-article.post ol,
-.entry-content ul,
-.entry-content ol {
-    margin: 20px 0 20px 40px !important;
-    line-height: 1.7 !important;
-    font-family: Georgia, serif !important;
-}
-
-.blog-post li,
-.post-content li,
-article.post li,
-.entry-content li {
-    margin-bottom: 8px !important;
-    line-height: 1.7 !important;
-}
-
-/* Blog post links */
-.blog-post a,
-.post-content a,
-article.post a,
-.entry-content a {
-    color: #000080 !important;
-    text-decoration: underline !important;
-}
-
-.blog-post a:hover,
-.post-content a:hover,
-article.post a:hover,
-.entry-content a:hover {
-    color: #4169E1 !important;
-}
-
-/* Mobile responsive for blog posts only */
-@media (max-width: 768px) {
-    .blog-post,
-    .post-content,
-    article.post,
-    .entry-content {
-        max-width: 95%;
-        padding: 0 15px;
-    }
-    
-    .blog-post h1,
-    .post-content h1,
-    article.post h1,
-    .entry-content h1 {
-        font-size: 1.8rem !important;
-        line-height: 1.2 !important;
-    }
-    
-    .blog-post p,
-    .post-content p,
-    article.post p,
-    .entry-content p {
-        font-size: 15px !important;
-        line-height: 1.6 !important;
-    }
+/* Remove general heading styles from blog posts */
+.blog-post h1,
+.blog-post h2,
+.blog-post h3,
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.content h1,
+.content h2,
+.content h3,
+article h1,
+article h2,
+article h3 {
+    border-bottom: none !important;
 }
 
 /* ==================================================
@@ -471,20 +401,11 @@ article.post a:hover,
    ================================================== */
 .section-header h1,
 .section-header h2,
-.content-section h2 {
-    color: #000080 !important;
-    margin-bottom: 20px !important;
-    padding-bottom: 10px !important;
-    text-align: left !important;
-    text-transform: uppercase !important;
-    font-family: Georgia, serif !important;
-    font-weight: bold !important;
-    font-size: 32px !important;
-}
-
-/* Non-blog page headings in main content */
-.main-content h1:not(.quiz-title),
-.main-content h2:not(.quiz-title) {
+.main-content h1:not(.quiz-title):not(.blog-post h1):not(.post-content h1):not(.content h1):not(article h1),
+.main-content h2:not(.quiz-title):not(.blog-post h2):not(.post-content h2):not(.content h2):not(article h2),
+.content-section h2,
+main h1:not(.quiz-title):not(.blog-post h1):not(.post-content h1):not(.content h1):not(article h1),
+main h2:not(.quiz-title):not(.blog-post h2):not(.post-content h2):not(.content h2):not(article h2) {
     color: #000080 !important;
     margin-bottom: 20px !important;
     border-bottom: 2px solid #4169E1 !important;
@@ -493,6 +414,27 @@ article.post a:hover,
     font-family: Georgia, serif !important;
     font-weight: bold !important;
     font-size: 32px !important;
+}
+
+/* Also exclude quiz-section headings */
+.quiz-section h1,
+.quiz-section h2,
+.quiz-section .quiz-title {
+    color: #000080 !important;
+    text-align: center !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 30px !important;
+    font-weight: bold !important;
+    font-size: 32px !important;
+}
+
+/* Remove any HR elements that might create double lines */
+.section-page hr,
+.main-content hr,
+.content hr,
+hr {
+    display: none;
 }
 
 /* ==================================================
