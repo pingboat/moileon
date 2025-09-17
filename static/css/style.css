@@ -33,7 +33,7 @@ body {
 
 .main-content {
     flex: 1;
-    padding: 40px;
+    padding: 40px 80px;
     text-align: left;
 }
 
@@ -348,6 +348,9 @@ article p {
     line-height: 1.7 !important;
     color: #333 !important;
     font-family: Georgia, serif !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
 }
 
 /* Section headings within blog posts */
