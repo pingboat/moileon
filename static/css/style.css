@@ -471,11 +471,7 @@ article.post a:hover,
    ================================================== */
 .section-header h1,
 .section-header h2,
-.main-content h1:not(.quiz-title):not(.blog-post h1):not(.post-content h1):not(.content h1):not(article h1),
-.main-content h2:not(.quiz-title):not(.blog-post h2):not(.post-content h2):not(.content h2):not(article h2),
-.content-section h2,
-main h1:not(.quiz-title):not(.blog-post h1):not(.post-content h1):not(.content h1):not(article h1),
-main h2:not(.quiz-title):not(.blog-post h2):not(.post-content h2):not(.content h2):not(article h2) {
+.content-section h2 {
     color: #000080 !important;
     margin-bottom: 20px !important;
     border-bottom: 2px solid #4169E1 !important;
@@ -486,25 +482,17 @@ main h2:not(.quiz-title):not(.blog-post h2):not(.post-content h2):not(.content h
     font-size: 32px !important;
 }
 
-/* Also exclude quiz-section headings */
-.quiz-section h1,
-.quiz-section h2,
-.quiz-section .quiz-title {
+/* Non-blog page headings in main content */
+.main-content h1:not(.quiz-title),
+.main-content h2:not(.quiz-title) {
     color: #000080 !important;
-    text-align: center !important;
-    border-bottom: none !important;
-    padding-bottom: 0 !important;
-    margin-bottom: 30px !important;
+    margin-bottom: 20px !important;
+    border-bottom: 2px solid #4169E1 !important;
+    padding-bottom: 10px !important;
+    text-align: left !important;
+    font-family: Georgia, serif !important;
     font-weight: bold !important;
     font-size: 32px !important;
-}
-
-/* Remove any HR elements that might create double lines */
-.section-page hr,
-.main-content hr,
-.content hr,
-hr {
-    display: none;
 }
 
 /* ==================================================
