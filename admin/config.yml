@@ -4,7 +4,8 @@
 
 # Backend Configuration
 backend:
-  name: git-gateway
+  name: github
+  repo: your-username/your-repo-name
   branch: dev  # Development branch for commits from CMS
 
 publish_mode: editorial_workflow
