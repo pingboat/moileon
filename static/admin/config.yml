@@ -4,9 +4,8 @@
 
 # Backend Configuration
 backend:
-  name: git-gateway
-  repo: pingboat/moileon   
-  branch: dev              
+  name: git-gateway  
+  branch: main             
 
 publish_mode: editorial_workflow
 
