@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moileon Admin</title>
+  <title>Moileon CMS</title>
 
   <!-- Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
   <!-- Netlify CMS (stable) -->
-  <script src="https://unpkg.com/netlify-cms-app@^2.0.0/dist/netlify-cms.js"></script>
-  
+  <script src="https://unpkg.com/netlify-cms-app@^2.0/dist/netlify-cms.js"></script>
+
   <style>
     body {
       font-family: 'Georgia', serif;
@@ -30,6 +30,10 @@
 </head>
 <body>
   <script>
+    // Initialize Netlify CMS
+    NetlifyCmsApp.init();
+
+    // Handle Netlify Identity login redirect
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
