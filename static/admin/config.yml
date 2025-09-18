@@ -4,11 +4,9 @@
 
 # Backend Configuration
 backend:
-  name: github
+  name: git-gateway
   repo: pingboat/moileon   
   branch: dev              
-  auth_type: implicit
-  app_id: Ov23li2OEFdvYrfh5oI0 
 
 publish_mode: editorial_workflow
 
