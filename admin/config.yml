@@ -6,7 +6,9 @@
 backend:
   name: github
   repo: your-username/your-repo-name
-  branch: dev  # Development branch for commits from CMS
+  branch: dev
+  auth_type: implicit
+  app_id: <Ov23li2OEFdvYrfh5oI0>
 
 publish_mode: editorial_workflow
 
