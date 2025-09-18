@@ -1,16 +1,16 @@
-<!doctype html>
+<<!doctype html>
 <html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moileon CMS</title>
+  <title>Moileon Admin</title>
 
   <!-- Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-  <!-- Netlify CMS (stable) -->
-  <script src="https://unpkg.com/netlify-cms-app@^2.0/dist/netlify-cms.js"></script>
-
+  <!-- Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^2.0/dist/decap-cms.js"></script>
+  
   <style>
     body {
       font-family: 'Georgia', serif;
@@ -30,10 +30,6 @@
 </head>
 <body>
   <script>
-    // Initialize Netlify CMS
-    NetlifyCmsApp.init();
-
-    // Handle Netlify Identity login redirect
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
@@ -43,6 +39,16 @@
         }
       });
     }
+  </script>
+
+  <!-- Load Decap CMS -->
+  <script>
+    window.CMS_MANUAL_INIT = true;
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.CMS && window.CMS.init) {
+        window.CMS.init();
+      }
+    });
   </script>
 </body>
 </html>
