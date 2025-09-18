@@ -17,3 +17,9 @@
   from = "/.netlify/identity"
   to = "/.netlify/identity/index.html"
   status = 200
+
+  [[headers]]
+  for = "/admin/config.yml"
+  [headers.values]
+    Content-Type = "text/plain"
+
