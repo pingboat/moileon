@@ -8,7 +8,7 @@
 
 # Redirect /admin to CMS panel
 [[redirects]]
-  from = "/admin/*"
+  from = "/admin"
   to = "/admin/cms.html"
   status = 200
 
