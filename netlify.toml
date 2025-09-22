@@ -7,6 +7,6 @@
   HUGO_ENV = "production"
 
 [[redirects]]
-  from = "/admin"
+  from = "/admin/*"
   to = "/admin/cms.html"
   status = 200
