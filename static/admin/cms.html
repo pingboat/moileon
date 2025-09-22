@@ -1,16 +1,16 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Moileon Admin</title>
 
-  <!-- Netlify Identity -->
+  <!-- Netlify Identity Widget -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-  <!-- Decap CMS -->
+  <!-- Decap CMS (latest stable) -->
   <script src="https://unpkg.com/decap-cms@^2.0/dist/decap-cms.js"></script>
-  
+
   <style>
     body {
       font-family: 'Georgia', serif;
@@ -30,6 +30,7 @@
 </head>
 <body>
   <script>
+    // Redirect user after login
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
@@ -39,13 +40,12 @@
         }
       });
     }
-  </script>
 
-  <!-- Load Decap CMS -->
-  <script>
-    window.CMS_MANUAL_INIT = true;
+    // Initialize Decap CMS
     document.addEventListener("DOMContentLoaded", function () {
-      NetlifyCms.init();   
+      if (window.CMS && window.CMS.init) {
+        window.CMS.init();
+      }
     });
   </script>
 </body>
