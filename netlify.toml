@@ -6,22 +6,25 @@
   HUGO_VERSION = "0.126.1"
   HUGO_ENV = "production"
 
+# Redirect /admin to CMS panel
 [[redirects]]
   from = "/admin/*"
   to = "/admin/cms.html"
   status = 200
 
+# Netlify Identity
 [[redirects]]
   from = "/.netlify/identity"
   to = "/.netlify/identity/index.html"
   status = 200
 
-# Your blog rewrite rule
+# Blog rewrite
 [[redirects]]
   from = "/blog/*"
   to = "/blog/index.html"
   status = 200
 
+# Ensure config.yml is served as plain text
 [[headers]]
   for = "/admin/config.yml"
   [headers.values]
