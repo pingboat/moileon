@@ -30,7 +30,6 @@
 </head>
 <body>
   <script>
-    // Redirect user after login
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
@@ -40,13 +39,9 @@
         }
       });
     }
-
-    // Initialize Decap CMS
-    document.addEventListener("DOMContentLoaded", function () {
-      if (window.CMS && window.CMS.init) {
-        window.CMS.init();
-      }
-    });
   </script>
+
+  <!-- Just let Decap CMS auto-init -->
+  <script src="https://unpkg.com/decap-cms@^2.0/dist/decap-cms.js"></script>
 </body>
 </html>
