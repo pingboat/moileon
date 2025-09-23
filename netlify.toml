@@ -14,6 +14,6 @@
 
 # Serve config.yml correctly
 [[headers]]
-  for = "/admin/config.yml"
+  for = "/admin/*.yml"
   [headers.values]
     Content-Type = "text/yaml"
