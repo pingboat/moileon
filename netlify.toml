@@ -9,7 +9,7 @@
 # Redirect /admin to CMS panel
 [[redirects]]
   from = "/admin"
-  to = "/admin/cms.html"
+  to = "/admin/index.html"
   status = 200
 
 # Blog rewrite
