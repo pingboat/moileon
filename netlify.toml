@@ -17,12 +17,6 @@
   to = "/.netlify/identity/index.html"
   status = 200
 
-# Your blog redirect rule
-[[redirects]]
-  from = "/blog/*"
-  to = "/blog/index.html"
-  status = 200
-
 # Ensure config.yml is served as plain text
 [[headers]]
   for = "/admin/config.yml"
