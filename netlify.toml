@@ -8,7 +8,7 @@
 
 # Redirect /admin to CMS panel
 [[redirects]]
-  from = "/admin"
+  from = "/admin/*"
   to = "/admin/index.html"
   status = 200
 
@@ -16,6 +16,12 @@
 [[redirects]]
   from = "/blog/*"
   to = "/blog/index.html"
+  status = 200
+
+# Redirect for Netlify Identity
+[[redirects]]
+  from = "/.netlify/identity"
+  to = "/.netlify/identity/index.html"
   status = 200
 
 # Ensure config.yml is served as plain text
