@@ -3,7 +3,7 @@ backend:
   branch: main
 
 media_folder: "assets/images"
-public_folder: "/assets/images"
+public_folder: "/images"
 
 collections:
   - name: "blog"
@@ -83,4 +83,5 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
