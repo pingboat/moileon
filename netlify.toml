@@ -1,7 +1,6 @@
 [build]
   publish = "public"
-  command = "hugo --gc --minify && cp -r static/admin public/ || mkdir -p public/admin && cp static/admin/* public/admin/"
-  
+  command = "hugo --gc --minify && cp -r static/admin public/ && cp _redirects public/"
 
 [build.environment]
   HUGO_VERSION = "0.126.1"
