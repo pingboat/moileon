@@ -5,8 +5,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-justify: none !important;
-    hyphens: none !important;
 }
 
 body {
@@ -352,8 +350,6 @@ article p {
     font-family: Georgia, serif !important;
     word-wrap: normal !important;
     overflow-wrap: normal !important;
-    text-justify: none !important;
-    hyphens: none !important;
 }
 
 /* Section headings within blog posts */
@@ -570,12 +566,12 @@ article .date {
     .container {
         flex-direction: column;
     }
-    
+
     /* Show hamburger button on mobile */
     .hamburger-btn {
         display: block;
     }
-    
+
     /* Mobile sidebar - slide out from left */
     .sidebar {
         position: fixed;
@@ -589,23 +585,23 @@ article .date {
         box-shadow: 2px 0 10px rgba(0,0,0,0.3);
         padding: 80px 20px 20px 20px;
     }
-    
+
     /* Show sidebar when active */
     .sidebar.active {
         left: 0;
     }
-    
+
     /* Show overlay when sidebar is active */
     .mobile-overlay {
         display: block;
     }
-    
+
     /* Adjust main content for mobile */
     .main-content {
         padding: 80px 20px 20px 20px;
         width: 100%;
     }
-    
+
     /* Navigation buttons in mobile sidebar */
     .nav-button {
         padding: 12px 16px;
@@ -615,42 +611,42 @@ article .date {
         width: 100%;
         border-radius: 4px;
     }
-    
+
     /* Homepage mobile adjustments */
     .logo-section {
         margin-bottom: 50px;
     }
-    
+
     .logo-text {
         font-size: 24px;
         margin-bottom: 15px;
     }
-    
+
     .lotus-image {
         margin: 20px 0 30px 0;
     }
-    
+
     .lotus-image img {
         width: 150px;
     }
-    
+
     /* Quiz mobile adjustments */
     .quiz-title {
         font-size: 24px;
         margin-bottom: 20px;
     }
-    
+
     .question {
         font-size: 18px;
         margin-bottom: 20px;
     }
-    
+
     .answer-input {
         width: 100%;
         max-width: 400px;
         font-size: 16px;
     }
-    
+
     /* Blog post mobile adjustments */
     .blog-post,
     .post-content,
@@ -659,7 +655,7 @@ article .date {
         max-width: 95%;
         padding: 0 15px;
     }
-    
+
     .blog-post h1,
     .post-content h1,
     .content h1,
@@ -675,11 +671,11 @@ article .date {
         width: 180px;
         padding: 18px;
     }
-    
+
     .main-content {
         padding: 35px;
     }
-    
+
     .nav-button {
         font-size: 12px;
         padding: 7px 10px;
@@ -692,7 +688,7 @@ article .date {
         width: 200px;
         padding: 20px;
     }
-    
+
     .main-content {
         padding: 40px;
     }
