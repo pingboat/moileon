@@ -59,15 +59,13 @@ There must be a constant insistence on one main idea. That main idea is to self 
 
 Knowing and accepting that whatever is the circumstance, there is a greater wisdom, and all the Sadhaka can do is to do what is needed to the best of his capacity. The full surrender of one’s personal being to the divine and through that attaining to the all possessing Ananda.       
 
-
-
-
-
-**1.1.1 Passive or Negative Equality**                                                                                                                                                                                                                                
+**1.1.1 Passive or Negative Equality**                                                                                                                                                                                             
 
 Passive equality is of three types based on differences in approach: Titiksha (way of will), Udasinata (way of knowledge), Nati (way of devotion). All three approaches lead to the same goal.     
 
-**Tititksha**                                                   Ability to bear all sensations without being overpowered by unpleasant ones or overjoyed by pleasant sensations.
+**Tititksha**                                              
+
+Ability to bear all sensations without being overpowered by unpleasant ones or overjoyed by pleasant sensations.
 
 **Udasinata**                                                                             
 
