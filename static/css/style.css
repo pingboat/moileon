@@ -5,6 +5,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-justify: none !important;
+    hyphens: none !important;
 }
 
 body {
@@ -337,7 +339,7 @@ article h1 {
     border-bottom: none !important;
 }
 
-/* Blog post paragraphs */
+/* Blog post paragraphs - FIXED */
 .blog-post p,
 .post-content p,
 .content p,
@@ -348,9 +350,10 @@ article p {
     line-height: 1.7 !important;
     color: #333 !important;
     font-family: Georgia, serif !important;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-
+    word-wrap: normal !important;
+    overflow-wrap: normal !important;
+    text-justify: none !important;
+    hyphens: none !important;
 }
 
 /* Section headings within blog posts */
