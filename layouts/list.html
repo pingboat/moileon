@@ -107,7 +107,7 @@
             </span>
             
             {{ if $paginator.HasNext }}
-            <a href="{{ .Next.URL }}" class="pagination-link">Next →</a>
+            <a href="{{ $paginator.Next.URL }}" class="pagination-link">Next →</a>
             {{ end }}
         </nav>
         {{ end }}
