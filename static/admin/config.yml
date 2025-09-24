@@ -85,3 +85,19 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "quiz"
+    label: "Quiz"
+    folder: "content/quiz"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Question", name: "question", widget: "text"}
+      - {label: "Option A", name: "option_a", widget: "string"}
+      - {label: "Option B", name: "option_b", widget: "string"}
+      - {label: "Option C", name: "option_c", widget: "string"}
+      - {label: "Option D", name: "option_d", widget: "string"}
+      - {label: "Correct Answer", name: "correct_answer", widget: "select", options: ["A", "B", "C", "D"]}
+      - {label: "Explanation", name: "explanation", widget: "text", required: false}
+      - {label: "Date", name: "date", widget: "datetime"}
