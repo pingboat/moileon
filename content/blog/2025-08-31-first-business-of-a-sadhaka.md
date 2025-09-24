@@ -40,7 +40,6 @@ Equality is the foundation on which you can embrace everything that life has to 
 In essence, equality is to remain unmoved within centrally, irrespective of the external (or even internal) circumstances.                                                                                                                                 
 
 Therefore, the first business of the Sadhaka is to see whether he has the perfect equality, how far he has gone in this direction, or else where is the flaw, and to exercise steadily his will on his nature, or invite the will of the Purusha to get rid of the defects and its causes. All this is the first business of the Sadhaka.                                                                                                                                                                                           
-
 To be equal is to be infinite and universal, not to bind oneself to this or that form of the mind and life and its partial preferences and desires. 
 
 However, that is not our starting point. We all start from a limited capacity, preferences, desires, attachments and so on. To accept all our limitations at first is inevitable. To get beyond them is exceedingly difficult, and not perhaps altogether possible; so long as we are compelled to use the mind as the chief instrument of our action. But opening to the divine action, allowing a higher power to work in you, all this ceases to be true. 
