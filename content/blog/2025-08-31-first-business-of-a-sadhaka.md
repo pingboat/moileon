@@ -97,7 +97,8 @@ The Divine pleasure in existence, which is superior to the mental pleasure. The 
 
 When Samata (Equality) mentioned above is perfected, the being reigns in Shanti (Peace). This may be a vast passive calm founded on Passive equality or a vast joyous calm based on Active equality. The former is an intermediate stage which must culminate in the latter. A firm peace and absence of all disturbance and trouble. 
 
-**1.3 Sukham (Happiness)**                                                                                              
+**1.3 Sukham (Happiness)**                                                                                           
+
 A positive inner spiritual happiness and spiritual ease of the natural being which nothing can lessen. Complete release from grief and depression. A state of positive inner happiness and spiritual ease. This comes from the fulfillment of the first two parts of this quartet: Equality and Peace.
 
 **1.4 Hasyam (Atmaprasada)**                                                                                              
