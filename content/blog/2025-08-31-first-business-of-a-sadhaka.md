@@ -94,10 +94,12 @@ Pleasure of the mind in all Rasa. Enjoyment of the rasa for the nourishment of t
 The Divine pleasure in existence, which is superior to the mental pleasure. The joy of unity. The ananda of unity in and with everything. This ananda is a delight that is undivided, not bound by any duality. The ananda of consciousness engaging with everything with perfect equality. 
 
 **1.2 Shanti (Peace)**                                                                                                                        
+
 When Samata (Equality) mentioned above is perfected, the being reigns in Shanti (Peace). This may be a vast passive calm founded on Passive equality or a vast joyous calm based on Active equality. The former is an intermediate stage which must culminate in the latter. A firm peace and absence of all disturbance and trouble. 
 
-**1.3 Sukham (Happiness)**                                                                                                              
+**1.3 Sukham (Happiness)**                                                                                              
 A positive inner spiritual happiness and spiritual ease of the natural being which nothing can lessen. Complete release from grief and depression. A state of positive inner happiness and spiritual ease. This comes from the fulfillment of the first two parts of this quartet: Equality and Peace.
 
-**1.4 Hasyam (Atmaprasada)**                                                                                                        
+**1.4 Hasyam (Atmaprasada)**                                                                                              
+
 Hasyam is the active side of Sukha. A clear joy and laughter of the soul embracing life and existence. Now the child playing the video game has extended its playground to the whole cosmos, and the potential is infinite. It is an active internal state of gladness and cheerfulness which no adverse experience mental or physical can trouble. Atmaprasada is a state of clearness, purity and contentment on the whole self; equivalent to hasyam (though hasyam is sometimes regarded as a still more positive state).
