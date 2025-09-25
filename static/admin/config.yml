@@ -66,8 +66,9 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Quote", name: "quote", widget: "text"}
+      - {label: "Author", name: "author", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "lenscape"
     label: "Lenscape"
@@ -98,10 +99,8 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Question", name: "question", widget: "text"}
-      - {label: "Option A", name: "option_a", widget: "string"}
-      - {label: "Option B", name: "option_b", widget: "string"}
-      - {label: "Option C", name: "option_c", widget: "string"}
-      - {label: "Option D", name: "option_d", widget: "string"}
-      - {label: "Correct Answer", name: "correct_answer", widget: "select", options: ["A", "B", "C", "D"]}
-      - {label: "Explanation", name: "explanation", widget: "text", required: false}
+      - {label: "Correct Answer", name: "correct_answer", widget: "string"}
+      - {label: "Category", name: "category", widget: "string", required: false}
+      - {label: "Active", name: "active", widget: "boolean", default: true}
+      - {label: "Points", name: "points", widget: "number", default: 10}
       - {label: "Date", name: "date", widget: "datetime"}
