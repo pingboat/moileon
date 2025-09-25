@@ -214,6 +214,8 @@ body {
     font-size: 16px;
     margin-bottom: 15px;
     background-color: white;
+    display: block;
+    margin: 0 auto 15px auto; /* 0 for top, auto for left/right, 15px for bottom */
 }
 
 .answer-input:focus {
