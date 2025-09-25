@@ -1076,3 +1076,31 @@ article .date {
     word-spacing: normal !important;
     letter-spacing: normal !important;
 }
+
+/* ==================================================
+   NUCLEAR TEXT ALIGNMENT FIX
+   ================================================== */
+.main-content *,
+.single-post *,
+.post-content *,
+.blog-post *,
+.content *,
+article *,
+p, div, span, h1, h2, h3, h4, h5, h6 {
+    text-align: left !important;
+    text-justify: none !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+    white-space: normal !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    -ms-hyphens: none !important;
+    text-rendering: auto !important;
+}
+
+/* Allow centered elements only where needed */
+.quiz-section *,
+.logo-section *,
+.post-header {
+    text-align: center !important;
+}
