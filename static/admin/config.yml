@@ -67,7 +67,6 @@ collections:
     fields:
       - {label: "Quote", name: "quote", widget: "text"}
       - {label: "Author", name: "author", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
 
   - name: "lenscape"
     label: "Lenscape"
