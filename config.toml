@@ -6,7 +6,7 @@ paginate = 20
 enableRobotsTXT = true
 
 [permalinks]
-  blog = "/blog/:slug/"
+  blog = "/:slug/"
   podcast = "/podcast/:slug/"
   digital = "/digital/:slug/"
   lenscape = "/lenscape/:slug/"
