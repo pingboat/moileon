@@ -1,10 +1,4 @@
 ---
-title: First Business of a Sadhaka
-display_title: FIRST BUSINESS OF A SADHAKA
-custom_url: sadhaka
-status: published
-date: 2025-08-31
-author: ""
 excerpt: >-
   The first business of the Sadhaka is to see whether he has the perfect
   equality, how far he has gone in this direction, or else where is the flaw,
@@ -14,6 +8,13 @@ excerpt: >-
 
 
   However, that is not our starting point. We all start from a limited capacity, preferences, desires, attachments and so on. To accept all our limitations at first is inevitable. To get beyond them is exceedingly difficult, and not perhaps altogether possible; so long as we are compelled to use the mind as the chief instrument of our action. But opening to the divine action, allowing a higher power to work in you, all this ceases to be true.
+custom_url: sadhaka
+author: ""
+slug: sadhaka
+date: 2025-08-31
+status: published
+title: First Business of a Sadhaka
+display_title: FIRST BUSINESS OF A SADHAKA
 ---
 Sri Aurobindo explains the business of a Sadhaka practicing Integral Yoga.
 
