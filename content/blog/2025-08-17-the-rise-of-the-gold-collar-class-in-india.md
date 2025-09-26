@@ -86,7 +86,7 @@ Women's Empowerment: Initiatives like the Chanakya School of Craft aim to open u
 **Nascent but Exciting Times** 
 
 
-Perhaps one of the most telling examples comes from hospitality. When Oberoi Udaivilas opened in Udaipur two decades ago, only 8% of its guests were Indian. By 2018, that figure had jumped to 52%. Indian consumers are no longer just participants in global luxury—they are becoming its centre of gravity.
+Perhaps one of the most telling examples comes from hospitality. When Oberoi Udaivilas opened in Udaipur two decades ago, only 8% of its guests were Indian, the rest were foreigners. By the time Kapil Chopra, then President of the Oberoi Group quit the company in 2018, the Indian occupancy was at 52%! Indian consumers are no longer just participants in global luxury—they are becoming its centre of gravity.
 
 
 The Jio World Tower and the Nita Mukesh Ambani Cultural Centre in Mumbai are only the beginning. They’re baby steps towards creating ecosystems that serve the Gold Collar Class: India’s affluent, aspirational, and values-driven consumers.
