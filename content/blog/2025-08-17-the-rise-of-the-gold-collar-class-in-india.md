@@ -76,7 +76,7 @@ The growing consciousness means luxury brands produced in India will need to ali
 
 The new affluent consumer shows greater sensitivity and respect towards luxury goods sourced from small, lesser-known ateliers in India that skillfully pair local craft knowledge and handcrafting processes with luxury standards. This new appreciation echoes the historical definition of Indian luxury, which was the celebration of refined craftsmanship in muslins, saris woven with precious metals, and exquisite jewelry. All the evidence points towards the ascendance of India’s design and artisanal strength globally.
 
-Global Collaboration and Transparency: International luxury labels are giving glowing credence to Indian embroidery houses. The global collaboration with Indian artisans might seem slower compared to Made-in-India iPhones, but the shift is here to say. The collapse of garments manufacturing in Bangladesh will also have its own role to play.
+Global Collaboration and Transparency: International luxury labels are giving glowing credence to Indian embroidery houses. The global collaboration with Indian artisans might seem slower compared to Made-in-India iPhones, but the shift is here to stay. The collapse of garments manufacturing in Bangladesh will also have its own role to play.
 
 Ethical Manufacturing: This shift supports transparency and accountability. Chanakya International, which collaborates with top luxury houses, ensures its atelier is SA8000 (social accountability) certified, ensuring global compliance for pay scales, working hours, and artisan welfare.
 
