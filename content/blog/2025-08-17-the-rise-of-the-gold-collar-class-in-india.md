@@ -29,7 +29,7 @@ These are individuals who are highly skilled professionals distinguished by thei
 
 This segment represents the first wealthy generation who did not necessarily inherit their luxury lifestyle, and thus view luxury as a symbol of their success and achievement. They are characterized by a willingness to spend and experiment, seeking high-value and discerning experiences.
 
-Experience over Possessions: They focus heavily on experiences, such as travel and entertainment. For example, they look for curated travel to destinations like the Maldives, emphasizing experiences like spas and snorkeling.
+Experience over Possessions: They focus heavily on experiences, such as travel and entertainment. For example, they look for curated travel to destinations, emphasizing experiences like spas and snorkeling.
 
 Defining the Luxury Market: The existence of the Gold Collar consumer has fundamentally altered the Indian economy, fueling luxury businesses that might not have been viable a decade ago. Real estate (owning primary and holiday homes) is considered the leading category for them, followed by travel and consumer goods like watches, handbags, handcrafted sarees.
 
