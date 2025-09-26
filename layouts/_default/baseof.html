@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode | default "en" }}">
 <head>
     <meta charset="utf-8">
@@ -10,10 +10,16 @@
     <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
+    {{ end }}
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+    {{ if .Description }}
+    <meta name="twitter:description" content="{{ .Description }}">
+    {{ else if .Summary }}
+    <meta name="twitter:description" content="{{ .Summary }}">
+    {{ end }}
     
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
