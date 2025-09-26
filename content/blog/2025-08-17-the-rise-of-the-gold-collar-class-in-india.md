@@ -10,8 +10,14 @@ slug: goldcollar
 **Decoding Affluence**
 
 The concept of affluence in India is undergoing a profound transformation, moving beyond mere material wealth and conspicuous consumption. Three major shifts are reshaping India's luxury landscape: the emergence of the financially powerful Gold Collar Class, the demand for truly sustainable luxury, and a renewed appreciation for indigenous handloom and crafts heritage. 
+
+
 When I first came across the term Gold Collar Class, I was as puzzled as most of you probably are. We’ve heard of white collar, blue collar, even pink collar. But a gold collar?
+
+
 The phrase began to take shape in India’s cultural vocabulary after Reliance Brands Limited (RBL) published its Atlas of Affluence (AOA) case study in 2022. It was the first comprehensive, pan-India white paper to dissect consumer behaviour through the prism of luxury. What it uncovered was striking: India is not only consuming luxury, it is reshaping what luxury means.
+
+
 Traditionally, Indian luxury buying was associated with legacy business families or wealth acquired through less traceable means. The AOA 2022 documents the emergence of a new, highly influential segment: the 'Gold Collar Consumer’.
 
 **Who are these Gold Collar Consumers?** 
