@@ -10,10 +10,12 @@
     <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
+    <meta property="og:image" content="{{ .Site.BaseURL }}images/og-favicon-512x512.png">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+    <meta name="twitter:image" content="{{ .Site.BaseURL }}images/og-favicon-512x512.png">
     
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
