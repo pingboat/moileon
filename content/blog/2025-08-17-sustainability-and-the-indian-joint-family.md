@@ -40,7 +40,7 @@ If India's family system were to collapse to the level currently seen in the US 
 
 The central issue is that this level of construction is simply not sustainable, primarily because the required land for so many houses is unavailable.
 
-**Critiquing Alternative Solutions**
+**Poor Alternative Solutions**
 
 One potential counter-argument to the land shortage crisis is the construction of massive residential skyscrapers. This approach, similar to those seen in China, involves building huge societies that support 20,000+ people, incorporating schools, colleges, hospitals, shopping malls, and all necessary services within the same structure.
 
