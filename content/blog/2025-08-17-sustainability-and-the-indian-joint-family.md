@@ -10,7 +10,7 @@ Today, the state of the USA appears to be at a peak w.r.t various troubling tren
 
 The reliance on external services has grown to the point where the USA has successfully outsourced its kitchens to the on-demand food delivery franchisees. Many are in fact building apartments without the provision of a kitchen. Real estate in some areas has become so unaffordable that people are resorting to renting out not only half of their home but also half of their bed. Parents and children there are already taking prior appointments to meet each other. 
 
-At the core of it, lies the gradual collapse of its family system. Many in India and elsewhere look up to the US as a first world country, and dream of living a so-called  American lifestyle. As is evident, there is nothing much to follow or appreciate about the American lifestyle. In fact, it provides some great lessons on what not to do with one's children, one's parents, one's health, one's environment, and beyond. 
+At the core of it, lies the gradual collapse of its family system. Many in India and elsewhere look up to the US as a first world country, and dream of living a so-called  American lifestyle. As is evident, there is nothing much to follow or appreciate about the American lifestyle. In fact, it provides some great lessons on what not to do with one's children, one's parents, one's health, one's environment, and beyond. There are many things to appreciate in the American society, but their current lifestyle is surely not one of them.
 
 We should be extremely careful about the paths we choose for our future. 
 
