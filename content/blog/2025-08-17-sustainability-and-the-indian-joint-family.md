@@ -67,3 +67,5 @@ The consumption of resources by a nation with only 300 million people is orders 
 The rationale behind the joint family system is that by pooling resources and living spaces, the demands placed on land, overall resources, and infrastructure are drastically lowered, hitting the core problem of sustainability.
 
 The evidence clearly suggests that the movement towards smaller households and nuclear families, driven by the collapse of the traditional family system, is a key factor behind unsustainable housing demand and increased resource consumption.
+
+**Note:** Thank you for taking out the time to read this post. Write to [feedback@moileon.in](mailto:feedback@moileon.in) to share your views.
