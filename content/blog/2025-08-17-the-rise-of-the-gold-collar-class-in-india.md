@@ -82,3 +82,5 @@ Supporting them isn’t just good karma—it’s good economics.
 The game has just begun. Now let’s play. 
 
 Bharat Mata Ki Jai 🇮🇳
+
+**Note:** Thank you for taking out the time to read this post. Write to [feedback@moileon.in](mailto:feedback@moileon.in) to share your views.
