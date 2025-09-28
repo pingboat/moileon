@@ -105,3 +105,5 @@ A positive inner spiritual happiness and spiritual ease of the natural being whi
 **1.4 Hasyam (Atmaprasada)**                                                                                              
 
 Hasyam is the active side of Sukha. A clear joy and laughter of the soul embracing life and existence. Now the child playing the video game has extended its playground to the whole cosmos, and the potential is infinite. It is an active internal state of gladness and cheerfulness which no adverse experience mental or physical can trouble. Atmaprasada is a state of clearness, purity and contentment on the whole self; equivalent to hasyam (though hasyam is sometimes regarded as a still more positive state).
+
+**Note:** Thank you for taking out the time to read this post. Write to [feedback@moileon.in](mailto:feedback@moileon.in) to share your views.
