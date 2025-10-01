@@ -95,6 +95,7 @@ collections:
     identifier_field: "question"
     fields:
       - {label: "Title", name: "title", widget: "string", required: false}
+      - {label: "Slug", name: "slug", widget: "string", hint: "Short URL-friendly identifier (e.g., 'dogstar-bassist')"}
       - {label: "Question", name: "question", widget: "text"}
       - {label: "Correct Answer", name: "correct_answer", widget: "string"}
       - {label: "Category", name: "category", widget: "string", required: false}
