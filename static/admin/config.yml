@@ -93,7 +93,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Title", name: "title", widget: "string", required: false}
       - {label: "Question", name: "question", widget: "text"}
       - {label: "Correct Answer", name: "correct_answer", widget: "string"}
       - {label: "Category", name: "category", widget: "string", required: false}
