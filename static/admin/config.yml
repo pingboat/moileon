@@ -89,16 +89,15 @@ collections:
 
   - name: "quiz"
     label: "Quiz"
-    folder: "content/quiz"
-    create: true
-    slug: "{{slug}}"
-    identifier_field: "question"
+    file: "data/questions.json"
     fields:
-      - {label: "Title", name: "title", widget: "string", required: false}
-      - {label: "Slug", name: "slug", widget: "string", hint: "Short URL-friendly identifier (e.g., 'dogstar-bassist')"}
-      - {label: "Question", name: "question", widget: "text"}
-      - {label: "Correct Answer", name: "correct_answer", widget: "string"}
-      - {label: "Category", name: "category", widget: "string", }
-      - {label: "Active", name: "active", widget: "boolean", default: true}
-      - {label: "Points", name: "points", widget: "number", default: 10}
-      - {label: "Date", name: "date", widget: "datetime"}
+      - label: "Questions"
+        name: "questions"
+        widget: "list"
+        fields:
+          - {label: "Title", name: "title", widget: "string", required: false}
+          - {label: "Question", name: "question", widget: "text"}
+          - {label: "Correct Answer", name: "correct_answer", widget: "string"}
+          - {label: "Category", name: "category", widget: "string", required: false}
+          - {label: "Active", name: "active", widget: "boolean", default: true}
+          - {label: "Points", name: "points", widget: "number", default: 10}
