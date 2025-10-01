@@ -53,9 +53,9 @@ Atri and Vasistha are the only Rishis who have retained their position among the
 
 Long before modern science, the Gotra system functioned as an ancient Indian science of lineage and heredity, demonstrating the profound wisdom of our ancestors. The rule forbidding marriage within the same Gotra is primarily based on genetics and the male lineage.
 
-* Chromosomes: Every cell contains 23 pairs of chromosomes. Females have two X chromosomes (XX), while males have one X and one Y chromosome (XY)
-* Male Lineage: The tiny Y chromosome is what makes a male a male, and men receive it only from their father, as females do not carry the Y chromosome
-* Purity of Line: The Y chromosome is transferred from father to son undisturbed and without any cross-over. This simple fact establishes a clear, pure genetic lineage all the way back to the root ancestor
+* **Chromosomes:** Every cell contains 23 pairs of chromosomes. Females have two X chromosomes (XX), while males have one X and one Y chromosome (XY)
+* **Male Lineage:** The tiny Y chromosome is what makes a male a male, and men receive it only from their father, as females do not carry the Y chromosome
+* **Purity of Line:** The Y chromosome is transferred from father to son undisturbed and without any cross-over. This simple fact establishes a clear, pure genetic lineage all the way back to the root ancestor
 
 This explains why sons carry the gene line and why having a son has historically been considered important for continuing the line. Daughters, conversely, do not carry the pure genetic line in the same way, which is why women traditionally changed their gotras and surnames after marriage.
 
@@ -65,8 +65,8 @@ Marrying within the same Gotra was forbidden because it meant uniting two indivi
 
 It is crucial to understand that Gotra predates the Varna system. Gotra is the oldest social identity in Hinduism.
 
-* Gotra: Tracks one's oldest lineage; it is genetic and hereditary
-* Varna: An ancient system designed to classify people based on their calling, skills, and temperament (qualities or gunas)
+* **Gotra:** Tracks one's oldest lineage; it is genetic and hereditary
+* **Varna:** An ancient system designed to classify people based on their calling, skills, and temperament (qualities or gunas)
 
 The Varna system was conceived as a scientific, philosophical, and spiritual way to organize human society. The Varna system allows movement of people from one Varna to the other based on their qualification and skill set, whereas Gotras represents a relation which is genetic, and hereditary. It consists of the four Varnas (Chaturvarna).
 
