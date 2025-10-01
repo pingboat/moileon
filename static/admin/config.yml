@@ -98,7 +98,7 @@ collections:
       - {label: "Slug", name: "slug", widget: "string", hint: "Short URL-friendly identifier (e.g., 'dogstar-bassist')"}
       - {label: "Question", name: "question", widget: "text"}
       - {label: "Correct Answer", name: "correct_answer", widget: "string"}
-      - {label: "Category", name: "category", widget: "string", required: false}
+      - {label: "Category", name: "category", widget: "string", }
       - {label: "Active", name: "active", widget: "boolean", default: true}
       - {label: "Points", name: "points", widget: "number", default: 10}
       - {label: "Date", name: "date", widget: "datetime"}
