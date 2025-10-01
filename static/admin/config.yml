@@ -92,6 +92,7 @@ collections:
     folder: "content/quiz"
     create: true
     slug: "{{slug}}"
+    identifier_field: "question"
     fields:
       - {label: "Title", name: "title", widget: "string", required: false}
       - {label: "Question", name: "question", widget: "text"}
