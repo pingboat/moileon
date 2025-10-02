@@ -147,7 +147,7 @@ One of the simplest ways to move forward to reduce caste-based division is to mo
 * **All males should start using their Gotra as their surname**
 * **All females should start using Devi as their surname**
 
-We have many surnames which hold no profound meaning anyway. Take for example the surnames like Tyrewala, Screwala etc. in the Sindhi community. Or surnames like Hazarika, Saikia etc. which meant a leader 1000 troops and 100 troops respectively in the Assamese community during the Ahom rule. These are just a few examples. The list could be very long. Surnames like these were relevant only during a brief period in history and don't carry any deeper essence. Whereas, gotras bind one through an unbroken chain lineage and Saptrishi's energy and consciousness.
+We have many surnames which hold no profound meaning anyway. Take for example the surnames like Tyrewala, Screwala etc. in the Sindhi community. Or surnames like Hazarika, Saikia etc. which meant a leader of 1000 troops and 100 troops respectively in the Assamese community during the Ahom rule. These are just a few examples. The list could be very long. Surnames like these were relevant only during a brief period in history and don't carry any deeper essence. Whereas, gotras bind one through an unbroken chain lineage and Saptrishi's energy and consciousness.
 
 Since Gotra tracks genetic lineage (male line) and Varna is based on qualities (guna) and actions (karma), individuals from different Varnas (e.g., a Brahmin and a Shudra) can share the same lineage and thus the same Gotra, such as Kashyapa Gotra. This inherent cross-classification highlights Gotra's potential as a great unifying tool. Kashyap is also noted as the default Gotra for people who do not know their own. 
 
