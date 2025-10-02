@@ -19,9 +19,7 @@ Initially, Gotra symbolized the shared ownership of a cowshed that protected a s
 
 As society developed, the meaning expanded. Gotra's significance shifted from a collective holding unit to a clan. Today, Gotra signifies a clan, tracing descendants through an unbroken male lineage from a single, common ancestor.
 
-Gotras were passed on by birth but sometimes the students in a Gurukula would adopt his Guru's Gotra, since a Guru is like a father. There are stories of this happening in Hindu Scriptures. Rishi Shunahshepa abandoned his father Ajigarta's Gotra and adopted his Guru, Maharishi Vishwamitra's Gotra. This is allowed in Hinduism. 
-
-*Fun fact:* Kashyap is the go-to default Gotra for people who do not know their own.
+Gotras were passed on by birth but sometimes the students in a Gurukula would adopt his Guru's Gotra, since a Guru is like a father. There are stories of this happening in Hindu Scriptures. Rishi Shunahshepa abandoned his father Ajigarta's Gotra and adopted his Guru, Maharishi Vishwamitra's Gotra. This is allowed in Hinduism. There are numerous occasions when people adopted the gotta of their Purohit or their Guru.
 
 **Gotra and the Gotrakarins**
 
@@ -84,18 +82,18 @@ The roots of the Varna system lies in the laws of nature, the organization of th
 
 The organization of the Varna system is rooted in the laws of nature and the organization of the human body itself—which has four major indispensable divisions, and timeless dharmic principles:
 
-| Body    | Varna     | Social Role                                    |
-| ------- | --------- | ---------------------------------------------- |
-| Head    | Brahmin   | Thinking, perceiving, speaking, guiding        |
-| Arms    | Kshatriya | Defense, protection, bravery                   |
-| Stomach | Vaishya   | Sustenance, nutrition, digestion               |
-| Legs    | Shudra    | Providing support, carryy the burden, mobility |
+| Body    | Varna     | Social Role                                   |
+| ------- | --------- | --------------------------------------------- |
+| Head    | Brahmin   | Thinking, perceiving, speaking, guiding       |
+| Arms    | Kshatriya | Defense, protection, bravery                  |
+| Stomach | Vaishya   | Sustenance, nutrition, digestion              |
+| Legs    | Shudra    | Providing support, carry the burden, mobility |
 
 A fifth category, the Antyaja or Panchama, relates to the excretory organs, representing the function of purification and cleansing.
 
 Just as the body collapses if one organ fails, society collapses if any division neglects its duty. This analogy emphasizes that each organ is indispensable. Hence, the superiority in the Varna system is determined not by origin, but by rightful conduct and the performance of duty.
 
-Crucially, unlike later rigid systems, the Varna system allows movement between Varnas based on one's qualifications and skill set. For example, Great Rishis like Vishvamitra became a Brahmarishi through penance, even though he was born a Kshatriya. Lord Krishna confirmed this concept in the Bhagavad Gita, declaring that the four Varnas were created according to one's qualities (guna) and actions (karma).
+Crucially, unlike later rigid systems, the Varna system allows movement between Varnas based on one's qualifications and skill set. For example, Great Rishis like Vishvamitra became a Brahmarishi through penance, even though he was born a Kshatriya.
 
 Sri Aurobindo describes the Varna system beautifully as the four aspects of the Divine Manifestation:
 
@@ -144,11 +142,11 @@ Gotra functions as a unifying force by fostering a shared consciousness of a com
 
 One of the simplest ways to move forward to reduce caste-based division is to move towards using gotras instead of surnames:
 
-* **All males should start using their Gotra as their surname**
-* **All females should start using Devi as their surname**
+* **All males could start using their Gotra as their surname**
+* **All females could start using Devi as their standard surname** (which was already prevalent 3-4 decades ago)
 
 We have many surnames which hold no profound meaning anyway. Take for example the surnames like Tyrewala, Screwala etc. in the Sindhi community. Or surnames like Hazarika, Saikia etc. which meant a leader of 1000 troops and 100 troops respectively in the Assamese community during the Ahom rule. These are just a few examples. The list could be very long. Surnames like these were relevant only during a brief period in history and don't carry any deeper essence. Whereas, gotras bind one through an unbroken chain lineage and Saptrishi's energy and consciousness.
 
-Since Gotra tracks genetic lineage (male line) and Varna is based on qualities (guna) and actions (karma), individuals from different Varnas (e.g., a Brahmin and a Shudra) can share the same lineage and thus the same Gotra, such as Kashyapa Gotra. This inherent cross-classification highlights Gotra's potential as a great unifying tool. Kashyap is also noted as the default Gotra for people who do not know their own. 
+Since Gotra tracks genetic lineage (male line) and Varna is based on qualities (guna) and actions (karma), individuals from different Varnas (e.g. a Brahmin and a Shudra) can share the same lineage and thus the same Gotra, such as Kashyapa Gotra. This inherent cross-classification highlights Gotra's potential as a great unifying tool.
 
 **Note:** Thank you for taking out the time to read this post. Write to feedback@moileon.in to share your views.
