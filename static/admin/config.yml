@@ -100,7 +100,12 @@ collections:
             fields:
               - {label: "Title", name: "title", widget: "string", required: false}
               - {label: "Question", name: "question", widget: "text"}
-              - {label: "Correct Answer", name: "correct_answer", widget: "string"}
+              - label: "Correct Answers"
+                name: "correct_answer"
+                widget: "list"
+                hint: "Add all acceptable answers (e.g., 'Nintendo', 'nintendo'). First answer will be shown as the correct answer."
+                field: {label: "Answer", name: "answer", widget: "string"}
+              - {label: "Explanation", name: "explanation", widget: "text", required: false}
               - {label: "Category", name: "category", widget: "string", required: false}
               - {label: "Active", name: "active", widget: "boolean", default: true}
               - {label: "Points", name: "points", widget: "number", default: 10}
