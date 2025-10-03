@@ -1,23 +1,35 @@
-[
-  {
-    "question": "Which company’s first product was a line of playing cards in 1889?",
-    "answer": ["nintendo", "Nintendo"],
-    "explanation": "Nintendo started as a playing card company in Kyoto, Japan, founded by Fusajiro Yamauchi."
-  },
-  {
-    "question": "Which was the first product to be scanned with a barcode?",
-    "answer": ["wigley's chewing gum", "Wrigley's Chewing Gum"] 
-  },
-  {
-    "question": "Diamond is the hardest mineral on the Mohs Hardness scale. Which mineral, once commonly used in households, is the softest?",
-    "answer": ["talc", "Talc"]
-  },
-  {
-    "question": "A kind of cognitive bias where a person overvalues something they helped create. The idea being that 'labour alone can be sufficient to induce greater liking for the fruits of one's labour'. How is this cognitive bias better known as?",
-    "answer": ["ikea effect", "IKEA Effect"]
-  },
-  {
-    "question": "It began as an attempt at creating textured wallpaper. But when Alfred Fielding and Marc Chavannes put two pieces of plastic shower curtains through a heat-sealing machine, the product was something peculiar. Which accidental invention, that helped IBM bring its computers to customers, soon revolutionised the packaging industry?",
-    "answer": ["bubble wrap", "Bubble Wrap"]
-  },
-]
+{
+  "questions": [
+    {
+      "question": "Which company's first product was a line of playing cards in 1889?",
+      "correct_answer": "Nintendo",
+      "explanation": "Nintendo started as a playing card company in Kyoto, Japan, founded by Fusajiro Yamauchi.",
+      "active": true,
+      "points": 10
+    },
+    {
+      "question": "Which was the first product to be scanned with a barcode?",
+      "correct_answer": "Wrigley's Chewing Gum",
+      "active": true,
+      "points": 10
+    },
+    {
+      "question": "Diamond is the hardest mineral on the Mohs Hardness scale. Which mineral, once commonly used in households, is the softest?",
+      "correct_answer": "Talc",
+      "active": true,
+      "points": 10
+    },
+    {
+      "question": "A kind of cognitive bias where a person overvalues something they helped create. The idea being that 'labour alone can be sufficient to induce greater liking for the fruits of one's labour'. How is this cognitive bias better known as?",
+      "correct_answer": "IKEA Effect",
+      "active": true,
+      "points": 10
+    },
+    {
+      "question": "It began as an attempt at creating textured wallpaper. But when Alfred Fielding and Marc Chavannes put two pieces of plastic shower curtains through a heat-sealing machine, the product was something peculiar. Which accidental invention, that helped IBM bring its computers to customers, soon revolutionised the packaging industry?",
+      "correct_answer": "Bubble Wrap",
+      "active": true,
+      "points": 10
+    }
+  ]
+}
