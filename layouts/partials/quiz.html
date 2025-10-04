@@ -16,9 +16,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Load quiz questions from Hugo data file
     const questionsData = {{ .Site.Data.questions | jsonify }};
-alert("Raw data type: " + typeof questionsData);
-alert("Has questions property: " + ('questions' in questionsData));
-const questions = questionsData.questions || [];
+    alert("Raw data type: " + typeof questionsData);
+    alert("Has questions property: " + ('questions' in questionsData));
+    const questions = questionsData.questions || [];
 
     // TEMPORARY DEBUG - Remove after testing
     alert("Total questions loaded: " + questions.length);
