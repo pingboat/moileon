@@ -16,21 +16,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Load quiz questions from Hugo data file
     const questionsData = {{ .Site.Data.questions | jsonify }};
-    alert("Raw data type: " + typeof questionsData);
-    alert("Has questions property: " + ('questions' in questionsData));
-    const questions = questionsData.questions || [];
-
-    // TEMPORARY DEBUG - Remove after testing
-    alert("Total questions loaded: " + questions.length);
-    if (questions.length > 0) {
-        alert("First question: " + questions[0].question.substring(0, 50) + "...");
-        alert("First answer type: " + typeof questions[0].correct_answer);
-        if (Array.isArray(questions[0].correct_answer)) {
-            alert("Answer is array with " + questions[0].correct_answer.length + " items");
-        }
-    } else {
-        alert("ERROR: No questions found in the data!");
-    }
+    
+    // Parse if it's a string
+    const parsedData = typeof questionsData === 'string' ? JSON.parse(questionsData) : questionsData;
+    const questions = parsedData.questions || [];
 
     let currentQuestionIndex = 0;
     let score = 0;
@@ -44,13 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Only initialize if all elements exist
     if (!questionElement || !answerInput || !submitButton || !scoreElement) {
-        alert("ERROR: Some page elements are missing!");
         return;
     }
 
     // Filter active questions only
     const activeQuestions = questions.filter(q => q.active !== false);
-    alert("Active questions: " + activeQuestions.length);
 
     // Initialize quiz
     shuffledQuestions = shuffleArray([...activeQuestions]);
