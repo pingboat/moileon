@@ -73,6 +73,18 @@
       "points": 10,
       "question": "Which wildly used term was introduced to internet parlance by Lou Montalli of Netscape Communications in 1994, which is also an eatable item?",
       "correct_answer": "Cookies"
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "Which Indian brand was started by Jaysukh Patel, O.R. Patel and Manubhai Patel?",
+      "correct_answer": "Ajanta Clocks"
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "Danjaq LLC is the holding company responsible for the copyright and trademarks to the characters, elements and other materials related to what?",
+      "correct_answer": "James Bond"
     }
   ]
 }
