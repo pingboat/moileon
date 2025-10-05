@@ -39,6 +39,12 @@
     {
       "active": true,
       "points": 10,
+      "question": "Which word comes from the Roman term meaning 'twice-cooked'?",
+      "correct_answer": "Biscuit"
+    },
+    {
+      "active": true,
+      "points": 10,
       "question": "Which was the first product to be scanned with a barcode?",
       "correct_answer": [
         "Wrigley's Chewing Gum",
