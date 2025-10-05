@@ -117,6 +117,7 @@ body {
 }
 
 .mobile-overlay.active {
+    display: block;
     opacity: 1;
 }
 
@@ -215,7 +216,7 @@ body {
     margin-bottom: 15px;
     background-color: white;
     display: block;
-    margin: 0 auto 15px auto; /* 0 for top, auto for left/right, 15px for bottom */
+    margin: 0 auto 15px auto;
 }
 
 .answer-input:focus {
@@ -229,7 +230,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* Ensure homepage headings don't get the section heading styling */
 .quiz-section h1,
 .quiz-section h2 {
     text-align: center !important;
@@ -296,7 +296,7 @@ body {
 }
 
 /* ==================================================
-   BLOG POST STYLING TO MATCH MOILEON.IN
+   BLOG POST STYLING
    ================================================== */
 
 /* Blog post content container */
@@ -342,7 +342,7 @@ article h1 {
     border-bottom: none !important;
 }
 
-/* Blog post paragraphs - AGGRESSIVE FIX */
+/* Blog post paragraphs */
 .blog-post p,
 .post-content p,
 .content p,
@@ -393,24 +393,8 @@ article h3 {
     font-family: Georgia, serif !important;
 }
 
-/* Remove general heading styles from blog posts */
-.blog-post h1,
-.blog-post h2,
-.blog-post h3,
-.post-content h1,
-.post-content h2,
-.post-content h3,
-.content h1,
-.content h2,
-.content h3,
-article h1,
-article h2,
-article h3 {
-    border-bottom: none !important;
-}
-
 /* ==================================================
-   HEADINGS - UNIFIED STYLING TO MATCH QUOTES PAGE
+   HEADINGS - UNIFIED STYLING
    ================================================== */
 .section-header h1,
 .section-header h2,
@@ -429,7 +413,6 @@ main h2:not(.quiz-title):not(.blog-post h2):not(.post-content h2):not(.content h
     font-size: 32px !important;
 }
 
-/* Also exclude quiz-section headings */
 .quiz-section h1,
 .quiz-section h2,
 .quiz-section .quiz-title {
@@ -442,7 +425,6 @@ main h2:not(.quiz-title):not(.blog-post h2):not(.post-content h2):not(.content h
     font-size: 32px !important;
 }
 
-/* Remove any HR elements that might create double lines */
 .section-page hr,
 .main-content hr,
 .content hr,
@@ -495,7 +477,6 @@ hr {
     color: #4169E1;
 }
 
-/* For article-based list items (preserve original bullet style) */
 .post-item,
 .booknote-item,
 .project-item,
@@ -534,7 +515,6 @@ hr {
     color: #4169E1;
 }
 
-/* Hide other post elements to maintain simple bullet list */
 .post-date,
 .post-summary,
 .book-author,
@@ -552,7 +532,6 @@ hr {
     display: none;
 }
 
-/* Show date in blog posts */
 .blog-post .post-date,
 .post-content .post-date,
 .content .post-date,
@@ -569,147 +548,9 @@ article .date {
 }
 
 /* ==================================================
-   RESPONSIVE DESIGN - ENHANCED MOBILE
+   SINGLE POST TEMPLATE STYLES
    ================================================== */
 
-/* Mobile styles (768px and below) */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    
-    /* Show hamburger button on mobile */
-    .hamburger-btn {
-        display: block;
-    }
-    
-    /* Mobile sidebar - slide out from left */
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: -250px;
-        width: 250px;
-        height: 100vh;
-        z-index: 1000;
-        transition: left 0.3s ease;
-        overflow-y: auto;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.3);
-        padding: 80px 20px 20px 20px;
-    }
-    
-    /* Show sidebar when active */
-    .sidebar.active {
-        left: 0;
-    }
-    
-    /* Show overlay when sidebar is active */
-    .mobile-overlay {
-        display: block;
-    }
-    
-    /* Adjust main content for mobile */
-    .main-content {
-        padding: 80px 20px 20px 20px;
-        width: 100%;
-    }
-    
-    /* Navigation buttons in mobile sidebar */
-    .nav-button {
-        padding: 12px 16px;
-        margin-bottom: 4px;
-        font-size: 14px;
-        text-align: left;
-        width: 100%;
-        border-radius: 4px;
-    }
-    
-    /* Homepage mobile adjustments */
-    .logo-section {
-        margin-bottom: 50px;
-    }
-    
-    .logo-text {
-        font-size: 24px;
-        margin-bottom: 15px;
-    }
-    
-    .lotus-image {
-        margin: 20px 0 30px 0;
-    }
-    
-    .lotus-image img {
-        width: 150px;
-    }
-    
-    /* Quiz mobile adjustments */
-    .quiz-title {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-    
-    .question {
-        font-size: 18px;
-        margin-bottom: 20px;
-    }
-    
-    .answer-input {
-        width: 100%;
-        max-width: 400px;
-        font-size: 16px;
-    }
-    
-    /* Blog post mobile adjustments */
-    .blog-post,
-    .post-content,
-    .content,
-    article {
-        max-width: 95%;
-        padding: 0 15px;
-    }
-    
-    .blog-post h1,
-    .post-content h1,
-    .content h1,
-    article h1 {
-        font-size: 1.8rem !important;
-        line-height: 1.2 !important;
-    }
-}
-
-/* Tablet styles (769px to 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .sidebar {
-        width: 180px;
-        padding: 18px;
-    }
-    
-    .main-content {
-        padding: 35px;
-    }
-    
-    .nav-button {
-        font-size: 12px;
-        padding: 7px 10px;
-    }
-}
-
-/* Desktop styles (1025px and above) */
-@media (min-width: 1025px) {
-    .sidebar {
-        width: 200px;
-        padding: 20px;
-    }
-    
-    .main-content {
-        padding: 40px;
-    }
-}
-
-/* ==================================================
-   SINGLE POST TEMPLATE STYLES (MOVED FROM TEMPLATE)
-   ================================================== */
-
-/* Single post styles */
 .single-post {
     max-width: 800px;
     margin: 0 auto;
@@ -802,7 +643,6 @@ article .date {
     height: 40px;
 }
 
-/* Template post content (with fixed alignment) */
 .single-post .post-content {
     font-size: 16px !important;
     line-height: 1.7 !important;
@@ -941,48 +781,9 @@ article .date {
     margin: 30px 0;
 }
 
-/* Mobile responsive for single posts */
-@media (max-width: 768px) {
-    .single-post {
-        max-width: 100%;
-        padding: 0 15px;
-    }
-    
-    .book-info {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .book-cover {
-        max-width: 120px;
-        margin: 0 auto;
-    }
-    
-    .post-navigation {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .nav-link {
-        text-align: center;
-    }
-}
-
 /* ==================================================
-   LIST TEMPLATE STYLES (MOVED FROM LIST TEMPLATE)
+   LIST TEMPLATE ADDITIONAL STYLES
    ================================================== */
-
-/* Override previous section-page styles */
-.section-page {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.section-header {
-    text-align: left;
-    margin-bottom: 40px;
-}
 
 .section-header h1 {
     font-size: 32px;
@@ -998,7 +799,6 @@ article .date {
     text-justify: none !important;
 }
 
-/* Book cover styling for list pages */
 .book-cover-small {
     float: left;
     width: 80px;
@@ -1011,12 +811,6 @@ article .date {
     overflow: hidden;
 }
 
-/* Project and external links */
-.project-links,
-.external-link {
-    margin-top: 10px;
-}
-
 .external-link {
     margin-left: 15px;
     color: #4169E1;
@@ -1027,11 +821,6 @@ article .date {
     text-decoration: underline;
 }
 
-/* Small tags for list pages */
-.post-tags-small {
-    margin: 10px 0;
-}
-
 .tag-small {
     background-color: #f0f0f0;
     padding: 2px 8px;
@@ -1040,7 +829,6 @@ article .date {
     margin-right: 5px;
 }
 
-/* Pagination styling */
 .pagination {
     text-align: center;
     margin: 40px 0;
@@ -1068,7 +856,6 @@ article .date {
     color: #666;
 }
 
-/* Ensure list page content has proper text alignment */
 .section-page p,
 .booknote-content p,
 .project-item p,
@@ -1081,7 +868,7 @@ article .date {
 }
 
 /* ==================================================
-   NUCLEAR TEXT ALIGNMENT FIX
+   TEXT ALIGNMENT FIX
    ================================================== */
 .main-content *,
 .single-post *,
@@ -1101,9 +888,168 @@ p, div, span, h1, h2, h3, h4, h5, h6 {
     text-rendering: auto !important;
 }
 
-/* Allow centered elements only where needed */
 .quiz-section *,
 .logo-section *,
 .post-header {
     text-align: center !important;
 }
+
+/* ==================================================
+   RESPONSIVE DESIGN - MOBILE
+   ================================================== */
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    /* Show hamburger button on mobile */
+    .hamburger-btn {
+        display: block !important;
+    }
+    
+    /* Mobile sidebar - slide out from left */
+    .sidebar {
+        position: fixed !important;
+        top: 0 !important;
+        left: -100% !important;
+        width: 250px !important;
+        height: 100vh !important;
+        z-index: 1000 !important;
+        transition: left 0.3s ease !important;
+        overflow-y: auto !important;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.3) !important;
+        padding: 80px 20px 20px 20px !important;
+    }
+    
+    /* Show sidebar when active */
+    .sidebar.active {
+        left: 0 !important;
+    }
+    
+    /* Show overlay when sidebar is active */
+    .mobile-overlay {
+        display: block !important;
+    }
+    
+    /* Adjust main content for mobile */
+    .main-content {
+        padding: 80px 20px 20px 20px !important;
+        width: 100% !important;
+    }
+    
+    /* Navigation buttons in mobile sidebar */
+    .nav-button {
+        padding: 12px 16px;
+        margin-bottom: 4px;
+        font-size: 14px;
+        text-align: left;
+        width: 100%;
+        border-radius: 4px;
+    }
+    
+    /* Homepage mobile adjustments */
+    .logo-section {
+        margin-bottom: 50px;
+    }
+    
+    .logo-text {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .lotus-image {
+        margin: 20px 0 30px 0;
+    }
+    
+    .lotus-image img {
+        width: 150px;
+    }
+    
+    /* Quiz mobile adjustments */
+    .quiz-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .question {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .answer-input {
+        width: 100%;
+        max-width: 400px;
+        font-size: 16px;
+    }
+    
+    /* Blog post mobile adjustments */
+    .blog-post,
+    .post-content,
+    .content,
+    article {
+        max-width: 95%;
+        padding: 0 15px;
+    }
+    
+    .blog-post h1,
+    .post-content h1,
+    .content h1,
+    article h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    /* Single post mobile */
+    .single-post {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
+    .book-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .book-cover {
+        max-width: 120px;
+        margin: 0 auto;
+    }
+    
+    .post-navigation {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-link {
+        text-align: center;
+    }
+}
+
+/* Tablet styles (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .sidebar {
+        width: 180px;
+        padding: 18px;
+    }
+    
+    .main-content {
+        padding: 35px;
+    }
+    
+    .nav-button {
+        font-size: 12px;
+        padding: 7px 10px;
+    }
+}
+
+/* Desktop styles (1025px and above) */
+@media (min-width: 1025px) {
+    .sidebar {
+        width: 200px;
+        padding: 20px;
+    }
+    
+    .main-content {
+        padding: 40px;
+    }
