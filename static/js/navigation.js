@@ -11,6 +11,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!hamburgerBtn || !sidebar || !mobileOverlay) return;
 
+    // Force hide sidebar on mobile on initial load
+    if (window.innerWidth <= 768) {
+        sidebar.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+        hamburgerBtn.classList.remove("active");
+    }
+
     // Toggle sidebar + overlay
     function toggleSidebar() {
         hamburgerBtn.classList.toggle("active");
@@ -25,8 +32,19 @@ document.addEventListener("DOMContentLoaded", function () {
     navButtons.forEach(button => {
         button.addEventListener("click", () => {
             if (window.innerWidth <= 768) {
-                toggleSidebar();
+                sidebar.classList.remove("active");
+                mobileOverlay.classList.remove("active");
+                hamburgerBtn.classList.remove("active");
             }
         });
+    });
+
+    // Handle window resize
+    window.addEventListener("resize", function() {
+        if (window.innerWidth > 768) {
+            sidebar.classList.remove("active");
+            mobileOverlay.classList.remove("active");
+            hamburgerBtn.classList.remove("active");
+        }
     });
 });
