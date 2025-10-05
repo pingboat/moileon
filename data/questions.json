@@ -85,6 +85,12 @@
       "points": 10,
       "question": "Danjaq LLC is the holding company responsible for the copyright and trademarks to the characters, elements and other materials related to what?",
       "correct_answer": "James Bond"
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "Which popular business term was first coined by Sir Walter Scott in his famous novel 'Ivanhoe'?",
+      "correct_answer": "Freelancer"
     }
   ]
 }
