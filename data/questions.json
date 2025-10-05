@@ -67,6 +67,12 @@
       "points": 10,
       "question": "Jean-Baptiste Say coined this term in 1800, which means 'one who undertakes an enterprise'. Which popular term is it?",
       "correct_answer": "Entrepreneur"
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "Which wildly used term was introduced to internet parlance by Lou Montalli of Netscape Communications in 1994, which is also an eatable item?",
+      "correct_answer": "Cookies"
     }
   ]
 }
