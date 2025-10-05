@@ -151,6 +151,12 @@
       "points": 10,
       "question": "Percy Spencer noticed the melting of a peanut candy bar that he had in his pocket while working on an active radar set. What famous appliance came out as a result of this incident?",
       "correct_answer": "Microwave"
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "What was added to the Morse Code on 24th May, 2004, on its 160th Anniversary?",
+      "correct_answer": "The @ Symbol"
     }
   ]
 }
