@@ -133,6 +133,24 @@
       "points": 10,
       "question": "Which brand name was suggested by Dhirajben Ruparel, in a contest held for the purpose, with prize money of Rs. 5?",
       "correct_answer": "Lijjat Papad"
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "Which company was the official supplier of uniforms to the SA, SS, Hitler Youth, NSKK, and other Nazi Party organisations?",
+      "correct_answer": "Hugo Boss"
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "What is the act of 'persisting with an idea even after it no longer remains profitable' called, that shares its name with a famous name in aviation?",
+      "correct_answer": "Concorde Effect"
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "Percy Spencer noticed the melting of a peanut candy bar that he had in his pocket while working on an active radar set. What famous appliance came out as a result of this incident?",
+      "correct_answer": "Microwave"
     }
   ]
 }
