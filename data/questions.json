@@ -115,6 +115,12 @@
       "points": 10,
       "question": "What was first created by Suaing Ching, extensively used by US Army in 1945, and currently used by corporates as a training tool?",
       "correct_answer": "Overhead Projector"
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "What resulted in 1937 after Lt. John McCready had returned from a Balloon flying adventure and the sun had done permanent damage to his eyes?",
+      "correct_answer": "Ray Ban"
     }
   ]
 }
