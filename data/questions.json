@@ -91,6 +91,18 @@
       "points": 10,
       "question": "Which popular business term was first coined by Sir Walter Scott in his famous novel 'Ivanhoe'?",
       "correct_answer": "Freelancer"
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "Which American shoe company is named after a corn dish used to feed pet dogs?",
+      "correct_answer": "Hush Puppies"
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "Which certification denotes that child labour has not been used in the manufacturing of carpets?",
+      "correct_answer": "Rugmark"
     }
   ]
 }
