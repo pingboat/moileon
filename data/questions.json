@@ -103,6 +103,18 @@
       "points": 10,
       "question": "Which certification denotes that child labour has not been used in the manufacturing of carpets?",
       "correct_answer": "Rugmark"
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "Harrah's Entertainment Inc. founded on October 30, 1937 as a small bingo parlor in Nevada, operated by William F. Harrah, became the first company in which type of business?",
+      "correct_answer": "Casino"
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "What was first created by Suaing Ching, extensively used by US Army in 1945, and currently used by corporates as a training tool?",
+      "correct_answer": "Overhead Projector"
     }
   ]
 }
