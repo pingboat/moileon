@@ -17,6 +17,24 @@
     <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
     <meta name="twitter:image" content="https://moileon.in/images/favicon-1200x675.png">
     
+    <!-- JavaScript BEFORE CSS to handle mobile immediately -->
+    <script>
+        // Immediately hide sidebar on mobile
+        if (window.innerWidth <= 768) {
+            document.addEventListener('DOMContentLoaded', function() {
+                var sidebar = document.getElementById('sidebar');
+                if (sidebar) {
+                    sidebar.style.position = 'fixed';
+                    sidebar.style.left = '-100%';
+                    sidebar.style.top = '0';
+                    sidebar.style.width = '250px';
+                    sidebar.style.height = '100vh';
+                    sidebar.style.zIndex = '1000';
+                }
+            });
+        }
+    </script>
+    
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
     
@@ -51,7 +69,6 @@
             <a href="{{ "/bio/" | relURL }}" class="nav-button {{ if eq .Section "bio" }}active{{ end }}">Bio</a>
             <a href="https://twitter.com/iobyleon" target="_blank" class="nav-button">Twitter</a>
             <a href="https://www.linkedin.com/in/leonkaushik" target="_blank" class="nav-button">Linkedin</a>
-            
         </nav>
 
         <!-- Main Content -->
