@@ -1,5 +1,5 @@
 /* CRITICAL: Force hide sidebar on mobile IMMEDIATELY */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .sidebar {
         position: fixed !important;
         left: -100% !important;
@@ -928,7 +928,7 @@ p, div, span, h1, h2, h3, h4, h5, h6 {
    RESPONSIVE DESIGN - MOBILE
    ================================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .container {
         flex-direction: column;
     }
@@ -1056,23 +1056,6 @@ p, div, span, h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Tablet styles (769px to 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .sidebar {
-        width: 180px;
-        padding: 18px;
-    }
-    
-    .main-content {
-        padding: 35px;
-    }
-    
-    .nav-button {
-        font-size: 12px;
-        padding: 7px 10px;
-    }
-}
-
 /* Desktop styles (1025px and above) */
 @media (min-width: 1025px) {
     .sidebar {
@@ -1083,3 +1066,4 @@ p, div, span, h1, h2, h3, h4, h5, h6 {
     .main-content {
         padding: 40px;
     }
+}
