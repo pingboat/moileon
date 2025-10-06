@@ -1,33 +1,3 @@
-/* CRITICAL: Force hide sidebar on mobile IMMEDIATELY */
-@media (max-width: 1024px) {
-    .sidebar {
-        position: fixed !important;
-        left: -100% !important;
-        top: 0 !important;
-        width: 250px !important;
-        height: 100vh !important;
-        z-index: 1000 !important;
-        transition: left 0.3s ease !important;
-        overflow-y: auto !important;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.3) !important;
-        padding: 80px 20px 20px 20px !important;
-    }
-    
-    .sidebar.active {
-        left: 0 !important;
-    }
-    
-    .hamburger-btn {
-        display: block !important;
-    }
-    
-    .main-content {
-        padding: 80px 20px 20px 20px !important;
-        width: 100% !important;
-        margin-left: 0 !important;
-    }
-}
-
 /* ==================================================
    GLOBAL RESET AND BASE STYLES
    ================================================== */
@@ -928,7 +898,7 @@ p, div, span, h1, h2, h3, h4, h5, h6 {
    RESPONSIVE DESIGN - MOBILE
    ================================================== */
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .container {
         flex-direction: column;
     }
@@ -1053,6 +1023,23 @@ p, div, span, h1, h2, h3, h4, h5, h6 {
     
     .nav-link {
         text-align: center;
+    }
+}
+
+/* Tablet styles (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .sidebar {
+        width: 180px;
+        padding: 18px;
+    }
+    
+    .main-content {
+        padding: 35px;
+    }
+    
+    .nav-button {
+        font-size: 12px;
+        padding: 7px 10px;
     }
 }
 
