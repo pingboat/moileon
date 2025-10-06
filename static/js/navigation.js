@@ -4,7 +4,7 @@
 
 // Immediately hide sidebar on mobile BEFORE page renders
 (function() {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1024) {
         document.documentElement.style.setProperty('--sidebar-left', '-100%');
     }
 })();
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Force proper state on load
     function initializeMobileState() {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1024) {
             sidebar.style.position = 'fixed';
             sidebar.style.left = '-100%';
             sidebar.style.top = '0';
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Toggle sidebar + overlay
     function toggleSidebar() {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1024) {
             const isActive = sidebar.classList.contains("active");
             
             if (isActive) {
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Close sidebar when clicking a nav button (on mobile)
     navButtons.forEach(button => {
         button.addEventListener("click", () => {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 1024) {
                 sidebar.style.left = '-100%';
                 mobileOverlay.style.display = 'none';
                 sidebar.classList.remove("active");
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle window resize
     window.addEventListener("resize", function() {
         initializeMobileState();
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 1024) {
             sidebar.classList.remove("active");
             mobileOverlay.classList.remove("active");
             hamburgerBtn.classList.remove("active");
