@@ -2,12 +2,11 @@
    NAVIGATION & MOBILE SIDEBAR
    ================================================== */
 
-// Immediately hide sidebar on mobile BEFORE page renders
-(function() {
-    if (window.innerWidth <= 1024) {
-        document.documentElement.style.setProperty('--sidebar-left', '-100%');
-    }
-})();
+// Better mobile detection
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+           (window.innerWidth <= 768);
+}
 
 // Wait for DOM content to load
 document.addEventListener("DOMContentLoaded", function () {
@@ -16,14 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const mobileOverlay = document.querySelector(".mobile-overlay");
     const navButtons = document.querySelectorAll(".nav-button");
 
-    if (!hamburgerBtn || !sidebar || !mobileOverlay) {
-        console.error("Navigation elements not found");
-        return;
-    }
+    if (!hamburgerBtn || !sidebar || !mobileOverlay) return;
 
     // Force proper state on load
     function initializeMobileState() {
-        if (window.innerWidth <= 1024) {
+        if (isMobileDevice()) {
             sidebar.style.position = 'fixed';
             sidebar.style.left = '-100%';
             sidebar.style.top = '0';
@@ -31,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
             sidebar.style.height = '100vh';
             sidebar.style.zIndex = '1000';
             mobileOverlay.style.display = 'none';
+            hamburgerBtn.style.display = 'block';
         } else {
             // Desktop: reset to default
             sidebar.style.position = '';
@@ -39,15 +36,16 @@ document.addEventListener("DOMContentLoaded", function () {
             sidebar.style.width = '';
             sidebar.style.height = '';
             sidebar.style.zIndex = '';
+            hamburgerBtn.style.display = 'none';
         }
     }
 
-    // Initialize on load
+    // Initialize immediately
     initializeMobileState();
 
     // Toggle sidebar + overlay
     function toggleSidebar() {
-        if (window.innerWidth <= 1024) {
+        if (isMobileDevice()) {
             const isActive = sidebar.classList.contains("active");
             
             if (isActive) {
@@ -69,10 +67,10 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburgerBtn.addEventListener("click", toggleSidebar);
     mobileOverlay.addEventListener("click", toggleSidebar);
 
-    // Close sidebar when clicking a nav button (on mobile)
+    // Close sidebar when clicking a nav button
     navButtons.forEach(button => {
         button.addEventListener("click", () => {
-            if (window.innerWidth <= 1024) {
+            if (isMobileDevice()) {
                 sidebar.style.left = '-100%';
                 mobileOverlay.style.display = 'none';
                 sidebar.classList.remove("active");
@@ -85,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle window resize
     window.addEventListener("resize", function() {
         initializeMobileState();
-        if (window.innerWidth > 1024) {
+        if (!isMobileDevice()) {
             sidebar.classList.remove("active");
             mobileOverlay.classList.remove("active");
             hamburgerBtn.classList.remove("active");
