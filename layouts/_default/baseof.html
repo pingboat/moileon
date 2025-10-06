@@ -17,6 +17,24 @@
     <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
     <meta name="twitter:image" content="https://moileon.in/images/favicon-1200x675.png">
     
+    <!-- JavaScript BEFORE CSS to handle mobile immediately -->
+    <script>
+        // Immediately hide sidebar on mobile
+        if (window.innerWidth <= 768) {
+            document.addEventListener('DOMContentLoaded', function() {
+                var sidebar = document.getElementById('sidebar');
+                if (sidebar) {
+                    sidebar.style.position = 'fixed';
+                    sidebar.style.left = '-100%';
+                    sidebar.style.top = '0';
+                    sidebar.style.width = '250px';
+                    sidebar.style.height = '100vh';
+                    sidebar.style.zIndex = '1000';
+                }
+            });
+        }
+    </script>
+    
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
     
@@ -35,11 +53,11 @@
     </button>
 
     <!-- Mobile overlay -->
-    <div class="mobile-overlay" id="mobileOverlay" style="display: none;"></div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
 
     <div class="container">
         <!-- Sidebar Navigation -->
-        <nav class="sidebar" id="sidebar" style="left: -100%; position: fixed; top: 0; width: 250px; height: 100vh; z-index: 1000; transition: left 0.3s ease;">
+        <nav class="sidebar" id="sidebar">
             <a href="{{ "/" | relURL }}" class="nav-button {{ if .IsHome }}active{{ end }}">Home</a>
             <a href="{{ "/blog/" | relURL }}" class="nav-button {{ if eq .Section "blog" }}active{{ end }}">Blog</a>
             <a href="{{ "/booknotes/" | relURL }}" class="nav-button {{ if eq .Section "booknotes" }}active{{ end }}">Book Notes</a>
