@@ -1,3 +1,15 @@
+/* CRITICAL FIX: Ensure hamburger only shows on mobile */
+@media (min-width: 901px) {
+    .hamburger-btn {
+        display: none !important;
+    }
+    .sidebar {
+        position: relative !important;
+        left: 0 !important;
+        width: 200px !important;
+    }
+}
+
 /* ==================================================
    GLOBAL RESET AND BASE STYLES
    ================================================== */
