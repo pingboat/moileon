@@ -13,34 +13,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Toggle sidebar + overlay
     function toggleSidebar() {
-        // Only toggle on mobile
-        if (window.innerWidth <= 900) {
-            hamburgerBtn.classList.toggle("active");
-            sidebar.classList.toggle("active");
-            mobileOverlay.classList.toggle("active");
-        }
+        hamburgerBtn.classList.toggle("active");
+        sidebar.classList.toggle("active");
+        mobileOverlay.classList.toggle("active");
     }
 
     hamburgerBtn.addEventListener("click", toggleSidebar);
     mobileOverlay.addEventListener("click", toggleSidebar);
 
-    // Close sidebar when clicking a nav button (on mobile only)
+    // Close sidebar when clicking a nav button (on mobile)
     navButtons.forEach(button => {
         button.addEventListener("click", () => {
-            if (window.innerWidth <= 900) {
-                hamburgerBtn.classList.remove("active");
-                sidebar.classList.remove("active");
-                mobileOverlay.classList.remove("active");
+            if (window.innerWidth <= 768) {
+                toggleSidebar();
             }
         });
-    });
-
-    // Clean up on resize
-    window.addEventListener("resize", function() {
-        if (window.innerWidth > 900) {
-            hamburgerBtn.classList.remove("active");
-            sidebar.classList.remove("active");
-            mobileOverlay.classList.remove("active");
-        }
     });
 });
