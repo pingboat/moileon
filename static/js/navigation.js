@@ -1,3 +1,8 @@
+/* ==================================================
+   NAVIGATION & MOBILE SIDEBAR
+   ================================================== */
+
+// Wait for DOM content to load
 document.addEventListener("DOMContentLoaded", function () {
     const hamburgerBtn = document.querySelector(".hamburger-btn");
     const sidebar = document.querySelector(".sidebar");
@@ -6,23 +11,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!hamburgerBtn || !sidebar || !mobileOverlay) return;
 
-    hamburgerBtn.addEventListener("click", function() {
+    // Toggle sidebar + overlay
+    function toggleSidebar() {
+        hamburgerBtn.classList.toggle("active");
         sidebar.classList.toggle("active");
         mobileOverlay.classList.toggle("active");
-        hamburgerBtn.classList.toggle("active");
-    });
+    }
 
-    mobileOverlay.addEventListener("click", function() {
-        sidebar.classList.remove("active");
-        mobileOverlay.classList.remove("active");
-        hamburgerBtn.classList.remove("active");
-    });
+    hamburgerBtn.addEventListener("click", toggleSidebar);
+    mobileOverlay.addEventListener("click", toggleSidebar);
 
-    navButtons.forEach(function(button) {
-        button.addEventListener("click", function() {
-            sidebar.classList.remove("active");
-            mobileOverlay.classList.remove("active");
-            hamburgerBtn.classList.remove("active");
+    // Close sidebar when clicking a nav button (on mobile)
+    navButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            if (window.innerWidth <= 768) {
+                toggleSidebar();
+            }
         });
     });
 });
