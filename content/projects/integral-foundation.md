@@ -6,9 +6,7 @@ project_type: Other
 ---
 A non-profit organization committed to work primarily towards four key areas:
 
-
-
-* Research & Development for Atmanirbhar Bharat
-* Dignified Rural Livelihood Generation
-* Sustainability & Climate Change
-* Integral Education
+1. Research & Development for Atmanirbhar Bharat
+2. Dignified Rural Livelihood Generation
+3. Sustainability & Climate Change
+4. Integral Education
