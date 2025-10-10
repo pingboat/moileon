@@ -40,7 +40,10 @@
       "active": true,
       "points": 10,
       "question": "Which word comes from the Roman term meaning 'twice-cooked'?",
-      "correct_answer": "Biscuit"
+      "correct_answer": [
+        "Biscuit",
+        "biscuit"
+      ]
     },
     {
       "active": true,
@@ -66,97 +69,146 @@
       "active": true,
       "points": 10,
       "question": "Jean-Baptiste Say coined this term in 1800, which means 'one who undertakes an enterprise'. Which popular term is it?",
-      "correct_answer": "Entrepreneur"
+      "correct_answer": [
+        "Entrepreneur",
+        "entrepreneur"
+      ]
     },
     {
       "active": true,
       "points": 10,
       "question": "Which wildly used term was introduced to internet parlance by Lou Montalli of Netscape Communications in 1994, which is also an eatable item?",
-      "correct_answer": "Cookies"
+      "correct_answer": [
+        "Cookies",
+        "cookies"
+      ]
     },
     {
       "active": true,
       "points": 10,
       "question": "Which Indian brand was started by Jaysukh Patel, O.R. Patel and Manubhai Patel?",
-      "correct_answer": "Ajanta Clocks"
+      "correct_answer": [
+        "Ajanta Clocks",
+        "ajanta clocks"
+      ]
     },
     {
       "active": true,
       "points": 10,
       "question": "Danjaq LLC is the holding company responsible for the copyright and trademarks to the characters, elements and other materials related to what?",
-      "correct_answer": "James Bond"
+      "correct_answer": [
+        "James Bond",
+        "james bond"
+      ]
     },
     {
       "active": true,
       "points": 10,
       "question": "Which popular business term was first coined by Sir Walter Scott in his famous novel 'Ivanhoe'?",
-      "correct_answer": "Freelancer"
+      "correct_answer": [
+        "Freelancer",
+        "freelancer"
+      ]
     },
     {
       "active": true,
       "points": 10,
       "question": "Which American shoe company is named after a corn dish used to feed pet dogs?",
-      "correct_answer": "Hush Puppies"
+      "correct_answer": [
+        "Hush Puppies",
+        "hush puppies"
+      ]
     },
     {
       "active": true,
       "points": 10,
       "question": "Which certification denotes that child labour has not been used in the manufacturing of carpets?",
-      "correct_answer": "Rugmark"
+      "correct_answer": [
+        "Rugmark",
+        "rugmark"
+      ]
     },
     {
       "active": true,
       "points": 10,
       "question": "Harrah's Entertainment Inc. founded on October 30, 1937 as a small bingo parlor in Nevada, operated by William F. Harrah, became the first company in which type of business?",
-      "correct_answer": "Casino"
+      "correct_answer": [
+        "Casino",
+        "casino"
+      ]
     },
     {
       "active": true,
       "points": 10,
       "question": "What was first created by Suaing Ching, extensively used by US Army in 1945, and currently used by corporates as a training tool?",
-      "correct_answer": "Overhead Projector"
+      "correct_answer": [
+        "Overhead Projector",
+        "overhead projector"
+      ]
     },
     {
       "active": true,
       "points": 10,
       "question": "What resulted in 1937 after Lt. John McCready had returned from a Balloon flying adventure and the sun had done permanent damage to his eyes?",
-      "correct_answer": "Ray Ban"
+      "correct_answer": [
+        "Ray Ban",
+        "ray ban"
+      ]
     },
     {
       "active": true,
       "points": 10,
-      "question": "What were introduced by Harry Burnett Lumsden and William Stephen  Raikes Hodson in 1848 for the British colonial troops in India and were found to be specially effective for field service and battle?",
-      "correct_answer": "Khakis"
+      "question": "What were introduced by Harry Burnett Lumsden and William Stephen Raikes Hodson in 1848 for the British colonial troops in India and were found to be specially effective for field service and battle?",
+      "correct_answer": [
+        "Khakis",
+        "khakis"
+      ]
     },
     {
       "active": true,
       "points": 10,
       "question": "Which brand name was suggested by Dhirajben Ruparel, in a contest held for the purpose, with prize money of Rs. 5?",
-      "correct_answer": "Lijjat Papad"
+      "correct_answer": [
+        "Lijjat Papad",
+        "lijjat papad"
+      ]
     },
     {
       "active": true,
       "points": 10,
       "question": "Which company was the official supplier of uniforms to the SA, SS, Hitler Youth, NSKK, and other Nazi Party organisations?",
-      "correct_answer": "Hugo Boss"
+      "correct_answer": [
+        "Hugo Boss",
+        "hugo boss"
+      ]
     },
     {
       "active": true,
       "points": 10,
       "question": "What is the act of 'persisting with an idea even after it no longer remains profitable' called, that shares its name with a famous name in aviation?",
-      "correct_answer": "Concorde Effect"
+      "correct_answer": [
+        "Concorde Effect",
+        "concorde effect"
+      ]
     },
     {
       "active": true,
       "points": 10,
       "question": "Percy Spencer noticed the melting of a peanut candy bar that he had in his pocket while working on an active radar set. What famous appliance came out as a result of this incident?",
-      "correct_answer": "Microwave"
+      "correct_answer": [
+        "Microwave",
+        "microwave"
+      ]
     },
     {
       "active": true,
       "points": 10,
       "question": "What was added to the Morse Code on 24th May, 2004, on its 160th Anniversary?",
-      "correct_answer": "The @ Symbol"
+      "correct_answer": [
+        "The @ Symbol",
+        "the @ symbol",
+        "@"
+      ]
     }
   ]
 }
