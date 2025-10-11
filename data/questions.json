@@ -219,6 +219,15 @@
         "bankruptcy"
       ],
       "explanation": "The word entered English via Middle French banqueroute, which itself derived from the Italian bancarotta, combining banca (bench) and rotta (broken)."
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "The name of which enclosure is derived from the Greek unit of measurement for the distance covered in six hundred feet?",
+      "correct_answer": [
+        "Stadium",
+        "stadium"
+      ]
     }
   ]
 }
