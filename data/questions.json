@@ -257,6 +257,17 @@
         "Arena",
         "arena"
       ]
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "The name of which tourist destination in India is derived from the Malay word for the Hindu God Hanuman?",
+      "correct_answer": [
+        "Andaman",
+        "andaman",
+        "Andaman Island",
+        "andaman island"
+      ]
     }
   ]
 }
