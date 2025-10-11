@@ -58,20 +58,20 @@
     {
       "active": true,
       "points": 10,
-      "question": "A kind of cognitive bias where a person overvalues something they helped create. The idea being that 'labour alone can be sufficient to induce greater liking for the fruits of one's labour'. How is this cognitive bias better known as?",
+      "question": "Jean-Baptiste Say coined this term in 1800, which means 'one who undertakes an enterprise'. Which popular term is it?",
       "correct_answer": [
-        "IKEA Effect",
-        "ikea effect",
-        "Ikea Effect"
+        "Entrepreneur",
+        "entrepreneur"
       ]
     },
     {
       "active": true,
       "points": 10,
-      "question": "Jean-Baptiste Say coined this term in 1800, which means 'one who undertakes an enterprise'. Which popular term is it?",
+      "question": "A kind of cognitive bias where a person overvalues something they helped create. The idea being that 'labour alone can be sufficient to induce greater liking for the fruits of one's labour'. How is this cognitive bias better known as?",
       "correct_answer": [
-        "Entrepreneur",
-        "entrepreneur"
+        "IKEA Effect",
+        "ikea effect",
+        "Ikea Effect"
       ]
     },
     {
@@ -247,6 +247,15 @@
       "correct_answer": [
         "Hegemony",
         "hegemony"
+      ]
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "Which term, literally meaning ‘sand’ in Latin, was used for the sand-strewn central area of a Roman amphitheatre?",
+      "correct_answer": [
+        "Arena",
+        "arena"
       ]
     }
   ]
