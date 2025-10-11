@@ -239,6 +239,15 @@
         "Chicken Neck",
         "chicken's neck"
       ]
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "What term derived from the Greek word meaning ‘Authority’ was first used to describe the dominance of Athens over other Greek city states?",
+      "correct_answer": [
+        "Hegemony",
+        "hegemony"
+      ]
     }
   ]
 }
