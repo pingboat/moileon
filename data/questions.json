@@ -228,6 +228,17 @@
         "Stadium",
         "stadium"
       ]
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "After which part of a bird’s anatomy was the strategic salient in Jammu, between the Chenab and the Chander Bagher, named ?",
+      "correct_answer": [
+        "Chicken’s Neck",
+        "chicken neck",
+        "Chicken Neck",
+        "chicken's neck"
+      ]
     }
   ]
 }
