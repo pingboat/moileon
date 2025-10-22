@@ -277,6 +277,16 @@
         "Veerappan",
         "veerappan"
       ]
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "This word to describe a hero, has its origin in the Latin word for a flat ground. The heroes showcased their military prowess on flat open grounds. Now a days, it is used to describe someone with great skills in any field.",
+      "correct_answer": [
+        "Champion",
+        "champion"
+      ],
+      "explanation": "Comes from the Latin word 'campus' meaning open/plain field."
     }
   ]
 }
