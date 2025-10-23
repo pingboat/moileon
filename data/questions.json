@@ -48,11 +48,10 @@
     {
       "active": true,
       "points": 10,
-      "question": "Which was the first product to be scanned with a barcode?",
+      "question": "Which wildly used term was introduced to internet parlance by Lou Montalli of Netscape Communications in 1994, which is also an eatable item?",
       "correct_answer": [
-        "Wrigley's Chewing Gum",
-        "wrigley's chewing gum",
-        "Wrigleys Chewing Gum"
+        "Cookies",
+        "cookies"
       ]
     },
     {
@@ -77,19 +76,20 @@
     {
       "active": true,
       "points": 10,
-      "question": "Which wildly used term was introduced to internet parlance by Lou Montalli of Netscape Communications in 1994, which is also an eatable item?",
+      "question": "Which Indian brand was started by Jaysukh Patel, O.R. Patel and Manubhai Patel?",
       "correct_answer": [
-        "Cookies",
-        "cookies"
+        "Ajanta Clocks",
+        "ajanta clocks"
       ]
     },
     {
       "active": true,
       "points": 10,
-      "question": "Which Indian brand was started by Jaysukh Patel, O.R. Patel and Manubhai Patel?",
+      "question": "Which was the first product to be scanned with a barcode?",
       "correct_answer": [
-        "Ajanta Clocks",
-        "ajanta clocks"
+        "Wrigley's Chewing Gum",
+        "wrigley's chewing gum",
+        "Wrigleys Chewing Gum"
       ]
     },
     {
@@ -287,6 +287,15 @@
         "champion"
       ],
       "explanation": "Comes from the Latin word 'campus' meaning open/plain field."
+    },
+    {
+      "active": true,
+      "points": 10,
+      "correct_answer": [
+        "Grok",
+        "grok"
+      ],
+      "question": "Coined by the author Robert A. Heinlein, the term 'X' first appeared in his science fiction novel 'Stranger in a Strange Land'. It tells the story of Valentine Michael Smith, a human who comes to Earth in his early adulthood after being born on the planet Mars. 'X' means to understand something deeply, intuitively, and completely. It is also the name of one of Elon Musk's projects. Identify 'X'."
     }
   ]
 }
