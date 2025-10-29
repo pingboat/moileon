@@ -39,6 +39,15 @@
     {
       "active": true,
       "points": 10,
+      "question": "Which wildly used term was introduced to internet parlance by Lou Montalli of Netscape Communications in 1994, which is also an eatable item?",
+      "correct_answer": [
+        "Cookies",
+        "cookies"
+      ]
+    },
+    {
+      "active": true,
+      "points": 10,
       "question": "Which Indian brand was started by Jaysukh Patel, O.R. Patel and Manubhai Patel?",
       "correct_answer": [
         "Ajanta Clocks",
@@ -62,15 +71,6 @@
         "IKEA Effect",
         "ikea effect",
         "Ikea Effect"
-      ]
-    },
-    {
-      "active": true,
-      "points": 10,
-      "question": "Which wildly used term was introduced to internet parlance by Lou Montalli of Netscape Communications in 1994, which is also an eatable item?",
-      "correct_answer": [
-        "Cookies",
-        "cookies"
       ]
     },
     {
@@ -316,6 +316,17 @@
         "tehelka"
       ],
       "explanation": "Tehelka's editor explained their crow icon as rooted in the proverb 'Jhooth bole, kauwa kaate' — if someone lies, the crow will peck them — to symbolise fearless truth-telling. \n"
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "In ancient India, X was originally known as Moksha Patam. It was designed not for amusement, but for contemplation – a quiet lesson in karma. As one advanced, virtues like kindness and honesty lifted them towards liberation; vices like lust or arrogance pulled them down towards endless rebirth. Used by teachers and monks alike, it mapped the moral terrain of life – with progress and setbacks governed not by skill, but by fate.\nCenturies later, X would lose its spiritual intent and become a pastime found in homes and waiting rooms around the world. Identify X.",
+      "correct_answer": [
+        "Snakes and ladders",
+        "snakes and ladders",
+        "Snakes and Ladders"
+      ],
+      "explanation": "Originally Moksha Patam in ancient India — a game of moral instruction about karma, virtue, and liberation — later globalized and stripped of its spiritual meaning into the children’s board game we know today."
     }
   ]
 }
