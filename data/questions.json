@@ -39,10 +39,29 @@
     {
       "active": true,
       "points": 10,
+      "question": "Which Indian brand was started by Jaysukh Patel, O.R. Patel and Manubhai Patel?",
+      "correct_answer": [
+        "Ajanta Clocks",
+        "ajanta clocks"
+      ]
+    },
+    {
+      "active": true,
+      "points": 10,
       "question": "Which word comes from the Roman term meaning 'twice-cooked'?",
       "correct_answer": [
         "Biscuit",
         "biscuit"
+      ]
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "A kind of cognitive bias where a person overvalues something they helped create. The idea being that 'labour alone can be sufficient to induce greater liking for the fruits of one's labour'. How is this cognitive bias better known as?",
+      "correct_answer": [
+        "IKEA Effect",
+        "ikea effect",
+        "Ikea Effect"
       ]
     },
     {
@@ -61,25 +80,6 @@
       "correct_answer": [
         "Entrepreneur",
         "entrepreneur"
-      ]
-    },
-    {
-      "active": true,
-      "points": 10,
-      "question": "A kind of cognitive bias where a person overvalues something they helped create. The idea being that 'labour alone can be sufficient to induce greater liking for the fruits of one's labour'. How is this cognitive bias better known as?",
-      "correct_answer": [
-        "IKEA Effect",
-        "ikea effect",
-        "Ikea Effect"
-      ]
-    },
-    {
-      "active": true,
-      "points": 10,
-      "question": "Which Indian brand was started by Jaysukh Patel, O.R. Patel and Manubhai Patel?",
-      "correct_answer": [
-        "Ajanta Clocks",
-        "ajanta clocks"
       ]
     },
     {
@@ -296,6 +296,26 @@
         "grok"
       ],
       "question": "Coined by the author Robert A. Heinlein, the term 'X' first appeared in his science fiction novel 'Stranger in a Strange Land'. It tells the story of Valentine Michael Smith, a human who comes to Earth in his early adulthood after being born on the planet Mars. 'X' means to understand something deeply, intuitively, and completely. It is also the name of one of Elon Musk's projects. Identify 'X'."
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "In the early 90s, a group of computer scientists working in a building at the University of Cambridge grew frustrated with a specific daily annoyance: walking down a hallway only to discover that the coffee pot was already empty. To solve this, the “Trojan Room Coffee Camera” was created to provide a live view of a shared coffee pot, allowing researchers to avoid wasted trips to an empty machine.  This innovation, though humble in intention, ended up being a quiet landmark in tech history. It was the first time a continuous video feed was shared over a network. What invention did this lead to?",
+      "correct_answer": [
+        "Webcam",
+        "webcam"
+      ],
+      "explanation": "The Trojan Room Coffee Pot camera (1991) at Cambridge is widely regarded as the birth of the webcam — the first live video feed streamed over a network."
+    },
+    {
+      "active": true,
+      "points": 10,
+      "question": "Describing why the crow is this publication’s icon, its editor wrote: 'It is the brainchild of Prasoon Joshi, Chairman of McCann Erickson, who brilliantly intuited the old proverb, 'Jhooth Bole Kauwa Kaate', for the paper’s ad campaign. Identify the publication.",
+      "correct_answer": [
+        "Tehelka",
+        "tehelka"
+      ],
+      "explanation": "Tehelka's editor explained their crow icon as rooted in the proverb 'Jhooth bole, kauwa kaate' — if someone lies, the crow will peck them — to symbolise fearless truth-telling. \n"
     }
   ]
 }
