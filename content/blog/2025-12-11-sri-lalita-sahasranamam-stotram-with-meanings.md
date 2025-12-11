@@ -3,8 +3,8 @@ title: Sri Lalita Sahasranamam Stotram with Meanings
 slug: srilalita
 date: 2024-11-14T18:30:07.216Z
 ---
-श्रीमाता श्रीमहाराज्ञी श्रीमत्-सिंहासनेश्वरी ।\
-चिदग्नि-कुण्ड-सम्भूता देवकार्य-समुद्यता ॥१॥
+**श्रीमाता श्रीमहाराज्ञी श्रीमत्-सिंहासनेश्वरी ।**\
+**चिदग्नि-कुण्ड-सम्भूता देवकार्य-समुद्यता ॥१॥**
 
 १. श्रीमाता 
 
@@ -26,10 +26,8 @@ She who rose from the fire-pit of pure consciousness and is the ultimate truth.
 
 She who is intent on helping and fulfilling the wishes of the gods.
 
-
-
-उद्यद्भानु-सहस्राभा चतुर्बाहु-समन्विता ।\
-रागस्वरूप-पाशाढ्या क्रोधाकाराङ्कुशोज्ज्वला ॥२॥
+**उद्यद्भानु-सहस्राभा चतुर्बाहु-समन्विता ।**\
+**रागस्वरूप-पाशाढ्या क्रोधाकाराङ्कुशोज्ज्वला ॥२॥**
 
 ६. उद्यद्भानुसहस्राभा 
 
@@ -47,14 +45,8 @@ She who is holding the rope of love in her hand.
 
 She who glitters and has anger in the form of Anghusa (goad) –in one of her right hands.
 
-
-
-
-
-मनोरूपेक्षु-कोदण्डा पञ्चतन्मात्र-सायका ।\
-निजारुण-प्रभापूर-मज्जद्ब्रह्माण्ड-मण्डला ॥३॥
-
-
+**मनोरूपेक्षु-कोदण्डा पञ्चतन्मात्र-सायका ।**\
+**निजारुण-प्रभापूर-मज्जद्ब्रह्माण्ड-मण्डला ॥३॥**
 
 १०. मनोरूपेक्षुकोदण्डा 
 
@@ -68,14 +60,8 @@ She who holds the five subtle elements of touch, smell, hearing, taste and sight
 
 She who makes all the universe immerse in her red colour of her form, which is like the sun in the dawn.
 
-
-
-
-
-चम्पकाशोक-पुन्नाग-सौगन्धिक-लसत्कचा ।\
-कुरुविन्दमणि-श्रेणी-कनत्कोटीर-मण्डिता ॥४॥
-
-
+**चम्पकाशोक-पुन्नाग-सौगन्धिक-लसत्कचा ।**\
+**कुरुविन्दमणि-श्रेणी-कनत्कोटीर-मण्डिता ॥४॥**
 
 १३. चम्पकाशोकपुन्नागसौगिन्धकलसत्कचा 
 
@@ -85,14 +71,8 @@ She whose hair has been adorned with flowers like champaka, ashoka, punnaga and 
 
 She who is resplendent with a crown adorned with rows of precious kuruvinda gemstones. 
 
-
-
-
-
-अष्टमीचन्द्र-विभ्राज-दलिकस्थल-शोभिता ।\
-मुखचन्द्र-कलङ्काभ-मृगनाभि-विशेषका ॥५॥
-
-
+**अष्टमीचन्द्र-विभ्राज-दलिकस्थल-शोभिता ।**\
+**मुखचन्द्र-कलङ्काभ-मृगनाभि-विशेषका ॥५॥**
 
 १५. अष्टमीचन्द्रविभ्राजदलिकस्थलशोभिता 
 
@@ -102,12 +82,8 @@ She who has a beautiful forehead that shines like the crescent moon of the eight
 
 She who has the tilaka (dot mark) of Musk in her forehead which shines like the black shadow on the moon.
 
-
-
-वदनस्मर-माङ्गल्य-गृहतोरण-चिल्लिका ।\
-वक्त्रलक्ष्मी-परीवाह-चलन्मीनाभ-लोचना ॥६॥
-
-
+**वदनस्मर-माङ्गल्य-गृहतोरण-चिल्लिका ।**\
+**वक्त्रलक्ष्मी-परीवाह-चलन्मीनाभ-लोचना ॥६॥**
 
 १७. वदनस्मरमाङ्गल्यगृहतोरणचिल्लका 
 
@@ -117,12 +93,8 @@ She whose beautiful eyebrows look like ornaments on her face and which shine lik
 
 She whose beautiful eyes possess the luster of the fish that move about in the stream of beauty flowing from the pond of her face. 
 
-
-
-नवचम्पक-पुष्पाभ-नासादण्ड-विराजिता ।\
-ताराकान्ति-तिरस्कारि-नासाभरण-भासुरा ॥७॥
-
-
+**नवचम्पक-पुष्पाभ-नासादण्ड-विराजिता ।**\
+**ताराकान्ति-तिरस्कारि-नासाभरण-भासुरा ॥७॥**
 
 १९. नवचम्पकपुष्पाभनासादण्डविराजिता
 
@@ -132,14 +104,8 @@ She who is resplendent with a nose that has the beauty of a newly blooming champ
 
 She who shines with a nose-ring that excels the luster of a star.
 
-
-
-
-
-कदम्बमञ्जरी-कॢप्त-कर्णपूर-मनोहरा ।\
-ताटङ्क-युगली-भूत-तपनोडुप-मण्डला ॥८॥
-
-
+**कदम्बमञ्जरी-कॢप्त-कर्णपूर-मनोहरा ।**\
+**ताटङ्क-युगली-भूत-तपनोडुप-मण्डला ॥८॥**
 
 २१. कदम्बमञ्जरीकॢप्तकर्णपूरमनोहरा
 
@@ -149,14 +115,8 @@ She who is captivating, wearing bunches of kadamba flowers as ear-ornaments. 
 
 She who wears the sun and the moon as a pair of large earrings.
 
-
-
-
-
-पद्मराग-शिलादर्श-परिभावि-कपोलभूः ।\
-नवविद्रुम-बिम्बश्री-न्यक्कारि-रदनच्छदा ॥९॥
-
-
+**पद्मराग-शिलादर्श-परिभावि-कपोलभूः ।**\
+**नवविद्रुम-बिम्बश्री-न्यक्कारि-रदनच्छदा ॥९॥**
 
 २३. पद्मरागशिलादर्शपरिभाविकपोलभूः
 
@@ -166,12 +126,8 @@ She whose cheeks outshine mirrors made of rubies in their beauty. 
 
 She whose lips excel freshly cut coral and bimba fruit in their reflective splendor and beauty.
 
-
-
-शुद्ध-विद्याङ्कुराकार-द्विजपङ्क्ति-द्वयोज्ज्वला ।\
-कर्पूर-वीटिकामोद-समाकर्षि-दिगन्तरा ॥१०॥
-
-
+**शुद्ध-विद्याङ्कुराकार-द्विजपङ्क्ति-द्वयोज्ज्वला ।**\
+**कर्पूर-वीटिकामोद-समाकर्षि-दिगन्तरा ॥१०॥**
 
 २५. शुद्धविद्याङ्कुराकारद्विजपङ्क्तिद्वयोज्ज्वला
 
@@ -181,14 +137,8 @@ She who has radiant teeth which resemble the buds of pure knowledge.
 
 She who is enjoying a camphor-laden betel roll, the fragrance of which is attracting people from all directions.
 
-
-
-
-
-निज-सल्लाप-माधुर्य-विनिर्भर्त्सित-कच्छपी ।\
-मन्दस्मित-प्रभापूर-मज्जत्कामेश-मानसा ॥११॥
-
-
+**निज-सल्लाप-माधुर्य-विनिर्भर्त्सित-कच्छपी ।**\
+**मन्दस्मित-प्रभापूर-मज्जत्कामेश-मानसा ॥११॥**
 
 २७. निजसल्लापमाधुर्यविनिर्भर्त्सितकच्छपी
 
@@ -198,20 +148,8 @@ She who excels even the veena of Sarasvati in the sweetness of her speech.
 
 She who submerges even the mind of Kamesha (Lord shiva) with the radiance of her smile.
 
-
-
-
-
-
-
-
-
-
-
-अनाकलित-सादृश्य-चिबुकश्री-विराजिता ।\
-कामेश-बद्ध-माङ्गल्य-सूत्र-शोभित-कन्धरा ॥१२॥
-
-
+**अनाकलित-सादृश्य-चिबुकश्री-विराजिता ।**\
+**कामेश-बद्ध-माङ्गल्य-सूत्र-शोभित-कन्धरा ॥१२॥**
 
 २९. अनाकलितसादृश्यचिबुकश्रीविराजिता
 
@@ -221,14 +159,8 @@ She whose chin cannot be compared to anything because of its unparalleled beauty
 
 She whose neck is adorned with the marriage thread tied by Kamesha.
 
-
-
-
-
-कनकाङ्गद-केयूर-कमनीय-भुजान्विता ।\
-रत्नग्रैवेय-चिन्ताक-लोल-मुक्ता-फलान्विता ॥१३॥
-
-
+**कनकाङ्गद-केयूर-कमनीय-भुजान्विता ।**\
+**रत्नग्रैवेय-चिन्ताक-लोल-मुक्ता-फलान्विता ॥१३॥**
 
 ३१. कनकाङ्गदकेयूरकमनीयभुजान्विता
 
@@ -238,14 +170,8 @@ She whose arms are beautifully adorned with golden armlets.
 
 She whose neck is resplendent with a gem-studded necklace with a locket made of pearl.
 
-
-
-
-
-कामेश्वर-प्रेमरत्न-मणि-प्रतिपण-स्तनी ।\
-नाभ्यालवाल-रोमालि-लता-फल-कुचद्वयी ॥१४॥
-
-
+**कामेश्वर-प्रेमरत्न-मणि-प्रतिपण-स्तनी ।**\
+**नाभ्यालवाल-रोमालि-लता-फल-कुचद्वयी ॥१४॥**
 
 ३३. कामेश्वरप्रेमरत्नमणिप्रतिपणस्तनी
 
@@ -255,12 +181,8 @@ She who gives her breasts to Kameshvara in return for the gem of love he bestows
 
 She whose breasts are the fruits on the creeper of the fine hairline that starts in the depths of her navel and spreads upwards.
 
-
-
-लक्ष्यरोम-लताधारता-समुन्नेय-मध्यमा ।\
-स्तनभार-दलन्मध्य-पट्टबन्ध-वलित्रया ॥१५॥
-
-
+**लक्ष्यरोम-लताधारता-समुन्नेय-मध्यमा ।**\
+**स्तनभार-दलन्मध्य-पट्टबन्ध-वलित्रया ॥१५॥**
 
 ३५. लक्ष्यरोमलताधारतासमुन्नेयमध्यमा 
 
@@ -270,14 +192,8 @@ She who has a waist, the existence of which can only be inferred by the fact tha
 
 She whose abdomen has three folds which form a belt to support her waist from breaking under the weight of her breasts.
 
-
-
-
-
-अरुणारुण-कौसुम्भ-वस्त्र-भास्वत्-कटीतटी ।\
-रत्न-किङ्किणिका-रम्य-रशना-दाम-भूषिता ॥१६॥
-
-
+**अरुणारुण-कौसुम्भ-वस्त्र-भास्वत्-कटीतटी ।**\
+**रत्न-किङ्किणिका-रम्य-रशना-दाम-भूषिता ॥१६॥**
 
 ३७. अरुणारुणकौसुम्भवस्त्रभास्वत्कटीतटी 
 
@@ -287,14 +203,8 @@ She whose hips are adorned with a garment as red as the rising sun, which is dye
 
 She who is adorned with a girdle which is decorated with many gem-studded bells.
 
-
-
-
-
-कामेश-ज्ञात-सौभाग्य-मार्दवोरु-द्वयान्विता ।\
-माणिक्य-मुकुटाकार-जानुद्वय-विराजिता ॥१७॥
-
-
+**कामेश-ज्ञात-सौभाग्य-मार्दवोरु-द्वयान्विता ।**\
+**माणिक्य-मुकुटाकार-जानुद्वय-विराजिता ॥१७॥**
 
 ३९. कामेशज्ञातसौभाग्यमार्दवोरुद्वयान्विता
 
@@ -304,12 +214,8 @@ The beauty and softness of whose thighs are known only to Kamesha, her husband.
 
 She whose knees are like crowns shaped from the precious red jewel, manikya (a kind of ruby).
 
-
-
-इन्द्रगोप-परिक्षिप्त-स्मरतूणाभ-जङ्घिका ।\
-गूढगुल्फा कूर्मपृष्ठ-जयिष्णु-प्रपदान्विता ॥१८॥
-
-
+**इन्द्रगोप-परिक्षिप्त-स्मरतूणाभ-जङ्घिका ।**\
+**गूढगुल्फा कूर्मपृष्ठ-जयिष्णु-प्रपदान्विता ॥१८॥**
 
 ४१. इन्द्रगोपपरिक्षिप्तस्मरतूणाभजङ्घिका
 
@@ -323,12 +229,8 @@ She whose ankles are hidden.
 
 She whose feet have arches that rival the back of a tortoise in smoothness and beauty.
 
-
-
-नख-दीधिति-संछन्न-नमज्जन-तमोगुणा ।\
-पदद्वय-प्रभाजाल-पराकृत-सरोरुहा ॥१९॥
-
-
+**नख-दीधिति-संछन्न-नमज्जन-तमोगुणा ।**\
+**पदद्वय-प्रभाजाल-पराकृत-सरोरुहा ॥१९॥**
 
 ४४. नखदीधितिसंछन्ननमज्जनतमोगुणा
 
@@ -338,22 +240,8 @@ She whose toenails give out such a radiance that all the darkness of ignorance i
 
 She whose feet defeat lotus flowers in radiance.
 
-
-
-
-
-
-
-
-
-
-
-
-
-सिञ्जान-मणिमञ्जीर-मण्डित-श्री-पदाम्बुजा ।\
-मराली-मन्दगमना महालावण्य-शेवधिः ॥२०॥
-
-
+**सिञ्जान-मणिमञ्जीर-मण्डित-श्री-पदाम्बुजा ।**\
+**मराली-मन्दगमना महालावण्य-शेवधिः ॥२०॥**
 
 ४६. सिञ्जानमणिमञ्जीरमण्डितश्रीपदाम्बुजा
 
@@ -367,28 +255,8 @@ She whose gait is as slow and gentle as that of a swan.
 
 She who is the treasure-house of beauty.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-सर्वारुणा ऽनवद्याङ्गी सर्वाभरण-भूषिता ।\
-शिव-कामेश्वराङ्कस्था शिवा स्वाधीन-वल्लभा ॥२१॥
-
-
+**सर्वारुणा ऽनवद्याङ्गी सर्वाभरण-भूषिता ।**\
+**शिव-कामेश्वराङ्कस्था शिवा स्वाधीन-वल्लभा ॥२१॥**
 
 ४९. सर्वारुणा
 
@@ -414,32 +282,8 @@ She who bestows all that is auspicious.
 
 She who keeps her husband always under her control.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-सुमेरु-मध्य-श‍ृङ्गस्था श्रीमन्नगर-नायिका ।\
-चिन्तामणि-गृहान्तस्था पञ्च-ब्रह्मासन-स्थिता ॥२२॥
-
-
+**सुमेरु-मध्य-श‍ृङ्गस्था श्रीमन्नगर-नायिका ।**\
+**चिन्तामणि-गृहान्तस्था पञ्च-ब्रह्मासन-स्थिता ॥२२॥**
 
 ५५. सुमेरुमध्यशृङ्गस्था 
 
@@ -457,34 +301,8 @@ She who resides in a house built of the chintamani.
 
 She who sits on a seat made of five Brahmas.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-महापद्माटवी-संस्था कदम्बवन-वासिनी ।\
-सुधासागर-मध्यस्था कामाक्षी कामदायिनी ॥२३॥
-
-
+**महापद्माटवी-संस्था कदम्बवन-वासिनी ।**\
+**सुधासागर-मध्यस्था कामाक्षी कामदायिनी ॥२३॥**
 
 ५९. महापद्माटवीसंस्था 
 
@@ -506,26 +324,8 @@ She whose eyes awaken desire, or she who has beautiful eyes.
 
 She who grants all wishes.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-देवर्षि-गण-संघात-स्तूयमानात्म-वैभवा ।\
-भण्डासुर-वधोद्युक्त-शक्तिसेना-समन्विता ॥२४॥
-
-
+**देवर्षि-गण-संघात-स्तूयमानात्म-वैभवा ।**\
+**भण्डासुर-वधोद्युक्त-शक्तिसेना-समन्विता ॥२४॥**
 
 ६४. देवर्षिगणसंघातस्तूयमानात्मवैभवा
 
@@ -535,16 +335,8 @@ She whose might is the subject of praise by multitudes of gods and sages.
 
 She who is endowed with an army of shaktis intent on slaying bhandasura.
 
-
-
-
-
-
-
-सम्पत्करी-समारूढ-सिन्धुर-व्रज-सेविता ।\
-अश्वारूढाधिष्ठिताश्व-कोटि-कोटिभिरावृता ॥२५॥
-
-
+**सम्पत्करी-समारूढ-सिन्धुर-व्रज-सेविता ।**\
+**अश्वारूढाधिष्ठिताश्व-कोटि-कोटिभिरावृता ॥२५॥**
 
 ६६. सम्पत्करीसमारूढसिन्धुरव्रजसेविता
 
@@ -554,14 +346,8 @@ She who is attended by a herd of elephants ably commanded by Sampatkari.
 
 She who is surrounded by a cavalry of several million horses which are under the command of the shakti, Ashvarudha.
 
-
-
-
-
-चक्रराज-रथारूढ-सर्वायुध-परिष्कृता ।\
-गेयचक्र-रथारूढ-मन्त्रिणी-परिसेविता ॥२६॥
-
-
+**चक्रराज-रथारूढ-सर्वायुध-परिष्कृता ।**\
+**गेयचक्र-रथारूढ-मन्त्रिणी-परिसेविता ॥२६॥**
 
 ६८. चक्रराजरथारूढसर्वायुधपरिष्कृता
 
@@ -571,14 +357,8 @@ She who shines in her chariot Chakraraja, equipped with all kinds of weapons.
 
 She who is served by the shakti named Mantrini, who rides the chariot known as Geyacakra.
 
-
-
-
-
-किरिचक्र-रथारूढ-दण्डनाथा-पुरस्कृता ।\
-ज्वाला-मालिनिकाक्षिप्त-वह्निप्राकार-मध्यगा ॥२७॥
-
-
+**किरिचक्र-रथारूढ-दण्डनाथा-पुरस्कृता ।**\
+**ज्वाला-मालिनिकाक्षिप्त-वह्निप्राकार-मध्यगा ॥२७॥**
 
 ७०. किरिचक्ररथारूढदण्डनाथापुरस्कृता
 
@@ -588,14 +368,8 @@ She who is escorted by the shakti named Dandanatha, seated in the chariot known 
 
 She who has taken position at the center of the fortress of fire created by the goddess,Jvalamalini.
 
-
-
-
-
-भण्डसैन्य-वधोद्युक्त-शक्ति-विक्रम-हर्षिता ।\
-नित्या-पराक्रमाटोप-निरीक्षण-समुत्सुका ॥२८॥
-
-
+**भण्डसैन्य-वधोद्युक्त-शक्ति-विक्रम-हर्षिता ।**\
+**नित्या-पराक्रमाटोप-निरीक्षण-समुत्सुका ॥२८॥**
 
 ७२. भण्डसैन्यवधोद्युक्तशक्तिविक्रमहर्षिता
 
@@ -605,12 +379,8 @@ She who rejoices at the valor of the shaktis who are intent on destroying the fo
 
 She who delights in seeing the might and the pride of her Nitya deities.
 
-
-
-
-
-भण्डपुत्र-वधोद्युक्त-बाला-विक्रम-नन्दिता ।\
-मन्त्रिण्यम्बा-विरचित-विषङ्ग-वध-तोषिता ॥२९॥
+**भण्डपुत्र-वधोद्युक्त-बाला-विक्रम-नन्दिता ।**\
+**मन्त्रिण्यम्बा-विरचित-विषङ्ग-वध-तोषिता ॥२९॥**
 
 ७४. भण्डपुत्रवधोद्युक्तबालाविक्रमनन्दिता
 
@@ -620,14 +390,8 @@ She who delights in seeing the valor of the Bala Devi (her daughter) who is inte
 
 She who rejoices at the destruction, in battle, of the demon Vishanga (a brother of Bhandasura, who is personification of physical desires) by the Devi Mantrini. 
 
-
-
-
-
-विशुक्र-प्राणहरण-वाराही-वीर्य-नन्दिता ।\
-कामेश्वर-मुखालोक-कल्पित-श्रीगणेश्वरा ॥३०॥
-
-
+**विशुक्र-प्राणहरण-वाराही-वीर्य-नन्दिता ।**\
+**कामेश्वर-मुखालोक-कल्पित-श्रीगणेश्वरा ॥३०॥**
 
 ७६. विशुक्रप्राणहरणवाराहीवीर्यनन्दिता
 
@@ -637,14 +401,8 @@ She who is pleased with the valour of Varahiv who took the life of Vishukra (ano
 
 She who created Ganesha by her mere glance at the face of her Lord , Kameshwara.
 
-
-
-
-
-महागणेश-निर्भिन्न-विघ्नयन्त्र-प्रहर्षिता ।\
-भण्डासुरेन्द्र-निर्मुक्त-शस्त्र-प्रत्यस्त्र-वर्षिणी ॥३१॥
-
-
+**महागणेश-निर्भिन्न-विघ्नयन्त्र-प्रहर्षिता ।**\
+**भण्डासुरेन्द्र-निर्मुक्त-शस्त्र-प्रत्यस्त्र-वर्षिणी ॥३१॥**
 
 ७८. महागणेशनिर्भिन्नविघ्नयन्त्रप्रहर्षिता
 
@@ -654,14 +412,8 @@ She who rejoices at seeing Lord Ganesha shatter all obstacles (the Vigna Yantra,
 
 She who rained arrows as counter weapons against Bhandasura.
 
-
-
-
-
-कराङ्गुलि-नखोत्पन्न-नारायण-दशाकृतिः ।\
-महा-पाशुपतास्त्राग्नि-निर्दग्धासुर-सैनिका ॥३२॥
-
-
+**कराङ्गुलि-नखोत्पन्न-नारायण-दशाकृतिः ।**\
+**महा-पाशुपतास्त्राग्नि-निर्दग्धासुर-सैनिका ॥३२॥**
 
 ८०. कराङ्गुलिनखोत्पन्ननारायणदशाकृतिः
 
@@ -671,12 +423,8 @@ She who created all the ten incarnations of Narayana (Vishnu) from her fingernai
 
 She who burned the armies of the asuras in the fire of the missile, by the Maha Pasupatha arrow.
 
-
-
-कामेश्वरास्त्र-निर्दग्ध-सभण्डासुर-शून्यका ।\
-ब्रह्मोपेन्द्र-महेन्द्रादि-देव-संस्तुत-वैभवा ॥३३॥
-
-
+**कामेश्वरास्त्र-निर्दग्ध-सभण्डासुर-शून्यका ।**\
+**ब्रह्मोपेन्द्र-महेन्द्रादि-देव-संस्तुत-वैभवा ॥३३॥**
 
 ८२. कामेश्वरास्त्रनिर्दग्धसभण्डासुरशून्यका
 
@@ -686,18 +434,8 @@ She who burned and destroyed Bhandasura and his capital Shunyaka with the Kamesh
 
 She whose many powers are extolled by Brahma, Vishnu, Shiva and other gods.
 
-
-
-
-
- 
-
-
-
-हर-नेत्राग्नि-संदग्ध-काम-सञ्जीवनौषधिः ।\
-श्रीमद्वाग्भव-कूटैक-स्वरूप-मुख-पङ्कजा ॥३४॥
-
-
+**हर-नेत्राग्नि-संदग्ध-काम-सञ्जीवनौषधिः ।**\
+**श्रीमद्वाग्भव-कूटैक-स्वरूप-मुख-पङ्कजा ॥३४॥**
 
 ८४. हरनेत्राग्निसंदग्धकामसञ्जीवनौषधिः
 
@@ -707,34 +445,8 @@ She who became the life-giving medicine for Kamadeva (the god of love) who had b
 
 She whose lotus face is the auspicious Vagbhava  Koota (a group of syllables of the Panchadashi mantra).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-कण्ठाधः-कटि-पर्यन्त-मध्यकूट-स्वरूपिणी ।\
-शक्ति-कूटैकतापन्न-कट्यधोभाग-धारिणी ॥३५॥
-
-
+**कण्ठाधः-कटि-पर्यन्त-मध्यकूट-स्वरूपिणी ।**\
+**शक्ति-कूटैकतापन्न-कट्यधोभाग-धारिणी ॥३५॥**
 
 ८६. कण्ठाधःकटिपर्यन्तमध्यकूटस्वरूपिणी
 
@@ -744,32 +456,8 @@ She who from her neck to her waist is of the form of the Madhya Koota (the middl
 
 She whose form below the waist is the Shakti Koota (the last four syllables of the Panchadasakshari mantra).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-मूल-मन्त्रात्मिका मूलकूटत्रय-कलेबरा ।\
-कुलामृतैक-रसिका कुलसंकेत-पालिनी ॥३६॥
-
-
+**मूल-मन्त्रात्मिका मूलकूटत्रय-कलेबरा ।**\
+**कुलामृतैक-रसिका कुलसंकेत-पालिनी ॥३६॥**
 
 ८८. मूलमन्त्रात्मिका
 
@@ -787,28 +475,8 @@ She who is especially fond of the nectar known as kula.
 
 She who protects the code of rituals of the path of yoga known as kula.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-कुलाङ्गना कुलान्तस्था कौलिनी कुलयोगिनी ।\
-अकुला समयान्तस्था समयाचार-तत्परा ॥३७॥
-
-
+**कुलाङ्गना कुलान्तस्था कौलिनी कुलयोगिनी ।**\
+**अकुला समयान्तस्था समयाचार-तत्परा ॥३७॥**
 
 ९२. कुलाङ्गना 
 
@@ -838,20 +506,8 @@ She who resides inside ‘samaya’.
 
 She who likes Samayachara i.e. worship  stepwise from the Mooladhara Chakra.
 
-
-
-
-
-
-
-
-
-
-
-मूलाधारैक-निलया ब्रह्मग्रन्थि-विभेदिनी ।\
-मणि-पूरान्तरुदिता विष्णुग्रन्थि-विभेदिनी ॥३८॥
-
-
+**मूलाधारैक-निलया ब्रह्मग्रन्थि-विभेदिनी ।**\
+**मणि-पूरान्तरुदिता विष्णुग्रन्थि-विभेदिनी ॥३८॥**
 
 ९९. मूलाधारैकनिलया
 
@@ -869,16 +525,8 @@ She who emerges in the Manipura Chakra. 
 
 She who breaks through the knot of Vishnu.
 
-
-
-
-
-
-
-आज्ञा-चक्रान्तरालस्था रुद्रग्रन्थि-विभेदिनी ।\
-सहस्राराम्बुजारूढा सुधा-साराभिवर्षिणी ॥३९॥
-
-
+**आज्ञा-चक्रान्तरालस्था रुद्रग्रन्थि-विभेदिनी ।**\
+**सहस्राराम्बुजारूढा सुधा-साराभिवर्षिणी ॥३९॥**
 
 १०३. आज्ञाचक्रान्तरालस्था 
 
@@ -896,20 +544,8 @@ She who ascends to the thousand-petaled lotus.
 
 She who pours out streams of ambrosia.
 
-
-
-
-
-
-
-
-
-
-
-तडिल्लता-समरुचिः षट्चक्रोपरि-संस्थिता ।\
-महासक्तिः कुण्डलिनी बिसतन्तु-तनीयसी ॥४०॥
-
-
+**तडिल्लता-समरुचिः षट्चक्रोपरि-संस्थिता ।**\
+**महासक्तिः कुण्डलिनी बिसतन्तु-तनीयसी ॥४०॥**
 
 १०७. तडिल्लतासमरुचिः
 
@@ -931,24 +567,8 @@ She who is in the form Kundalini (a form which is a snake hissing and exists in 
 
 She who is fine and delicate as the fiber of the lotus.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-भवानी भावनागम्या भवारण्य-कुठारिका ।\
-भद्रप्रिया भद्रमूर्तिर् भक्त-सौभाग्यदायिनी ॥४१॥
-
-
+**भवानी भावनागम्या भवारण्य-कुठारिका ।**\
+**भद्रप्रिया भद्रमूर्तिर् भक्त-सौभाग्यदायिनी ॥४१॥**
 
 ११२. भवानी 
 
@@ -974,20 +594,8 @@ She who is the embodiment of auspiciousness or benevolence.
 
 She who confers prosperity on her devotees.
 
-
-
-
-
-
-
-
-
-
-
-भक्तिप्रिया भक्तिगम्या भक्तिवश्या भयापहा ।\
-शाम्भवी शारदाराध्या शर्वाणी शर्मदायिनी ॥४२॥
-
-
+**भक्तिप्रिया भक्तिगम्या भक्तिवश्या भयापहा ।**\
+**शाम्भवी शारदाराध्या शर्वाणी शर्मदायिनी ॥४२॥**
 
 ११८. भक्तिप्रिया
 
@@ -1021,22 +629,8 @@ She who is the wife of Sharva (Shiva).
 
 She who confers pleasures.
 
-
-
-
-
-
-
-
-
-
-
-
-
-शाङ्करी श्रीकरी साध्वी शरच्चन्द्र-निभानना ।\
-शातोदरी शान्तिमती निराधारा निरञ्जना ॥४३॥
-
-
+**शाङ्करी श्रीकरी साध्वी शरच्चन्द्र-निभानना ।**\
+**शातोदरी शान्तिमती निराधारा निरञ्जना ॥४३॥**
 
 १२६. शाङ्करी 
 
@@ -1070,14 +664,8 @@ She who is without any dependence.
 
 She who is devoid of any blemishes or scars.
 
-
-
-
-
-निर्लेपा निर्मला नित्या निराकारा निराकुला ।\
-निर्गुणा निष्कला शान्ता निष्कामा निरुपप्लवा ॥४४॥
-
-
+**निर्लेपा निर्मला नित्या निराकारा निराकुला ।**\
+**निर्गुणा निष्कला शान्ता निष्कामा निरुपप्लवा ॥४४॥**
 
 १३४. निर्लेपा
 
@@ -1119,14 +707,8 @@ She who is without any desire.
 
 She who is indestructible.
 
-
-
-
-
-नित्यमुक्ता निर्विकारा निष्प्रपञ्चा निराश्रया ।\
-नित्यशुद्धा नित्यबुद्धा निरवद्या निरन्तरा ॥४५॥
-
-
+**नित्यमुक्ता निर्विकारा निष्प्रपञ्चा निराश्रया ।**\
+**नित्यशुद्धा नित्यबुद्धा निरवद्या निरन्तरा ॥४५॥**
 
 १४४. नित्यमुक्ता
 
@@ -1160,24 +742,8 @@ She who can never be accused of anything.
 
 She who is all-pervading, continuous.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-निष्कारणा निष्कलङ्का निरुपाधिर् निरीश्वरा ।\
-नीरागा रागमथनी निर्मदा मदनाशिनी ॥४६॥
-
-
+**निष्कारणा निष्कलङ्का निरुपाधिर् निरीश्वरा ।**\
+**नीरागा रागमथनी निर्मदा मदनाशिनी ॥४६॥**
 
 १५२. निष्कारणा
 
@@ -1211,20 +777,8 @@ She who is without any pride and beliefs.
 
 She who destroys all pride and beliefs.
 
-
-
-
-
-
-
-
-
-
-
-निश्चिन्ता निरहंकारा निर्मोहा मोहनाशिनी ।\
-निर्ममा ममताहन्त्री निष्पापा पापनाशिनी ॥४७॥
-
-
+**निश्चिन्ता निरहंकारा निर्मोहा मोहनाशिनी ।**\
+**निर्ममा ममताहन्त्री निष्पापा पापनाशिनी ॥४७॥**
 
 १६०. निश्चिन्ता
 
@@ -1258,18 +812,8 @@ She who is without sin.
 
 She who destroys all the sins of her devotees. 
 
-
-
-
-
-
-
-
-
-निष्क्रोधा क्रोधशमनी निर्लोभा लोभनाशिनी ।\
-निःसंशया संशयघ्नी निर्भवा भवनाशिनी ॥४८॥
-
-
+**निष्क्रोधा क्रोधशमनी निर्लोभा लोभनाशिनी ।**\
+**निःसंशया संशयघ्नी निर्भवा भवनाशिनी ॥४८॥**
 
 १६८. निष्क्रोधा
 
@@ -1303,16 +847,8 @@ She who is without origin.
 
 She who destroys the sorrow of samsara (the cycle of birth and death).
 
-
-
-
-
-
-
-निर्विकल्पा निराबाधा निर्भेदा भेदनाशिनी ।\
-निर्नाशा मृत्युमथनी निष्क्रिया निष्परिग्रहा ॥४९॥
-
-
+**निर्विकल्पा निराबाधा निर्भेदा भेदनाशिनी ।**\
+**निर्नाशा मृत्युमथनी निष्क्रिया निष्परिग्रहा ॥४९॥**
 
 १७६. निर्विकल्पा
 
@@ -1346,16 +882,8 @@ She who remains without action.
 
 She who does not acquire or accept any help or anything at all.
 
-
-
-
-
-
-
-निस्तुला नीलचिकुरा निरपाया निरत्यया ।\
-दुर्लभा दुर्गमा दुर्गा दुःखहन्त्री सुखप्रदा ॥५०॥
-
-
+**निस्तुला नीलचिकुरा निरपाया निरत्यया ।**\
+**दुर्लभा दुर्गमा दुर्गा दुःखहन्त्री सुखप्रदा ॥५०॥**
 
 १८४. निस्तुला
 
@@ -1393,20 +921,8 @@ She who is the destroyer of sorrow.
 
 She who is the giver of pleasure and happiness.
 
-
-
-
-
-
-
-
-
-
-
-दुष्टदूरा दुराचार-शमनी दोषवर्जिता ।\
-सर्वज्ञा सान्द्रकरुणा समानाधिक-वर्जिता ॥५१॥
-
-
+**दुष्टदूरा दुराचार-शमनी दोषवर्जिता ।**\
+**सर्वज्ञा सान्द्रकरुणा समानाधिक-वर्जिता ॥५१॥**
 
 १९३. दुष्टदूरा 
 
@@ -1432,30 +948,8 @@ She who shows intense compassion and mercy.
 
 She who has neither equal nor superior; incomparable.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-सर्वशक्तिमयी सर्व-मङ्गला सद्गतिप्रदा ।\
-सर्वेश्वरी सर्वमयी सर्वमन्त्र-स्वरूपिणी ॥५२॥
-
-
+**सर्वशक्तिमयी सर्व-मङ्गला सद्गतिप्रदा ।**\
+**सर्वेश्वरी सर्वमयी सर्वमन्त्र-स्वरूपिणी ॥५२॥**
 
 १९९. सर्वशक्तिमयी
 
@@ -1481,28 +975,8 @@ She who is everywhere, pervades every living and non-living thing.
 
 She who is the personification of all the mantras.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-सर्व-यन्त्रात्मिका सर्व-तन्त्ररूपा मनोन्मनी ।\
-माहेश्वरी महादेवी महालक्ष्मीर् मृडप्रिया ॥५३॥
-
-
+**सर्व-यन्त्रात्मिका सर्व-तन्त्ररूपा मनोन्मनी ।**\
+**माहेश्वरी महादेवी महालक्ष्मीर् मृडप्रिया ॥५३॥**
 
 २०५. सर्वयन्त्रात्मिका
 
@@ -1532,22 +1006,8 @@ She who takes the form of Goddess Lakshmi.
 
 She who is the beloved of Mrida (Shiva).
 
-
-
-
-
-
-
-
-
-
-
-
-
-महारूपा महापूज्या महापातक-नाशिनी ।\
-महामाया महासत्त्वा महाशक्तिर् महारतिः ॥५४॥
-
-
+**महारूपा महापूज्या महापातक-नाशिनी ।**\
+**महामाया महासत्त्वा महाशक्तिर् महारतिः ॥५४॥**
 
 २१२. महारूपा 
 
@@ -1577,20 +1037,8 @@ She who has great power.
 
 She who is a boundless delight.
 
-
-
-
-
-
-
-
-
-
-
-महाभोगा महैश्वर्या महावीर्या महाबला ।\
-महाबुद्धिर् महासिद्धिर् महायोगेश्वरेश्वरी ॥५५॥
-
-
+**महाभोगा महैश्वर्या महावीर्या महाबला ।**\
+**महाबुद्धिर् महासिद्धिर् महायोगेश्वरेश्वरी ॥५५॥**
 
 २१९. महाभोगा 
 
@@ -1620,26 +1068,8 @@ She who is endowed with the highest attainments.
 
 She who is the goddess of the greatest of yogis.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-महातन्त्रा महामन्त्रा महायन्त्रा महासना ।\
-महायाग-क्रमाराध्या महाभैरव-पूजिता ॥५६॥
-
-
+**महातन्त्रा महामन्त्रा महायन्त्रा महासना ।**\
+**महायाग-क्रमाराध्या महाभैरव-पूजिता ॥५६॥**
 
 २२६. महातन्त्रा 
 
@@ -1653,44 +1083,20 @@ She who is the greatest mantra.
 
 She who is in the form of the great yantras.
 
-
-
 २२९. महासना 
 
 She who is seated on the greatest seat.
-
-
 
 २३०. महायागक्रमाराध्या 
 
 She who is worshipped by performing the ritual of Maha Yajna.
 
-
-
 २३१. महाभैरवपूजिता
 
 She who is worshipped even by Maha Bhairava (Shiva).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-महेश्वर-महाकल्प-महाताण्डव-साक्षिणी ।\
-महाकामेश-महिषी महात्रिपुर-सुन्दरी ॥५७॥
-
-
+**महेश्वर-महाकल्प-महाताण्डव-साक्षिणी ।**\
+**महाकामेश-महिषी महात्रिपुर-सुन्दरी ॥५७॥**
 
 २३२. महेश्वरमहाकल्पमहाताण्डवसाक्षिणी 
 
@@ -1704,36 +1110,8 @@ She who is the great queen of Maha Kameshvara (Shiva).
 
 She who is the great Tripurasundari, the queen of the three cities or the three lokas.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-चतुषष्ट्युपचाराढ्या चतुषष्टिकलामयी ।\
-महाचतुषष्टिकोटि-योगिनी-गणसेविता ॥५८॥
-
-
+**चतुषष्ट्युपचाराढ्या चतुषष्टिकलामयी ।**\
+**महाचतुषष्टिकोटि-योगिनी-गणसेविता ॥५८॥**
 
 २३५. चतुषष्ट्युपचाराढ्या 
 
@@ -1747,30 +1125,8 @@ She who embodies the sixty-four fine arts.
 
 She who is attended (served) by sixty-four categories of bands of yoginis.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-मनुविद्या चन्द्रविद्या चन्द्रमण्डल-मध्यगा ।\
-चारुरूपा चारुहासा चारुचन्द्र-कलाधरा ॥५९॥
-
-
+**मनुविद्या चन्द्रविद्या चन्द्रमण्डल-मध्यगा ।**\
+**चारुरूपा चारुहासा चारुचन्द्र-कलाधरा ॥५९॥**
 
 २३८. मनुविद्या
 
@@ -1796,30 +1152,8 @@ She who has a beautiful smile.
 
 She who wears of beautiful crescent moon that does not wax or wane.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 चराचर-जगन्नाथा चक्रराज-निकेतना ।\
 पार्वती पद्मनयना पद्मराग-समप्रभा ॥६०॥
-
-
 
 २४४. चराचरजगन्नाथा 
 
@@ -1841,26 +1175,8 @@ She who has eyes that are long and beautiful like the petals of the lotus flower
 
 She who has a resplendent red complexion like the Padma Raga jewel (ruby).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 पञ्च-प्रेतासनासीना पञ्चब्रह्म-स्वरूपिणी ।\
 चिन्मयी परमानन्दा विज्ञान-घनरूपिणी ॥६१॥
-
-
 
 २४९. पञ्चप्रेतासनासीना 
 
@@ -1882,20 +1198,8 @@ She who is the supreme bliss.
 
 She who is the embodiment of all-pervading science-based intelligence.
 
-
-
-
-
-
-
-
-
-
-
 ध्यान-ध्यातृ-ध्येयरूपा धर्माधर्म-विवर्जिता ।\
 विश्वरूपा जागरिणी स्वपन्ती तैजसात्मिका ॥६२॥
-
-
 
 २५४. ध्यानध्यातृध्येयरूपा 
 
@@ -1921,12 +1225,8 @@ She who is in the dream state, or she who assumes the form of the jiva who is in
 
 She who is the soul of taijasva/subconscious state, or she who assumes the form of the jiva who is in the subconscious state.
 
-
-
 सुप्ता प्राज्ञात्मिका तुर्या सर्वावस्था-विवर्जिता ।\
 सृष्टिकर्त्री ब्रह्मरूपा गोप्त्री गोविन्दरूपिणी ॥६३॥
-
-
 
 २६०. सुप्ता 
 
@@ -1960,12 +1260,8 @@ She who protects.
 
 She who has assumed the form of govinda (Vishnu) for the preservation of the universe.
 
-
-
 संहारिणी रुद्ररूपा तिरोधानकरी ईश्वरी ।\
 सदाशिवा ऽनुग्रहदा पञ्चकृत्य-परायणा ॥६४॥
-
-
 
 २६८. संहारिणी
 
@@ -1993,16 +1289,8 @@ She who confers blessing.
 
 She who is devoted to the five functions (of creation, preservation, destruction, disappearance and reappearance).
 
-
-
-
-
-
-
 भानुमण्डल-मध्यस्था भैरवी भगमालिनी ।\
 पद्मासना भगवती पद्मनाभ-सहोदरी ॥६५॥
-
-
 
 २७५. भानुमण्डलमध्यस्था 
 
@@ -2028,28 +1316,8 @@ She who the goddess of wealth and knowledge
 
 She who is the sister of Vishnu.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 उन्मेष-निमिषोत्पन्न-विपन्न-भुवनावली ।\
 सहस्र-शीर्षवदना सहस्राक्षी सहस्रपात् ॥६६॥
-
-
 
 २८१. उन्मेषनिमिषोत्पन्नविपन्नभुवनावली
 
@@ -2067,34 +1335,8 @@ She who has a thousand eyes.
 
 She who has a thousand feet.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 आब्रह्म-कीट-जननी वर्णाश्रम-विधायिनी ।\
 निजाज्ञारूप-निगमा पुण्यापुण्य-फलप्रदा ॥६७॥
-
-
 
 २८५. आब्रह्मकीटजननी 
 
@@ -2112,40 +1354,8 @@ She whose commands take the form of the Vedas.
 
 She who dispenses the fruits of both good and evil actions.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 श्रुति-सीमन्त-सिन्दूरी-कृत-पादाब्ज-धूलिका ।\
 सकलागम-सन्दोह-शुक्ति-सम्पुट-मौक्तिका ॥६८॥
-
-
 
 २८९. श्रुतिसीमन्तसिन्दूरीकृतपादाब्जधूलिका
 
@@ -2155,30 +1365,8 @@ She who is the one the dust from whose feet forms the vermillion marks at the pa
 
 She who is the pearl enclosed in the shell made of all the Vedic scriptures.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 पुरुषार्थप्रदा पूर्णा भोगिनी भुवनेश्वरी ।\
 अम्बिका अनादिनिधना हरिब्रह्मेन्द्र-सेविता ॥६९॥
-
-
 
 २९१. पुरुषार्थप्रदा
 
@@ -2208,26 +1396,8 @@ She who has neither beginning nor end.
 
 She who is served by Brahma, Vishnu and Indra.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 नारायणी नादरूपा नामरूप-विवर्जिता ।\
 ह्रींकारी ह्रीमती हृद्या हेयोपादेय-वर्जिता ॥७०॥
-
-
 
 २९८. नारायणी 
 
@@ -2257,22 +1427,8 @@ She who abides in the heart of her devotees.
 
 She who has nothing to reject or accept.
 
-
-
-
-
-
-
-
-
-
-
-
-
 राजराजार्चिता राज्ञी रम्या राजीवलोचना ।\
 रञ्जनी रमणी रस्या रणत्किङ्किणि-मेखला ॥७१॥
-
-
 
 ३०५. राजराजार्चिता
 
@@ -2306,20 +1462,8 @@ She who feeds juice of everything.
 
 She who wears a golden waistband with tinkling bells.
 
-
-
-
-
-
-
-
-
-
-
 रमा राकेन्दुवदना रतिरूपा रतिप्रिया ।\
 रक्षाकरी राक्षसघ्नी रामा रमणलम्पटा ॥७२॥
-
-
 
 ३१३. रमा 
 
@@ -2353,26 +1497,8 @@ She who is the giver of delight.
 
 She who is devoted and keen to make love to the Lord of her heart, Lord shiva.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 काम्या कामकलारूपा कदम्ब-कुसुम-प्रिया ।\
 कल्याणी जगतीकन्दा करुणा-रस-सागरा ॥७३॥
-
-
 
 ३२१. काम्या 
 
@@ -2398,26 +1524,8 @@ She who is the root of all the universes.
 
 She who is the ocean of compassion and mercy.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 कलावती कलालापा कान्ता कादम्बरीप्रिया ।\
 वरदा वामनयना वारुणी-मद-विह्वला ॥७४॥
-
-
 
 ३२७. कलावती 
 
@@ -2447,26 +1555,8 @@ She who has beautiful eyes.
 
 She who is intoxicated by varuni, the wine of happiness (ambrosial drink).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 विश्वाधिका वेदवेद्या विन्ध्याचल-निवासिनी ।\
 विधात्री वेदजननी विष्णुमाया विलासिनी ॥७५॥
-
-
 
 ३३४. विश्वाधिका
 
@@ -2496,26 +1586,8 @@ She who is the illusory power of Vishnu.
 
 She who is playful.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 क्षेत्रस्वरूपा क्षेत्रेशी क्षेत्र-क्षेत्रज्ञ-पालिनी ।\
 क्षयवृद्धि-विनिर्मुक्ता क्षेत्रपाल-समर्चिता ॥७६॥
-
-
 
 ३४१. क्षेत्रस्वरूपा 
 
@@ -2537,22 +1609,8 @@ She who is free from growth and decay.
 
 She who is worshipped by Kshetrapala (Shiva in infant form).
 
-
-
-
-
-
-
-
-
-
-
-
-
 विजया विमला वन्द्या वन्दारु-जन-वत्सला ।\
 वाग्वादिनी वामकेशी वह्निमण्डल-वासिनी ॥७७॥
-
-
 
 ३४६. विजया
 
@@ -2582,28 +1640,8 @@ She who has beautiful hair.
 
 She who resides in the universe of fire, which is Mooladhara.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 भक्तिमत्-कल्पलतिका पशुपाश-विमोचिनी ।\
 संहृताशेष-पाषण्डा सदाचार-प्रवर्तिका ॥७८॥
-
-
 
 ३५३. भक्तिमत्कल्पलतिका
 
@@ -2621,30 +1659,8 @@ She who destroys all those who have left their faith.
 
 She who is immersed in (and inspires others to follow) and makes things happen through right conduct.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 तापत्रयाग्नि-सन्तप्त-समाह्लादन-चन्द्रिका ।\
 तरुणी तापसाराध्या तनुमध्या तमोपहा ॥७९॥
-
-
 
 ३५७. तापत्रयाग्निसन्तप्तसमाह्लादनचन्द्रिका
 
@@ -2666,32 +1682,8 @@ She who is slender-waisted (with a narrow hip).
 
 She who removes the ignorance born of tamas.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 चिति तत्पद-लक्ष्यार्था चिदेकरस-रूपिणी ।\
 स्वात्मानन्द-लवीभूत-ब्रह्माद्यानन्द-सन्ततिः ॥८०॥
-
-
 
 ३६२. चिति
 
@@ -2709,22 +1701,8 @@ She who is the cause as well as of the nature of all wisdom. 
 
 She who makes the wisdom & bliss of Brahma and others, insignificant compared to that of her own.
 
-
-
-
-
-
-
-
-
-
-
-
-
 परा प्रत्यक्चितीरूपा पश्यन्ती परदेवता ।\
 मध्यमा वैखरीरूपा भक्त-मानस-हंसिका ॥८१॥
-
-
 
 ३६६. परा 
 
@@ -2754,20 +1732,8 @@ She who is in the form of vaikhari (sound in the manifested words, in audible fo
 
 She who is like a swan in the lake of minds of her devotees.
 
-
-
-
-
-
-
-
-
-
-
 कामेश्वर-प्राणनाडी कृतज्ञा कामपूजिता ।\
 श‍ृङ्गार-रस-सम्पूर्णा जया जालन्धर-स्थिता ॥८२॥
-
-
 
 ३७३. कामेश्वरप्राणनाडी 
 
@@ -2793,18 +1759,8 @@ She who is the personification of victory. 
 
 She who resides in the jalandhara pitha (in the throat region); she who is the purest of the pure.
 
-
-
-
-
-
-
-
-
 ओड्याणपीठ-निलया बिन्दु-मण्डलवासिनी ।\
 रहोयाग-क्रमाराध्या रहस्तर्पण-तर्पिता ॥ ८३॥
-
-
 
 ३७९. ओड्याणपीठनिलया
 
@@ -2822,22 +1778,8 @@ She who is worshipped in secret through sacrificial rites.
 
 She who is to be gratified by the secret rites of worship.
 
-
-
-
-
-
-
-
-
-
-
-
-
 सद्यःप्रसादिनी विश्व-साक्षिणी साक्षिवर्जिता ।\
 षडङ्गदेवता-युक्ता षाड्गुण्य-परिपूरिता ॥ ८४॥
-
-
 
 ३८३. सद्यःप्रसादिनी 
 
@@ -2859,24 +1801,8 @@ She who her angas (heart,head, hair, eyes, armor and weapons) as six deities who
 
 She who is fully endowed with the six good qualities (prosperity, duty, wisdom, valour, wisdom and renunciation).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 नित्यक्लिन्ना निरुपमा निर्वाण-सुखदायिनी ।\
 नित्या-षोडशिका-रूपा श्रीकण्ठार्ध-शरीरिणी ॥८५॥
-
-
 
 ३८८. नित्यक्लिन्ना
 
@@ -2898,20 +1824,8 @@ She who is the embodiment of the sixteen daily deities (i.e.,kameshvari, bhagmal
 
 She who possesses half of the body of Shrikantha (Shiva).She who is in the form of Ardha Narishvara.
 
-
-
-
-
-
-
-
-
-
-
 प्रभावती प्रभारूपा प्रसिद्धा परमेश्वरी ।\
 मूलप्रकृतिर् अव्यक्ता व्यक्ताव्यक्त-स्वरूपिणी ॥८६॥
-
-
 
 ३९३. प्रभावती 
 
@@ -2941,28 +1855,8 @@ She who is unmanifested.
 
 She who is both in the manifested and unmanifested forms.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 व्यापिनी विविधाकारा विद्याविद्या-स्वरूपिणी ।\
 महाकामेश-नयन-कुमुदाह्लाद-कौमुदी ॥८७॥
-
-
 
 ४००. व्यापिनी
 
@@ -2980,26 +1874,8 @@ She who is the form of both knowledge and ignorance.
 
 She who is like the full moon that opens the lotus-like eyes of Maha Kamesh. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 भक्त-हार्द-तमोभेद-भानुमद्भानु-सन्ततिः ।\
 शिवदूती शिवाराध्या शिवमूर्तिः शिवङ्करी ॥८८॥
-
-
 
 ४०४. भक्तहार्दतमोभेदभानुमद्भानुसन्ततिः
 
@@ -3021,20 +1897,8 @@ She whose form is Shiva himself.
 
 She who confers auspiciousness, prosperity, and blissfulness. 
 
-
-
-
-
-
-
-
-
-
-
 शिवप्रिया शिवपरा शिष्टेष्टा शिष्टपूजिता ।\
 अप्रमेया स्वप्रकाशा मनोवाचामगोचरा ॥८९॥
-
-
 
 ४०९. शिवप्रिया
 
@@ -3064,14 +1928,8 @@ She who is self-luminous.
 
 She who is beyond the range of mind and speech.
 
-
-
-
-
 चिच्छक्तिश् चेतनारूपा जडशक्तिर् जडात्मिका ।\
 गायत्री व्याहृतिः सन्ध्या द्विजबृन्द-निषेविता ॥९०॥
-
-
 
 ४१६. चिच्छक्तिश्
 
@@ -3105,14 +1963,8 @@ She who is in the form of twilight; who is in the form of union of Atman and Bra
 
 She who is worshipped by all beings.
 
-
-
-
-
 तत्त्वासना तत्त्वमयी पञ्च-कोशान्तर-स्थिता ।\
 निःसीम-महिमा नित्य-यौवना मदशालिनी ॥९१॥
-
-
 
 ४२४. तत्त्वासना 
 
@@ -3146,28 +1998,8 @@ She who is ever youthful.
 
 She who is shining by her own exuberance.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 मदघूर्णित-रक्ताक्षी मदपाटल-गण्डभूः ।\
 चन्दन-द्रव-दिग्धाङ्गी चाम्पेय-कुसुम-प्रिया ॥९२॥
-
-
 
 ४३२. मदघूर्णितरक्ताक्षी
 
@@ -3185,30 +2017,8 @@ She whose whole body is smeared with sandalwood paste.
 
 She who is especially fond of champaka flowers.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 कुशला कोमलाकारा कुरुकुल्ला कुलेश्वरी ।\
 कुलकुण्डालया कौल-मार्ग-तत्पर-सेविता ॥९३॥
-
-
 
 ४३६. कुशला 
 
@@ -3234,16 +2044,8 @@ She who abides in the kulakunda (the bindu at the center of the Muladhara chakra
 
 She who is worshipped by those devoted to the Kaula tradition.
 
-
-
-
-
-
-
 कुमार-गणनाथाम्बा तुष्टिः-पुष्टिर्-मतिर्-धृतिः ।\
 शान्तिः स्वस्तिमती कान्तिर् नन्दिनी विघ्ननाशिनी ॥९४॥
-
-
 
 ४४२. कुमारगणनाथाम्बा 
 
@@ -3285,14 +2087,8 @@ She who gives delight; she who is the the personification of Nandino, the daught
 
 She who destroys all obstacles.
 
-
-
-
-
 तेजोवती त्रिनयना लोलाक्षी-कामरूपिणी ।\
 मालिनी हंसिनी माता मलयाचल-वासिनी ॥९५॥
-
-
 
 ४५२. तेजोवती 
 
@@ -3322,14 +2118,8 @@ She who is the mother of the universe, the Divine Mother.
 
 She who resides in the Malaya mountain.
 
-
-
-
-
 सुमुखी नलिनी सुभ्रूः शोभना सुरनायिका ।\
 कालकण्ठी कान्तिमती क्षोभिणी सूक्ष्मरूपिणी ॥९६॥
-
-
 
 ४५९. सुमुखी 
 
@@ -3367,14 +2157,8 @@ She who creates high emotions in the mind, she who gets agitated.
 
 She who has a form that is too subtle to be perceived by the sense organs.
 
-
-
-
-
 वज्रेश्वरी वामदेवी वयोऽवस्था-विवर्जिता ।\
 सिद्धेश्वरी सिद्धविद्या सिद्धमाता यशस्विनी ॥९७॥
-
-
 
 ४६८. वज्रेश्वरी 
 
@@ -3404,22 +2188,8 @@ She who is the mother of Siddhas.
 
 She who is of unequalled renown.
 
-
-
-
-
-
-
-
-
-
-
-
-
 विशुद्धिचक्र-निलया ऽऽरक्तवर्णा त्रिलोचना ।\
 खट्वाङ्गादि-प्रहरणा वदनैक-समन्विता ॥९८॥
-
-
 
 ४७५. विशुद्धिचक्रनिलया
 
@@ -3441,30 +2211,8 @@ She who is armed with a khadga (a kind of sword) and other weapons.
 
 She who possesses only one face.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 पायसान्नप्रिया त्वक्स्था पशुलोक-भयङ्करी ।\
 अमृतादि-महाशक्ति-संवृता डाकिनीश्वरी ॥९९॥
-
-
 
 ४८०. पायसान्नप्रिया
 
@@ -3486,26 +2234,8 @@ She who is surrounded by Maha Shaktis— Amrita, Karshini, Indrani, Eeshani,  U
 
 She who is the Dakini yogini, the goddess of the south (denoting death).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 अनाहताब्ज-निलया श्यामाभा वदनद्वया ।\
 दंष्ट्रोज्ज्वला ऽक्ष-मालादि-धरा रुधिरसंस्थिता ॥१००॥
-
-
 
 ४८५. अनाहताब्जनिलया
 
@@ -3531,32 +2261,8 @@ She who is wearing garlands of rudraksha beads and other things.
 
 She who presides over the blood in the bodies of living beings.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 कालरात्र्यादि-शक्त्यौघ-वृता स्निग्धौदनप्रिया ।\
 महावीरेन्द्र-वरदा राकिण्यम्बा-स्वरूपिणी ॥१०१॥
-
-
 
 ४९१. कालरात्र्यादिशक्त्यौघवृता
 
@@ -3574,36 +2280,8 @@ She who bestows boons on great warriors.
 
 She who is in the form of the Rakini yogini.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 मणिपूराब्ज-निलया वदनत्रय-संयुता ।\
 वज्रादिकायुधोपेता डामर्यादिभिरावृता ॥१०२॥
-
-
 
 ४९५. मणिपूराब्जनिलया
 
@@ -3621,34 +2299,8 @@ She who holds the vajra (lightning bolt) and other weapons.
 
 She who is surrounded by Damari and other attending yoginis.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 रक्तवर्णा मांसनिष्ठा गुडान्न-प्रीत-मानसा ।\
 समस्तभक्त-सुखदा लाकिन्यम्बा-स्वरूपिणी ॥१०३॥
-
-
 
 ४९९. रक्तवर्णा
 
@@ -3670,28 +2322,8 @@ She who confers happiness on all her devotees.
 
 She who is in the form of the Lakini yogini.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 स्वाधिष्ठानाम्बु-जगता चतुर्वक्त्र-मनोहरा ।\
 शूलाद्यायुध-सम्पन्ना पीतवर्णा ऽतिगर्विता ॥१०४॥
-
-
 
 ५०४. स्वाधिष्ठानाम्बुजगता
 
@@ -3713,30 +2345,8 @@ She who is golden in colour.
 
 She who is very proud.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 मेदोनिष्ठा मधुप्रीता बन्धिन्यादि-समन्विता ।\
 दध्यन्नासक्त-हृदया काकिनी-रूप-धारिणी ॥१०५॥
-
-
 
 ५०९. मेदोनिष्ठा
 
@@ -3758,28 +2368,8 @@ She who is particularly fond of rice offerings made with curd.
 
 She who is in the form of Kakini yogini.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 मूलाधाराम्बुजारूढा पञ्च-वक्त्रा ऽस्थि-संस्थिता ।\
 अङ्कुशादि-प्रहरणा वरदादि-निषेविता ॥१०६॥
-
-
 
 ५१४. मूलाधाराम्बुजारूढा 
 
@@ -3801,32 +2391,8 @@ She who holds the goad and other weapons.
 
 She who is attended by Varada and other shaktis.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 मुद्गौदनासक्त-चित्ता साकिन्यम्बा-स्वरूपिणी ।\
 आज्ञा-चक्राब्ज-निलया शुक्लवर्णा षडानना ॥१०७॥
-
-
 
 ५१९. मुद्गौदनासक्तचित्ता
 
@@ -3848,28 +2414,6 @@ She who is white in color.
 
 She who has six faces.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 मज्जासंस्था हंसवती-मुख्य-शक्ति-समन्विता ।\
 हरिद्रान्नैक-रसिका हाकिनी-रूप-धारिणी ॥१०८॥
 
@@ -3889,36 +2433,8 @@ She who is fond of rice offerings seasoned with turmeric.
 
 She who is in the form of Hakini yogini.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 सहस्रदल-पद्मस्था सर्व-वर्णोप-शोभिता ।\
 सर्वायुधधरा शुक्ल-संस्थिता सर्वतोमुखी ॥१०९॥
-
-
 
 ५२८. सहस्रदलपद्मस्था 
 
@@ -3940,24 +2456,8 @@ She who resides in the shukla (semen).
 
 She who has faces turned in all directions.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 सर्वौदन-प्रीतचित्ता याकिन्यम्बा-स्वरूपिणी ।\
 स्वाहा स्वधा ऽमतिर् मेधा श्रुतिः स्मृतिर् अनुत्तमा ॥११०॥
-
-
 
 ५३३. सर्वौदनप्रीतचित्ता
 
@@ -3995,16 +2495,8 @@ She who is the personification of Smritis (works based on the meaning of Vedas).
 
 She who is above all; she who is not excelled by anyone.
 
-
-
-
-
-
-
 पुण्यकीर्तिः पुण्यलभ्या पुण्यश्रवण-कीर्तना ।\
 पुलोमजार्चिता बन्ध-मोचनी बन्धुरालका ॥१११॥
-
-
 
 ५४२. पुण्यकीर्तिः
 
@@ -4030,24 +2522,8 @@ She who is free from bonds; she who releases us from bondage.
 
 She who has wavy locks of hair.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 विमर्शरूपिणी विद्या वियदादि-जगत्प्रसूः ।\
 सर्वव्याधि-प्रशमनी सर्वमृत्यु-निवारिणी ॥११२॥
-
-
 
 ५४८. विमर्शरूपिणी
 
@@ -4069,30 +2545,8 @@ She who removes all diseases and sorrows.
 
 She who guards her devotees from all kinds of death.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 अग्रगण्या ऽचिन्त्यरूपा कलिकल्मष-नाशिनी ।\
 कात्यायनी कालहन्त्री कमलाक्ष-निषेविता ॥११३॥
-
-
 
 ५५३. अग्रगण्या 
 
@@ -4118,22 +2572,8 @@ She who is the destroyer of time (death).
 
 She in whom Vishnu takes refuge, she is worshipped by the lotus eyed Vishnu.
 
-
-
-
-
-
-
-
-
-
-
-
-
 ताम्बूल-पूरित-मुखी दाडिमी-कुसुम-प्रभा ।\
 मृगाक्षी मोहिनी मुख्या मृडानी मित्ररूपिणी ॥११४॥
-
-
 
 ५५९. ताम्बूलपूरतमुखी 
 
@@ -4163,26 +2603,8 @@ She who gives pleasure, who is the wife of Mrida (Shiva).
 
 She who is the friend of everyone (universe).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 नित्यतृप्ता भक्तनिधिर् नियन्त्री निखिलेश्वरी ।\
 मैत्र्यादि-वासनालभ्या महाप्रलय-साक्षिणी ॥११५॥
-
-
 
 ५६६. नित्यतृप्ता
 
@@ -4208,28 +2630,8 @@ She who is to be attained by love and other good dispositions like friendship.
 
 She who is witness to the great dissolution.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 पराशक्तिः परानिष्ठा प्रज्ञानघन-रूपिणी ।\
 माध्वीपानालसा मत्ता मातृका-वर्ण-रूपिणी ॥११६॥
-
-
 
 ५७२. पराशक्तिः
 
@@ -4255,26 +2657,8 @@ She who is intoxicated.
 
 She who is in the form of the letters of the alphabet, she who is in the form of all colours and shapes.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 महाकैलास-निलया मृणाल-मृदु-दोर्लता ।\
 महनीया दयामूर्तिर् महासाम्राज्य-शालिनी ॥११७॥
-
-
 
 ५७८. महाकैलासनिलया
 
@@ -4296,30 +2680,8 @@ She who is the personification of compassion.
 
 She who is the empress of all worlds.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 आत्मविद्या महाविद्या श्रीविद्या कामसेविता ।\
 श्री-षोडशाक्षरी-विद्या त्रिकूटा कामकोटिका ॥११८॥
-
-
 
 ५८३. आत्मविद्या
 
@@ -4349,20 +2711,8 @@ She who is in the three parts (of the pa~nchadashi mantra).
 
 She, of whom Kama (Shiva) is a part or an approximate form; she who sits on the Kama Koti peetha.
 
-
-
-
-
-
-
-
-
-
-
 कटाक्ष-किङ्करी-भूत-कमला-कोटि-सेविता ।\
 शिरःस्थिता चन्द्रनिभा भालस्था इन्द्रधनुःप्रभा ॥११९॥
-
-
 
 ५९०. कटाक्षकिङ्करीभूतकमलाकोटिसेविता
 
@@ -4384,28 +2734,8 @@ She who resides in the forehead (between the eyebrows).
 
 She who is resplendent like the rainbow.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 हृदयस्था रविप्रख्या त्रिकोणान्तर-दीपिका ।\
 दाक्षायणी दैत्यहन्त्री दक्षयज्ञ-विनाशिनी ॥१२०॥
-
-
 
 ५९५. हृदयस्था 
 
@@ -4431,30 +2761,8 @@ She who is the killer of asuras.
 
 She who is the destroyer of the sacrifice conducted by Daksha.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 दरान्दोलित-दीर्घाक्षी दर-हासोज्ज्वलन्-मुखी ।\
 गुरुमूर्तिर् गुणनिधिर् गोमाता गुहजन्मभूः ॥१२१॥
-
-
 
 ६०१. दरान्दोलितदीर्घाक्षी
 
@@ -4480,30 +2788,8 @@ She who is the divine cow, the mother cow that grants all wishes.
 
 She who is the mother of Guha (Subramanya).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 देवेशी दण्डनीतिस्था दहराकाश-रूपिणी ।\
 प्रतिपन्मुख्य-राकान्त-तिथि-मण्डल-पूजिता ॥१२२॥
-
-
 
 ६०७. देवेशी 
 
@@ -4521,26 +2807,8 @@ She who is the subtle self in the heart, she who is the personification of the w
 
 She who is worshipped daily on all fifteen days from full moon to new moon. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 कलात्मिका कलानाथा काव्यालाप-विनोदिनी ।\
 सचामर-रमा-वाणी-सव्य-दक्षिण-सेविता ॥१२३॥
-
-
 
 ६११. कलात्मिका
 
@@ -4558,30 +2826,8 @@ She who delights in hearing poetry, she who enjoys being described in epics.
 
 She who is attended by Lakshmi on the left side and Saraswati on the right side, bearing ceremonial fans.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 आदिशक्तिर् अमेया ऽऽत्मा परमा पावनाकृतिः ।\
 अनेककोटि-ब्रह्माण्ड-जननी दिव्यविग्रहा ॥१२४॥
-
-
 
 ६१५. आदिशक्तिर्
 
@@ -4611,18 +2857,8 @@ She who is the creator of several billions of universes.
 
 She who has a divine body.
 
-
-
-
-
-
-
-
-
 क्लींकारी केवला गुह्या कैवल्य-पददायिनी ।\
 त्रिपुरा त्रिजगद्वन्द्या त्रिमूर्तिस् त्रिदशेश्वरी ॥१२५॥
-
-
 
 ६२२. क्लीङ्कारी 
 
@@ -4656,20 +2892,8 @@ She who is the aggregate of the trinity (Brahma, Vishnu and Shiva).
 
 She who is the goddess for all gods.
 
-
-
-
-
-
-
-
-
-
-
 त्र्यक्षरी दिव्य-गन्धाढ्या सिन्दूर-तिलकाञ्चिता ।\
 उमा शैलेन्द्रतनया गौरी गन्धर्व-सेविता ॥१२६॥
-
-
 
 ६३०. त्र्यक्षरी
 
@@ -4699,18 +2923,8 @@ She who has a fair complexion.
 
 She who is served by gandharvas (like Vishvavasu).
 
-
-
-
-
-
-
-
-
 विश्वगर्भा स्वर्णगर्भा ऽवरदा वागधीश्वरी ।\
 ध्यानगम्या ऽपरिच्छेद्या ज्ञानदा ज्ञानविग्रहा ॥१२७॥
-
-
 
 ६३७. विश्वगर्भा
 
@@ -4744,26 +2958,8 @@ She who gives knowledge of the self. 
 
 She who is the embodiment of knowledge itself.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 सर्ववेदान्त-संवेद्या सत्यानन्द-स्वरूपिणी ।\
 लोपामुद्रार्चिता लीला-कॢप्त-ब्रह्माण्ड-मण्डला ॥१२८॥
-
-
 
 ६४५. सर्ववेदान्तसंवेद्या
 
@@ -4781,20 +2977,8 @@ She who is worshipped by Lopamudra (the wife of sage Agastya).
 
 She who has created and maintained the universe purely as a play of hers.
 
-
-
-
-
-
-
-
-
-
-
 अदृश्या दृश्यरहिता विज्ञात्री वेद्यवर्जिता ।\
 योगिनी योगदा योग्या योगानन्दा युगन्धरा ॥१२९॥
-
-
 
 ६४९. अदृश्या 
 
@@ -4832,18 +3016,8 @@ She who is the bliss attained through yoga; she who enjoys the bliss of yoga.
 
 She who is the bearer of the yugas.
 
-
-
-
-
-
-
-
-
 इच्छाशक्ति-ज्ञानशक्ति-क्रियाशक्ति-स्वरूपिणी ।\
 सर्वाधारा सुप्रतिष्ठा सदसद्रूप-धारिणी ॥१३०॥
-
-
 
 ६५८. इच्छाशक्तिज्ञानशक्तिक्रियाशक्तिस्वरूपिणी
 
@@ -4861,26 +3035,8 @@ She who is firmly established.
 
 She who assumes the forms of both being and non-being; she who always has truth in her.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 अष्टमूर्तिर् अजाजैत्री लोकयात्रा-विधायिनी ।\
 एकाकिनी भूमरूपा निर्द्वैता द्वैतवर्जिता ॥१३१॥
-
-
 
 ६६२. अष्टमूर्तिर्
 
@@ -4910,18 +3066,8 @@ She who is without the sense of duality; she who makes everything as one.n
 
 She who is away/beyond duality.
 
-
-
-
-
-
-
-
-
 अन्नदा वसुदा वृद्धा ब्रह्मात्मैक्य-स्वरूपिणी ।\
 बृहती ब्राह्मणी ब्राह्मी ब्रह्मानन्दा बलिप्रिया ॥१३२॥
-
-
 
 ६६९. अन्नदा 
 
@@ -4959,18 +3105,8 @@ She who is ever immersed in the bliss of brahman.
 
 She who is especially fond of sacrificial offerings.
 
-
-
-
-
-
-
-
-
 भाषारूपा बृहत्सेना भावाभाव-विवर्जिता ।\
 सुखाराध्या शुभकरी शोभनासुलभागतिः ॥१३३॥
-
-
 
 ६७८. भाषारूपा 
 
@@ -4996,26 +3132,6 @@ She who does good.
 
 She who is attained through a bright and easy path.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 राजराजेश्वरी राज्यदायिनी राज्यवल्लभा ।\
 राजत्कृपा राजपीठ-निवेशित-निजाश्रिता ॥१३४॥
 
@@ -5039,32 +3155,8 @@ She whose mercy shines everywhere.
 
 She who establishes on royal thrones of those who take refuge in her.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 राज्यलक्ष्मीः कोशनाथा चतुरङ्ग-बलेश्वरी ।\
 साम्राज्य-दायिनी सत्यसन्धा सागरमेखला ॥१३५॥
-
-
 
 ६८९. राज्यलक्ष्मीः
 
@@ -5090,24 +3182,8 @@ She who is devoted to (or maintains) truth.
 
 She who is the earth surrounded by the oceans.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 दीक्षिता दैत्यशमनी सर्वलोक-वशङ्करी ।\
 सर्वार्थदात्री सावित्री सच्चिदानन्द-रूपिणी ॥१३६॥
-
-
 
 ६९५. दीक्षिता
 
@@ -5133,24 +3209,8 @@ She who is the creative power in the universe, she who shines like the sun.
 
 She who is the ultimate truth, consciousness and bliss.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 देश-कालापरिच्छिन्ना सर्वगा सर्वमोहिनी ।\
 सरस्वती शास्त्रमयी गुहाम्बा गुह्यरूपिणी ॥१३७॥
-
-
 
 ७०१. देशकालापरिच्छन्ना 
 
@@ -5180,18 +3240,8 @@ She who is the mother of Guha (Subramanya); she who dwells in the cave of the he
 
 She who has a secret form, hidden from all.
 
-
-
-
-
-
-
-
-
 सर्वोपाधि-विनिर्मुक्ता सदाशिव-पतिव्रता ।\
 सम्प्रदायेश्वरी साध्वी गुरुमण्डल-रूपिणी ॥१३८॥
-
-
 
 ७०८. सर्वोपाधिविनिर्मुक्ता
 
@@ -5217,16 +3267,8 @@ She who is the symbol ‘Ee’.
 
 She who embodies in herself the lineage of Gurus.
 
-
-
-
-
-
-
 कुलोत्तीर्णा भगाराध्या माया मधुमती मही ।\
 गणाम्बा गुह्यकाराध्या कोमलाङ्गी गुरुप्रिया ॥१३९॥
-
-
 
 ७१४. कुलोत्तीर्णा
 
@@ -5264,20 +3306,8 @@ She who has beautiful limbs.
 
 She who is beloved of the gurus, she who likes gurus.
 
-
-
-
-
-
-
-
-
-
-
 स्वतन्त्रा सर्वतन्त्रेशी दक्षिणामूर्ति-रूपिणी ।\
 सनकादि-समाराध्या शिवज्ञान-प्रदायिनी ॥१४०॥
-
-
 
 ७२३. स्वतन्त्रा 
 
@@ -5299,26 +3329,8 @@ She who is worshipped by Sanaka and other sages.
 
 She who bestows the knowledge of Shiva.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 चित्कला ऽऽनन्द-कलिका प्रेमरूपा प्रियङ्करी ।\
 नामपारायण-प्रीता नन्दिविद्या नटेश्वरी ॥१४१॥
-
-
 
 ७२८. चित्कला
 
@@ -5348,22 +3360,8 @@ She who is the deity worshipped by the nandi mantra; she who is the knowledge ta
 
 She who is the wife of Natesha (Shiva), she who is the goddess of dance.
 
-
-
-
-
-
-
-
-
-
-
-
-
 मिथ्या-जगदधिष्ठाना मुक्तिदा मुक्तिरूपिणी ।\
 लास्यप्रिया लयकरी लज्जा रम्भादिवन्दिता ॥१४२॥
-
-
 
 ७३५. मिथ्याजगदधिष्ठाना
 
@@ -5393,24 +3391,8 @@ She who exists as modesty in living beings, she who is shy.
 
 She who is adored by the celestial dancers such as Rambha.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 भवदाव-सुधावृष्टिः पापारण्य-दवानला ।\
 दौर्भाग्य-तूलवातूला जराध्वान्त-रविप्रभा ॥१४३॥
-
-
 
 ७४२. भवदावसुधावृष्टिः
 
@@ -5428,32 +3410,8 @@ She who is the cyclone that drives away the cotton wisps of misfortune and bad l
 
 She who is the sunlight that dispels the darkness of old age.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 भाग्याब्धि-चन्द्रिका भक्त-चित्तकेकि-घनाघना ।\
 रोगपर्वत-दम्भोलिर् मृत्युदारु-कुठारिका ॥१४४॥
-
-
 
 ७४६. भाग्याब्धिचन्द्रिका
 
@@ -5471,30 +3429,8 @@ She who is the Vajra weapon (thunderbolt) that shatters the mountain of diseases
 
 She who is the axe that cuts down the tree of death.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 महेश्वरी महाकाली महाग्रासा महाशना ।\
 अपर्णा चण्डिका चण्डमुण्डासुर-निषूदिनी ॥१४५॥
-
-
 
 ७५०. महेश्वरी 
 
@@ -5524,22 +3460,8 @@ She who is supremely angry (at the wicked).
 
 She who killed the asuras Chanda and Munda.
 
-
-
-
-
-
-
-
-
-
-
-
-
 क्षराक्षरात्मिका सर्व-लोकेशी विश्वधारिणी ।\
 त्रिवर्गदात्री सुभगा त्र्यम्बका त्रिगुणात्मिका ॥१४६॥
-
-
 
 ७५७. क्षराक्षरात्मिका
 
@@ -5569,26 +3491,8 @@ She who has three eyes.
 
 She who is the essence of the three gunas, Tamas (Kali), Rajas (Durga), Sattva (Parvati).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 स्वर्गापवर्गदा शुद्धा जपापुष्प-निभाकृतिः ।\
 ओजोवती द्युतिधरा यज्ञरूपा प्रियव्रता ॥१४७॥
-
-
 
 ७६४. स्वर्गापवर्गदा
 
@@ -5618,22 +3522,8 @@ She who is embodiment of sacrifice.
 
 She who is fond of vows and penances.
 
-
-
-
-
-
-
-
-
-
-
-
-
 दुराराध्या दुराधर्षा पाटली-कुसुम-प्रिया ।\
 महती मेरुनिलया मन्दार-कुसुम-प्रिया ॥१४८॥
-
-
 
 ७७१. दुराराध्या 
 
@@ -5659,20 +3549,8 @@ She who resides in the Meru mountain.
 
 She who is fond of the Mandara flowers.
 
-
-
-
-
-
-
-
-
-
-
 वीराराध्या विराड्रूपा विरजा विश्वतोमुखी ।\
 प्रत्यग्रूपा पराकाशा प्राणदा प्राणरूपिणी ॥१४९॥
-
-
 
 ७७७. वीराराध्या 
 
@@ -5706,18 +3584,8 @@ She who is the source & giver of the life force.
 
 She who is the personification of the life force itself.
 
-
-
-
-
-
-
-
-
 मार्ताण्ड-भैरवाराध्या मन्त्रिणीन्यस्त-राज्यधूः ।\
 त्रिपुरेशी जयत्सेना निस्त्रैगुण्या परापरा ॥१५०॥
-
-
 
 ७८५. मार्ताण्डभैरवाराध्या
 
@@ -5743,24 +3611,8 @@ She who is beyond the three gunas.
 
 She who is both Para and Apara.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 सत्य-ज्ञानानन्द-रूपा सामरस्य-परायणा ।\
 कपर्दिनी कलामाला कामधुक् कामरूपिणी ॥१५१॥
-
-
 
 ७९१. सत्यज्ञानानन्दरूपा 
 
@@ -5786,22 +3638,8 @@ She who fulfills all desires.
 
 She who can take any desirable form.
 
-
-
-
-
-
-
-
-
-
-
-
-
 कलानिधिः काव्यकला रसज्ञा रसशेवधिः ।\
 पुष्टा पुरातना पूज्या पुष्करा पुष्करेक्षणा ॥१५२॥
-
-
 
 ७९७. कलानिधिः
 
@@ -5839,22 +3677,8 @@ She who bestows exuberance.
 
 She who has eyes like lotus petals.
 
-
-
-
-
-
-
-
-
-
-
-
-
 परंज्योतिः परंधाम परमाणुः परात्परा ।\
 पाशहस्ता पाशहन्त्री परमन्त्र-विभेदिनी ॥१५३॥
-
-
 
 ८०६. परंज्योतिः
 
@@ -5884,20 +3708,8 @@ She who destroys all the attachments.
 
 She who breaks the spell of the evil mantras of the enemies.
 
-
-
-
-
-
-
-
-
-
-
 मूर्ता ऽमूर्ता ऽनित्यतृप्ता मुनिमानस-हंसिका ।\
 सत्यव्रता सत्यरूपा सर्वान्तर्यामिनी सती ॥१५४॥
-
-
 
 ८१३. मूर्ता
 
@@ -5931,14 +3743,8 @@ She who dwells within us all, and everything.
 
 She who is reality, the eternal being; she who is the daughter of Daksha.
 
-
-
-
-
 ब्रह्माणी ब्रह्म जननी बहुरूपा बुधार्चिता ।\
 प्रसवित्री प्रचण्डा ऽऽज्ञा प्रतिष्ठा प्रकटाकृतिः ॥१५५॥
-
-
 
 ८२१. ब्रह्माणी 
 
@@ -5980,14 +3786,8 @@ She who is the foundation.
 
 She who is manifested in the form of the universe.
 
-
-
-
-
 प्राणेश्वरी प्राणदात्री पञ्चाशत्पीठ-रूपिणी ।\
 विश‍ृङ्खला विविक्तस्था वीरमाता वियत्प्रसूः ॥१५६॥
-
-
 
 ८३१. प्राणेश्वरी 
 
@@ -6017,18 +3817,8 @@ She who is the mother of the valiant.
 
 She who is the mother to the ether, who created the sky.
 
-
-
-
-
-
-
-
-
 मुकुन्दा मुक्तिनिलया मूलविग्रह-रूपिणी ।\
 भावज्ञा भवरोगघ्नी भवचक्र-प्रवर्तिनी ॥१५७॥
-
-
 
 ८३८. मुकुन्दा 
 
@@ -6054,26 +3844,8 @@ She who eradicates the sins of birth, who eradicates diseases of the cycle of bi
 
 She who turns the wheel of the cycle of birth and death.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 छन्दःसारा शास्त्रसारा मन्त्रसारा तलोदरी ।\
 उदारकीर्तिर् उद्दामवैभवा वर्णरूपिणी ॥१५८॥
-
-
 
 ८४४. छन्दःसारा 
 
@@ -6103,28 +3875,8 @@ She who has immeasurable prowess and fame.
 
 She who is the personification of all alphabets.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 जन्ममृत्यु-जरातप्त-जनविश्रान्ति-दायिनी ।\
 सर्वोपनिष-दुद्-घुष्टा शान्त्यतीत-कलात्मिका ॥१५९॥
-
-
 
 ८५१. जन्ममृत्युजरातप्तजनविश्रान्तिदायिनी
 
@@ -6138,30 +3890,8 @@ She who is celebrated and loudly announced as the greatest by all the Upanishads
 
 She who transcends the state of peace.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 गम्भीरा गगनान्तस्था गर्विता गानलोलुपा ।\
 कल्पना-रहिता काष्ठा ऽकान्ता कान्तार्ध-विग्रहा ॥१६०॥
-
-
 
 ८५४. गम्भीरा 
 
@@ -6195,26 +3925,8 @@ She who ends all sins and sorrows.
 
 She who is half the body of her husband (Shiva).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 कार्यकारण-निर्मुक्ता कामकेलि-तरङ्गिता ।\
 कनत्कनकता-टङ्का लीला-विग्रह-धारिणी ॥१६१॥
-
-
 
 ८६२. कार्यकारणनिर्मुक्ता
 
@@ -6232,28 +3944,8 @@ She who wears glittering gold ear ornaments.
 
 She who assumes various glorious forms as her play.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 अजा क्षयविनिर्मुक्ता मुग्धा क्षिप्र-प्रसादिनी ।\
 अन्तर्मुख-समाराध्या बहिर्मुख-सुदुर्लभा ॥१६२॥
-
-
 
 ८६६. अजा 
 
@@ -6279,26 +3971,8 @@ She who is to be worshipped internally (mentally).
 
 She who is difficult to attain by those whose attention is directed outwards.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 त्रयी त्रिवर्गनिलया त्रिस्था त्रिपुरमालिनी ।\
 निरामया निरालम्बा स्वात्मारामा सुधासृतिः ॥१६३॥
-
-
 
 ८७२. त्रयी 
 
@@ -6332,22 +4006,8 @@ She who rejoices in her own self.
 
 She who is the source of nectar, the rain of nectar.
 
-
-
-
-
-
-
-
-
-
-
-
-
 संसारपङ्क-निर्मग्न-समुद्धरण-पण्डिता ।\
 यज्ञप्रिया यज्ञकर्त्री यजमान-स्वरूपिणी ॥१६४॥
-
-
 
 ८८०. संसारपङ्कनिर्मग्नसमुद्धरणपण्डिता
 
@@ -6365,26 +4025,8 @@ She who carries out fire sacrifices.
 
 She who is in the form of Yajamana, who directs sacrificial rites.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 धर्माधारा धनाध्यक्षा धनधान्य-विवर्धिनी ।\
 विप्रप्रिया विप्ररूपा विश्वभ्रमण-कारिणी ॥१६५॥
-
-
 
 ८८४. धर्माधारा
 
@@ -6410,20 +4052,8 @@ She who is the personification of a knower of the self.
 
 She who makes the universe go around.
 
-
-
-
-
-
-
-
-
-
-
 विश्वग्रासा विद्रुमाभा वैष्णवी विष्णुरूपिणी ।\
 अयोनिर् योनिनिलया कूटस्था कुलरूपिणी ॥१६६॥
-
-
 
 ८९०. विश्वग्रासा
 
@@ -6457,24 +4087,8 @@ She who remains stable and unchanged.
 
 She who is the deity of the kaula path.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 वीरगोष्ठीप्रिया वीरा नैष्कर्म्या नादरूपिणी ।\
 विज्ञानकलना कल्या विदग्धा बैन्दवासना ॥१६७॥
-
-
 
 ८९८. वीरगोष्ठीप्रिया
 
@@ -6508,24 +4122,8 @@ She who is expert in everything.
 
 She who is seated in Baindava (the dot in the thousand petalled lotus).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 तत्त्वाधिका तत्त्वमयी तत्त्वमर्थ-स्वरूपिणी ।\
 सामगानप्रिया सौम्या सदाशिव-कुटुम्बिनी ॥१६८॥
-
-
 
 ९०६. तत्त्वाधिका
 
@@ -6551,22 +4149,8 @@ She who is benign and gentle in nature; like the moon.
 
 She who is the wife of Sadashiva.
 
-
-
-
-
-
-
-
-
-
-
-
-
 सव्यापसव्य-मार्गस्था सर्वापद्विनिवारिणी ।\
 स्वस्था स्वभावमधुरा धीरा धीरसमर्चिता ॥१६९॥
-
-
 
 ९१२. सव्यापसव्यमार्गस्था
 
@@ -6592,22 +4176,8 @@ She who is wise; she who gives wisdom.
 
 She who is worshipped by the wise.
 
-
-
-
-
-
-
-
-
-
-
-
-
 चैतन्यार्घ्य-समाराध्या चैतन्य-कुसुमप्रिया ।\
 सदोदिता सदातुष्टा तरुणादित्य-पाटला ॥१७०॥
-
-
 
 ९१८. चैतन्यार्घ्यसमाराध्या
 
@@ -6629,28 +4199,8 @@ She who is ever pleased.
 
 She who is rosy like the morning sun.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 दक्षिणा-दक्षिणाराध्या दरस्मेर-मुखाम्बुजा ।\
 कौलिनी-केवला ऽनर्घ्य-कैवल्य-पददायिनी ॥१७१॥
-
-
 
 ९२३. दक्षिणादक्षिणाराध्या
 
@@ -6668,22 +4218,8 @@ She who is worshipped as pure knowledge (consciousness) by the spiritual aspiran
 
 She who confers the priceless fruit of final liberation.
 
-
-
-
-
-
-
-
-
-
-
-
-
 स्तोत्रप्रिया स्तुतिमती श्रुति-संस्तुत-वैभवा ।\
 मनस्विनी मानवती महेशी मङ्गलाकृतिः ॥१७२॥
-
-
 
 ९२७. स्तोत्रप्रिया
 
@@ -6713,22 +4249,8 @@ She who is the wife of Mahesha (Shiva); she who is the greatest goddess.
 
 She who is of auspicious form.
 
-
-
-
-
-
-
-
-
-
-
-
-
 विश्वमाता जगद्धात्री विशालाक्षी विरागिणी ।\
 प्रगल्भा परमोदारा परामोदा मनोमयी ॥१७३॥
-
-
 
 ९३४. विश्वमाता
 
@@ -6762,20 +4284,8 @@ She who is supremely joyful.
 
 She who is in the form of the mind; she who is one with the mind.
 
-
-
-
-
-
-
-
-
-
-
 व्योमकेशी विमानस्था वज्रिणी वामकेश्वरी ।\
 पञ्चयज्ञ-प्रिया पञ्च-प्रेत-मञ्चाधिशायिनी ॥१७४॥
-
-
 
 ९४२. व्योमकेशी 
 
@@ -6801,14 +4311,8 @@ She who is fond of the five forms of sacrifices (Agnihotra, Darshapurnamasa, Cha
 
 She who reclines on a couch made of the five corpses.
 
-
-
-
-
 पञ्चमी पञ्चभूतेशी पञ्च-संख्योपचारिणी ।\
 शाश्वती शाश्वतैश्वर्या शर्मदा शम्भुमोहिनी ॥१७५॥
-
-
 
 ९४८. पञ्चमी 
 
@@ -6838,14 +4342,8 @@ She who is the giver of happiness.
 
 She who deludes Shiva.
 
-
-
-
-
 धरा धरसुता धन्या धर्मिणी धर्मवर्धिनी ।\
 लोकातीता गुणातीता सर्वातीता शमात्मिका ॥१७६॥
-
-
 
 ९५५. धरा 
 
@@ -6883,18 +4381,8 @@ She who transcends everything.
 
 She who is the embodiment of peace and bliss.
 
-
-
-
-
-
-
-
-
 बन्धूक-कुसुमप्रख्या बाला लीलाविनोदिनी ।\
 सुमङ्गली सुखकरी सुवेषाढ्या सुवासिनी ॥१७७॥
-
-
 
 ९६४. बन्धूककुसुमप्रख्या 
 
@@ -6924,16 +4412,8 @@ She who is very attractive.
 
 She who is ever auspiciously married, she whose fragrance is sweet.
 
-
-
-
-
-
-
 सुवासिन्यर्चन-प्रीता ऽऽशोभना शुद्धमानसा ।\
 बिन्दु-तर्पण-सन्तुष्टा पूर्वजा त्रिपुराम्बिका ॥१७८॥
-
-
 
 ९७१. सुवासिन्यर्चनप्रीता
 
@@ -6959,24 +4439,8 @@ She who precedes everyone; first born.
 
 She who is the mother of the tripuras (three cities).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 दशमुद्रा-समाराध्या त्रिपुराश्री-वशङ्करी ।\
 ज्ञानमुद्रा ज्ञानगम्या ज्ञानज्ञेय-स्वरूपिणी ॥१७९॥
-
-
 
 ९७७. दशमुद्रासमाराध्या 
 
@@ -6998,24 +4462,8 @@ She who is to be attained through the yoga of knowledge.
 
 She who is both knowledge and the known.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 योनिमुद्रा त्रिखण्डेशी त्रिगुणाम्बा त्रिकोणगा ।\
 अनघा ऽद्भुत-चारित्रा वाञ्छितार्थ-प्रदायिनी ॥१८०॥
-
-
 
 ९८२. योनिमुद्रा
 
@@ -7049,20 +4497,8 @@ She whose deeds are marvelous.
 
 She who gives all what is desired.
 
-
-
-
-
-
-
-
-
-
-
 अभ्यासातिशय-ज्ञाता षडध्वातीत-रूपिणी ।\
 अव्याज-करुणा-मूर्तिर् अज्ञान-ध्वान्त-दीपिका ॥१८१॥
-
-
 
 ९९०. अभ्यासातिशयज्ञाता
 
@@ -7080,30 +4516,8 @@ She who is pure compassion, she who shows mercy without reason.
 
 She who is the bright lamp that drives away ignorance.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 आबाल-गोप-विदिता सर्वानुल्लङ्घ्य-शासना ।\
 श्रीचक्रराज-निलया श्रीमत्-त्रिपुरसुन्दरी ॥१८२॥
-
-
 
 ९९४. आबालगोपविदिता
 
@@ -7121,33 +4535,7 @@ She who abides in Shri Chakra, the king of all chakras.
 
 She who is the divine beautiful of wealth who is the wife of the God of Tripura (Shiva).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 श्रीशिवा शिव-शक्त्यैक्य-रूपिणी ललिताम्बिका ।
-
-
 
 ९९८. श्रीशिवा
 
@@ -7160,3 +4548,7 @@ She who is the unification of shiva and shakti into one form.
 १०००. ललिताम्बिका
 
 She who is the divine mother Lalita who is easily approachable.
+
+
+
+**Note:** Thank you for taking out the time to read this post. Write to [feedback@moileon.in](mailto:feedback@moileon.in) to share your views.
