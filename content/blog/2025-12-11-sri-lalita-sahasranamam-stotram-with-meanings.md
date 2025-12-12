@@ -1152,8 +1152,8 @@ She who has a beautiful smile.
 
 She who wears of beautiful crescent moon that does not wax or wane.
 
-चराचर-जगन्नाथा चक्रराज-निकेतना ।\
-पार्वती पद्मनयना पद्मराग-समप्रभा ॥६०॥
+**चराचर-जगन्नाथा चक्रराज-निकेतना ।**\
+**पार्वती पद्मनयना पद्मराग-समप्रभा ॥६०॥**
 
 २४४. चराचरजगन्नाथा 
 
@@ -1175,8 +1175,8 @@ She who has eyes that are long and beautiful like the petals of the lotus flower
 
 She who has a resplendent red complexion like the Padma Raga jewel (ruby).
 
-पञ्च-प्रेतासनासीना पञ्चब्रह्म-स्वरूपिणी ।\
-चिन्मयी परमानन्दा विज्ञान-घनरूपिणी ॥६१॥
+**पञ्च-प्रेतासनासीना पञ्चब्रह्म-स्वरूपिणी ।**\
+**चिन्मयी परमानन्दा विज्ञान-घनरूपिणी ॥६१॥**
 
 २४९. पञ्चप्रेतासनासीना 
 
@@ -1198,8 +1198,8 @@ She who is the supreme bliss.
 
 She who is the embodiment of all-pervading science-based intelligence.
 
-ध्यान-ध्यातृ-ध्येयरूपा धर्माधर्म-विवर्जिता ।\
-विश्वरूपा जागरिणी स्वपन्ती तैजसात्मिका ॥६२॥
+**ध्यान-ध्यातृ-ध्येयरूपा धर्माधर्म-विवर्जिता ।**\
+**विश्वरूपा जागरिणी स्वपन्ती तैजसात्मिका ॥६२॥**
 
 २५४. ध्यानध्यातृध्येयरूपा 
 
@@ -1225,8 +1225,8 @@ She who is in the dream state, or she who assumes the form of the jiva who is in
 
 She who is the soul of taijasva/subconscious state, or she who assumes the form of the jiva who is in the subconscious state.
 
-सुप्ता प्राज्ञात्मिका तुर्या सर्वावस्था-विवर्जिता ।\
-सृष्टिकर्त्री ब्रह्मरूपा गोप्त्री गोविन्दरूपिणी ॥६३॥
+**सुप्ता प्राज्ञात्मिका तुर्या सर्वावस्था-विवर्जिता ।**\
+**सृष्टिकर्त्री ब्रह्मरूपा गोप्त्री गोविन्दरूपिणी ॥६३॥**
 
 २६०. सुप्ता 
 
@@ -1260,8 +1260,8 @@ She who protects.
 
 She who has assumed the form of govinda (Vishnu) for the preservation of the universe.
 
-संहारिणी रुद्ररूपा तिरोधानकरी ईश्वरी ।\
-सदाशिवा ऽनुग्रहदा पञ्चकृत्य-परायणा ॥६४॥
+**संहारिणी रुद्ररूपा तिरोधानकरी ईश्वरी ।**\
+**सदाशिवा ऽनुग्रहदा पञ्चकृत्य-परायणा ॥६४॥**
 
 २६८. संहारिणी
 
@@ -1289,8 +1289,8 @@ She who confers blessing.
 
 She who is devoted to the five functions (of creation, preservation, destruction, disappearance and reappearance).
 
-भानुमण्डल-मध्यस्था भैरवी भगमालिनी ।\
-पद्मासना भगवती पद्मनाभ-सहोदरी ॥६५॥
+**भानुमण्डल-मध्यस्था भैरवी भगमालिनी ।**\
+**पद्मासना भगवती पद्मनाभ-सहोदरी ॥६५॥**
 
 २७५. भानुमण्डलमध्यस्था 
 
@@ -1316,8 +1316,8 @@ She who the goddess of wealth and knowledge
 
 She who is the sister of Vishnu.
 
-उन्मेष-निमिषोत्पन्न-विपन्न-भुवनावली ।\
-सहस्र-शीर्षवदना सहस्राक्षी सहस्रपात् ॥६६॥
+**उन्मेष-निमिषोत्पन्न-विपन्न-भुवनावली ।**\
+**सहस्र-शीर्षवदना सहस्राक्षी सहस्रपात् ॥६६॥**
 
 २८१. उन्मेषनिमिषोत्पन्नविपन्नभुवनावली
 
@@ -1335,8 +1335,8 @@ She who has a thousand eyes.
 
 She who has a thousand feet.
 
-आब्रह्म-कीट-जननी वर्णाश्रम-विधायिनी ।\
-निजाज्ञारूप-निगमा पुण्यापुण्य-फलप्रदा ॥६७॥
+**आब्रह्म-कीट-जननी वर्णाश्रम-विधायिनी ।**\
+**निजाज्ञारूप-निगमा पुण्यापुण्य-फलप्रदा ॥६७॥**
 
 २८५. आब्रह्मकीटजननी 
 
@@ -4548,7 +4548,5 @@ She who is the unification of shiva and shakti into one form.
 १०००. ललिताम्बिका
 
 She who is the divine mother Lalita who is easily approachable.
-
-
 
 **Note:** Thank you for taking out the time to read this post. Write to [feedback@moileon.in](mailto:feedback@moileon.in) to share your views.
