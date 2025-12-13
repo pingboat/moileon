@@ -1,7 +1,7 @@
 ---
 title: Sri Rudram (Namakam + Chamakam)
 slug: srirudram
-date: 2025-12-13T19:05:02.593Z
+date: 2024-12-20T11:05:02.593Z
 ---
 # **॥ नमकम् ॥**
 
